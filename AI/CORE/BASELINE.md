@@ -12,7 +12,9 @@ projects. Projects may add an overlay file for local constraints.
 
 ## Documentation
 - Keep doc filenames consistent and UPPERCASE at the repo root.
-- Record non-obvious decisions as ADRs.
+- Record non-obvious decisions as Architecture Decision Records (ADR) in
+  `docs/decisions/`.
+- ADR filenames use `ADR-0001-TITLE.md` (UPPERCASE, hyphenated).
 
 ## Architecture Precedence
 - Safety/security/correctness rules take priority.
