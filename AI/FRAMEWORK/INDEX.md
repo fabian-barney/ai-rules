@@ -15,8 +15,8 @@ Place framework-specific rules in this directory.
 - Avoid adopting very new frameworks without evidence of long-term sustainability.
 - Favor clear release cadences, published support windows, and strong maintenance.
 - Prefer comprehensive feature sets over hype-driven adoption.
-- Ensure licenses are compatible with commercial closed-source use; see
-  `AI/COMPLIANCE/LICENSES.md`.
+- Ensure licenses are compatible with commercial closed-source use and that
+  required attribution is provided; see `AI/COMPLIANCE/LICENSES.md`.
 
 ## Examples
 - SPRING.md

@@ -10,6 +10,18 @@ When in doubt, consult legal counsel.
 - If a dependency is dual-licensed, select the compatible license explicitly.
 - Record license decisions in an ADR when material.
 
+## Attribution and Notice Obligations
+- Many permissive licenses still require preserving copyright and license
+  notices in distributions.
+- When required, ship license texts and notices with the product (for example,
+  `THIRD_PARTY_NOTICES.md` and/or a `licenses/` directory).
+- If a license requires a NOTICE file (e.g., Apache-2.0), include it and keep it
+  up to date.
+- If the product UI or documentation must disclose third-party usage, ensure an
+  appropriate "About" or credits section exists.
+- Track attribution requirements in the dependency inventory so releases remain
+  compliant.
+
 ## Generally Compatible (Permissive)
 These licenses are typically business-friendly for closed-source use:
 - Apache-2.0
