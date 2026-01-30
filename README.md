@@ -21,6 +21,7 @@ for baseline agent rules across repositories.
 - `AI/ARCHITECTURE/`
 - `AI/FRAMEWORK/`
 - `AI/LIBRARY/`
+- `AI/COMPLIANCE/`
 
 ## Usage (git subtree)
 Example:

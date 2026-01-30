@@ -29,3 +29,6 @@ only one level deeper to keep navigation predictable.
 
 ## LIBRARY
 - `LIBRARY/INDEX.md`
+
+## COMPLIANCE
+- `COMPLIANCE/INDEX.md`
