@@ -14,6 +14,13 @@ projects. Projects may add an overlay file for local constraints.
 - Keep doc filenames consistent and UPPERCASE at the repo root.
 - Record non-obvious decisions as ADRs.
 
+## Architecture Precedence
+- Safety/security/correctness rules take priority.
+- Framework architectural conventions are the default.
+- General architecture guidance (e.g., Clean Architecture) applies when it does
+  not conflict with the framework.
+- Conflicts should be documented with a brief ADR when material.
+
 ## Safety
 - Never include secrets or proprietary data in prompts or logs.
 - Ask if a request could cause destructive changes.
