@@ -4,12 +4,23 @@ This repository contains shared, versioned AI guidance intended to be vendored
 into other projects (e.g., via git subtree). It is the single source of truth
 for baseline agent rules across repositories.
 
+## Entry Point
+- `AI/INDEX.md`
+
+## Setup Template
+- `AGENTS_TEMPLATE.md` - copy into a project root **as `AGENTS.md`**, then ask
+  your AI agent to set up ai-rules as a subtree.
+
 ## Structure
-- `AI/BASELINE.md` - global rules and expectations
-- `AI/REVIEW.md` - review checklist and focus areas
-- `AI/SECURITY.md` - security and privacy expectations
-- `AI/JAVA.md` - Java-specific guidance (Effective Java-style rules)
-- `AI/TESTING.md` - test expectations and verification notes
+- `AI/CORE/`
+- `AI/REVIEW/`
+- `AI/SECURITY/`
+- `AI/TEST/`
+- `AI/LANGUAGE/`
+- `AI/DESIGN/`
+- `AI/ARCHITECTURE/`
+- `AI/FRAMEWORK/`
+- `AI/LIBRARY/`
 
 ## Usage (git subtree)
 Example:

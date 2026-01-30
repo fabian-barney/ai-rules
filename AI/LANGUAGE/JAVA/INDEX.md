@@ -1,6 +1,9 @@
 # JAVA
 
-## Effective Java-inspired Rules (summary)
+## Entry Point
+- `EFFECTIVE_JAVA.md` - distilled ruleset for Java code quality.
+
+## General Java Rules (summary)
 - Prefer immutability where practical.
 - Avoid exposing internal mutable state.
 - Use builder patterns for complex construction.
