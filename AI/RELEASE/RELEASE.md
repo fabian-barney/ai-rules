@@ -5,6 +5,7 @@ generation, security assessments, and version management.
 
 ## Topics
 
+- [QUICK_REFERENCE.md](QUICK_REFERENCE.md) - Quick reference guide for common release tasks
 - [CHANGELOG_RULES.md](CHANGELOG_RULES.md) - Rules for generating changelog entries
 - [SECURITY_ASSESSMENT.md](SECURITY_ASSESSMENT.md) - Security assessment framework
 - [SECURITY_REPORT_TEMPLATE.md](SECURITY_REPORT_TEMPLATE.md) - Template for security reports
@@ -27,6 +28,9 @@ publishing a new version of a project. This includes:
 7. **Communication** - Announcing the release to stakeholders
 
 ## Quick Start
+
+**New to release management?** Start with [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
+for a practical overview of the release workflow.
 
 When preparing a release:
 
