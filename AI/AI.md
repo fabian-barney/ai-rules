@@ -38,3 +38,6 @@ only one level deeper to keep navigation predictable.
 
 ## INFRASTRUCTURE
 - [INFRASTRUCTURE/INFRASTRUCTURE.md](INFRASTRUCTURE/INFRASTRUCTURE.md)
+
+## RELEASE
+- [RELEASE/RELEASE.md](RELEASE/RELEASE.md)
