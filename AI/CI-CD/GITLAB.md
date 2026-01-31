@@ -7,7 +7,7 @@ Guidance for GitLab CI/CD usage.
 - Fail fast on lint, build, and test stages.
 
 ## Structure
-- Use separate stages for lint, test, build, and deploy.
+- Use separate stages for lint, build, test, and deploy.
 - Cache dependencies to speed up builds.
 
 ## Release Pipelines

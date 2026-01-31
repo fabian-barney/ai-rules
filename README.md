@@ -23,6 +23,7 @@ for baseline agent rules across repositories.
 - `AI/LIBRARY/`
 - `AI/COMPLIANCE/`
 - `AI/CI-CD/`
+- `AI/INFRASTRUCTURE/`
 
 ## Contributing
 - `CONTRIBUTING.md`

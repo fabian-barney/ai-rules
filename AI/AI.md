@@ -35,3 +35,6 @@ only one level deeper to keep navigation predictable.
 
 ## CI-CD
 - [CI-CD/CI-CD.md](CI-CD/CI-CD.md)
+
+## INFRASTRUCTURE
+- [INFRASTRUCTURE/INFRASTRUCTURE.md](INFRASTRUCTURE/INFRASTRUCTURE.md)
