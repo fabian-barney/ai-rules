@@ -55,7 +55,6 @@ logs/
 Desktop.ini
 
 # Backup files
-*~
 *.bak
 *.orig
 
