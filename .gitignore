@@ -1,0 +1,77 @@
+# VERSION_CONTROL_SYSTEM minimal must-have ignores
+# Reference: AI/CORE/VERSION_CONTROL_SYSTEM.md
+
+# Secrets and Credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.keystore
+*.jks
+**/secrets/
+**/credentials/
+config/**/secret*
+
+# IDE and Editor Files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Build Artifacts and Dependencies
+target/
+build/
+dist/
+out/
+node_modules/
+bower_components/
+vendor/
+*.class
+*.jar
+*.war
+*.ear
+*.pyc
+__pycache__/
+.pytest_cache/
+.gradle/
+.mvn/
+
+# Logs and Temporary Files
+*.log
+logs/
+*.tmp
+*.temp
+*.cache
+
+# OS and System Files
+.AppleDouble
+.LSOverride
+Desktop.ini
+
+# Backup files
+*~
+*.bak
+*.orig
+
+# Package Manager Caches
+.npm/
+.yarn/
+.pnpm-store/
+.bundle/
+
+# Coverage Reports
+coverage/
+*.coverage
+.nyc_output/
+htmlcov/
+
+# Documentation Build Outputs (if applicable)
+_site/
+.jekyll-cache/
+.docusaurus/
