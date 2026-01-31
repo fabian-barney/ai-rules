@@ -1,4 +1,6 @@
-# TESTING
+# TEST
+
+Testing expectations and verification notes.
 
 ## Expectations
 - Add tests when behavior changes.

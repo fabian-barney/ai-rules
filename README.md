@@ -5,7 +5,7 @@ into other projects (e.g., via git subtree). It is the single source of truth
 for baseline agent rules across repositories.
 
 ## Entry Point
-- `AI/INDEX.md`
+- `AI/AI.md`
 
 ## Setup Template
 - `AGENTS_TEMPLATE.md` - copy into a project root **as `AGENTS.md`**, then ask

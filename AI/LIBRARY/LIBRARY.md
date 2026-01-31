@@ -16,5 +16,6 @@ Place library-specific rules in this directory.
 
 ## Examples
 - LOMBOK.md
+- MAPSTRUCT.md
 - JOOQ.md
 - GUAVA.md

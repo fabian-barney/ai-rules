@@ -11,7 +11,7 @@ still available if the setup is interrupted.
 1. Add the ai-rules subtree:
    git subtree add --prefix docs/ai https://github.com/fabian-barney/ai-rules.git main --squash
 2. Baseline entry point (after subtree add):
-   docs/ai/AI/INDEX.md
+   docs/ai/AI/AI.md
 3. Create a local overlay for project-specific rules (recommended):
    AI_PROJECT.md
    Note: keep this outside `docs/ai/` so subtree updates do not overwrite it.
@@ -19,7 +19,7 @@ still available if the setup is interrupted.
    - `CLAUDE.md` (Claude Code)
    - `.github/copilot-instructions.md` (GitHub Copilot)
 5. Replace this template content in `AGENTS.md` with the final references:
-   - Baseline: docs/ai/AI/INDEX.md
+   - Baseline: docs/ai/AI/AI.md
    - Overlay: AI_PROJECT.md
 
 ## Entry Point Templates
@@ -29,7 +29,7 @@ still available if the setup is interrupted.
 # CLAUDE
 
 Use the shared AI rules located at:
-- Baseline: docs/ai/AI/INDEX.md
+- Baseline: docs/ai/AI/AI.md
 - Overlay: AI_PROJECT.md
 ```
 
@@ -38,7 +38,7 @@ Use the shared AI rules located at:
 # Copilot Instructions
 
 Use the shared AI rules located at:
-- Baseline: docs/ai/AI/INDEX.md
+- Baseline: docs/ai/AI/AI.md
 - Overlay: AI_PROJECT.md
 ```
 

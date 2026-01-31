@@ -4,31 +4,31 @@ This index is the single entry point for the baseline rules. Each level links
 only one level deeper to keep navigation predictable.
 
 ## CORE
-- `CORE/INDEX.md`
+- `CORE/CORE.md`
 
 ## REVIEW
-- `REVIEW/INDEX.md`
+- `REVIEW/REVIEW.md`
 
 ## SECURITY
-- `SECURITY/INDEX.md`
+- `SECURITY/SECURITY.md`
 
 ## TEST
-- `TEST/INDEX.md`
+- `TEST/TEST.md`
 
 ## LANGUAGE
-- `LANGUAGE/INDEX.md`
+- `LANGUAGE/LANGUAGE.md`
 
 ## DESIGN
-- `DESIGN/INDEX.md`
+- `DESIGN/DESIGN.md`
 
 ## ARCHITECTURE
-- `ARCHITECTURE/INDEX.md`
+- `ARCHITECTURE/ARCHITECTURE.md`
 
 ## FRAMEWORK
-- `FRAMEWORK/INDEX.md`
+- `FRAMEWORK/FRAMEWORK.md`
 
 ## LIBRARY
-- `LIBRARY/INDEX.md`
+- `LIBRARY/LIBRARY.md`
 
 ## COMPLIANCE
-- `COMPLIANCE/INDEX.md`
+- `COMPLIANCE/COMPLIANCE.md`
