@@ -3,6 +3,12 @@
 <!-- 
 This is a template for security assessment reports. Copy this file to 
 security-reports/vX.Y.Z/security-report.md and fill in the details.
+
+Instructions:
+- Replace vX.Y.Z with your actual version number (e.g., v1.0.1)
+- Use current date in YYYY-MM-DD format for Assessment Date
+- Fill in all [PLACEHOLDER] sections with actual values
+- Remove this comment block before finalizing
 -->
 
 **Release Version:** vX.Y.Z
