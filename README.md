@@ -22,6 +22,13 @@ for baseline agent rules across repositories.
 - `AI/FRAMEWORK/`
 - `AI/LIBRARY/`
 - `AI/COMPLIANCE/`
+- `AI/CI-CD/`
+
+## Contributing
+- `CONTRIBUTING.md`
+
+## Changelog
+- `CHANGELOG.md`
 
 ## Usage (git subtree)
 Example:

@@ -3,8 +3,8 @@
 Language-specific rule sets live in subdirectories.
 
 ## Files
-- `READABILITY.md` - language-agnostic readability rules
-- `CONVENTIONS.md` - formatting and naming conventions
+- [CONVENTIONS.md](CONVENTIONS.md)
+- [READABILITY.md](READABILITY.md)
 
 ## Languages
-- `JAVA/JAVA.md` - Java rules and entry point
+- [JAVA/JAVA.md](JAVA/JAVA.md) - Java rules and entry point

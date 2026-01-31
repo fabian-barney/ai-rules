@@ -14,8 +14,16 @@ Place library-specific rules in this directory.
 - Ensure licenses are compatible with commercial closed-source use and that
   required attribution is provided; see `AI/COMPLIANCE/LICENSES.md`.
 
-## Examples
-- LOMBOK.md
-- MAPSTRUCT.md
-- JOOQ.md
-- GUAVA.md
+## Files
+- [GUAVA.md](GUAVA.md)
+- [JAXB.md](JAXB.md)
+- [JOOQ.md](JOOQ.md)
+- [JPA.md](JPA.md)
+- [JUNIT.md](JUNIT.md)
+- [KAFKA.md](KAFKA.md)
+- [LOMBOK.md](LOMBOK.md)
+- [MAPSTRUCT.md](MAPSTRUCT.md)
+- [MOCKITO.md](MOCKITO.md)
+- [PLAYWRIGHT.md](PLAYWRIGHT.md)
+- [RESILIENCE4J.md](RESILIENCE4J.md)
+- [SELENIUM.md](SELENIUM.md)

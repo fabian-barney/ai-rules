@@ -18,6 +18,10 @@ Place framework-specific rules in this directory.
 - Ensure licenses are compatible with commercial closed-source use and that
   required attribution is provided; see `AI/COMPLIANCE/LICENSES.md`.
 
-## Examples
-- SPRING.md
-- ANGULAR.md
+## Files
+- [ANGULAR.md](ANGULAR.md)
+- [PRIMEFACES.md](PRIMEFACES.md)
+- [REACT.md](REACT.md)
+- [SPRING_BOOT.md](SPRING_BOOT.md)
+- [SVELTE.md](SVELTE.md)
+- [TAILWIND_CSS.md](TAILWIND_CSS.md)
