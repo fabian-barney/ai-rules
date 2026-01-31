@@ -15,6 +15,7 @@ jobs:
           globs: |
             **/*.md
             !**/node_modules/**
+          config: .markdownlint-cli2.json
 
   linkcheck:
     runs-on: ubuntu-latest
