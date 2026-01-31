@@ -8,6 +8,7 @@ generation, security assessments, and version management.
 - [CHANGELOG_RULES.md](CHANGELOG_RULES.md) - Rules for generating changelog entries
 - [SECURITY_ASSESSMENT.md](SECURITY_ASSESSMENT.md) - Security assessment framework
 - [SECURITY_REPORT_TEMPLATE.md](SECURITY_REPORT_TEMPLATE.md) - Template for security reports
+- [SECURITY_REPORTS_STRUCTURE.md](SECURITY_REPORTS_STRUCTURE.md) - Directory structure for security reports
 - [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) - Pre-release checklist
 - [VERSION_MANAGEMENT.md](VERSION_MANAGEMENT.md) - Version management best practices
 - [RELEASE_BEST_PRACTICES.md](RELEASE_BEST_PRACTICES.md) - Additional best practices and considerations
