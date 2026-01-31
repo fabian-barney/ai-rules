@@ -22,3 +22,18 @@
 - Suggest targeted tests when relevant.
 - When cognitive complexity is high, suggest concrete refactors (e.g., extract
   methods, guard clauses, early exits, split responsibilities, introduce strategy).
+
+## Repository Review (2026-01-31)
+- Scope: documentation-only repository; no automated builds or tests are defined.
+- Strengths: clear entry point (`AI/AI.md`) and consistent domain-structured folders
+  (CORE, REVIEW, SECURITY, TEST, LANGUAGE, DESIGN, ARCHITECTURE, FRAMEWORK,
+  LIBRARY, COMPLIANCE).
+- Gaps:
+  - No documented process for updating rules (e.g., CONTRIBUTING, review/approval
+    workflow, versioning policy beyond tags).
+  - No changelog or release notes to accompany tagged versions.
+  - No automation (CI) for link checking or markdown linting to prevent drift.
+- Not verified: builds, tests, or external links (none defined).
+- Recommended next steps: add a lightweight CONTRIBUTING guide, changelog per
+  release, and a basic CI job for markdown/link validation to keep guidance
+  trustworthy.
