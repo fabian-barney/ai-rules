@@ -15,11 +15,12 @@ jobs:
           globs: |
             **/*.md
             !**/node_modules/**
+          config: .markdownlint.json
 
   linkcheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: lycheeverse/lychee-action@v1
+      - uses: lycheeverse/lychee-action@v2.0.2
         with:
           args: --no-progress --verbose --exclude-mail "**/*.md"
