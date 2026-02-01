@@ -12,6 +12,10 @@ Copy and fill in for each lesson learned:
 ```
 # YYYY-MM-DD-short-title
 
+## Scope
+- Applies only to this repository.
+- Do not copy these rules into consuming projects.
+
 ## Issue
 What went wrong and why it mattered.
 
