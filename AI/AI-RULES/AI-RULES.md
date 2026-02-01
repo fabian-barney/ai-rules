@@ -19,4 +19,6 @@ Guidance for maintaining this ai-rules repository.
 ## Maintenance
 - Update `README.md` structure list when adding or renaming top-level folders.
 - Avoid self-referential links in index files.
+- Ensure index files have exactly one "## Files" section (no duplicates).
 - Keep markdown lint-friendly formatting (single trailing newline, <= 120 chars per line).
+- Use UTF-8 without BOM for Markdown files.
