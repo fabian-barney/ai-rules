@@ -13,3 +13,7 @@ Add these when using Node tooling (if not already covered by the baseline ignore
 - `npm-debug.log*`, `yarn-debug.log*`, `yarn-error.log*`, `pnpm-debug.log*`
 - `.npm/`, `.yarn/`, `.pnpm-store/`
 - `.pnp.*` (Yarn Plug'n'Play)
+
+## .npmrc Handling
+- Do not commit `.npmrc` if it contains credentials or auth tokens; add it to `.gitignore`.
+- If `.npmrc` is required, commit a sanitized version (no secrets) and consider a `.npmrc.example`.
