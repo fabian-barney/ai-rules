@@ -46,13 +46,5 @@ Use the shared AI rules located at:
 > Keeping `.github/copilot-instructions.md` present and pointed at the baseline
 > increases the chance it uses the same rules.
 
-## Updates
-To pull new baseline rules later:
-  git subtree pull --prefix docs/ai https://github.com/fabian-barney/ai-rules.git main --squash
-
-## Conventions
-- Root-level docs use UPPERCASE filenames.
-- Avoid case-only renames on Windows.
-
 ## Access
 This repository is private; ensure your GitHub account has access.

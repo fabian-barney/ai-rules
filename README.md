@@ -4,7 +4,7 @@ This repository contains shared, versioned AI guidance intended to be vendored
 into other projects (e.g., via git subtree). It is the single source of truth
 for baseline agent rules across repositories.
 
-## Getting started
+## Getting Started
 
 ### Initial setup
 1. Copy `AGENTS_TEMPLATE.md` into your project root as `AGENTS.md`.
