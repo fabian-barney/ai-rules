@@ -36,8 +36,8 @@ Build output, dependencies, caches, logs
 - `tmp/`, `*.tmp`, `*.cache`
 - `*.class`
 
-## Language/Framework/Library Additions
-- If a language/framework/library doc includes a "VCS Ignore Additions" section, add those patterns when using it.
+## Language/Framework/Library/Build Tool Additions
+- If a language/framework/library/build tool doc includes a "VCS Ignore Additions" section, add those patterns when using it.
 - Keep additions scoped to generated output and local tooling noise.
 - Do not ignore files that are meant to be versioned for reproducible builds.
 

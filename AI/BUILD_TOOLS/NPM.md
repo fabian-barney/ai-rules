@@ -1,10 +1,11 @@
-﻿# NODE
+﻿# NPM
 
-Guidance for Node.js runtime and tooling.
+Guidance for Node.js package managers (npm, Yarn, pnpm).
 
 ## General
 - Use an LTS Node version and document it (for example via `engines` or `.nvmrc`).
-- Use a single package manager consistently and follow repository policy on lockfiles.
+- Use one package manager consistently and avoid mixing lockfiles.
+- Follow repository policy on whether lockfiles are committed.
 
 ## VCS Ignore Additions
 Add these when using Node tooling (if not already covered by the baseline ignore list):
