@@ -20,6 +20,7 @@ Place framework-specific rules in this directory.
 
 ## Files
 - [ANGULAR.md](ANGULAR.md)
+- [NODE.md](NODE.md)
 - [PRIMEFACES.md](PRIMEFACES.md)
 - [REACT.md](REACT.md)
 - [SPRING_BOOT.md](SPRING_BOOT.md)

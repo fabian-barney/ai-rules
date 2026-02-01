@@ -1,6 +1,6 @@
 ﻿# NODE
 
-Guidance for Node.js projects.
+Guidance for Node.js runtime and tooling.
 
 ## General
 - Use an LTS Node version and document it (for example via `engines` or `.nvmrc`).

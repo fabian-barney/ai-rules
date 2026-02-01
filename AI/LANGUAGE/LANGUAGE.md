@@ -8,5 +8,4 @@ Language-specific rule sets live in subdirectories.
 
 ## Languages
 - [JAVA/JAVA.md](JAVA/JAVA.md) - Java rules and entry point
-- [NODE.md](NODE.md) - Node.js and package manager guidance
 - [TYPESCRIPT/TYPESCRIPT.md](TYPESCRIPT/TYPESCRIPT.md) - TypeScript rules and entry point
