@@ -8,6 +8,7 @@ Guidance for maintaining this ai-rules repository.
 ## Files
 - [STRUCTURE.md](STRUCTURE.md) - Structure rules for this repository only.
 - [FORMATTING.md](FORMATTING.md) - Formatting rules for this repository only.
+- [RELEASE.md](RELEASE.md) - Release checklist for this repository.
 - [UPDATE.md](UPDATE.md) - Update workflow and prompt examples for downstream repos.
 - [LESSONS_LEARNED/LESSONS_LEARNED.md](LESSONS_LEARNED/LESSONS_LEARNED.md) - Index of lessons
   to prevent repeat mistakes.
