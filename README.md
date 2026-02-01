@@ -20,6 +20,7 @@ for baseline agent rules across repositories.
 - `AI/DESIGN/`
 - `AI/ARCHITECTURE/`
 - `AI/FRAMEWORK/`
+- `AI/BUILD_TOOLS/`
 - `AI/LIBRARY/`
 - `AI/COMPLIANCE/`
 - `AI/CI-CD/`
