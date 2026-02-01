@@ -10,9 +10,10 @@ Guidance for maintaining this ai-rules repository.
 - Add new categories as top-level folders under `AI/` and index them in `AI/AI.md`.
 - Keep category index files limited to one level down (no cross-links between peers).
 - Name index files after their parent directory (e.g., `AI/CORE/CORE.md`, `AI/BUILD_TOOLS/BUILD_TOOLS.md`).
+- Use "## Files" as the link section heading in all index files.
 - Link AI-RULES guidance files here.
 
-## AI-RULES Files
+## Files
 - [UPDATE.md](UPDATE.md)
 
 ## Maintenance
