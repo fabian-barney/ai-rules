@@ -30,8 +30,22 @@ Build output, dependencies, caches, logs
 - `node_modules/`
 - `.gradle/`
 - `__pycache__/`, `*.pyc`, `.pytest_cache/`
+- `.npm/`, `.yarn/`, `.pnpm-store/`
+- `coverage/`, `.nyc_output/`, `htmlcov/`
 - `*.log`, `logs/`
 - `tmp/`, `*.tmp`, `*.cache`
+- `*.class`
+
+## Language/Framework/Library Additions
+- If a language/framework/library doc includes a "VCS Ignore Additions" section, add those patterns when using it.
+- Keep additions scoped to generated output and local tooling noise.
+- Do not ignore files that are meant to be versioned for reproducible builds.
+
+## IDE/Tooling Additions
+Apply only when the tool is used:
+- Xcode: `DerivedData/`, `*.xcworkspace`, `*.xcuserdatad`, `*.xcuserdata/`, `*.xcuserstate`, `*.xccheckout`
+- Visual Studio: `.vs/`, `*.suo`, `*.user`, `*.userosscache`, `*.sln.docstates`, `*.VC.db`, `*.VC.opendb`
+- Android Studio: `*.iml`, `local.properties`, `captures/`, `.externalNativeBuild/` (plus `.idea/`, `.gradle/`, `build/` if not already)
 
 ## Safeguards
 - Do not commit secrets; rotate and remove them from history if exposed.
