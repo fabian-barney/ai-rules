@@ -1,4 +1,4 @@
-﻿# GRADLE
+# GRADLE
 
 Guidance for Gradle builds.
 

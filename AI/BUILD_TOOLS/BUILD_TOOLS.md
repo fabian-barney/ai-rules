@@ -1,4 +1,4 @@
-﻿# BUILD_TOOLS
+# BUILD_TOOLS
 
 Build and dependency management rules live in this directory.
 

@@ -1,4 +1,4 @@
-﻿# MAVEN
+# MAVEN
 
 Guidance for Apache Maven builds.
 

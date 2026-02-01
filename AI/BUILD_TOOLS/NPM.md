@@ -1,4 +1,4 @@
-﻿# NPM
+# NPM
 
 Guidance for Node.js package managers (npm, Yarn, pnpm).
 

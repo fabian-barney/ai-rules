@@ -37,15 +37,18 @@ Build output, dependencies, caches, logs
 - `*.class`
 
 ## Language/Framework/Library/Build Tool Additions
-- If a language/framework/library/build tool doc includes a "VCS Ignore Additions" section, add those patterns when using it.
+- If a language/framework/library/build tool doc includes a "VCS Ignore Additions" section,
+  add those patterns when using it.
 - Keep additions scoped to generated output and local tooling noise.
 - Do not ignore files that are meant to be versioned for reproducible builds.
 
 ## IDE/Tooling Additions
 Apply only when the tool is used:
 - Xcode: `DerivedData/`, `*.xcworkspace`, `*.xcuserdatad`, `*.xcuserdata/`, `*.xcuserstate`, `*.xccheckout`
-- Visual Studio: `.vs/`, `*.suo`, `*.user`, `*.userosscache`, `*.sln.docstates`, `*.VC.db`, `*.VC.opendb`
-- Android Studio: `*.iml`, `local.properties`, `captures/`, `.externalNativeBuild/` (plus `.idea/`, `.gradle/`, `build/` if not already)
+- Visual Studio: `.vs/`, `*.suo`, `*.user`, `*.userosscache`, `*.sln.docstates`,
+  `*.VC.db`, `*.VC.opendb`
+- Android Studio: `*.iml`, `local.properties`, `captures/`, `.externalNativeBuild/`
+  (plus `.idea/`, `.gradle/`, `build/` if not already)
 
 ## Safeguards
 - Do not commit secrets; rotate and remove them from history if exposed.
