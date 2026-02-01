@@ -3,6 +3,7 @@
 Instructions for AI agents to update ai-rules in a downstream repository.
 
 ## Prompt Examples
+- "update ai-rules"
 - "update ai-rules to version v2.0.0"
 - "update ai-rules to the latest tagged release"
 
