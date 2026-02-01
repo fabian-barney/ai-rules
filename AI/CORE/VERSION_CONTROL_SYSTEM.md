@@ -9,16 +9,29 @@ Guidance for version control system usage (Git and others).
 
 ## Ignore File
 - Maintain a VCS ignore file in the repository root (for Git: `.gitignore`).
-- Keep the ignore list minimal and security-focused; add project-specific entries as needed.
+- Keep the ignore list minimal but practical to prevent VCS pollution and protect sensitive files.
+- Start from a baseline set, then add project- or tool-specific entries as needed.
+- Remove or override entries if the repository intentionally versions those files.
 
 ### Minimal Must-Have Ignores
+Secrets
 - `.env`, `.env.*` (except `.env.example`)
 - `.envrc`
 - `*.key`, `*.pem`, `*.p12`, `*.pfx`
 - `*.jks`, `*.keystore`
+
+OS and editor noise
 - `.DS_Store`, `Thumbs.db`, `Desktop.ini`
 - `*.swp`, `*.swo`, `*~`
 - `.idea/`, `.vscode/`
+
+Build output, dependencies, caches, logs
+- `target/`, `build/`, `dist/`, `out/`
+- `node_modules/`
+- `.gradle/`
+- `__pycache__/`, `*.pyc`, `.pytest_cache/`
+- `*.log`, `logs/`
+- `tmp/`, `*.tmp`, `*.cache`
 
 ## Safeguards
 - Do not commit secrets; rotate and remove them from history if exposed.

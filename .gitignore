@@ -1,4 +1,4 @@
-﻿# Minimal, security-focused ignores
+﻿# Minimal baseline ignores (extend per project)
 
 # Secrets
 .env
@@ -21,3 +21,30 @@ Desktop.ini
 *~
 .idea/
 .vscode/
+
+# Logs and temp
+*.log
+logs/
+tmp/
+*.tmp
+*.cache
+
+# Build output
+target/
+build/
+dist/
+out/
+*.class
+
+# Dependencies and caches
+node_modules/
+.gradle/
+__pycache__/
+*.pyc
+.pytest_cache/
+coverage/
+.nyc_output/
+htmlcov/
+.npm/
+.yarn/
+.pnpm-store/
