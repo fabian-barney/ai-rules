@@ -22,3 +22,7 @@ Guidance for maintaining this ai-rules repository.
 - Ensure index files have exactly one "## Files" section (no duplicates).
 - Keep markdown lint-friendly formatting (single trailing newline, <= 120 chars per line).
 - Use UTF-8 without BOM for Markdown files.
+- Before pushing, verify common markdownlint pitfalls: MD013 (line length), MD024 (duplicate headings),
+  and MD047 (single trailing newline).
+- For new or moved files, update all affected indexes in the same change (AI/AI.md, category index,
+  and README structure list).
