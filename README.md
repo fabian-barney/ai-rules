@@ -14,6 +14,7 @@ for baseline agent rules across repositories.
 
 ## Structure
 - `AI/CORE/`
+- `AI/AI-RULES/`
 - `AI/REVIEW/`
 - `AI/SECURITY/`
 - `AI/TEST/`

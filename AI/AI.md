@@ -6,6 +6,9 @@ only one level deeper to keep navigation predictable.
 ## CORE
 - [CORE/CORE.md](CORE/CORE.md)
 
+## AI-RULES
+- [AI-RULES/AI-RULES.md](AI-RULES/AI-RULES.md)
+
 ## REVIEW
 - [REVIEW/REVIEW.md](REVIEW/REVIEW.md)
 
