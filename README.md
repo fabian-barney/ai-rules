@@ -18,7 +18,7 @@ Example prompt: "update ai-rules to version v2.1.0"
 If you omit the version, the latest tagged release will be used.
 
 ## Structure
-- `AI/AI.md` - Single entry point for the baseline rules.
+- `AI/AI.md` - Single entry point for the entire ai-rules ruleset.
 - `AI/CORE/` - Non-negotiable baseline rules used across all projects.
 - `AI/AI-RULES/` - Maintenance guidance for this ruleset and release/update workflows.
 - `AI/REVIEW/` - Code review standards and checklists.
