@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
 
+## [v2.0.0] - 2026-02-01
+- Added AI-RULES meta guidance, including structure, formatting, update workflow, and lessons learned.
+- Introduced BUILD_TOOLS category with Maven, Gradle, and npm guidance.
+- Added VCS rules (commit message expectations and ignore-file baseline) and logging guidance.
+- Expanded language guidance with TypeScript and Java VCS ignore additions.
+- Improved index usability with one-line descriptions and updated repository structure docs.
+
 ## [v1.0.1] - 2026-01-31
 - Updated docs-check workflow to use markdownlint configuration.
 - Added markdownlint configuration to align CI with repository style.
