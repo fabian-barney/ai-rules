@@ -4,9 +4,6 @@ This repository contains shared, versioned AI guidance intended to be vendored
 into other projects (e.g., via git subtree). It is the single source of truth
 for baseline agent rules across repositories.
 
-## Entry Point
-- `AI/AI.md`
-
 ## Installation
 
 ### Initial setup
@@ -21,6 +18,7 @@ Example prompt: "update ai-rules to version v2.1.0"
 If you omit the version, the latest tagged release will be used.
 
 ## Structure
+- `AI/AI.md` - Single entry point for the baseline rules.
 - `AI/CORE/` - Non-negotiable baseline rules used across all projects.
 - `AI/AI-RULES/` - Maintenance guidance for this ruleset and release/update workflows.
 - `AI/REVIEW/` - Code review standards and checklists.
