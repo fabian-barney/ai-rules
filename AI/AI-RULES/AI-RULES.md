@@ -17,3 +17,5 @@ Additional maintenance rules:
 - Avoid redundancy across AI-RULES docs. If a new focused file supersedes content here, remove the overlap
   and link to the single source of truth instead.
 - If a task requires a second attempt, add a short lesson under `AI/AI-RULES/LESSONS_LEARNED/` and link it.
+- Before final response, run a quick AI-RULES self-check (structure, formatting, and relevant lessons learned).
+  Do not respond until the self-check passes.
