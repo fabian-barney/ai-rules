@@ -9,12 +9,18 @@ for baseline agent rules across repositories.
 ### Initial setup
 1. Copy `AGENTS_TEMPLATE.md` into your project root as `AGENTS.md`.
 2. Ask your AI agent to set up ai-rules.
-   Example prompt: "setup ai-rules with version v2.1.0"
+   Example prompt:
+   ```
+   setup ai-rules with version v2.1.0
+   ```
    If you omit the version, the latest tagged release will be used.
 
 ### Update
 Ask your AI agent to update ai-rules when you want a newer version.
-Example prompt: "update ai-rules to version v2.1.0"
+Example prompt:
+```
+update ai-rules to version v2.1.0
+```
 If you omit the version, the latest tagged release will be used.
 
 ## Structure
