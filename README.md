@@ -11,7 +11,7 @@ for baseline agent rules across repositories.
 2. Ask your AI agent to set up ai-rules.
    Example prompt:
    ```
-   setup ai-rules with version v2.1.0
+   setup ai-rules with version v2.1.1
    ```
    If you omit the version, the latest tagged release will be used.
 
@@ -19,7 +19,7 @@ for baseline agent rules across repositories.
 Ask your AI agent to update ai-rules when you want a newer version.
 Example prompt:
 ```
-update ai-rules to version v2.1.0
+update ai-rules to version v2.1.1
 ```
 If you omit the version, the latest tagged release will be used.
 
