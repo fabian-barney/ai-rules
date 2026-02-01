@@ -5,11 +5,13 @@ into other projects (e.g., via git subtree). It is the single source of truth
 for baseline agent rules across repositories.
 
 ## Getting Started
-Recommended: latest GPT Codex (xhigh)
+### Recommended AI agent
+
+**Recommended: latest GPT Codex (xhigh)**  
 *xhigh* reasoning is very important. If you do not have access to it, switch to
 an alternative below.
 
-Alternative: latest Opus
+**Alternative: latest Opus**  
 Might work well in most cases, but expect it to be sloppy sometimes.
 
 ### Initial setup
