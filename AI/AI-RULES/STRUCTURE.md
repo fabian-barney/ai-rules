@@ -12,6 +12,7 @@ Rules for organizing the ai-rules repository itself (not downstream projects).
 - Category index files should only link one level down.
 - In index files, each "## Files" entry should include a short one-line description when helpful.
 - Do not add headings that only link to another file; use the "## Files" list instead.
+- In `AI/AI.md`, add a one-line description for every link to help navigation.
 
 ## AI-RULES Area
 - Meta-guidance lives under `AI/AI-RULES/`.
