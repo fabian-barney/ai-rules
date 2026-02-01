@@ -1,6 +1,10 @@
 # LESSONS_LEARNED
 
 Compact, actionable notes to prevent repeat mistakes.
+
+## Scope
+- Applies only to this repository.
+- Do not copy these rules into consuming projects.
 - Avoid duplicate lessons; update an existing entry if the issue matches.
 
 ## Template
