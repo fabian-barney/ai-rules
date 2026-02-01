@@ -15,15 +15,15 @@ Place library-specific rules in this directory.
   required attribution is provided; see `AI/COMPLIANCE/LICENSES.md`.
 
 ## Files
-- [GUAVA.md](GUAVA.md)
-- [JAXB.md](JAXB.md)
-- [JOOQ.md](JOOQ.md)
-- [JPA.md](JPA.md)
-- [JUNIT.md](JUNIT.md)
-- [KAFKA.md](KAFKA.md)
-- [LOMBOK.md](LOMBOK.md)
-- [MAPSTRUCT.md](MAPSTRUCT.md)
-- [MOCKITO.md](MOCKITO.md)
-- [PLAYWRIGHT.md](PLAYWRIGHT.md)
-- [RESILIENCE4J.md](RESILIENCE4J.md)
-- [SELENIUM.md](SELENIUM.md)
+- [GUAVA.md](GUAVA.md) - Google Guava library guidance.
+- [JAXB.md](JAXB.md) - JAXB XML binding guidance.
+- [JOOQ.md](JOOQ.md) - jOOQ SQL DSL guidance.
+- [JPA.md](JPA.md) - Java Persistence API guidance.
+- [JUNIT.md](JUNIT.md) - JUnit testing guidance.
+- [KAFKA.md](KAFKA.md) - Apache Kafka usage guidance.
+- [LOMBOK.md](LOMBOK.md) - Lombok usage guidance.
+- [MAPSTRUCT.md](MAPSTRUCT.md) - MapStruct mapping guidance.
+- [MOCKITO.md](MOCKITO.md) - Mockito mocking guidance.
+- [PLAYWRIGHT.md](PLAYWRIGHT.md) - Playwright browser testing guidance.
+- [RESILIENCE4J.md](RESILIENCE4J.md) - Resilience4j patterns guidance.
+- [SELENIUM.md](SELENIUM.md) - Selenium browser testing guidance.

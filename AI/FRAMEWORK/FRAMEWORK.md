@@ -19,9 +19,9 @@ Place framework-specific rules in this directory.
   required attribution is provided; see `AI/COMPLIANCE/LICENSES.md`.
 
 ## Files
-- [ANGULAR.md](ANGULAR.md)
-- [PRIMEFACES.md](PRIMEFACES.md)
-- [REACT.md](REACT.md)
-- [SPRING_BOOT.md](SPRING_BOOT.md)
-- [SVELTE.md](SVELTE.md)
-- [TAILWIND_CSS.md](TAILWIND_CSS.md)
+- [ANGULAR.md](ANGULAR.md) - Angular framework guidance.
+- [PRIMEFACES.md](PRIMEFACES.md) - PrimeFaces UI framework guidance.
+- [REACT.md](REACT.md) - React framework guidance.
+- [SPRING_BOOT.md](SPRING_BOOT.md) - Spring Boot guidance.
+- [SVELTE.md](SVELTE.md) - Svelte framework guidance.
+- [TAILWIND_CSS.md](TAILWIND_CSS.md) - Tailwind CSS guidance.

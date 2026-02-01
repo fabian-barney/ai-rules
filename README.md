@@ -9,10 +9,12 @@ for baseline agent rules across repositories.
 
 ## Setup Template
 - `AGENTS_TEMPLATE.md` - copy into a project root **as `AGENTS.md`**, then ask
-  your AI agent to set up ai-rules as a subtree.
+  your AI agent to set up ai-rules. If you need a specific version, say so.
+  Example prompt: "setup ai-rules with version v1.0.1"
 
 ## Structure
 - `AI/CORE/`
+- `AI/AI-RULES/`
 - `AI/REVIEW/`
 - `AI/SECURITY/`
 - `AI/TEST/`
@@ -33,15 +35,15 @@ for baseline agent rules across repositories.
 - `CHANGELOG.md`
 
 ## Usage (git subtree)
-Example:
-```bash
-git subtree add --prefix docs/ai https://github.com/fabian-barney/ai-rules.git main --squash
-```
+ai-rules can be vendored into another repository (for example with git subtree).
+This keeps the rules in sync while still allowing you to pin a specific version.
+You do not need to manage the mechanics manually if you use the AI prompts below.
 
-Update later:
-```bash
-git subtree pull --prefix docs/ai https://github.com/fabian-barney/ai-rules.git main --squash
-```
+### Update Prompt (for the AI)
+Example prompt:
+"update ai-rules to version v2.0.0"
+
+If you are not pinning a version, you can ask for the latest tagged release instead.
 
 ## Versioning
 Tag releases (e.g., `v1.0.0`) and pin subtree updates to a tag when stability
