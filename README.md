@@ -41,7 +41,7 @@ You do not need to manage the mechanics manually if you use the AI prompts below
 
 ### Update Prompt (for the AI)
 Example prompt:
-"update ai-rules to version v2.0.0"
+"update ai-rules to version v2.1.0"
 
 If you are not pinning a version, you can ask for the latest tagged release instead.
 
