@@ -35,21 +35,15 @@ If you omit the version, the latest tagged release will be used.
 - `AI/INFRASTRUCTURE/` - Infrastructure and platform guidance.
 
 ## Contributing
-- `CONTRIBUTING.md`
+- `CONTRIBUTING.md` - Contribution guidelines for this repository.
 
 ## Changelog
-- `CHANGELOG.md`
+- `CHANGELOG.md` - Release history and notable changes.
 
 ## Usage (git subtree)
 ai-rules can be vendored into another repository (for example with git subtree).
 This keeps the rules in sync while still allowing you to pin a specific version.
 You do not need to manage the mechanics manually if you use the AI prompts below.
-
-### Update Prompt (for the AI)
-Example prompt:
-"update ai-rules to version v2.1.0"
-
-If you are not pinning a version, you can ask for the latest tagged release instead.
 
 ## Versioning
 Tag releases (e.g., `v1.0.0`) and pin subtree updates to a tag when stability
