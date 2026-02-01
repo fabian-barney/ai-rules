@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
 
+## [v2.1.1] - 2026-02-01
+- Improved README with clearer Getting Started section and formatted example prompts.
+- Streamlined setup template.
+
 ## [v2.1.0] - 2026-02-01
 - Added AI-prompted release guidance for streamlined version releases.
 - Enhanced README and AI index with structure descriptions.
