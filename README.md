@@ -13,20 +13,20 @@ for baseline agent rules across repositories.
   Example prompt: "setup ai-rules with version v1.0.1"
 
 ## Structure
-- `AI/CORE/`
-- `AI/AI-RULES/`
-- `AI/REVIEW/`
-- `AI/SECURITY/`
-- `AI/TEST/`
-- `AI/LANGUAGE/`
-- `AI/DESIGN/`
-- `AI/ARCHITECTURE/`
-- `AI/FRAMEWORK/`
-- `AI/BUILD_TOOLS/`
-- `AI/LIBRARY/`
-- `AI/COMPLIANCE/`
-- `AI/CI-CD/`
-- `AI/INFRASTRUCTURE/`
+- `AI/CORE/` - Non-negotiable baseline rules used across all projects.
+- `AI/AI-RULES/` - Maintenance guidance for this ruleset and release/update workflows.
+- `AI/REVIEW/` - Code review standards and checklists.
+- `AI/SECURITY/` - Security practices and safeguards.
+- `AI/TEST/` - Testing strategy and expectations.
+- `AI/LANGUAGE/` - Language and coding conventions.
+- `AI/DESIGN/` - Design principles and clean code guidance.
+- `AI/ARCHITECTURE/` - Architecture patterns and system design rules.
+- `AI/FRAMEWORK/` - Framework-specific guidance.
+- `AI/BUILD_TOOLS/` - Build and dependency management tooling.
+- `AI/LIBRARY/` - Library-specific guidance.
+- `AI/COMPLIANCE/` - Compliance and licensing rules.
+- `AI/CI-CD/` - CI/CD and automation guidance.
+- `AI/INFRASTRUCTURE/` - Infrastructure and platform guidance.
 
 ## Contributing
 - `CONTRIBUTING.md`
