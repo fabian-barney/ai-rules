@@ -24,5 +24,8 @@ Concrete steps or checks that would have avoided the issue.
 ```
 
 ## Files
+- [2026-02-03-markdownlint-angle-brackets.md](2026-02-03-markdownlint-angle-brackets.md)
+  - Avoid inline HTML from placeholder tokens.
 - [2026-02-01-markdownlint.md](2026-02-01-markdownlint.md) - Markdownlint and BOM prevention checklist.
-- [2026-02-01-release-version-examples.md](2026-02-01-release-version-examples.md) - Update versioned examples before tagging.
+- [2026-02-01-release-version-examples.md](2026-02-01-release-version-examples.md)
+  - Update versioned examples before tagging.
