@@ -8,8 +8,67 @@ into your project root as `AGENTS.md` and ask your AI agent to run the setup.
 Keep this template content in place until the final step so the instructions are
 still available if the setup is interrupted.
 
+### Choose a setup mode
+Follow the mode requested by the user:
+- "setup ai-rules local" => Local-only (no commits, no push)
+- "setup ai-rules git" => Git subtree (tracked in repo)
+If the user did not specify a mode, ask which they want.
+
+### Mode: local (no commits, no push)
+1. Add the ai-rules subtree (creates a local commit):
+   git subtree add --prefix docs/ai https://github.com/fabian-barney/ai-rules.git <ref> --squash
+   - Use the requested version tag; otherwise use the latest tagged release.
+     If no tags exist, use `main`.
+   - If Git requires an author identity, set it locally:
+     git config --local user.name "Your Name"
+     git config --local user.email "you@example.com"
+   - Windows line ending note (important):
+     If `git subtree add` fails with "fatal: working tree has modifications. Cannot add."
+     but your IDE looks clean, it is usually CRLF/LF normalization noise. Fix locally:
+
+     ```
+     git config --local core.autocrlf true
+     git add --renormalize .
+     git status --porcelain
+     ```
+
+     If `git status --porcelain` is empty, continue. If not, stash/commit any
+     real work first. If there are no real changes, you may discard them only
+     after explicit confirmation (for example, `git reset --hard`).
+2. Undo the subtree commit but keep files:
+   git reset --mixed HEAD~1
+3. Add local-only excludes to `.git/info/exclude`:
+   /docs/ai/
+   /AGENTS.md
+   /AI_PROJECT.md
+   /CLAUDE.md
+   /.github/copilot-instructions.md
+4. Baseline entry point (after subtree add):
+   docs/ai/AI/AI.md
+5. Create a local overlay for project-specific rules (recommended):
+   AI_PROJECT.md
+   Note: keep this outside `docs/ai/` so subtree updates do not overwrite it.
+6. Create entry points for other AI tools:
+   - `CLAUDE.md` (Claude Code)
+   - `.github/copilot-instructions.md` (GitHub Copilot)
+7. Replace this template content in `AGENTS.md` with the final references:
+   - Baseline: docs/ai/AI/AI.md
+   - Overlay: AI_PROJECT.md
+
+Local-only update note:
+- Temporarily remove the exclude entries, re-run subtree add with the desired
+  version, then reset again and re-add the excludes. If `docs/ai` already exists
+  locally, remove it only after confirming there is no real work in that
+  directory.
+
+### Mode: git (tracked in repo)
 1. Add the ai-rules subtree:
-   git subtree add --prefix docs/ai https://github.com/fabian-barney/ai-rules.git main --squash
+   git subtree add --prefix docs/ai https://github.com/fabian-barney/ai-rules.git <ref> --squash
+   - Use the requested version tag; otherwise use the latest tagged release.
+     If no tags exist, use `main`.
+   - If Git requires an author identity, set it locally:
+     git config --local user.name "Your Name"
+     git config --local user.email "you@example.com"
    - Windows line ending note (important):
      If `git subtree add` fails with "fatal: working tree has modifications. Cannot add."
      but your IDE looks clean, it is usually CRLF/LF normalization noise. Fix locally:
@@ -34,6 +93,11 @@ still available if the setup is interrupted.
 5. Replace this template content in `AGENTS.md` with the final references:
    - Baseline: docs/ai/AI/AI.md
    - Overlay: AI_PROJECT.md
+6. Commit and push the changes.
+
+Git update note:
+- Use `git subtree pull --prefix docs/ai https://github.com/fabian-barney/ai-rules.git <ref> --squash`
+  and commit the update.
 
 ## Entry Point Templates
 

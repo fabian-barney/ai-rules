@@ -16,20 +16,29 @@ Might work well in most cases, but expect it to be sloppy sometimes.
 
 ### Initial setup
 1. Copy `AGENTS_TEMPLATE.md` into your project root as `AGENTS.md`.
-2. Ask your AI agent to set up ai-rules.
-   Example prompt:
+2. Ask your AI agent to set up ai-rules in the desired mode.
+   Example prompts:
    ```
-   setup ai-rules with version v2.1.1
+   setup ai-rules local
+   setup ai-rules git
+   setup ai-rules local v2.1.1
+   setup ai-rules git v2.1.1
    ```
    If you omit the version, the latest tagged release will be used.
+   - `local` keeps ai-rules uncommitted on your machine.
+   - `git` commits the subtree so the team can share it.
 
 ### Update
 Ask your AI agent to update ai-rules when you want a newer version.
-Example prompt:
+Example prompts:
 ```
-update ai-rules to version v2.1.1
+update ai-rules local
+update ai-rules git
+update ai-rules local v2.1.1
+update ai-rules git v2.1.1
 ```
 If you omit the version, the latest tagged release will be used.
+Use the same mode you chose during setup.
 
 ## Structure
 - `AI/AI.md` - Single entry point for the entire ai-rules ruleset.
