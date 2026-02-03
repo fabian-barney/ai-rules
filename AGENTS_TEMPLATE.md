@@ -27,7 +27,7 @@ If `git subtree add` fails with "fatal: working tree has modifications. Cannot a
 but your IDE looks clean, it is usually CRLF/LF normalization noise. Fix locally:
 
 ```
-git config core.autocrlf true
+git config --local core.autocrlf true
 git ls-files -m
 ```
 
