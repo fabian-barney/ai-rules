@@ -11,8 +11,12 @@ Instructions for AI agents to update ai-rules in a downstream repository.
 2. Determine the setup mode (local or git):
    - If the user explicitly specifies a mode, use it.
    - Otherwise auto-detect from the repository:
-     - If `.git/info/exclude` contains `/docs/ai/` (or related ai-rules entries),
-       treat this as local mode.
+     - If `.git/info/exclude` contains any of these entries, treat this as local mode:
+       /docs/ai/
+       /AGENTS.md
+       /AI_PROJECT.md
+       /CLAUDE.md
+       /.github/copilot-instructions.md
      - If `git ls-files <path>/AI/AI.md` returns a tracked file, treat this as git mode.
      - If it is ambiguous, ask which mode to use.
 3. Determine the target version:
@@ -51,7 +55,9 @@ Steps:
    - If currently git mode, confirm the user wants to remove ai-rules from version
      control for this repo. This requires a commit.
    - Remove tracked ai-rules paths but keep files:
-     `git rm -r --cached docs/ai AGENTS.md AI_PROJECT.md CLAUDE.md .github/copilot-instructions.md`
+     `git rm -r --cached <path> AGENTS.md AI_PROJECT.md CLAUDE.md .github/copilot-instructions.md`
+     Note: This treats `AI_PROJECT.md` as local-only too. If the user wants it
+     shared, confirm before removing it.
    - Add the local excludes to `.git/info/exclude` (keep the file intact):
      /docs/ai/
      /AGENTS.md
@@ -75,7 +81,9 @@ Steps:
      - Otherwise, use the latest tagged release.
    - Run:
      `git subtree add --prefix <path> https://github.com/fabian-barney/ai-rules.git <ref> --squash`
-   - Ensure entry points exist and are tracked, then commit and push.
+   - Create any missing entry points (for example `AGENTS.md` final references,
+     `AI_PROJECT.md`, `CLAUDE.md`, and `.github/copilot-instructions.md`), ensure
+     they are tracked, then commit and push.
 
 ## Expectations
 - Prefer tagged releases unless explicitly asked for a branch.
