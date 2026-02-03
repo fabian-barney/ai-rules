@@ -22,6 +22,18 @@ still available if the setup is interrupted.
    - Baseline: docs/ai/AI/AI.md
    - Overlay: AI_PROJECT.md
 
+## Windows line ending note (important)
+If `git subtree add` fails with "fatal: working tree has modifications. Cannot add."
+but your IDE looks clean, it is usually CRLF/LF normalization noise. Fix locally:
+
+```
+git config core.autocrlf true
+git ls-files -m
+```
+
+If `git ls-files -m` is still non-empty and you have no real local changes,
+clean the working tree (stash/commit your real work first).
+
 ## Entry Point Templates
 
 ### CLAUDE.md
