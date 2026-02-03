@@ -23,8 +23,9 @@ Guidance for Bun as a package manager.
 - Bun also supports `.npmrc`, but migrating to `bunfig.toml` is recommended.
 
 ## VCS Ignore Additions
+Add these when using Bun (if not already covered by the baseline ignore list):
 - `node_modules/`
 
 ## .npmrc Handling
-- Do not commit `.npmrc` if it contains credentials or auth tokens.
+- Do not commit `.npmrc` if it contains credentials or auth tokens; add it to `.gitignore`.
 - If `.npmrc` is required, commit a sanitized version and consider `.npmrc.example`.
