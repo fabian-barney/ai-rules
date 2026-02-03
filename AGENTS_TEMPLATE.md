@@ -10,6 +10,19 @@ still available if the setup is interrupted.
 
 1. Add the ai-rules subtree:
    git subtree add --prefix docs/ai https://github.com/fabian-barney/ai-rules.git main --squash
+   - Windows line ending note (important):
+     If `git subtree add` fails with "fatal: working tree has modifications. Cannot add."
+     but your IDE looks clean, it is usually CRLF/LF normalization noise. Fix locally:
+
+     ```
+     git config --local core.autocrlf true
+     git add --renormalize .
+     git status --porcelain
+     ```
+
+     If `git status --porcelain` is empty, continue. If not, stash/commit any
+     real work first. If there are no real changes, you may discard them only
+     after explicit confirmation (for example, `git reset --hard`).
 2. Baseline entry point (after subtree add):
    docs/ai/AI/AI.md
 3. Create a local overlay for project-specific rules (recommended):
