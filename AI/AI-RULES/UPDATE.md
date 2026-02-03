@@ -3,23 +3,25 @@
 Instructions for AI agents to update ai-rules in a downstream repository.
 
 ## Prompt Examples
-- "update ai-rules local"
-- "update ai-rules git"
-- "update ai-rules local to version v2.0.0"
-- "update ai-rules git to version v2.0.0"
-- "update ai-rules to the latest tagged release"
+- "update ai-rules"
+- "update ai-rules v2.0.0"
 
 ## Update Steps (run when requested)
-1. Identify the setup mode (local or git) from the user prompt or repository docs.
-   If it is not specified, ask which mode to use.
-2. Locate the vendored ai-rules path and entry point from `AGENTS.md` or README.
+1. Locate the vendored ai-rules path and entry point from `AGENTS.md` or README.
+2. Determine the setup mode (local or git):
+   - If the user explicitly specifies a mode, use it.
+   - Otherwise auto-detect from the repository:
+     - If `.git/info/exclude` contains `/docs/ai/` (or related ai-rules entries),
+       treat this as local mode.
+     - If `git ls-files <path>/AI/AI.md` returns a tracked file, treat this as git mode.
+     - If it is ambiguous, ask which mode to use.
 3. Determine the target version:
    - If the user specifies a tag, use it.
    - Otherwise, use the latest tagged release.
 4. Update based on mode:
    - If it is git (tracked subtree):
      `git subtree pull --prefix <path> https://github.com/fabian-barney/ai-rules.git <ref> --squash`
-     Commit the update and open a PR.
+     Commit the update.
    - If it is local (no commits, no push):
      - Temporarily remove the ai-rules entries from `.git/info/exclude`.
      - If `<path>` already exists locally, remove it only after confirming there is no real work in it.
@@ -36,6 +38,29 @@ Instructions for AI agents to update ai-rules in a downstream repository.
 6. Preserve local overlays and any project-specific rules outside the vendor path.
 7. Record the updated version in the destination repository if it tracks versions.
 8. Summarize changes. Only open a PR for git mode.
+
+## Mode Switch (when requested)
+Prompt Examples:
+- "mode ai-rules local"
+- "mode ai-rules git"
+
+Steps:
+1. Detect the current mode using the same rules as the update flow.
+2. If switching to local:
+   - If already local, stop.
+   - If currently git mode, confirm the user wants to remove ai-rules from version
+     control for this repo. This requires a commit.
+   - Remove tracked ai-rules paths but keep files:
+     `git rm -r --cached docs/ai AGENTS.md AI_PROJECT.md CLAUDE.md .github/copilot-instructions.md`
+   - Add the local excludes to `.git/info/exclude` (same list as local setup).
+   - Commit the removal, and only push if the user confirms.
+3. If switching to git:
+   - If already git, stop.
+   - Remove the ai-rules entries from `.git/info/exclude`.
+   - If `docs/ai` exists locally, remove it only after confirming there is no real work in it.
+   - Run:
+     `git subtree add --prefix <path> https://github.com/fabian-barney/ai-rules.git <ref> --squash`
+   - Ensure entry points exist and are tracked, then commit and push.
 
 ## Expectations
 - Prefer tagged releases unless explicitly asked for a branch.

@@ -19,12 +19,15 @@ Might work well in most cases, but expect it to be sloppy sometimes.
 2. Ask your AI agent to set up ai-rules in the desired mode.
    Example prompts:
    ```
+   setup ai-rules
    setup ai-rules local
    setup ai-rules git
+   setup ai-rules v2.1.1
    setup ai-rules local v2.1.1
    setup ai-rules git v2.1.1
    ```
    If you omit the version, the latest tagged release will be used.
+   If you omit the mode, `local` is used by default.
    - `local` keeps ai-rules uncommitted on your machine.
    - `git` commits the subtree so the team can share it.
 
@@ -32,13 +35,20 @@ Might work well in most cases, but expect it to be sloppy sometimes.
 Ask your AI agent to update ai-rules when you want a newer version.
 Example prompts:
 ```
-update ai-rules local
-update ai-rules git
-update ai-rules local v2.1.1
-update ai-rules git v2.1.1
+update ai-rules
+update ai-rules v2.1.1
 ```
 If you omit the version, the latest tagged release will be used.
-Use the same mode you chose during setup.
+The update auto-detects the current mode (local or git) and preserves it.
+
+### Switch modes
+To switch modes after setup, ask your AI agent:
+```
+mode ai-rules local
+mode ai-rules git
+```
+Switching to `git` will create commits to track the subtree. Switching to `local`
+will remove the subtree from version control and keep it only on your machine.
 
 ## Structure
 - `AI/AI.md` - Single entry point for the entire ai-rules ruleset.
