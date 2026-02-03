@@ -17,7 +17,7 @@ To switch modes later, use "mode ai-rules local" or "mode ai-rules git".
 
 ### Mode: local (no commits, no push)
 1. Add the ai-rules subtree (creates a local commit):
-   git subtree add --prefix docs/ai https://github.com/fabian-barney/ai-rules.git <ref> --squash
+   `git subtree add --prefix docs/ai https://github.com/fabian-barney/ai-rules.git <ref> --squash`
    - Use the requested version tag; otherwise use the latest tagged release.
      If no tags exist, use `main`.
    - If Git requires an author identity, set it locally:
@@ -64,7 +64,7 @@ Local-only update note:
 
 ### Mode: git (tracked in repo)
 1. Add the ai-rules subtree:
-   git subtree add --prefix docs/ai https://github.com/fabian-barney/ai-rules.git <ref> --squash
+   `git subtree add --prefix docs/ai https://github.com/fabian-barney/ai-rules.git <ref> --squash`
    - Use the requested version tag; otherwise use the latest tagged release.
      If no tags exist, use `main`.
    - If Git requires an author identity, set it locally:
