@@ -57,10 +57,10 @@ To switch modes later, use "mode ai-rules local" or "mode ai-rules git".
    - Overlay: AI_PROJECT.md
 
 Local-only update note:
-- Temporarily remove the exclude entries, re-run subtree add with the desired
-  version, then reset again and re-add the excludes. If `docs/ai` already exists
-  locally, remove it only after confirming there is no real work in that
-  directory.
+- Follow the local-mode update steps in `AI/AI-RULES/UPDATE.md`.
+  Do not run `git subtree add` on top of an existing `docs/ai` directory.
+  If `docs/ai` already exists locally, remove it only after confirming there is
+  no real work in that directory.
 
 ### Mode: git (tracked in repo)
 1. Add the ai-rules subtree:

@@ -25,12 +25,12 @@ Instructions for AI agents to update ai-rules in a downstream repository.
    - If it is local (no commits, no push):
      - Temporarily remove the ai-rules entries from `.git/info/exclude`.
      - If `<path>` already exists locally, remove it only after confirming there is no real work in it.
-     - Run:
-       `git subtree add --prefix <path> https://github.com/fabian-barney/ai-rules.git <ref> --squash`
-       (This creates a commit; if it fails due to missing author identity, set it locally and retry.)
-     - If Git requires an author identity, set it locally:
+     - Ensure Git has a local author identity configured (required for subtree add). If needed:
        `git config --local user.name "Your Name"`
        `git config --local user.email "you@example.com"`
+     - Run:
+       `git subtree add --prefix <path> https://github.com/fabian-barney/ai-rules.git <ref> --squash`
+       (This creates a commit.)
      - Undo the commit but keep files:
        `git reset --mixed HEAD~1`
      - Re-add the exclude entries to `.git/info/exclude`.
@@ -52,12 +52,27 @@ Steps:
      control for this repo. This requires a commit.
    - Remove tracked ai-rules paths but keep files:
      `git rm -r --cached docs/ai AGENTS.md AI_PROJECT.md CLAUDE.md .github/copilot-instructions.md`
-   - Add the local excludes to `.git/info/exclude` (same list as local setup).
-   - Commit the removal, and only push if the user confirms.
+   - Add the local excludes to `.git/info/exclude` (keep the file intact):
+     /docs/ai/
+     /AGENTS.md
+     /AI_PROJECT.md
+     /CLAUDE.md
+     /.github/copilot-instructions.md
+   - Commit the removal. Ask the user whether to push this commit, and only push
+     if they explicitly confirm.
 3. If switching to git:
    - If already git, stop.
-   - Remove the ai-rules entries from `.git/info/exclude`.
-   - If `docs/ai` exists locally, remove it only after confirming there is no real work in it.
+   - Remove the ai-rules entries from `.git/info/exclude` (keep the file intact):
+     /docs/ai/
+     /AGENTS.md
+     /AI_PROJECT.md
+     /CLAUDE.md
+     /.github/copilot-instructions.md
+   - If `<path>` exists locally, remove it only after confirming there is no real work in it.
+   - Determine `<ref>`:
+     - If the local ai-rules copy documents a version/tag (for example in `AGENTS.md`),
+       reuse that tag.
+     - Otherwise, use the latest tagged release.
    - Run:
      `git subtree add --prefix <path> https://github.com/fabian-barney/ai-rules.git <ref> --squash`
    - Ensure entry points exist and are tracked, then commit and push.
