@@ -41,7 +41,7 @@ Instructions for AI agents to update ai-rules in a downstream repository.
 5. Verify the baseline entry point still resolves (e.g., `<path>/AI/AI.md`).
 6. Preserve local overlays and any project-specific rules outside the vendor path.
 7. Record the updated version in the destination repository if it tracks versions.
-8. Summarize changes. Only open a PR for git mode.
+8. Summarize changes.
 
 ## Mode Switch (when requested)
 Prompt Examples:
