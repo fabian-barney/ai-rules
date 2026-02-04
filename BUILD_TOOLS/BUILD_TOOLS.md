@@ -10,4 +10,3 @@ Build and dependency management rules live in this directory.
 - [GRADLE.md](GRADLE.md) - Gradle build and wrapper guidance.
 - [MAVEN.md](MAVEN.md) - Maven build and wrapper guidance.
 - [NPM.md](NPM.md) - Node.js package manager guidance (npm, Yarn, pnpm).
-

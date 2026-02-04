@@ -39,4 +39,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Expanded design, architecture, compliance, and library guidance.
 - Added CI/CD and infrastructure guidance.
 - Added framework and library specific guidance.
-

@@ -17,4 +17,3 @@ Add these when using Node tooling (if not already covered by the baseline ignore
 ## .npmrc Handling
 - Do not commit `.npmrc` if it contains credentials or auth tokens; add it to `.gitignore`.
 - If `.npmrc` is required, commit a sanitized version (no secrets) and consider a `.npmrc.example`.
-

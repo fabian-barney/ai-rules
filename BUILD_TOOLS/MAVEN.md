@@ -15,4 +15,3 @@ Add these when using Maven (if not already covered by the baseline ignore list):
 - `.mvn/timing.properties`
 
 Do not ignore wrapper scripts or the wrapper JAR required to build the project.
-

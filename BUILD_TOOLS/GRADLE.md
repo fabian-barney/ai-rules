@@ -12,4 +12,3 @@ Add these when using Gradle (if not already covered by the baseline ignore list)
 - `build/`
 
 Do not ignore wrapper scripts or the wrapper JAR required to build the project.
-

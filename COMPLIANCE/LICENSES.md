@@ -54,4 +54,3 @@ copyleft obligations that conflict with closed-source products:
 - Check the SPDX identifier in the dependency manifest.
 - Confirm license text for custom or non-standard licenses.
 - Ensure transitive dependencies are also compatible.
-

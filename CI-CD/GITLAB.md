@@ -24,4 +24,3 @@ Guidance for GitLab CI/CD usage.
 ## Quality
 - Run static analysis and dependency checks where feasible.
 - Publish test reports and artifacts.
-
