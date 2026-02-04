@@ -1,4 +1,4 @@
-﻿# GOF_DESIGN_PATTERNS
+# GOF_DESIGN_PATTERNS
 
 A concise, practical checklist inspired by the Gang of Four patterns. This is
 not an exhaustive catalog; it focuses on when patterns are appropriate and how

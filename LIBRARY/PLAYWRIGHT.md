@@ -1,4 +1,4 @@
-﻿# PLAYWRIGHT
+# PLAYWRIGHT
 
 Guidance for Playwright usage.
 

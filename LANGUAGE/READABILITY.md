@@ -1,4 +1,4 @@
-﻿# READABILITY
+# READABILITY
 
 Rules to promote readable code and low cognitive complexity.
 

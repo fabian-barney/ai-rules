@@ -1,4 +1,4 @@
-﻿# CODE REVIEW
+# CODE REVIEW
 
 Code review ensures correctness, security, and maintainability before changes land.
 

@@ -1,4 +1,4 @@
-﻿# SOLID
+# SOLID
 
 Concise, practical guidance for the SOLID principles.
 

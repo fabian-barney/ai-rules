@@ -1,4 +1,4 @@
-﻿# LOMBOK
+# LOMBOK
 
 Lombok is strongly encouraged in Java projects. It reduces boilerplate and
 improves readability when used consistently.

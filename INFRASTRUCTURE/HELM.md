@@ -1,4 +1,4 @@
-﻿# HELM
+# HELM
 
 Guidance for Helm usage.
 

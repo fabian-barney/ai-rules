@@ -1,4 +1,4 @@
-﻿# DOCKER
+# DOCKER
 
 Guidance for Docker usage.
 

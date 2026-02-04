@@ -1,4 +1,4 @@
-﻿# REACT
+# REACT
 
 Guidance for React projects.
 

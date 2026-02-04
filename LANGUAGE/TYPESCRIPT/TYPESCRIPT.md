@@ -1,4 +1,4 @@
-﻿# TYPESCRIPT
+# TYPESCRIPT
 
 Guidance for TypeScript projects.
 

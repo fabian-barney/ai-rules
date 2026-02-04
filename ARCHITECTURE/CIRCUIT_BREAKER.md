@@ -1,4 +1,4 @@
-﻿# CIRCUIT_BREAKER
+# CIRCUIT_BREAKER
 
 Guidance for circuit breaker usage.
 

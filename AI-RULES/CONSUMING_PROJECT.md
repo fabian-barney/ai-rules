@@ -1,4 +1,4 @@
-﻿# CONSUMING_PROJECT
+# CONSUMING_PROJECT
 
 Guidance for downstream projects that vendor ai-rules.
 

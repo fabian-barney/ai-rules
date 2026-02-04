@@ -1,4 +1,4 @@
-﻿# LOGGING
+# LOGGING
 
 Guidance for logging.
 

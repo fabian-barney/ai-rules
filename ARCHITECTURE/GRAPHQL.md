@@ -1,4 +1,4 @@
-﻿# GRAPHQL
+# GRAPHQL
 
 Guidance for GraphQL APIs.
 

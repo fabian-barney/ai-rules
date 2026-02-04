@@ -1,4 +1,4 @@
-﻿# RESILIENCE4J
+# RESILIENCE4J
 
 Guidance for Resilience4j usage.
 

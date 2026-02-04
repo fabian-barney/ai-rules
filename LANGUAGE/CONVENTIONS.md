@@ -1,4 +1,4 @@
-﻿# CONVENTIONS
+# CONVENTIONS
 
 ## Formatting
 Formatting rules are ordered by precedence:

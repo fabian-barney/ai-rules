@@ -1,4 +1,4 @@
-﻿# MAPSTRUCT
+# MAPSTRUCT
 
 MapStruct is recommended for type-safe, compile-time mapping between DTOs and
 entities. It avoids reflection at runtime and keeps mapping logic explicit.

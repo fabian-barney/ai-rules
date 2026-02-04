@@ -1,4 +1,4 @@
-﻿# KUBERNETES
+# KUBERNETES
 
 Guidance for Kubernetes usage.
 

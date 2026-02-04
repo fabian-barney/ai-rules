@@ -1,4 +1,4 @@
-﻿# CI-CD
+# CI-CD
 
 Continuous integration and delivery guidance.
 

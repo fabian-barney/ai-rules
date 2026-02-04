@@ -1,4 +1,4 @@
-﻿# SVELTE
+# SVELTE
 
 Guidance for Svelte projects.
 

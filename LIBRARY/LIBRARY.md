@@ -1,4 +1,4 @@
-﻿# LIBRARY
+# LIBRARY
 
 Place library-specific rules in this directory.
 

@@ -1,4 +1,4 @@
-﻿# LANGUAGE
+# LANGUAGE
 
 Language-specific rule sets live in subdirectories.
 

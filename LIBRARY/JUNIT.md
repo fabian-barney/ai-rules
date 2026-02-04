@@ -1,4 +1,4 @@
-﻿# JUNIT
+# JUNIT
 
 Guidance for JUnit usage.
 

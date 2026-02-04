@@ -1,4 +1,4 @@
-﻿# PRIMEFACES
+# PRIMEFACES
 
 Guidance for PrimeFaces projects.
 

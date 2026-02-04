@@ -1,4 +1,4 @@
-﻿# CLEAN_CODE
+# CLEAN_CODE
 
 Concise rules inspired by clean code principles. This is not a summary of the
 book; it is a practical checklist for reviews and implementation.

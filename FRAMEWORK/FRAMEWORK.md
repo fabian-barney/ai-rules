@@ -1,4 +1,4 @@
-﻿# FRAMEWORK
+# FRAMEWORK
 
 Place framework-specific rules in this directory.
 

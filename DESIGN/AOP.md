@@ -1,4 +1,4 @@
-﻿# AOP
+# AOP
 
 Promote the use of Aspect-Oriented Programming (AOP) for cross-cutting concerns.
 AOP is appropriate when behavior must be applied consistently across many

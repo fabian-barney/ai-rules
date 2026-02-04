@@ -1,4 +1,4 @@
-﻿# TAILWIND_CSS
+# TAILWIND_CSS
 
 Guidance for Tailwind CSS usage.
 

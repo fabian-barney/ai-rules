@@ -1,4 +1,4 @@
-﻿# TEST
+# TEST
 
 Testing expectations and verification notes.
 

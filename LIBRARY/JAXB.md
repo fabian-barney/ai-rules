@@ -1,4 +1,4 @@
-﻿# JAXB
+# JAXB
 
 Guidance for JAXB usage.
 

@@ -1,4 +1,4 @@
-﻿# GUAVA
+# GUAVA
 
 Guidance for Guava usage.
 

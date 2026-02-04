@@ -1,4 +1,4 @@
-﻿# SELENIUM
+# SELENIUM
 
 Guidance for Selenium usage.
 

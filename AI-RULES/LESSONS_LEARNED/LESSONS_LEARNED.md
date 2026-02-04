@@ -1,4 +1,4 @@
-﻿# LESSONS_LEARNED
+# LESSONS_LEARNED
 
 Compact, actionable notes to prevent repeat mistakes.
 

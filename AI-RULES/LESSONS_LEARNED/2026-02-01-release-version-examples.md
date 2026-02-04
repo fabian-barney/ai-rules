@@ -1,4 +1,4 @@
-﻿# 2026-02-01-release-version-examples
+# 2026-02-01-release-version-examples
 
 ## Scope
 - Applies only to this repository.

@@ -1,4 +1,4 @@
-﻿# MOCKITO
+# MOCKITO
 
 Guidance for Mockito usage.
 

@@ -1,4 +1,4 @@
-﻿# KAFKA
+# KAFKA
 
 Guidance for Apache Kafka usage.
 

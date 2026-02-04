@@ -1,4 +1,4 @@
-﻿# SPRING_BOOT
+# SPRING_BOOT
 
 Guidance for Spring Boot projects.
 

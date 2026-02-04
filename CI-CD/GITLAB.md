@@ -1,4 +1,4 @@
-﻿# GITLAB
+# GITLAB
 
 Guidance for GitLab CI/CD usage.
 

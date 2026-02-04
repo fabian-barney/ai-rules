@@ -1,4 +1,4 @@
-﻿# JOOQ
+# JOOQ
 
 Guidance for jOOQ usage.
 

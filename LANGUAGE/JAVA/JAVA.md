@@ -1,4 +1,4 @@
-﻿# JAVA
+# JAVA
 
 ## Entry Point
 - `EFFECTIVE_JAVA.md` - distilled ruleset for Java code quality.

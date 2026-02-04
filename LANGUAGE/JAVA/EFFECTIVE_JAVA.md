@@ -1,4 +1,4 @@
-﻿# EFFECTIVE_JAVA
+# EFFECTIVE_JAVA
 
 This file is a concise, non-exhaustive ruleset inspired by Effective Java. It is
 meant to guide reviews and implementations without quoting the book.

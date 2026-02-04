@@ -1,4 +1,4 @@
-﻿# BUN
+# BUN
 
 Guidance for Bun as a package manager.
 

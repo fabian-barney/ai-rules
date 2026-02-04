@@ -1,4 +1,4 @@
-﻿# INFRASTRUCTURE
+# INFRASTRUCTURE
 
 Platform and runtime infrastructure guidance.
 

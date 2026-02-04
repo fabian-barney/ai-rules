@@ -1,4 +1,4 @@
-﻿# PLAN
+# PLAN
 
 Guidance for creating execution plans.
 

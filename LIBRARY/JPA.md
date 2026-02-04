@@ -1,4 +1,4 @@
-﻿# JPA
+# JPA
 
 Guidance for JPA usage.
 

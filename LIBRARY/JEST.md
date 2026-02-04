@@ -1,4 +1,4 @@
-﻿# JEST
+# JEST
 
 Guidance for Jest testing.
 

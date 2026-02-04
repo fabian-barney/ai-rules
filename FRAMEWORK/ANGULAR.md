@@ -1,4 +1,4 @@
-﻿# ANGULAR
+# ANGULAR
 
 Guidance for Angular projects.
 

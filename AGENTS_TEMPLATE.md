@@ -1,4 +1,4 @@
-﻿# AGENTS.md - AI Rules Setup Template
+# AGENTS.md - AI Rules Setup Template
 
 ## Purpose
 This file bootstraps the ai-rules baseline into a new project. Copy this file

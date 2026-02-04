@@ -1,4 +1,4 @@
-﻿# PROGRAMMING
+# PROGRAMMING
 
 Guidance for implementing code changes.
 

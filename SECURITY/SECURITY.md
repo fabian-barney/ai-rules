@@ -1,4 +1,4 @@
-﻿# SECURITY
+# SECURITY
 
 ## Principles
 - Minimize data exposure and access.

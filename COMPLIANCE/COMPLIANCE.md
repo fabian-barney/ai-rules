@@ -1,4 +1,4 @@
-﻿# COMPLIANCE
+# COMPLIANCE
 
 Compliance and governance rules live in this directory.
 

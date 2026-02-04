@@ -1,4 +1,4 @@
-﻿# AI-RULES
+# AI-RULES
 
 Guidance for maintaining this ai-rules repository.
 

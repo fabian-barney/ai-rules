@@ -1,4 +1,4 @@
-﻿# LICENSES
+# LICENSES
 
 This guidance is for commercial, closed-source use. It is not legal advice.
 When in doubt, consult legal counsel.

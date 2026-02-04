@@ -1,4 +1,4 @@
-﻿# ISTIO
+# ISTIO
 
 Guidance for Istio usage.
 

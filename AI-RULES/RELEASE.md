@@ -1,4 +1,4 @@
-﻿# RELEASE
+# RELEASE
 
 Release process for the ai-rules repository (not downstream projects).
 
