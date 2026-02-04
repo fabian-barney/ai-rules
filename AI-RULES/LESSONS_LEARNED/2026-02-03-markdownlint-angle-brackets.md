@@ -1,4 +1,4 @@
-﻿# 2026-02-03-markdownlint-angle-brackets
+# 2026-02-03-markdownlint-angle-brackets
 
 ## Scope
 - Applies only to this repository.
