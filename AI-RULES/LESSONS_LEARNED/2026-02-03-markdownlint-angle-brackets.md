@@ -1,4 +1,4 @@
-# 2026-02-03-markdownlint-angle-brackets
+﻿# 2026-02-03-markdownlint-angle-brackets
 
 ## Scope
 - Applies only to this repository.
@@ -13,4 +13,3 @@ breaking CI.
 - Wrap placeholder commands in backticks or fenced code blocks.
 - Avoid raw angle-bracket tokens in prose; use code formatting instead.
 - Run markdownlint (or scan for angle-bracket tokens) before pushing docs changes.
-

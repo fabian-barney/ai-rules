@@ -1,4 +1,4 @@
-# RELEASE
+﻿# RELEASE
 
 Release process for the ai-rules repository (not downstream projects).
 
@@ -36,4 +36,3 @@ Version selection:
 ## Notes
 - Prefer tagged releases; do not release from feature branches.
 - Keep release notes concise and aligned with the changelog.
-

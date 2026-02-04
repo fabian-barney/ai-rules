@@ -1,4 +1,4 @@
-# STRUCTURE
+﻿# STRUCTURE
 
 Rules for organizing the ai-rules repository itself (not downstream projects).
 
@@ -17,4 +17,3 @@ Rules for organizing the ai-rules repository itself (not downstream projects).
 ## AI-RULES Area
 - Meta-guidance lives under `AI-RULES/`.
 - Link AI-RULES files from `AI-RULES/AI-RULES.md`.
-

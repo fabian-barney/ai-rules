@@ -1,4 +1,4 @@
-# 2026-02-01-release-version-examples
+﻿# 2026-02-01-release-version-examples
 
 ## Scope
 - Applies only to this repository.
@@ -25,4 +25,3 @@ Checklist for AI agents:
 - [ ] Check for version references in any other documentation.
 - [ ] Stage all version updates with the changelog in the same commit.
 - [ ] Only then create the annotated tag.
-

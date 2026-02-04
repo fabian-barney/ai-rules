@@ -23,4 +23,3 @@ Guidance for downstream projects that vendor ai-rules.
   such as `AI_PROJECT.md`.
 - If you use `docs/ai/LESSONS_LEARNED/`, reference it from `AI_PROJECT.md` or other
   local guidance.
-

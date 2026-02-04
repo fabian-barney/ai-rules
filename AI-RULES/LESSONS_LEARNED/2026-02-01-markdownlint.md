@@ -1,4 +1,4 @@
-# 2026-02-01-markdownlint
+﻿# 2026-02-01-markdownlint
 
 ## Scope
 - Applies only to this repository.
@@ -13,4 +13,3 @@ MD047 trailing newline) and a UTF-8 BOM.
 - Ensure index files have a single "## Files" section.
 - Ensure every Markdown file ends with a single trailing newline.
 - Save Markdown files as UTF-8 without BOM.
-

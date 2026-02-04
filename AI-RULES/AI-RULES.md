@@ -1,4 +1,4 @@
-# AI-RULES
+﻿# AI-RULES
 
 Guidance for maintaining this ai-rules repository.
 
@@ -22,4 +22,3 @@ Additional maintenance rules:
   `AI-RULES/LESSONS_LEARNED/` and link it.
 - Before final response, run a quick AI-RULES self-check (structure, formatting, and relevant lessons learned).
   Do not respond until the self-check passes.
-

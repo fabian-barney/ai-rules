@@ -1,4 +1,4 @@
-# AGENTS.md - AI Rules Setup Template
+﻿# AGENTS.md - AI Rules Setup Template
 
 ## Purpose
 This file bootstraps the ai-rules baseline into a new project. Copy this file
@@ -137,4 +137,3 @@ Use the shared AI rules located at:
 
 ## Access
 This repository is private; ensure your GitHub account has access.
-
