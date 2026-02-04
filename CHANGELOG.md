@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
 
+## [v2.2.0] - 2026-02-04
+- Added dual setup modes (local default) with mode switching and auto-detected updates.
+- Added Windows subtree CRLF troubleshooting with renormalize guidance.
+- Added Bun package manager guidance and Jest testing guidance (now in Library).
+- Added N+1 query prevention rules under Architecture.
+- Added Apache License 2.0 and a markdownlint lesson learned for placeholder tokens.
+- Set unit test coverage expectations (100% line coverage by default).
+
 ## [v2.1.1] - 2026-02-01
 - Improved README with clearer Getting Started section and formatted example prompts.
 - Streamlined setup template.
