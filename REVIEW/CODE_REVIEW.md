@@ -36,4 +36,3 @@ Code review ensures correctness, security, and maintainability before changes la
 - Propose small, concrete code changes when possible (patch or pseudocode).
 - Call out questionable architecture decisions and questionable new dependencies explicitly.
 - State what was not verified and which tests were (or were not) run.
-

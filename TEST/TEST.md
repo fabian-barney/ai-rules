@@ -33,4 +33,3 @@ Testing expectations and verification notes.
 - Default to unit tests for business logic.
 - Require integration tests only for boundary behavior and wiring.
 - Keep E2E tests limited to critical user journeys.
-

@@ -22,4 +22,3 @@ Guidance for creating execution plans.
 - Use short, ordered steps with clear outcomes.
 - Keep steps small enough to validate independently.
 - Update the plan if scope or assumptions change.
-

@@ -9,4 +9,3 @@
 - Validate all external input.
 - Use least-privilege for credentials and permissions.
 - Keep dependencies updated; document security scan results when run.
-

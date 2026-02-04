@@ -12,4 +12,3 @@ Guidance for Selenium usage.
 
 ## Performance
 - Keep the e2e suite focused on critical paths.
-

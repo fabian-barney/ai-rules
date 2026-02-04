@@ -25,4 +25,3 @@ Guidance for implementing code changes.
 ## Delivery
 - Update documentation or comments when behavior changes.
 - Summarize changes, tests run, and any residual risks.
-
