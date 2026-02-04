@@ -9,4 +9,3 @@ Guidance for Helm usage.
 ## Structure
 - Separate environment-specific values files.
 - Keep templates readable and avoid over-templating.
-

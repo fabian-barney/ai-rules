@@ -17,4 +17,3 @@ Guidance for PrimeFaces projects.
 
 ## Testing
 - Cover critical UI flows with integration or end-to-end tests.
-

@@ -14,4 +14,3 @@ Guidance for Docker usage.
 ## Quality
 - Use health checks where supported.
 - Clean up build artifacts and cache layers.
-

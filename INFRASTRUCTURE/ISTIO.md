@@ -13,4 +13,3 @@ Guidance for Istio usage.
 ## Security
 - Enforce mTLS where required.
 - Keep authorization policies explicit.
-

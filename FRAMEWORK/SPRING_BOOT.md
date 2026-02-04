@@ -24,4 +24,3 @@ Guidance for Spring Boot projects.
 ## Testing
 - Use slice tests when possible.
 - Prefer testcontainers for integration testing when DB behavior matters.
-

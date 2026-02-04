@@ -25,4 +25,3 @@ Place framework-specific rules in this directory.
 - [SPRING_BOOT.md](SPRING_BOOT.md) - Spring Boot guidance.
 - [SVELTE.md](SVELTE.md) - Svelte framework guidance.
 - [TAILWIND_CSS.md](TAILWIND_CSS.md) - Tailwind CSS guidance.
-

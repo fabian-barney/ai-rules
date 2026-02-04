@@ -14,4 +14,3 @@ Guidance for Svelte projects.
 ## Testing
 - Keep unit tests fast and focused.
 - Use integration tests for key user flows.
-

@@ -19,4 +19,3 @@ Guidance for Tailwind CSS usage.
 ## Consistency
 - Enforce class ordering via a formatter or lint rule.
 - Keep responsive variants consistent across components.
-
