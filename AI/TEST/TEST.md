@@ -10,6 +10,10 @@ Testing expectations and verification notes.
 - Keep tests deterministic and fast.
 - Document when tests were not run.
 
+## Coverage
+- Target 100% line coverage by default for unit tests.
+- If 100% is not feasible, document the specific gaps and why.
+
 ## Test Types
 - Unit tests: fast, isolated, focused on logic in a single unit.
 - Integration tests: verify boundaries (DB, messaging, external services) and
