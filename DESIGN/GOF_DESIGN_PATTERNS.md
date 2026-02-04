@@ -38,4 +38,3 @@ not to overuse them.
 - Creating abstractions with no credible change vector or without a test seam.
 - Hiding complexity behind patterns without reducing it.
 - Using Singleton as a global variable.
-

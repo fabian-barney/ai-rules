@@ -19,4 +19,3 @@ Guidance for logging.
 ## Reliability
 - Logging must not crash the app; avoid exceptions in logging paths.
 - Rate-limit or sample noisy logs.
-

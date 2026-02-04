@@ -53,4 +53,3 @@ Apply only when the tool is used:
 ## Safeguards
 - Do not commit secrets; rotate and remove them from history if exposed.
 - Review ignore rules when adding new tools to avoid accidental leaks.
-

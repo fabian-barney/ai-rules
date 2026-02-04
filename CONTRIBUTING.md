@@ -23,4 +23,3 @@ shared AI guidance, so changes should be deliberate and well-reviewed.
 - Keep filenames UPPERCASE at the repo root.
 - Keep line endings consistent (Windows CRLF is acceptable here).
 - Ensure links and markdown pass CI checks.
-

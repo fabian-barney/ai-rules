@@ -25,4 +25,3 @@ components without tangling core business logic.
 - Avoid hiding significant business logic inside aspects.
 - Do not misclassify domain logic as cross-cutting; keep business rules in core code.
 - Be careful with ordering when multiple aspects apply.
-

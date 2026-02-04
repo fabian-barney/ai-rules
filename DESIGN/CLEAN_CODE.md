@@ -33,4 +33,3 @@ book; it is a practical checklist for reviews and implementation.
 ## Structure
 - Keep modules cohesive; related code should live together.
 - Favor composition over inheritance when possible.
-

@@ -21,4 +21,3 @@ Concise, practical guidance for the SOLID principles.
 ## Dependency Inversion Principle (DIP)
 - Depend on abstractions, not concretions.
 - Keep high-level policy independent of low-level details.
-

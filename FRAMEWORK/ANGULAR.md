@@ -19,4 +19,3 @@ Guidance for Angular projects.
 ## Testing
 - Keep unit tests fast; isolate components.
 - Use e2e tests for critical user journeys.
-
