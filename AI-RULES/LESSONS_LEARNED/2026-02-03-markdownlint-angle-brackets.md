@@ -5,11 +5,12 @@
 - Do not copy these rules into consuming projects.
 
 ## Issue
-Markdownlint failed because placeholder tokens like `<ref>` were written in plain
-text and treated as inline HTML (MD033), breaking CI.
+Markdownlint failed because placeholder tokens wrapped in angle brackets (for
+example, `REF` with angle brackets) were treated as inline HTML (MD033),
+breaking CI.
 
 ## Prevention
 - Wrap placeholder commands in backticks or fenced code blocks.
 - Avoid raw angle-bracket tokens in prose; use code formatting instead.
-- Run markdownlint (or scan for `<...>` tokens) before pushing docs changes.
+- Run markdownlint (or scan for angle-bracket tokens) before pushing docs changes.
 
