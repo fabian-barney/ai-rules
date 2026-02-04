@@ -24,6 +24,8 @@ Concrete steps or checks that would have avoided the issue.
 ```
 
 ## Files
+- [2026-02-04-review-comments-md012.md](2026-02-04-review-comments-md012.md)
+  - Resolve review comments and prevent MD012 regressions after bulk edits.
 - [2026-02-03-markdownlint-angle-brackets.md](2026-02-03-markdownlint-angle-brackets.md)
   - Avoid inline HTML from placeholder tokens.
 - [2026-02-01-markdownlint.md](2026-02-01-markdownlint.md) - Markdownlint and BOM prevention checklist.
