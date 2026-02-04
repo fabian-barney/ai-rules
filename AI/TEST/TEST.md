@@ -2,9 +2,6 @@
 
 Testing expectations and verification notes.
 
-## Files
-- [JEST.md](JEST.md) - Jest-specific guidance.
-
 ## Expectations
 - Add tests when behavior changes.
 - Keep tests deterministic and fast.

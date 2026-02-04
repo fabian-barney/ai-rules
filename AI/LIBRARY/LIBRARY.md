@@ -17,6 +17,7 @@ Place library-specific rules in this directory.
 ## Files
 - [GUAVA.md](GUAVA.md) - Google Guava library guidance.
 - [JAXB.md](JAXB.md) - JAXB XML binding guidance.
+- [JEST.md](JEST.md) - Jest testing guidance.
 - [JOOQ.md](JOOQ.md) - jOOQ SQL DSL guidance.
 - [JPA.md](JPA.md) - Java Persistence API guidance.
 - [JUNIT.md](JUNIT.md) - JUnit testing guidance.
