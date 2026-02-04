@@ -1,4 +1,4 @@
-# ARCHITECTURE
+﻿# ARCHITECTURE
 
 Place architecture rules in this directory.
 
@@ -10,4 +10,3 @@ Place architecture rules in this directory.
 - [MICROSERVICE.md](MICROSERVICE.md) - Microservice architecture practices.
 - [N_PLUS_1.md](N_PLUS_1.md) - Prevent N+1 query patterns.
 - [REST.md](REST.md) - REST API design rules.
-

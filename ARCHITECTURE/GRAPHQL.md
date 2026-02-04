@@ -1,4 +1,4 @@
-# GRAPHQL
+﻿# GRAPHQL
 
 Guidance for GraphQL APIs.
 
@@ -19,4 +19,3 @@ Guidance for GraphQL APIs.
 ## Security
 - Validate inputs and enforce auth at resolver boundaries.
 - Monitor for abusive queries and set rate limits.
-

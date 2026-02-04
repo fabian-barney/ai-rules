@@ -1,4 +1,4 @@
-# MICROSERVICE
+﻿# MICROSERVICE
 
 Guidance for microservice architectures.
 
@@ -23,4 +23,3 @@ Guidance for microservice architectures.
 ## Testing
 - Use contract tests for service boundaries.
 - Keep end-to-end tests limited and focused.
-

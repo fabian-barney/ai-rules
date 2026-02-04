@@ -1,4 +1,4 @@
-# REST
+﻿# REST
 
 Guidance for REST-style APIs.
 
@@ -23,4 +23,3 @@ Guidance for REST-style APIs.
 ## Security
 - Validate inputs and sanitize outputs.
 - Use auth and authorization consistently at the resource boundary.
-

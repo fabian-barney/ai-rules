@@ -1,4 +1,4 @@
-# CIRCUIT_BREAKER
+﻿# CIRCUIT_BREAKER
 
 Guidance for circuit breaker usage.
 
@@ -19,4 +19,3 @@ Guidance for circuit breaker usage.
 ## Monitoring
 - Track open/close events and failure rates.
 - Alert on sustained open states.
-

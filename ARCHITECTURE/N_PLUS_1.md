@@ -1,4 +1,4 @@
-# N_PLUS_1
+﻿# N_PLUS_1
 
 Rules to prevent N+1 query patterns in data access.
 
@@ -23,4 +23,3 @@ Rules to prevent N+1 query patterns in data access.
 ## ORMs
 - Use fetch joins, entity graphs, or explicit DTO projections when needed.
 - If lazy loading is used, access relationships only after batch loading.
-

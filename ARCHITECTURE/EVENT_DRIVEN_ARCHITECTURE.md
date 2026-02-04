@@ -1,4 +1,4 @@
-# EVENT_DRIVEN_ARCHITECTURE
+﻿# EVENT_DRIVEN_ARCHITECTURE
 
 Guidance for event-driven architecture (EDA).
 
@@ -24,4 +24,3 @@ Guidance for event-driven architecture (EDA).
 
 ## Testing
 - Use integration tests for end-to-end event flows.
-

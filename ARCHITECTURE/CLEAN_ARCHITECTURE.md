@@ -1,4 +1,4 @@
-# CLEAN_ARCHITECTURE
+﻿# CLEAN_ARCHITECTURE
 
 Concise rules inspired by Clean Architecture. This is a practical checklist for
 system structure and dependency management.
@@ -24,4 +24,3 @@ system structure and dependency management.
 ## Testing
 - Prefer fast, isolated tests at inner layers.
 - Use integration tests at boundaries and adapters.
-

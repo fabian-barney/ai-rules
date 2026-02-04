@@ -1,4 +1,4 @@
-# UPDATE
+﻿# UPDATE
 
 Instructions for AI agents to update ai-rules in a downstream repository.
 
@@ -89,4 +89,3 @@ Steps:
 ## Expectations
 - Prefer tagged releases unless explicitly asked for a branch.
 - Do not overwrite local overlays or custom rules.
-

@@ -1,4 +1,4 @@
-# AI Rules Index
+﻿# AI Rules Index
 
 This index is the single entry point for the baseline rules. Each level links
 only one level deeper to keep navigation predictable.
@@ -50,4 +50,3 @@ only one level deeper to keep navigation predictable.
 
 ## INFRASTRUCTURE
 - [INFRASTRUCTURE/INFRASTRUCTURE.md](INFRASTRUCTURE/INFRASTRUCTURE.md) - Infrastructure guidance.
-
