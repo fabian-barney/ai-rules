@@ -51,21 +51,23 @@ Switching to `git` will create commits to track the subtree. Switching to `local
 will remove the subtree from version control and keep it only on your machine.
 
 ## Structure
-- `AI/AI.md` - Single entry point for the entire ai-rules ruleset.
-- `AI/CORE/` - Non-negotiable baseline rules used across all projects.
-- `AI/AI-RULES/` - Maintenance guidance for this ruleset and release/update workflows.
-- `AI/REVIEW/` - Code review standards and checklists.
-- `AI/SECURITY/` - Security practices and safeguards.
-- `AI/TEST/` - Testing strategy and expectations.
-- `AI/LANGUAGE/` - Language and coding conventions.
-- `AI/DESIGN/` - Design principles and clean code guidance.
-- `AI/ARCHITECTURE/` - Architecture patterns and system design rules.
-- `AI/FRAMEWORK/` - Framework-specific guidance.
-- `AI/BUILD_TOOLS/` - Build and dependency management tooling.
-- `AI/LIBRARY/` - Library-specific guidance.
-- `AI/COMPLIANCE/` - Compliance and licensing rules.
-- `AI/CI-CD/` - CI/CD and automation guidance.
-- `AI/INFRASTRUCTURE/` - Infrastructure and platform guidance.
+- `AI.md` - Single entry point for the entire ai-rules ruleset.
+- `CORE/` - Non-negotiable baseline rules used across all projects.
+- `AI-RULES/` - Maintenance guidance for this ruleset and release/update workflows.
+- `PROGRAMMING/` - Programming task guidance.
+- `PLAN/` - Planning guidance for execution tasks.
+- `REVIEW/` - Code review standards and checklists.
+- `SECURITY/` - Security practices and safeguards.
+- `TEST/` - Testing strategy and expectations.
+- `LANGUAGE/` - Language and coding conventions.
+- `DESIGN/` - Design principles and clean code guidance.
+- `ARCHITECTURE/` - Architecture patterns and system design rules.
+- `FRAMEWORK/` - Framework-specific guidance.
+- `BUILD_TOOLS/` - Build and dependency management tooling.
+- `LIBRARY/` - Library-specific guidance.
+- `COMPLIANCE/` - Compliance and licensing rules.
+- `CI-CD/` - CI/CD and automation guidance.
+- `INFRASTRUCTURE/` - Infrastructure and platform guidance.
 
 ## Contributing
 - `CONTRIBUTING.md` - Contribution guidelines for this repository.
