@@ -31,4 +31,3 @@ Rules to promote readable code and low cognitive complexity.
   clean code principles are followed.
 - Use comments only to clarify intent, constraints, or non-obvious decisions.
 - Document structural decisions with ADRs when appropriate.
-

@@ -17,4 +17,3 @@ Guidance for Jest testing.
 ## Snapshots
 - Prefer explicit assertions for small objects.
 - Use snapshots for large or UI-driven outputs; review diffs carefully.
-

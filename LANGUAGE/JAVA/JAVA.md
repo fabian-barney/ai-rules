@@ -19,4 +19,3 @@ Add these when using Java build tools (if not already covered by the baseline ig
 - `.gradle/`
 
 Do not ignore wrapper scripts or jars that are required to build the project.
-

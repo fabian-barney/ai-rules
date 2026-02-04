@@ -13,4 +13,3 @@ Guidance for Kubernetes usage.
 ## Observability
 - Export metrics and logs for monitoring.
 - Use labels and annotations consistently.
-

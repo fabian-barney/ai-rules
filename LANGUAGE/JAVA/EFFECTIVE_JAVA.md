@@ -27,4 +27,3 @@ meant to guide reviews and implementations without quoting the book.
 ## Performance
 - Avoid premature optimization; measure before tuning.
 - Be mindful of allocation and hot paths in performance-critical code.
-

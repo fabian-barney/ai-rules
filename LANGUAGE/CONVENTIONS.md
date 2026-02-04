@@ -27,4 +27,3 @@ Formatting rules are ordered by precedence:
 - Prefer clear, descriptive names.
 - Use consistent casing and prefixes within a codebase.
 - Avoid misleading names; names must reflect intent.
-

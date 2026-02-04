@@ -18,4 +18,3 @@ Guidance for Guava usage.
 
 ## Testing
 - Ensure usage is covered by unit tests when Guava utilities are central to logic.
-

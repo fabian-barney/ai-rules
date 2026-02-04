@@ -17,4 +17,3 @@ Guidance for JAXB usage.
 
 ## Testing
 - Use sample XML fixtures to verify bindings.
-
