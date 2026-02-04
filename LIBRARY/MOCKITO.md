@@ -10,4 +10,3 @@ Guidance for Mockito usage.
 - Mock external dependencies, not value objects.
 - Verify interactions sparingly; focus on behavior and output.
 - Avoid over-mocking; it can make tests brittle.
-

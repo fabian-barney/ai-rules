@@ -22,4 +22,3 @@ Guidance for Apache Kafka usage.
 
 ## Testing
 - Use integration tests for producers/consumers with embedded or test Kafka.
-

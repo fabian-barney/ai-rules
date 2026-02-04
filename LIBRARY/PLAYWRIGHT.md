@@ -12,4 +12,3 @@ Guidance for Playwright usage.
 
 ## Performance
 - Keep end-to-end tests focused on critical journeys.
-

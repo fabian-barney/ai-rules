@@ -22,4 +22,3 @@ Guidance for Resilience4j usage.
 ## Observability
 - Export metrics and monitor open/half-open states.
 - Alert on sustained failure conditions.
-

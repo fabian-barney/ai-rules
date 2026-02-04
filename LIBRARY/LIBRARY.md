@@ -28,4 +28,3 @@ Place library-specific rules in this directory.
 - [PLAYWRIGHT.md](PLAYWRIGHT.md) - Playwright browser testing guidance.
 - [RESILIENCE4J.md](RESILIENCE4J.md) - Resilience4j patterns guidance.
 - [SELENIUM.md](SELENIUM.md) - Selenium browser testing guidance.
-

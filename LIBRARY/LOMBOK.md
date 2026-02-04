@@ -44,4 +44,3 @@ lombok.copyableAnnotations += org.jspecify.annotations.Nullable
 lombok.addLombokGeneratedAnnotation = true
 lombok.anyConstructor.addConstructorProperties = true
 ```
-

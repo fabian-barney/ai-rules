@@ -13,4 +13,3 @@ Guidance for JUnit usage.
 ## Practices
 - Use parameterized tests for coverage of multiple cases.
 - Keep assertions focused and specific.
-

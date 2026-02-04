@@ -21,4 +21,3 @@ Guidance for JPA usage.
 
 ## Testing
 - Use integration tests for entity mappings and queries.
-

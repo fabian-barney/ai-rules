@@ -16,4 +16,3 @@ entities. It avoids reflection at runtime and keeps mapping logic explicit.
 ## Avoid
 - Embedding business logic in mapping layers.
 - Overusing expression-based mappings when a named method is clearer.
-

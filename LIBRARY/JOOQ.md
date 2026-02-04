@@ -19,4 +19,3 @@ Guidance for jOOQ usage.
 
 ## Testing
 - Cover non-trivial queries with integration tests.
-
