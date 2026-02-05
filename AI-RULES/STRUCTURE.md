@@ -1,4 +1,4 @@
-﻿# STRUCTURE
+# STRUCTURE
 
 Rules for organizing the ai-rules repository itself (not downstream projects).
 

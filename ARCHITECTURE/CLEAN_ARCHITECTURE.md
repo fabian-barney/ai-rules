@@ -1,4 +1,4 @@
-﻿# CLEAN_ARCHITECTURE
+# CLEAN_ARCHITECTURE
 
 Concise rules inspired by Clean Architecture. This is a practical checklist for
 system structure and dependency management.

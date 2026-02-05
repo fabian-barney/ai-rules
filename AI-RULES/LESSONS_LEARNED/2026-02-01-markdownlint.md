@@ -1,4 +1,4 @@
-﻿# 2026-02-01-markdownlint
+# 2026-02-01-markdownlint
 
 ## Scope
 - Applies only to this repository.

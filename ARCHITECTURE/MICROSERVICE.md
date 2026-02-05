@@ -1,4 +1,4 @@
-﻿# MICROSERVICE
+# MICROSERVICE
 
 Guidance for microservice architectures.
 

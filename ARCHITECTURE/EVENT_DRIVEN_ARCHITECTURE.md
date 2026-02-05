@@ -1,4 +1,4 @@
-﻿# EVENT_DRIVEN_ARCHITECTURE
+# EVENT_DRIVEN_ARCHITECTURE
 
 Guidance for event-driven architecture (EDA).
 

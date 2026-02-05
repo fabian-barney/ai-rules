@@ -1,4 +1,4 @@
-﻿# FORMATTING
+# FORMATTING
 
 Formatting rules for the ai-rules repository itself (not downstream projects).
 

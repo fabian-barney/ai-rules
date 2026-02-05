@@ -1,4 +1,4 @@
-﻿# REST
+# REST
 
 Guidance for REST-style APIs.
 
