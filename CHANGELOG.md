@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
 
+## [v3.0.0] - 2026-02-05
+- Breaking: flattened repo layout with `AI.md` at the repo root and subtree prefix
+  guidance updated to `docs/ai/AI-RULES`.
+- Added PROGRAMMING, PLAN, and CODE_REVIEW guidance with stricter review expectations.
+- Added consuming-project guidance for lessons learned placement and maintenance rules.
+- Added test fixture separation guidance and markdownlint hygiene updates.
+
 ## [v2.2.0] - 2026-02-04
 - Added dual setup modes (local default) with mode switching and auto-detected updates.
 - Added Windows subtree CRLF troubleshooting with renormalize guidance.
