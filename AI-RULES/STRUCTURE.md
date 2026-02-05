@@ -17,3 +17,5 @@ Rules for organizing the ai-rules repository itself (not downstream projects).
 ## AI-RULES Area
 - Meta-guidance lives under `AI-RULES/`.
 - Link AI-RULES files from `AI-RULES/AI-RULES.md`.
+- Keep bootstrap definitions in `AGENTS_TEMPLATE.md` in sync with terminology
+  in `AI-RULES/AI-RULES.md`.
