@@ -55,11 +55,11 @@ Define `AI_RULES_PATH` as `docs/ai/AI-RULES`.
    Note: keep this outside `docs/ai/` so subtree updates do not overwrite it.
 6. Create a project lessons learned area (recommended):
    docs/ai/LESSONS_LEARNED/LESSONS_LEARNED.md
-   See `AI-RULES/CONSUMING_PROJECT.md` for the template.
+   See `AI-RULES/CONSUMING_PROJECT.md` for guidance.
 7. Create a project ADR area (recommended):
    docs/ai/DECISIONS/DECISIONS.md
    docs/ai/DECISIONS/ADR-0001-TITLE.md
-   See `AI-RULES/CONSUMING_PROJECT.md` for the template.
+   See `AI-RULES/CONSUMING_PROJECT.md` for guidance.
 8. Create entry points for other AI tools:
    - `CLAUDE.md` (Claude Code)
    - `.github/copilot-instructions.md` (GitHub Copilot)
@@ -101,11 +101,11 @@ Local-only update note:
    Note: keep this outside `docs/ai/` so subtree updates do not overwrite it.
 4. Create a project lessons learned area (recommended):
    docs/ai/LESSONS_LEARNED/LESSONS_LEARNED.md
-   See `AI-RULES/CONSUMING_PROJECT.md` for the template.
+   See `AI-RULES/CONSUMING_PROJECT.md` for guidance.
 5. Create a project ADR area (recommended):
    docs/ai/DECISIONS/DECISIONS.md
    docs/ai/DECISIONS/ADR-0001-TITLE.md
-   See `AI-RULES/CONSUMING_PROJECT.md` for the template.
+   See `AI-RULES/CONSUMING_PROJECT.md` for guidance.
 6. Create entry points for other AI tools:
    - `CLAUDE.md` (Claude Code)
    - `.github/copilot-instructions.md` (GitHub Copilot)
