@@ -15,8 +15,9 @@ Instructions for AI agents to update ai-rules in a downstream repository.
 2. Determine the setup mode (local or git):
    - If the user explicitly specifies a mode, use it.
    - Otherwise auto-detect from the repository:
-     - If `.git/info/exclude` contains any of these entries, treat this as local mode:
-       /<AI_RULES_PATH>/ (replace with the real path; example: `/docs/ai/AI-RULES/`)
+     - If `.git/info/exclude` contains any of these entries, treat this as local mode
+       (replace `/<AI_RULES_PATH>/` with the real path; example: `/docs/ai/AI-RULES/`):
+       /<AI_RULES_PATH>/
        /AGENTS.md
        /AI_PROJECT.md
        /CLAUDE.md
@@ -64,7 +65,8 @@ Steps:
      Note: This treats `AI_PROJECT.md` as local-only too. If the user wants it
      shared, confirm before removing it.
    - Add the local excludes to `.git/info/exclude` (keep the file intact):
-     /<AI_RULES_PATH>/ (replace with the real path; example: `/docs/ai/AI-RULES/`)
+     (Replace `/<AI_RULES_PATH>/` with the real path; example: `/docs/ai/AI-RULES/`.)
+     /<AI_RULES_PATH>/
      /AGENTS.md
      /AI_PROJECT.md
      /CLAUDE.md
@@ -74,7 +76,8 @@ Steps:
 3. If switching to git:
    - If already git, stop.
    - Remove the ai-rules entries from `.git/info/exclude` (keep the file intact):
-     /<AI_RULES_PATH>/ (replace with the real path; example: `/docs/ai/AI-RULES/`)
+     (Replace `/<AI_RULES_PATH>/` with the real path; example: `/docs/ai/AI-RULES/`.)
+     /<AI_RULES_PATH>/
      /AGENTS.md
      /AI_PROJECT.md
      /CLAUDE.md
