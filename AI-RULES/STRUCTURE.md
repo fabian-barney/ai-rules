@@ -1,6 +1,6 @@
 # STRUCTURE
 
-Rules for organizing the ai-rules repository itself (not downstream projects).
+Rules for organizing the ai-rules repository itself (not consuming projects).
 
 ## Scope
 - Applies only to this repository.

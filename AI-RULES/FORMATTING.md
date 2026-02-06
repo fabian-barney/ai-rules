@@ -1,6 +1,6 @@
 # FORMATTING
 
-Formatting rules for the ai-rules repository itself (not downstream projects).
+Formatting rules for the ai-rules repository itself (not consuming projects).
 
 ## Scope
 - Applies only to this repository.

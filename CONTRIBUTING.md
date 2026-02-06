@@ -12,10 +12,9 @@ shared AI guidance, so changes should be deliberate and well-reviewed.
 ## Review Expectations
 - Use PRs for all changes.
 - Verify AI-generated content for correctness and alignment with repo goals.
-- If a change affects multiple areas or changes policy, add an ADR in
-  `docs/decisions/`.
-- `docs/decisions/` is the ADR location for this repository.
-- In downstream repositories that vendor ai-rules, use
+- If a change affects consuming-project policy, update related AI-RULES docs
+  and templates in the same PR.
+- In consuming projects that vendor ai-rules, use
   `docs/ai/DECISIONS/` for project-specific ADRs.
 
 ## Versioning and Releases

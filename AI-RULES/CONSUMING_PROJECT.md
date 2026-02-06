@@ -1,6 +1,6 @@
 # CONSUMING_PROJECT
 
-Guidance for downstream projects that vendor ai-rules.
+Guidance for consuming projects that vendor ai-rules.
 
 ## Goals
 - Keep the ai-rules subtree replaceable by updates.
