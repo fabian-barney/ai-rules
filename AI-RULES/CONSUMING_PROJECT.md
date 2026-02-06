@@ -11,12 +11,19 @@ Guidance for downstream projects that vendor ai-rules.
 - Baseline entry point: `docs/ai/AI-RULES/AI.md`.
 - Keep project-specific AI files outside `docs/ai/AI-RULES/` (for example `AI_PROJECT.md`).
 - Store project lessons learned under `docs/ai/LESSONS_LEARNED/` so updates do not overwrite them.
+- Store project ADRs under `docs/ai/DECISIONS/` so architecture decisions stay
+  with project-owned AI docs, not the vendored subtree.
 
 ## Lessons Learned (project-specific)
 - Create `docs/ai/LESSONS_LEARNED/LESSONS_LEARNED.md` with an index and keep entries as
   `YYYY-MM-DD-short-title.md`.
 - Keep the scope limited to the consuming project and update existing entries
   when the issue repeats.
+
+## Architecture Decision Records (project-specific)
+- Create `docs/ai/DECISIONS/DECISIONS.md` as an ADR index.
+- Store individual ADRs as `docs/ai/DECISIONS/ADR-0001-TITLE.md`,
+  `docs/ai/DECISIONS/ADR-0002-TITLE.md`, and so on.
 
 ## Entry Points
 - `AGENTS.md` should reference the baseline entry point and any local overlay
