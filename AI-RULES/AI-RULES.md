@@ -4,6 +4,8 @@ Guidance for maintaining this ai-rules repository.
 
 ## Terminology
 - "ai-rules" refers to this repository's baseline ruleset and its published tags.
+- "consuming project" means a downstream project/repository that vendors and
+  uses ai-rules.
 
 ## Files
 - [STRUCTURE.md](STRUCTURE.md) - Structure rules for this repository only.

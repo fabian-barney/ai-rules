@@ -1,6 +1,8 @@
 # CONSUMING_PROJECT
 
 Guidance for consuming projects that vendor ai-rules.
+In this documentation, a "consuming project" is the same as a downstream
+project/repository.
 
 ## Goals
 - Keep the ai-rules subtree replaceable by updates.
