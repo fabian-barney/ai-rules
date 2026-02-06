@@ -19,3 +19,8 @@ Rules for organizing the ai-rules repository itself (not consuming projects).
 - Link AI-RULES files from `AI-RULES/AI-RULES.md`.
 - Keep bootstrap definitions in `AGENTS_TEMPLATE.md` in sync with terminology
   in `AI-RULES/AI-RULES.md`.
+- Keep repository-standard files (for example `CONTRIBUTING.md`, `README.md`,
+  and `CHANGELOG.md`) scoped to this repository only.
+- Put consuming-project guidance in `AI-RULES/CONSUMING_PROJECT.md`,
+  `AI-RULES/UPDATE.md`, and `AGENTS_TEMPLATE.md`, not in repository-standard
+  files.
