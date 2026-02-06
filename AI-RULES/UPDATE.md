@@ -4,7 +4,7 @@ Instructions for AI agents to update ai-rules in a consuming project.
 
 ## Prompt Examples
 - "update ai-rules"
-- "update ai-rules v3.0.0"
+- "update ai-rules v3.0.1"
 
 ## Update Steps (run when requested)
 1. Locate the vendored ai-rules path and entry point from `AGENTS.md` or README.

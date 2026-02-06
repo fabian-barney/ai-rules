@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
 
+## [v3.0.1] - 2026-02-06
+- Clarified update/setup path placeholder handling, including copy-paste-safe
+  `.git/info/exclude` examples.
+- Added readability guidance forbidding nested/chained ternary expressions.
+- Added consuming-project ADR guidance under `docs/ai/DECISIONS/` and
+  clarified consuming-project terminology.
+- Clarified scope boundaries between repository governance files and
+  consuming-project operational guidance.
+
 ## [v3.0.0] - 2026-02-05
 - Breaking: flattened repo layout with `AI.md` at the repo root and subtree prefix
   guidance updated to `docs/ai/AI-RULES`.
