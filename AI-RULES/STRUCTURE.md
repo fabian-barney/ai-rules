@@ -1,6 +1,6 @@
 # STRUCTURE
 
-Rules for organizing the ai-rules repository itself (not downstream projects).
+Rules for organizing the ai-rules repository itself (not consuming projects).
 
 ## Scope
 - Applies only to this repository.
@@ -19,3 +19,10 @@ Rules for organizing the ai-rules repository itself (not downstream projects).
 - Link AI-RULES files from `AI-RULES/AI-RULES.md`.
 - Keep bootstrap definitions in `AGENTS_TEMPLATE.md` in sync with terminology
   in `AI-RULES/AI-RULES.md`.
+- Keep repository-standard governance files (for example `CONTRIBUTING.md` and
+  `CHANGELOG.md`) scoped to this repository only.
+- `README.md` may include user-facing guidance on how to use ai-rules in
+  consuming projects.
+- Put detailed consuming-project operational guidance in
+  `AI-RULES/CONSUMING_PROJECT.md`, `AI-RULES/UPDATE.md`, and
+  `AGENTS_TEMPLATE.md`.
