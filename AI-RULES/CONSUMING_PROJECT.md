@@ -8,6 +8,11 @@ project/repository.
 - Keep the ai-rules subtree replaceable by updates.
 - Store project-specific guidance and lessons learned outside the vendor path.
 
+## Execution Guidance
+- For planning, see [PLAN/PLAN.md](../PLAN/PLAN.md).
+- For implementation, see [PROGRAMMING/PROGRAMMING.md](../PROGRAMMING/PROGRAMMING.md).
+- For review, see [REVIEW/REVIEW.md](../REVIEW/REVIEW.md).
+
 ## Recommended Layout
 - Vendor ai-rules under `docs/ai/AI-RULES/`.
 - Baseline entry point: `docs/ai/AI-RULES/AI.md`.
