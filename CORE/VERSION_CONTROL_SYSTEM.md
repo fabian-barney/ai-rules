@@ -42,11 +42,11 @@ Guidance for version control system usage (Git and others).
     explain why deferral is acceptable.
 - If the comment is not valid, explain the reasoning with project-specific
   context and keep the tone factual and professional.
-- Resolve/close review comments when appropriate, but first check downstream
-  project rules for ownership (for example whether the author or reviewer is
-  expected to mark comments resolved).
-- Do not resolve/close comments by deleting discussion; keep decisions auditable
-  in the comment thread.
+- When appropriate, mark the relevant review thread or conversation as resolved,
+  but first check downstream project rules for ownership (for example whether
+  the author or reviewer is expected to mark threads resolved).
+- Do not mark a review thread or conversation resolved by deleting discussion;
+  keep decisions auditable in the comment thread.
 
 ### PR/MR Summary Template (Code Reviewer Audience)
 ```md
