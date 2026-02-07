@@ -19,6 +19,14 @@ To switch modes later, use "mode ai-rules local" or "mode ai-rules git".
 ai-rules is vendored under `docs/ai/AI-RULES/`.
 Define `<AI_RULES_PATH>` as `docs/ai/AI-RULES`.
 
+### Precondition: clean working tree
+Before any `git subtree add`/`git subtree pull` command:
+- Run `git status --porcelain`.
+- If output is empty, continue.
+- If output is not empty, do not run subtree commands yet.
+- Resolve the dirty state first by committing/stashing the current work, or
+  abort setup/update.
+
 ### Resolve REF (deterministic)
 Use this before any `git subtree add/pull` command:
 - If the user specifies a tag (for example `v4.0.0`), validate it:

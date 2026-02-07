@@ -29,7 +29,15 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
    - Every time this guide shows `<AI_RULES_PATH>`, replace it with that real path.
    - For `.git/info/exclude`, the matching directory entry is `/<AI_RULES_PATH>/`
      (for example `/docs/ai/AI-RULES/`).
-2. Determine the setup mode (local or git):
+2. Enforce a clean-working-tree precondition before subtree operations:
+   - Run `git status --porcelain`.
+   - If output is empty, continue.
+   - If output is not empty, do not run any `git subtree` command yet.
+   - Resolve the dirty state first by one of:
+     - Commit relevant work.
+     - Stash local work.
+     - Abort the ai-rules update.
+3. Determine the setup mode (local or git):
    - If the user explicitly specifies a mode, use it.
    - Otherwise auto-detect from the repository:
      - If `.git/info/exclude` contains any of these entries, treat this as local mode
@@ -41,20 +49,20 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
        /.github/copilot-instructions.md
      - If `git ls-files -- "<AI_RULES_PATH>/AI.md"` returns a tracked file, treat this as git mode.
      - If it is ambiguous, ask which mode to use.
-3. Determine the currently installed ai-rules version (`CURRENT_VERSION`):
+4. Determine the currently installed ai-rules version (`CURRENT_VERSION`):
    - If the downstream-project explicitly tracks the installed ai-rules version,
      reuse that value.
    - Otherwise inspect `<AI_RULES_PATH>/CHANGELOG.md` and read the first
      released version heading (`## [vX.Y.Z]`) as `CURRENT_VERSION`.
    - If no version can be determined, set `CURRENT_VERSION=unknown`.
-4. Determine the target version (`TARGET_VERSION`):
+5. Determine the target version (`TARGET_VERSION`):
    - If the user specifies a tag, use it.
    - If the user explicitly asks for a branch, use it.
    - Otherwise, use the latest tagged release.
-5. Determine `REF` using [REF Determination Rules](#ref-determination-rules):
+6. Determine `REF` using [REF Determination Rules](#ref-determination-rules):
    - Set `REF=<TARGET_VERSION>`.
    - Validate `REF` with the matching rule (tag or branch).
-6. Run a compatibility preflight before any subtree command:
+7. Run a compatibility preflight before any subtree command:
    - Load and review target-version docs at `REF` (the same ref used for subtree commands):
      - `CHANGELOG.md`
      - `AI-RULES/UPDATE.md`
@@ -73,10 +81,11 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
    - Summarize the detected changes and adapted execution plan before proceeding.
    - If the target-version docs cannot be inspected, stop and ask the user how
      to proceed instead of guessing.
-7. Update based on mode:
+8. Update based on mode:
    - If it is git (tracked subtree):
      `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
      Commit the update.
+     Ask the user whether to push this commit, and only push if they explicitly confirm.
    - If it is local (no commits, no push):
      - Temporarily remove the ai-rules entries from `.git/info/exclude`.
      - If `<AI_RULES_PATH>` already exists locally, remove it only after confirming there is no real work in it.
@@ -89,11 +98,11 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
      - Undo the commit but keep files:
        `git reset --mixed HEAD~1`
      - Re-add the exclude entries to `.git/info/exclude`.
-8. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
-9. Preserve local overlays and any project-specific rules outside the vendor path,
-   including `docs/ai/LESSONS_LEARNED/` if used.
-10. Record the updated version in the destination repository if it tracks versions.
-11. Summarize changes.
+9. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
+10. Preserve local overlays and any project-specific rules outside the vendor path,
+    including `docs/ai/LESSONS_LEARNED/` if used.
+11. Record the updated version in the destination repository if it tracks versions.
+12. Summarize changes.
 
 ## Mode Switch (when requested)
 Prompt Examples:
