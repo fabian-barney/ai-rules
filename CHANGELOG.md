@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   and PR/MR suggestion timing.
 - Added execution guidance links from `AI-RULES/CONSUMING_PROJECT.md` to
   `PLAN/PLAN.md`, `PROGRAMMING/PROGRAMMING.md`, and `REVIEW/REVIEW.md`.
+- Added PR/MR and issue-tracker summary rules with template snippets in
+  `CORE/VERSION_CONTROL_SYSTEM.md`, plus a delivery pointer in
+  `PROGRAMMING/PROGRAMMING.md`.
 
 ## [v3.0.1] - 2026-02-06
 - Clarified update/setup path placeholder handling, including copy-paste-safe

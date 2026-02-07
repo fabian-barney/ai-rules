@@ -15,6 +15,41 @@ Guidance for version control system usage (Git and others).
 - Do not push knowingly non-working code unless this is explicitly requested.
 - Suggest opening a PR/MR when all acceptance criteria are fulfilled and you
   have access to GitHub, GitLab, or a similar review system.
+- When opening a PR/MR, auto-detect the target branch from consuming-project
+  rules when available; otherwise ask which target branch to use and suggest
+  the most likely one.
+
+## PR/MR and Issue Tracker Summaries
+- When creating a PR/MR, include an implementation summary aimed at code
+  reviewers.
+- If you have access to the review platform, add that summary directly to the
+  PR/MR description or comment thread.
+- Also provide a short bullet-point summary on the linked issue/ticket for
+  Product Owners, Code Reviewers, and Testers/QA.
+- If you have access to the issue tracker, add that summary directly to the
+  linked issue/ticket.
+
+### PR/MR Summary Template (Code Reviewer Audience)
+```md
+## Implementation Summary
+- Scope:
+- Key changes:
+- Non-goals:
+
+## Validation
+- Tests executed:
+- Manual checks:
+- Residual risks:
+```
+
+### Issue Tracker Summary Template (PO/Reviewer/QA Audience)
+```md
+- Delivered:
+- Acceptance criteria status:
+- Validation status:
+- QA notes / test focus:
+- Open risks or follow-ups:
+```
 
 ## Ignore File
 - Maintain a VCS ignore file in the repository root (for Git: `.gitignore`).
