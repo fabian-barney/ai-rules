@@ -7,6 +7,15 @@ Guidance for version control system usage (Git and others).
 - Add optional context about what changed and why when it improves clarity.
 - Mark breaking changes explicitly.
 
+## Branch and PR/MR Workflow
+- Create a dedicated branch for each new concern being implemented (usually one
+  issue/ticket).
+- Keep each branch scoped to that single concern.
+- Push successful intermediate states to VCS so progress stays recoverable.
+- Do not push knowingly non-working code unless this is explicitly requested.
+- Suggest opening a PR/MR when all acceptance criteria are fulfilled and you
+  have access to GitHub, GitLab, or a similar review system.
+
 ## Ignore File
 - Maintain a VCS ignore file in the repository root (for Git: `.gitignore`).
 - Keep the ignore list minimal but practical to prevent VCS pollution and protect sensitive files.
