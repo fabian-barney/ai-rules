@@ -19,6 +19,19 @@ To switch modes later, use "mode ai-rules local" or "mode ai-rules git".
 ai-rules is vendored under `docs/ai/AI-RULES/`.
 Define `<AI_RULES_PATH>` as `docs/ai/AI-RULES`.
 
+### Target-version preflight (required)
+Before running any setup/update subtree command, inspect the target ai-rules
+version and adapt behavior as needed:
+- Read target-version docs:
+  - `CHANGELOG.md`
+  - `AI-RULES/UPDATE.md`
+  - `AGENTS_TEMPLATE.md`
+- If the target version includes breaking or behavior-changing setup/update
+  guidance, follow the target-version guidance even if it differs from this
+  template.
+- Summarize the detected differences and planned command changes before running
+  `git subtree add`/`git subtree pull`.
+
 ### Mode: local (no commits, no push)
 1. Add the ai-rules subtree (creates a local commit):
    `git subtree add --prefix <AI_RULES_PATH> https://github.com/fabian-barney/ai-rules.git REF --squash`

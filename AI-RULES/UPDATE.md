@@ -24,10 +24,29 @@ Instructions for AI agents to update ai-rules in a downstream-project.
        /.github/copilot-instructions.md
      - If `git ls-files -- "<AI_RULES_PATH>/AI.md"` returns a tracked file, treat this as git mode.
      - If it is ambiguous, ask which mode to use.
-3. Determine the target version:
+3. Determine the currently installed ai-rules version (`CURRENT_VERSION`):
+   - If the downstream-project explicitly tracks the installed ai-rules version,
+     reuse that value.
+   - Otherwise inspect `<AI_RULES_PATH>/CHANGELOG.md` and read the first
+     released version heading (`## [vX.Y.Z]`) as `CURRENT_VERSION`.
+   - If no version can be determined, set `CURRENT_VERSION=unknown`.
+4. Determine the target version (`TARGET_VERSION`):
    - If the user specifies a tag, use it.
    - Otherwise, use the latest tagged release.
-4. Update based on mode:
+5. Run a compatibility preflight before any subtree command:
+   - Load and review target-version docs (from `TARGET_VERSION`):
+     - `CHANGELOG.md`
+     - `AI-RULES/UPDATE.md`
+     - `AGENTS_TEMPLATE.md`
+   - Review changelog entries for all versions between `CURRENT_VERSION` and
+     `TARGET_VERSION` (inclusive of intermediate versions).
+   - Identify breaking or behavior-changing entries (for example path renames,
+     entry-point changes, setup/update workflow changes, mode semantics changes).
+   - Adapt the setup/update commands and file operations before execution.
+   - Summarize the detected changes and adapted execution plan before proceeding.
+   - If the target-version docs cannot be inspected, stop and ask the user how
+     to proceed instead of guessing.
+6. Update based on mode:
    - If it is git (tracked subtree):
      `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
      Commit the update.
@@ -43,11 +62,11 @@ Instructions for AI agents to update ai-rules in a downstream-project.
      - Undo the commit but keep files:
        `git reset --mixed HEAD~1`
      - Re-add the exclude entries to `.git/info/exclude`.
-5. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
-6. Preserve local overlays and any project-specific rules outside the vendor path,
+7. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
+8. Preserve local overlays and any project-specific rules outside the vendor path,
    including `docs/ai/LESSONS_LEARNED/` if used.
-7. Record the updated version in the destination repository if it tracks versions.
-8. Summarize changes.
+9. Record the updated version in the destination repository if it tracks versions.
+10. Summarize changes.
 
 ## Mode Switch (when requested)
 Prompt Examples:
