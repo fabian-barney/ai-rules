@@ -8,7 +8,7 @@ Instructions for AI agents to update ai-rules in a consuming project.
 
 ## Update Steps (run when requested)
 1. Locate the vendored ai-rules path and entry point from `AGENTS.md` or README.
-   - Set `AI_RULES_PATH` to the repo-relative path (for example `docs/ai/AI-RULES`).
+   - Set `<AI_RULES_PATH>` to the repo-relative path (for example `docs/ai/AI-RULES`).
    - Every time this guide shows `<AI_RULES_PATH>`, replace it with that real path.
    - For `.git/info/exclude`, the matching directory entry is `/<AI_RULES_PATH>/`
      (for example `/docs/ai/AI-RULES/`).
