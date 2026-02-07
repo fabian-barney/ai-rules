@@ -6,6 +6,23 @@ Instructions for AI agents to update ai-rules in a downstream-project.
 - "update ai-rules"
 - "update ai-rules v4.0.0"
 
+## REF Determination Rules
+Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
+- If the user specifies a tag (for example `v4.0.0`), validate it first:
+  `git ls-remote --exit-code --refs --tags https://github.com/fabian-barney/ai-rules.git "refs/tags/<TAG>"`
+  - If the command fails, stop and ask for a valid tag.
+  - If it succeeds, set `REF=<TAG>`.
+- If the user explicitly asks for a branch, validate it first:
+  `git ls-remote --exit-code --heads https://github.com/fabian-barney/ai-rules.git "refs/heads/<BRANCH>"`
+  - If the command fails, stop and ask for a valid branch.
+  - If it succeeds, set `REF=<BRANCH>`.
+- Otherwise resolve the latest tagged release:
+  `git ls-remote --refs --tags --sort="version:refname" https://github.com/fabian-barney/ai-rules.git "v*"`
+  - If at least one `v*` tag exists, set `REF` to the last tag in the sorted output.
+  - If no tags exist, set `REF=main`.
+- Before any subtree command, echo the resolved ref to the user:
+  Using ai-rules REF: `<REF>`
+
 ## Update Steps (run when requested)
 1. Locate the vendored ai-rules path and entry point from `AGENTS.md` or README.
    - Set `<AI_RULES_PATH>` to the repo-relative path (for example `docs/ai/AI-RULES`).
@@ -24,12 +41,10 @@ Instructions for AI agents to update ai-rules in a downstream-project.
        /.github/copilot-instructions.md
      - If `git ls-files -- "<AI_RULES_PATH>/AI.md"` returns a tracked file, treat this as git mode.
      - If it is ambiguous, ask which mode to use.
-3. Determine the target version:
-   - If the user specifies a tag, use it.
-   - Otherwise, use the latest tagged release.
+3. Determine `REF` using [REF Determination Rules](#ref-determination-rules).
 4. Update based on mode:
    - If it is git (tracked subtree):
-     `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
+     `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
      Commit the update.
    - If it is local (no commits, no push):
      - Temporarily remove the ai-rules entries from `.git/info/exclude`.
@@ -38,7 +53,7 @@ Instructions for AI agents to update ai-rules in a downstream-project.
        `git config --local user.name "Your Name"`
        `git config --local user.email "you@example.com"`
      - Run:
-       `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
+       `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
        (This creates a commit.)
      - Undo the commit but keep files:
        `git reset --mixed HEAD~1`
@@ -83,12 +98,13 @@ Steps:
      /CLAUDE.md
      /.github/copilot-instructions.md
    - If `<AI_RULES_PATH>` exists locally, remove it only after confirming there is no real work in it.
-   - Determine `REF`:
+   - Determine `REF` using [REF Determination Rules](#ref-determination-rules).
      - If the local ai-rules copy documents a version/tag (for example in `AGENTS.md`),
-       reuse that tag.
-     - Otherwise, use the latest tagged release.
+       treat it as user-specified and validate it before reuse.
+     - If no reusable version is documented, resolve `REF` with the default path
+       in REF Determination Rules (latest tagged release, fallback `main`).
    - Run:
-     `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
+     `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
    - Create any missing entry points (for example `AGENTS.md` final references,
      `AI_PROJECT.md`, `CLAUDE.md`, and `.github/copilot-instructions.md`), ensure
      they are tracked, then commit and push.
