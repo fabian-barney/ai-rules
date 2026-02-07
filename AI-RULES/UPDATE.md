@@ -12,7 +12,15 @@ Instructions for AI agents to update ai-rules in a downstream-project.
    - Every time this guide shows `<AI_RULES_PATH>`, replace it with that real path.
    - For `.git/info/exclude`, the matching directory entry is `/<AI_RULES_PATH>/`
      (for example `/docs/ai/AI-RULES/`).
-2. Determine the setup mode (local or git):
+2. Enforce a clean-working-tree precondition before subtree operations:
+   - Run `git status --porcelain`.
+   - If output is empty, continue.
+   - If output is not empty, do not run any `git subtree` command yet.
+   - Resolve the dirty state first by one of:
+     - Commit relevant work.
+     - Stash local work.
+     - Abort the ai-rules update.
+3. Determine the setup mode (local or git):
    - If the user explicitly specifies a mode, use it.
    - Otherwise auto-detect from the repository:
      - If `.git/info/exclude` contains any of these entries, treat this as local mode
@@ -24,13 +32,14 @@ Instructions for AI agents to update ai-rules in a downstream-project.
        /.github/copilot-instructions.md
      - If `git ls-files -- "<AI_RULES_PATH>/AI.md"` returns a tracked file, treat this as git mode.
      - If it is ambiguous, ask which mode to use.
-3. Determine the target version:
+4. Determine the target version:
    - If the user specifies a tag, use it.
    - Otherwise, use the latest tagged release.
-4. Update based on mode:
+5. Update based on mode:
    - If it is git (tracked subtree):
      `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
      Commit the update.
+     Ask the user whether to push this commit, and only push if they explicitly confirm.
    - If it is local (no commits, no push):
      - Temporarily remove the ai-rules entries from `.git/info/exclude`.
      - If `<AI_RULES_PATH>` already exists locally, remove it only after confirming there is no real work in it.
@@ -43,11 +52,11 @@ Instructions for AI agents to update ai-rules in a downstream-project.
      - Undo the commit but keep files:
        `git reset --mixed HEAD~1`
      - Re-add the exclude entries to `.git/info/exclude`.
-5. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
-6. Preserve local overlays and any project-specific rules outside the vendor path,
+6. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
+7. Preserve local overlays and any project-specific rules outside the vendor path,
    including `docs/ai/LESSONS_LEARNED/` if used.
-7. Record the updated version in the destination repository if it tracks versions.
-8. Summarize changes.
+8. Record the updated version in the destination repository if it tracks versions.
+9. Summarize changes.
 
 ## Mode Switch (when requested)
 Prompt Examples:
