@@ -19,11 +19,27 @@ To switch modes later, use "mode ai-rules local" or "mode ai-rules git".
 ai-rules is vendored under `docs/ai/AI-RULES/`.
 Define `<AI_RULES_PATH>` as `docs/ai/AI-RULES`.
 
+### Resolve REF (deterministic)
+Use this before any `git subtree add/pull` command:
+- If the user specifies a tag (for example `v4.0.0`), validate it:
+  `git ls-remote --exit-code --refs --tags https://github.com/fabian-barney/ai-rules.git "refs/tags/<TAG>"`
+  - If valid, set `REF=<TAG>`.
+  - If invalid, stop and ask for a valid tag.
+- If the user explicitly asks for a branch, validate it:
+  `git ls-remote --exit-code --heads https://github.com/fabian-barney/ai-rules.git "<BRANCH>"`
+  - If valid, set `REF=<BRANCH>`.
+  - If invalid, stop and ask for a valid branch.
+- Otherwise resolve the latest tagged release:
+  `git ls-remote --refs --tags --sort="version:refname" https://github.com/fabian-barney/ai-rules.git "v*"`
+  - If at least one `v*` tag exists, set `REF` to the last tag in the sorted output.
+  - If no tags exist, set `REF=main`.
+- Before executing subtree commands, echo:
+  `Using ai-rules REF: <REF>`
+
 ### Mode: local (no commits, no push)
 1. Add the ai-rules subtree (creates a local commit):
    `git subtree add --prefix <AI_RULES_PATH> https://github.com/fabian-barney/ai-rules.git REF --squash`
-   - Use the requested version tag; otherwise use the latest tagged release.
-     If no tags exist, use `main`.
+   - Resolve `REF` using the deterministic rules above.
    - If Git requires an author identity, set it locally:
      git config --local user.name "Your Name"
      git config --local user.email "you@example.com"
@@ -76,8 +92,7 @@ Local-only update note:
 ### Mode: git (tracked in repo)
 1. Add the ai-rules subtree:
    `git subtree add --prefix <AI_RULES_PATH> https://github.com/fabian-barney/ai-rules.git REF --squash`
-   - Use the requested version tag; otherwise use the latest tagged release.
-     If no tags exist, use `main`.
+   - Resolve `REF` using the deterministic rules above.
    - If Git requires an author identity, set it locally:
      git config --local user.name "Your Name"
      git config --local user.email "you@example.com"
