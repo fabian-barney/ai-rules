@@ -5,6 +5,9 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
+- Added consuming-project VCS workflow guidance for branch-per-concern,
+  pushing working intermediate states, non-working-code exception handling,
+  and PR/MR suggestion timing.
 
 ## [v3.0.1] - 2026-02-06
 - Clarified update/setup path placeholder handling, including copy-paste-safe

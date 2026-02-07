@@ -11,6 +11,10 @@ Guidance for implementing code changes.
 - Use logging rules from `CORE/LOGGING.md` and observability expectations where relevant.
 - Treat security and privacy as non-negotiable (`SECURITY/SECURITY.md`).
 
+## VCS Workflow Rules
+- For VCS workflow guidance during implementation, follow
+  `CORE/VERSION_CONTROL_SYSTEM.md`.
+
 ## Dependencies
 - Avoid new dependencies unless clearly justified.
 - Evaluate any new dependency against `FRAMEWORK/FRAMEWORK.md`, `LIBRARY/LIBRARY.md`, and
