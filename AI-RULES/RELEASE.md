@@ -1,10 +1,10 @@
 # RELEASE
 
-Release process for the ai-rules repository (not downstream projects).
+Release process for the ai-rules repository (not downstream-projects).
 
 ## Scope
 - Applies only to this repository.
-- Do not copy these rules into downstream projects.
+- Do not copy these rules into downstream-projects.
 
 ## AI-Prompted Release
 Example prompts:

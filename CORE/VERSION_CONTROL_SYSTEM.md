@@ -17,7 +17,7 @@ Guidance for version control system usage (Git and others).
 - Do not push knowingly non-working code unless this is explicitly requested.
 - Suggest opening a PR/MR when all acceptance criteria are fulfilled and you
   have access to GitHub, GitLab, or a similar review system.
-- When opening a PR/MR, auto-detect the target branch from downstream project
+- When opening a PR/MR, auto-detect the target branch from downstream-project
   rules when available; otherwise ask which target branch to use and suggest
   the most likely one.
 
