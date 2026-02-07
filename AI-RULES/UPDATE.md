@@ -30,7 +30,7 @@ Instructions for AI agents to update ai-rules in a downstream-project.
      - If the command fails, stop and ask for a valid tag.
      - If it succeeds, set `REF=<TAG>`.
    - If the user explicitly asks for a branch, validate it first:
-     `git ls-remote --exit-code --heads https://github.com/fabian-barney/ai-rules.git "<BRANCH>"`
+     `git ls-remote --exit-code --heads https://github.com/fabian-barney/ai-rules.git "refs/heads/<BRANCH>"`
      - If the command fails, stop and ask for a valid branch.
      - If it succeeds, set `REF=<BRANCH>`.
    - Otherwise resolve the latest tagged release:
@@ -38,10 +38,10 @@ Instructions for AI agents to update ai-rules in a downstream-project.
      - If at least one `v*` tag exists, set `REF` to the last tag in the sorted output.
      - If no tags exist, set `REF=main`.
    - Before any subtree command, echo the resolved ref to the user:
-     `Using ai-rules REF: <REF>`
+     Using ai-rules REF: `<REF>`
 4. Update based on mode:
    - If it is git (tracked subtree):
-     `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
+     `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
      Commit the update.
    - If it is local (no commits, no push):
      - Temporarily remove the ai-rules entries from `.git/info/exclude`.
@@ -50,7 +50,7 @@ Instructions for AI agents to update ai-rules in a downstream-project.
        `git config --local user.name "Your Name"`
        `git config --local user.email "you@example.com"`
      - Run:
-       `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
+       `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
        (This creates a commit.)
      - Undo the commit but keep files:
        `git reset --mixed HEAD~1`
@@ -100,9 +100,9 @@ Steps:
        treat it as user-specified and validate it before reuse.
      - If no reusable version is documented, resolve `REF` exactly as in update step 3.
    - Before any subtree command, echo the resolved ref to the user:
-     `Using ai-rules REF: <REF>`
+     Using ai-rules REF: `<REF>`
    - Run:
-     `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
+     `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
    - Create any missing entry points (for example `AGENTS.md` final references,
      `AI_PROJECT.md`, `CLAUDE.md`, and `.github/copilot-instructions.md`), ensure
      they are tracked, then commit and push.
