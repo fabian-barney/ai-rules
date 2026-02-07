@@ -22,10 +22,13 @@ Define `<AI_RULES_PATH>` as `docs/ai/AI-RULES`.
 ### Target-version preflight (required)
 Before running any setup/update subtree command, inspect the target ai-rules
 version and adapt behavior as needed:
+- Use the same `REF` that will be passed to `git subtree add`/`git subtree pull`.
 - Read target-version docs:
   - `CHANGELOG.md`
   - `AI-RULES/UPDATE.md`
   - `AGENTS_TEMPLATE.md`
+- Inspect these files at `REF` using any reliable method (for example repository
+  web view, `git show`, or a temporary local checkout).
 - If the target version includes breaking or behavior-changing setup/update
   guidance, follow the target-version guidance even if it differs from this
   template.

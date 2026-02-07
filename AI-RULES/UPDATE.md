@@ -33,13 +33,20 @@ Instructions for AI agents to update ai-rules in a downstream-project.
 4. Determine the target version (`TARGET_VERSION`):
    - If the user specifies a tag, use it.
    - Otherwise, use the latest tagged release.
+   - Set `REF=<TARGET_VERSION>` for subtree commands in this workflow.
 5. Run a compatibility preflight before any subtree command:
-   - Load and review target-version docs (from `TARGET_VERSION`):
+   - Load and review target-version docs at `REF` (the same ref used for subtree commands):
      - `CHANGELOG.md`
      - `AI-RULES/UPDATE.md`
      - `AGENTS_TEMPLATE.md`
-   - Review changelog entries for all versions between `CURRENT_VERSION` and
-     `TARGET_VERSION` (inclusive of intermediate versions).
+   - Use any reliable method to inspect these files at `REF` (for example the
+     repository web view, `git show`, or a temporary local checkout).
+   - Review changelog entries:
+     - If `CURRENT_VERSION` is known, review all versions after
+       `CURRENT_VERSION` up to and including `TARGET_VERSION` (including
+       intermediate versions).
+     - If `CURRENT_VERSION=unknown`, review all changelog entries up to and
+       including `TARGET_VERSION`.
    - Identify breaking or behavior-changing entries (for example path renames,
      entry-point changes, setup/update workflow changes, mode semantics changes).
    - Adapt the setup/update commands and file operations before execution.
@@ -48,7 +55,7 @@ Instructions for AI agents to update ai-rules in a downstream-project.
      to proceed instead of guessing.
 6. Update based on mode:
    - If it is git (tracked subtree):
-     `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
+     `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
      Commit the update.
    - If it is local (no commits, no push):
      - Temporarily remove the ai-rules entries from `.git/info/exclude`.
@@ -57,7 +64,7 @@ Instructions for AI agents to update ai-rules in a downstream-project.
        `git config --local user.name "Your Name"`
        `git config --local user.email "you@example.com"`
      - Run:
-       `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
+       `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
        (This creates a commit.)
      - Undo the commit but keep files:
        `git reset --mixed HEAD~1`
@@ -107,7 +114,7 @@ Steps:
        reuse that tag.
      - Otherwise, use the latest tagged release.
    - Run:
-     `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
+     `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
    - Create any missing entry points (for example `AGENTS.md` final references,
      `AI_PROJECT.md`, `CLAUDE.md`, and `.github/copilot-instructions.md`), ensure
      they are tracked, then commit and push.
