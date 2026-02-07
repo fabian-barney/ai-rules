@@ -12,6 +12,11 @@ Formatting rules are ordered by precedence:
   consensus.
 - When no standard formatter exists, apply the conventions in this file and
   keep them consistent across the codebase.
+- For function/method parameter lists and function/method call argument lists
+  with more than 3 items, use multiline formatting in new/changed code.
+- If parameter/argument lists are multiline, place each item on its own line.
+- If parameter/argument lists are multiline, require a trailing delimiter on
+  the last item when supported by the language.
 
 ## Naming Conventions
 - Use English names by default.
