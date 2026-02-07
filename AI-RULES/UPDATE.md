@@ -93,15 +93,15 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
      - Ensure Git has a local author identity configured (required for subtree add). If needed:
        `git config --local user.name "Your Name"`
        `git config --local user.email "you@example.com"`
-      - Run:
+     - Run:
         `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
         (This creates a commit.)
-      - Undo the commit but keep files:
+     - Undo the commit but keep files:
         `git reset --mixed HEAD~1`
-      - Always restore `.git/info/exclude` from the backup copy, even if subtree
+     - Always restore `.git/info/exclude` from the backup copy, even if subtree
         commands fail. Use try/finally behavior so restore runs on both success
         and failure paths.
-      - When ensuring required entries after restore, add only missing lines and
+     - When ensuring required entries after restore, add only missing lines and
         keep all other existing exclude rules unchanged.
      - Required local exclude entries after restore:
        /<AI_RULES_PATH>/
@@ -111,7 +111,7 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
        /.github/copilot-instructions.md
      - Verify `.git/info/exclude` was restored from backup and required exclude
        entries are present.
-      - Recovery checklist (if update fails or restore verification fails):
+     - Recovery checklist (if update fails or restore verification fails):
         - Restore `.git/info/exclude` from the backup copy.
         - Re-check required local exclude entries.
         - Run `git status --short` and confirm local-only files are not staged.
