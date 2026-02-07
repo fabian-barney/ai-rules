@@ -87,17 +87,35 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
      Commit the update.
      Ask the user whether to push this commit, and only push if they explicitly confirm.
    - If it is local (no commits, no push):
+     - Before editing `.git/info/exclude`, create a backup copy.
      - Temporarily remove the ai-rules entries from `.git/info/exclude`.
      - If `<AI_RULES_PATH>` already exists locally, remove it only after confirming there is no real work in it.
      - Ensure Git has a local author identity configured (required for subtree add). If needed:
        `git config --local user.name "Your Name"`
        `git config --local user.email "you@example.com"`
      - Run:
-       `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
-       (This creates a commit.)
+        `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
+        (This creates a commit.)
      - Undo the commit but keep files:
-       `git reset --mixed HEAD~1`
-     - Re-add the exclude entries to `.git/info/exclude`.
+        `git reset --mixed HEAD~1`
+     - Always restore `.git/info/exclude` from the backup copy, even if subtree
+        commands fail. Use try/finally behavior so restore runs on both success
+        and failure paths.
+     - When ensuring required entries after restore, add only missing lines and
+        keep all other existing exclude rules unchanged.
+     - Required local exclude entries after restore:
+       /<AI_RULES_PATH>/
+       /AGENTS.md
+       /AI_PROJECT.md
+       /CLAUDE.md
+       /.github/copilot-instructions.md
+     - Verify `.git/info/exclude` was restored from backup and required exclude
+       entries are present.
+     - Recovery checklist (if update fails or restore verification fails):
+        - Restore `.git/info/exclude` from the backup copy.
+        - Re-check required local exclude entries.
+        - Run `git status --short` and confirm local-only files are not staged.
+        - Stop and ask the user before retrying subtree commands.
 9. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
 10. Preserve local overlays and any project-specific rules outside the vendor path,
     including `docs/ai/LESSONS_LEARNED/` if used.
