@@ -26,6 +26,8 @@ Concrete steps or checks that would have avoided the issue.
 ```
 
 ## Files
+- [2026-02-07-pr-issue-linking.md](2026-02-07-pr-issue-linking.md)
+  - Link each PR to its issue so merged PRs close issues automatically.
 - [2026-02-04-md012-after-bulk-edits.md](2026-02-04-md012-after-bulk-edits.md)
   - Prevent MD012 regressions after bulk edits.
 - [2026-02-04-review-comments-resolution.md](2026-02-04-review-comments-resolution.md)
