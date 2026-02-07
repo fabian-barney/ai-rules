@@ -1,8 +1,8 @@
-# CONSUMING_PROJECT
+# DOWNSTREAM-PROJECT
 
-Guidance for consuming projects that vendor ai-rules.
-In this documentation, a "consuming project" is the same as a downstream
-project/repository.
+Guidance for downstream-projects that vendor ai-rules.
+In this documentation, "downstream-project" is the primary term.
+Legacy wording "consuming project" means the same thing.
 
 ## Goals
 - Keep the ai-rules subtree replaceable by updates.
@@ -24,7 +24,7 @@ project/repository.
 ## Lessons Learned (project-specific)
 - Create `docs/ai/LESSONS_LEARNED/LESSONS_LEARNED.md` with an index and keep entries as
   `YYYY-MM-DD-short-title.md`.
-- Keep the scope limited to the consuming project and update existing entries
+- Keep the scope limited to the downstream-project and update existing entries
   when the issue repeats.
 
 ## Architecture Decision Records (project-specific)
