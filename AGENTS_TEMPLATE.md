@@ -53,6 +53,7 @@ Define `<AI_RULES_PATH>` as `docs/ai/AI-RULES`.
 5. Create a local overlay for project-specific rules (recommended):
    AI_PROJECT.md
    Note: keep this outside `docs/ai/` so subtree updates do not overwrite it.
+   In local mode, keep `AI_PROJECT.md` local-only (excluded from VCS).
 6. Create a project lessons learned area (recommended):
    docs/ai/LESSONS_LEARNED/LESSONS_LEARNED.md
    See `AI-RULES/DOWNSTREAM-PROJECT.md` for guidance.
@@ -99,6 +100,7 @@ Local-only update note:
 3. Create a local overlay for project-specific rules (recommended):
    AI_PROJECT.md
    Note: keep this outside `docs/ai/` so subtree updates do not overwrite it.
+   In git mode, keep `AI_PROJECT.md` tracked so the team shares the overlay.
 4. Create a project lessons learned area (recommended):
    docs/ai/LESSONS_LEARNED/LESSONS_LEARNED.md
    See `AI-RULES/DOWNSTREAM-PROJECT.md` for guidance.

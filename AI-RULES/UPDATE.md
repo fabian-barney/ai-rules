@@ -14,16 +14,21 @@ Instructions for AI agents to update ai-rules in a downstream-project.
      (for example `/docs/ai/AI-RULES/`).
 2. Determine the setup mode (local or git):
    - If the user explicitly specifies a mode, use it.
-   - Otherwise auto-detect from the repository:
-     - If `.git/info/exclude` contains any of these entries, treat this as local mode
+   - Otherwise auto-detect using both repository signals:
+     - `TRACKED_SUBTREE=true` if `git ls-files -- "<AI_RULES_PATH>/AI.md"` returns a tracked file.
+     - `LOCAL_HINT=true` if `.git/info/exclude` contains any of these entries
        (replace `/<AI_RULES_PATH>/` with the real path; example: `/docs/ai/AI-RULES/`):
        /<AI_RULES_PATH>/
        /AGENTS.md
        /AI_PROJECT.md
        /CLAUDE.md
        /.github/copilot-instructions.md
-     - If `git ls-files -- "<AI_RULES_PATH>/AI.md"` returns a tracked file, treat this as git mode.
-     - If it is ambiguous, ask which mode to use.
+   - Resolve mode from combined signals:
+     - `TRACKED_SUBTREE=true` and `LOCAL_HINT=false` => git mode.
+     - `TRACKED_SUBTREE=false` and `LOCAL_HINT=true` => local mode.
+     - `TRACKED_SUBTREE=true` and `LOCAL_HINT=true` => ambiguous
+       (for example stale excludes after a previous mode switch); ask which mode to use.
+     - `TRACKED_SUBTREE=false` and `LOCAL_HINT=false` => ambiguous; ask which mode to use.
 3. Determine the target version:
    - If the user specifies a tag, use it.
    - Otherwise, use the latest tagged release.
@@ -62,8 +67,8 @@ Steps:
      control for this repo. This requires a commit.
    - Remove tracked ai-rules paths but keep files:
      `git rm -r --cached -- "<AI_RULES_PATH>" "AGENTS.md" "AI_PROJECT.md" "CLAUDE.md" ".github/copilot-instructions.md"`
-     Note: This treats `AI_PROJECT.md` as local-only too. If the user wants it
-     shared, confirm before removing it.
+     Note: `AI_PROJECT.md` is shared/tracked in git mode. Switching to local
+     intentionally converts it to local-only (untracked).
    - Add the local excludes to `.git/info/exclude` (keep the file intact):
      (Replace `/<AI_RULES_PATH>/` with the real path; example: `/docs/ai/AI-RULES/`.)
      /<AI_RULES_PATH>/
@@ -96,3 +101,5 @@ Steps:
 ## Expectations
 - Prefer tagged releases unless explicitly asked for a branch.
 - Do not overwrite local overlays or custom rules.
+- In local mode, keep `AI_PROJECT.md` local-only and excluded from VCS.
+- In git mode, keep `AI_PROJECT.md` tracked so the team can share it.
