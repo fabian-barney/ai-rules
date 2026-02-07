@@ -41,8 +41,39 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
        /.github/copilot-instructions.md
      - If `git ls-files -- "<AI_RULES_PATH>/AI.md"` returns a tracked file, treat this as git mode.
      - If it is ambiguous, ask which mode to use.
-3. Determine `REF` using [REF Determination Rules](#ref-determination-rules).
-4. Update based on mode:
+3. Determine the currently installed ai-rules version (`CURRENT_VERSION`):
+   - If the downstream-project explicitly tracks the installed ai-rules version,
+     reuse that value.
+   - Otherwise inspect `<AI_RULES_PATH>/CHANGELOG.md` and read the first
+     released version heading (`## [vX.Y.Z]`) as `CURRENT_VERSION`.
+   - If no version can be determined, set `CURRENT_VERSION=unknown`.
+4. Determine the target version (`TARGET_VERSION`):
+   - If the user specifies a tag, use it.
+   - If the user explicitly asks for a branch, use it.
+   - Otherwise, use the latest tagged release.
+5. Determine `REF` using [REF Determination Rules](#ref-determination-rules):
+   - Set `REF=<TARGET_VERSION>`.
+   - Validate `REF` with the matching rule (tag or branch).
+6. Run a compatibility preflight before any subtree command:
+   - Load and review target-version docs at `REF` (the same ref used for subtree commands):
+     - `CHANGELOG.md`
+     - `AI-RULES/UPDATE.md`
+     - `AGENTS_TEMPLATE.md`
+   - Use any reliable method to inspect these files at `REF` (for example the
+     repository web view, `git show`, or a temporary local checkout).
+   - Review changelog entries:
+     - If `CURRENT_VERSION` is known, review all versions after
+       `CURRENT_VERSION` up to and including `TARGET_VERSION` (including
+       intermediate versions).
+     - If `CURRENT_VERSION=unknown`, review all changelog entries up to and
+       including `TARGET_VERSION`.
+   - Identify breaking or behavior-changing entries (for example path renames,
+     entry-point changes, setup/update workflow changes, mode semantics changes).
+   - Adapt the setup/update commands and file operations before execution.
+   - Summarize the detected changes and adapted execution plan before proceeding.
+   - If the target-version docs cannot be inspected, stop and ask the user how
+     to proceed instead of guessing.
+7. Update based on mode:
    - If it is git (tracked subtree):
      `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
      Commit the update.
@@ -58,11 +89,11 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
      - Undo the commit but keep files:
        `git reset --mixed HEAD~1`
      - Re-add the exclude entries to `.git/info/exclude`.
-5. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
-6. Preserve local overlays and any project-specific rules outside the vendor path,
+8. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
+9. Preserve local overlays and any project-specific rules outside the vendor path,
    including `docs/ai/LESSONS_LEARNED/` if used.
-7. Record the updated version in the destination repository if it tracks versions.
-8. Summarize changes.
+10. Record the updated version in the destination repository if it tracks versions.
+11. Summarize changes.
 
 ## Mode Switch (when requested)
 Prompt Examples:
