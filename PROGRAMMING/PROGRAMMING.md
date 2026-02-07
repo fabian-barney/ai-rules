@@ -29,3 +29,5 @@ Guidance for implementing code changes.
 ## Delivery
 - Update documentation or comments when behavior changes.
 - Summarize changes, tests run, and any residual risks.
+- For PR/MR and issue-tracker summary expectations, follow
+  `CORE/VERSION_CONTROL_SYSTEM.md`.
