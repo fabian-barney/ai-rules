@@ -16,13 +16,12 @@ Instructions for AI agents to update ai-rules in a downstream-project.
    - If the user explicitly specifies a mode, use it.
    - Otherwise auto-detect using both repository signals:
      - `TRACKED_SUBTREE=true` if `git ls-files -- "<AI_RULES_PATH>/AI.md"` returns a tracked file.
-     - `LOCAL_HINT=true` if `.git/info/exclude` contains any of these entries
-       (replace `/<AI_RULES_PATH>/` with the real path; example: `/docs/ai/AI-RULES/`):
-       /<AI_RULES_PATH>/
-       /AGENTS.md
-       /AI_PROJECT.md
-       /CLAUDE.md
-       /.github/copilot-instructions.md
+     - `LOCAL_HINT=true` if `.git/info/exclude` contains the subtree directory
+       entry `/<AI_RULES_PATH>/` (replace with the real path; example:
+       `/docs/ai/AI-RULES/`).
+       Companion excludes (for example `/AGENTS.md`, `/AI_PROJECT.md`,
+       `/CLAUDE.md`, `/.github/copilot-instructions.md`) are optional and do not
+       affect `LOCAL_HINT`.
    - Resolve mode from combined signals:
      - `TRACKED_SUBTREE=true` and `LOCAL_HINT=false` => git mode.
      - `TRACKED_SUBTREE=false` and `LOCAL_HINT=true` => local mode.

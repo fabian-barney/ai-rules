@@ -97,7 +97,7 @@ Local-only update note:
      after explicit confirmation (for example, `git reset --hard`).
 2. Baseline entry point (after subtree add):
    `<AI_RULES_PATH>/AI.md`
-3. Create a local overlay for project-specific rules (recommended):
+3. Create a project overlay for project-specific rules (recommended):
    AI_PROJECT.md
    Note: keep this outside `docs/ai/` so subtree updates do not overwrite it.
    In git mode, keep `AI_PROJECT.md` tracked so the team shares the overlay.
