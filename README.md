@@ -1,4 +1,4 @@
-# AI Rules (Baseline)
+# AI Rules
 
 This repository contains shared, versioned AI guidance intended to be vendored
 into other projects (e.g., via git subtree). It is the single source of truth
