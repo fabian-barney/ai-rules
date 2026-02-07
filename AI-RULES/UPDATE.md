@@ -43,15 +43,19 @@ Instructions for AI agents to update ai-rules in a downstream-project.
        (This creates a commit.)
      - Undo the commit but keep files:
        `git reset --mixed HEAD~1`
-     - Always restore local excludes, even if subtree commands fail.
-       Use try/finally behavior so restore runs on both success and failure paths.
+     - Always restore `.git/info/exclude` from the backup copy, even if subtree
+       commands fail. Use try/finally behavior so restore runs on both success
+       and failure paths.
+     - When ensuring required entries after restore, add only missing lines and
+       keep all other existing exclude rules unchanged.
      - Required local exclude entries after restore:
        /<AI_RULES_PATH>/
        /AGENTS.md
        /AI_PROJECT.md
        /CLAUDE.md
        /.github/copilot-instructions.md
-     - Verify required exclude entries are present after restore.
+     - Verify `.git/info/exclude` was restored from backup and required exclude
+       entries are present.
      - Recovery checklist (if update fails or restore verification fails):
        - Restore `.git/info/exclude` from the backup copy.
        - Re-check required local exclude entries.
