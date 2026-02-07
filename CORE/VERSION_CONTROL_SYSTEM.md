@@ -3,7 +3,9 @@
 Guidance for version control system usage (Git and others).
 
 ## Commit Messages
-- Always reference the ticket or issue identifier in commit messages.
+- Always include the ticket or issue identifier and ticket/issue title (or a
+  concise equivalent summary aligned with that title).
+- Example format: `<ticket-or-issue-id> <ticket-or-issue-title>: <change>`.
 - Add optional context about what changed and why when it improves clarity.
 - Mark breaking changes explicitly.
 
