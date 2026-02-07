@@ -6,6 +6,23 @@ Instructions for AI agents to update ai-rules in a downstream-project.
 - "update ai-rules"
 - "update ai-rules v4.0.0"
 
+## REF Determination Rules
+Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
+- If the user specifies a tag (for example `v4.0.0`), validate it first:
+  `git ls-remote --exit-code --refs --tags https://github.com/fabian-barney/ai-rules.git "refs/tags/<TAG>"`
+  - If the command fails, stop and ask for a valid tag.
+  - If it succeeds, set `REF=<TAG>`.
+- If the user explicitly asks for a branch, validate it first:
+  `git ls-remote --exit-code --heads https://github.com/fabian-barney/ai-rules.git "refs/heads/<BRANCH>"`
+  - If the command fails, stop and ask for a valid branch.
+  - If it succeeds, set `REF=<BRANCH>`.
+- Otherwise resolve the latest tagged release:
+  `git ls-remote --refs --tags --sort="version:refname" https://github.com/fabian-barney/ai-rules.git "v*"`
+  - If at least one `v*` tag exists, set `REF` to the last tag in the sorted output.
+  - If no tags exist, set `REF=main`.
+- Before any subtree command, echo the resolved ref to the user:
+  Using ai-rules REF: `<REF>`
+
 ## Update Steps (run when requested)
 1. Locate the vendored ai-rules path and entry point from `AGENTS.md` or README.
    - Set `<AI_RULES_PATH>` to the repo-relative path (for example `docs/ai/AI-RULES`).
@@ -32,9 +49,12 @@ Instructions for AI agents to update ai-rules in a downstream-project.
    - If no version can be determined, set `CURRENT_VERSION=unknown`.
 4. Determine the target version (`TARGET_VERSION`):
    - If the user specifies a tag, use it.
+   - If the user explicitly asks for a branch, use it.
    - Otherwise, use the latest tagged release.
-   - Set `REF=<TARGET_VERSION>` for subtree commands in this workflow.
-5. Run a compatibility preflight before any subtree command:
+5. Determine `REF` using [REF Determination Rules](#ref-determination-rules):
+   - Set `REF=<TARGET_VERSION>`.
+   - Validate `REF` with the matching rule (tag or branch).
+6. Run a compatibility preflight before any subtree command:
    - Load and review target-version docs at `REF` (the same ref used for subtree commands):
      - `CHANGELOG.md`
      - `AI-RULES/UPDATE.md`
@@ -53,7 +73,7 @@ Instructions for AI agents to update ai-rules in a downstream-project.
    - Summarize the detected changes and adapted execution plan before proceeding.
    - If the target-version docs cannot be inspected, stop and ask the user how
      to proceed instead of guessing.
-6. Update based on mode:
+7. Update based on mode:
    - If it is git (tracked subtree):
      `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
      Commit the update.
@@ -69,11 +89,11 @@ Instructions for AI agents to update ai-rules in a downstream-project.
      - Undo the commit but keep files:
        `git reset --mixed HEAD~1`
      - Re-add the exclude entries to `.git/info/exclude`.
-7. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
-8. Preserve local overlays and any project-specific rules outside the vendor path,
+8. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
+9. Preserve local overlays and any project-specific rules outside the vendor path,
    including `docs/ai/LESSONS_LEARNED/` if used.
-9. Record the updated version in the destination repository if it tracks versions.
-10. Summarize changes.
+10. Record the updated version in the destination repository if it tracks versions.
+11. Summarize changes.
 
 ## Mode Switch (when requested)
 Prompt Examples:
@@ -109,10 +129,11 @@ Steps:
      /CLAUDE.md
      /.github/copilot-instructions.md
    - If `<AI_RULES_PATH>` exists locally, remove it only after confirming there is no real work in it.
-   - Determine `REF`:
+   - Determine `REF` using [REF Determination Rules](#ref-determination-rules).
      - If the local ai-rules copy documents a version/tag (for example in `AGENTS.md`),
-       reuse that tag.
-     - Otherwise, use the latest tagged release.
+       treat it as user-specified and validate it before reuse.
+     - If no reusable version is documented, resolve `REF` with the default path
+       in REF Determination Rules (latest tagged release, fallback `main`).
    - Run:
      `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
    - Create any missing entry points (for example `AGENTS.md` final references,
