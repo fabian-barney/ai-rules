@@ -118,10 +118,6 @@ Git update note:
 - Use `git subtree pull --prefix AI_RULES_PATH https://github.com/fabian-barney/ai-rules.git REF --squash`
   and commit the update.
 
-## Ongoing Workflow Rules (Consuming Projects)
-After setup, follow `AI_RULES_PATH/CORE/VERSION_CONTROL_SYSTEM.md` for branch
-and PR/MR workflow expectations in the consuming project.
-
 ## Entry Point Templates
 Note: Replace `AI_RULES_PATH` with `docs/ai/AI-RULES`.
 
