@@ -51,6 +51,15 @@ Guidance for version control system usage (Git and others).
 - Open risks or follow-ups:
 ```
 
+## Dependency Lock Files
+- Commit dependency lock files for the package managers used by the project
+  (for example `package-lock.json`, `pnpm-lock.yaml`, `yarn.lock`).
+- Do not add ignore rules that exclude required lock files from VCS.
+- In CI, install dependencies from lock files in frozen/immutable mode when
+  supported by the package manager.
+- Exceptions are allowed only when explicitly documented (for example,
+  intentionally published libraries that choose not to commit lock files).
+
 ## Ignore File
 - Maintain a VCS ignore file in the repository root (for Git: `.gitignore`).
 - Keep the ignore list minimal but practical to prevent VCS pollution and protect sensitive files.
