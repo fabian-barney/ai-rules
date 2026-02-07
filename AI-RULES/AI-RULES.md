@@ -13,7 +13,7 @@ Guidance for maintaining this ai-rules repository.
 - [FORMATTING.md](FORMATTING.md) - Formatting rules for this repository only.
 - [RELEASE.md](RELEASE.md) - Release checklist for this repository.
 - [UPDATE.md](UPDATE.md) - Update workflow and prompt examples for downstream projects.
-- [CONSUMING_PROJECT.md](CONSUMING_PROJECT.md) - Downstream-project layout and lessons learned guidance.
+- [CONSUMING_PROJECT.md](CONSUMING_PROJECT.md) - Downstream project layout and lessons learned guidance.
 - [LESSONS_LEARNED/LESSONS_LEARNED.md](LESSONS_LEARNED/LESSONS_LEARNED.md) - Index of lessons
   to prevent repeat mistakes.
 

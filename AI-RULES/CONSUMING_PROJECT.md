@@ -3,6 +3,7 @@
 Guidance for downstream projects that vendor ai-rules.
 In this documentation, "downstream project" is the primary term.
 Legacy wording "consuming project" means the same thing.
+The filename and H1 `CONSUMING_PROJECT` are kept for backward compatibility.
 
 ## Goals
 - Keep the ai-rules subtree replaceable by updates.

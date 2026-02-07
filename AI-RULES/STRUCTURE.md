@@ -23,6 +23,6 @@ Rules for organizing the ai-rules repository itself (not downstream projects).
   `CHANGELOG.md`) scoped to this repository only.
 - `README.md` may include user-facing guidance on how to use ai-rules in
   downstream projects.
-- Put detailed downstream-project operational guidance in
+- Put detailed downstream project operational guidance in
   `AI-RULES/CONSUMING_PROJECT.md`, `AI-RULES/UPDATE.md`, and
   `AGENTS_TEMPLATE.md`.
