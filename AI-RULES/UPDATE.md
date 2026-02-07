@@ -1,6 +1,6 @@
 # UPDATE
 
-Instructions for AI agents to update ai-rules in a consuming project.
+Instructions for AI agents to update ai-rules in a downstream project.
 
 ## Prompt Examples
 - "update ai-rules"
