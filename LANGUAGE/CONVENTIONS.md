@@ -11,7 +11,8 @@ Formatting rules are ordered by precedence:
 - It is not allowed to override standard formatting rules, even by team
   consensus.
 - If not conflicting with standard formatting rules, apply the ai-rules
-  conventions and keep them consistent across the codebase.
+  conventions (all conventions within the ai-rules vendor path, excluding
+  downstream project conventions) and keep them consistent across the codebase.
 - For function/method parameter lists and function/method call argument lists
   with more than 3 items, use multiline formatting in new/changed code.
 - If parameter/argument lists are multiline, place each item on its own line.
