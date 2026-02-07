@@ -107,7 +107,8 @@ Steps:
    - If currently git mode, confirm the user wants to remove ai-rules from version
      control for this repo. This requires a commit.
    - Remove tracked ai-rules paths but keep files:
-     `git rm -r --cached -- "<AI_RULES_PATH>" "AGENTS.md" "AI_PROJECT.md" "CLAUDE.md" ".github/copilot-instructions.md"`
+     `git rm -r --cached --ignore-unmatch -- "<AI_RULES_PATH>" "AGENTS.md" "AI_PROJECT.md" "CLAUDE.md" ".github/copilot-instructions.md"`
+     This must succeed even when optional entry-point files are absent.
      Note: This treats `AI_PROJECT.md` as local-only too. If the user wants it
      shared, confirm before removing it.
    - Add the local excludes to `.git/info/exclude` (keep the file intact):
@@ -117,6 +118,9 @@ Steps:
      /AI_PROJECT.md
      /CLAUDE.md
      /.github/copilot-instructions.md
+   - Verify switch result:
+     - `git ls-files -- "<AI_RULES_PATH>/AI.md"` should return no tracked file.
+     - `git status --short` should show only the intended mode-switch index changes.
    - Commit the removal. Ask the user whether to push this commit, and only push
      if they explicitly confirm.
 3. If switching to git:
