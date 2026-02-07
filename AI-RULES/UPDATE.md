@@ -39,16 +39,20 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
      - Abort the ai-rules update.
 3. Determine the setup mode (local or git):
    - If the user explicitly specifies a mode, use it.
-   - Otherwise auto-detect from the repository:
-     - If `.git/info/exclude` contains any of these entries, treat this as local mode
-       (replace `/<AI_RULES_PATH>/` with the real path; example: `/docs/ai/AI-RULES/`):
-       /<AI_RULES_PATH>/
-       /AGENTS.md
-       /AI_PROJECT.md
-       /CLAUDE.md
-       /.github/copilot-instructions.md
-     - If `git ls-files -- "<AI_RULES_PATH>/AI.md"` returns a tracked file, treat this as git mode.
-     - If it is ambiguous, ask which mode to use.
+   - Otherwise auto-detect using both repository signals:
+     - `TRACKED_SUBTREE=true` if `git ls-files -- "<AI_RULES_PATH>/AI.md"` returns a tracked file.
+     - `LOCAL_HINT=true` if `.git/info/exclude` contains the subtree directory
+       entry `/<AI_RULES_PATH>/` (replace with the real path; example:
+       `/docs/ai/AI-RULES/`).
+       Companion excludes (for example `/AGENTS.md`, `/AI_PROJECT.md`,
+       `/CLAUDE.md`, `/.github/copilot-instructions.md`) are optional and do not
+       affect `LOCAL_HINT`.
+   - Resolve mode from combined signals:
+     - `TRACKED_SUBTREE=true` and `LOCAL_HINT=false` => git mode.
+     - `TRACKED_SUBTREE=false` and `LOCAL_HINT=true` => local mode.
+     - `TRACKED_SUBTREE=true` and `LOCAL_HINT=true` => ambiguous
+       (for example stale excludes after a previous mode switch); ask which mode to use.
+     - `TRACKED_SUBTREE=false` and `LOCAL_HINT=false` => ambiguous; ask which mode to use.
 4. Determine the currently installed ai-rules version (`CURRENT_VERSION`):
    - If the downstream-project explicitly tracks the installed ai-rules version,
      reuse that value.
@@ -104,13 +108,13 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
      - When ensuring required entries after restore, add only missing lines and
         keep all other existing exclude rules unchanged.
      - Required local exclude entries after restore:
-       /<AI_RULES_PATH>/
-       /AGENTS.md
-       /AI_PROJECT.md
-       /CLAUDE.md
-       /.github/copilot-instructions.md
+        /<AI_RULES_PATH>/
+        /AGENTS.md
+        /AI_PROJECT.md
+        /CLAUDE.md
+        /.github/copilot-instructions.md
      - Verify `.git/info/exclude` was restored from backup and required exclude
-       entries are present.
+        entries are present.
      - Recovery checklist (if update fails or restore verification fails):
         - Restore `.git/info/exclude` from the backup copy.
         - Re-check required local exclude entries.
@@ -134,10 +138,10 @@ Steps:
    - If currently git mode, confirm the user wants to remove ai-rules from version
      control for this repo. This requires a commit.
    - Remove tracked ai-rules paths but keep files:
-     `git rm -r --cached --ignore-unmatch -- "<AI_RULES_PATH>" "AGENTS.md" "AI_PROJECT.md" "CLAUDE.md" ".github/copilot-instructions.md"`
-     This must succeed even when optional entry-point files are absent.
-     Note: This treats `AI_PROJECT.md` as local-only too. If the user wants it
-     shared, confirm before removing it.
+      `git rm -r --cached --ignore-unmatch -- "<AI_RULES_PATH>" "AGENTS.md" "AI_PROJECT.md" "CLAUDE.md" ".github/copilot-instructions.md"`
+      This must succeed even when optional entry-point files are absent.
+      Note: `AI_PROJECT.md` is shared/tracked in git mode. Switching to local
+      intentionally converts it to local-only (untracked).
    - Add the local excludes to `.git/info/exclude` (keep the file intact):
      (Replace `/<AI_RULES_PATH>/` with the real path; example: `/docs/ai/AI-RULES/`.)
      /<AI_RULES_PATH>/
@@ -174,3 +178,5 @@ Steps:
 ## Expectations
 - Prefer tagged releases unless explicitly asked for a branch.
 - Do not overwrite local overlays or custom rules.
+- In local mode, keep `AI_PROJECT.md` local-only and excluded from VCS.
+- In git mode, keep `AI_PROJECT.md` tracked so the team can share it.
