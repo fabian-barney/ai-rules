@@ -32,6 +32,7 @@ Instructions for AI agents to update ai-rules in a downstream-project.
      `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git REF --squash`
      Commit the update.
    - If it is local (no commits, no push):
+     - Before editing `.git/info/exclude`, create a backup copy.
      - Temporarily remove the ai-rules entries from `.git/info/exclude`.
      - If `<AI_RULES_PATH>` already exists locally, remove it only after confirming there is no real work in it.
      - Ensure Git has a local author identity configured (required for subtree add). If needed:
@@ -42,7 +43,20 @@ Instructions for AI agents to update ai-rules in a downstream-project.
        (This creates a commit.)
      - Undo the commit but keep files:
        `git reset --mixed HEAD~1`
-     - Re-add the exclude entries to `.git/info/exclude`.
+     - Always restore local excludes, even if subtree commands fail.
+       Use try/finally behavior so restore runs on both success and failure paths.
+     - Required local exclude entries after restore:
+       /<AI_RULES_PATH>/
+       /AGENTS.md
+       /AI_PROJECT.md
+       /CLAUDE.md
+       /.github/copilot-instructions.md
+     - Verify required exclude entries are present after restore.
+     - Recovery checklist (if update fails or restore verification fails):
+       - Restore `.git/info/exclude` from the backup copy.
+       - Re-check required local exclude entries.
+       - Run `git status --short` and confirm local-only files are not staged.
+       - Stop and ask the user before retrying subtree commands.
 5. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
 6. Preserve local overlays and any project-specific rules outside the vendor path,
    including `docs/ai/LESSONS_LEARNED/` if used.
