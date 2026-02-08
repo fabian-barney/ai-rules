@@ -100,8 +100,8 @@ Effects synchronize Angular state with non-reactive or imperative systems.
   outside constructors/field initializers, pass an explicit `Injector`.
 - Prefer `afterRenderEffect`/`afterNextRender` for DOM read/write that must
   happen after render.
-- `afterRenderEffect` runs only on the client and may run before hydration is
-  complete; keep DOM access hydration-safe.
+- `afterRenderEffect` and `afterNextRender` run only on the client and may run
+  before hydration is complete; keep DOM access hydration-safe.
 - Do not mutate SSR-produced DOM structure in post-render hooks unless
   hydration behavior is intentionally controlled.
 
@@ -123,8 +123,9 @@ Effects synchronize Angular state with non-reactive or imperative systems.
 
 ## HTTP and Error Handling
 - Keep HTTP access in data services, not scattered across templates/components.
-- For signal-first data loading, consider `httpResource` to model loading/error
-  /value state explicitly without ad-hoc subscriptions/interop.
+- For signal-first data loading, consider `httpResource` (experimental /
+  version-dependent) to model loading/error/value state explicitly without
+  ad-hoc subscriptions/interop.
 - Model loading, success, and error states explicitly in UI-facing view models.
 - Handle errors at the boundary where context exists (service/component), and
   map to actionable user-facing state.
