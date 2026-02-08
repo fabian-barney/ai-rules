@@ -37,9 +37,18 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `BUILD_TOOLS/**`,
 - [READABILITY.md](READABILITY.md) - Readability and clarity guidance.
 
 ## Languages
+- [JAVASCRIPT/JAVASCRIPT.md](JAVASCRIPT/JAVASCRIPT.md) - JavaScript runtime
+  baseline (parent for TypeScript and JS frameworks).
 - [JAVA/JAVA.md](JAVA/JAVA.md) - Java language baseline and entry point.
-- [TYPESCRIPT/TYPESCRIPT.md](TYPESCRIPT/TYPESCRIPT.md) - TypeScript baseline
-  and JavaScript specialization entry point.
+- [TYPESCRIPT/TYPESCRIPT.md](TYPESCRIPT/TYPESCRIPT.md) - TypeScript
+  specialization over JavaScript baseline.
+
+## Data/Markup Languages
+- [HTML/HTML.md](HTML/HTML.md) - Semantic and accessible HTML baseline.
+- [CSS/CSS.md](CSS/CSS.md) - Maintainable and accessible CSS baseline.
+- [SQL/SQL.md](SQL/SQL.md) - SQL correctness/performance baseline.
+- [YAML/YAML.md](YAML/YAML.md) - YAML configuration safety baseline.
+- [SHELL/SHELL.md](SHELL/SHELL.md) - Shell scripting safety baseline.
 
 ## Authoring Notes
 - Keep this file index-level and boundary-focused.
