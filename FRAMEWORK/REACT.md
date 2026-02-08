@@ -8,6 +8,12 @@ Guidance for React projects.
 - Prefer composition over inheritance.
 - Treat `useEffect` as a controlled escape hatch, not a default tool.
 
+## Naming Conventions
+- This section only defines React-specific naming rules.
+- React components: `PascalCase` (for example `UserProfileCard`).
+- Custom hooks: `camelCase` with `use` prefix (for example `useUserProfile`).
+- Non-React symbol naming follows general TypeScript conventions.
+
 ## State and Data
 - Keep state minimal and local where possible.
 - Avoid prop drilling by introducing context sparingly.
