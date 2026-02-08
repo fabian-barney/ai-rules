@@ -48,7 +48,7 @@ Guidance for AI agents applying GoF patterns pragmatically.
 ## Anti-Pattern Guardrails
 - Avoid speculative pattern layering without real variability pressure.
 - Avoid pattern names as substitutes for clear domain names.
-- Avoid hidden complexity behind façade/proxy without observability.
+- Avoid hidden complexity behind faÃ§ade/proxy without observability.
 - Avoid singleton-as-global-variable design.
 
 ## High-Risk Pitfalls
