@@ -15,6 +15,10 @@ Guidance for React projects.
 - Derive values during render when possible.
 - Prefer framework/server data-loading primitives over client `useEffect` fetching.
 
+## Testing
+- Follow general testing expectations in `TEST/TEST.md`.
+- Use this file's effect-specific checklist and tests for `useEffect` behavior.
+
 ## `useEffect` Policy
 `useEffect` exists to synchronize React with systems outside React.
 
@@ -80,6 +84,8 @@ or cancel external work.
 - Extract repeated side-effect behavior into focused custom hooks.
 - Avoid effect chains:
   use one cohesive effect, or model flow with explicit actions/reducer/state machine.
+- Handle non-abort async errors explicitly (state/reporting); do not `throw`
+  from fire-and-forget async effect tasks.
 - If your React version supports `useEffectEvent`, use it for non-reactive
   callback reads instead of stale closure workarounds.
 - Use `useLayoutEffect` only for DOM read/write that must run before paint.
@@ -171,6 +177,7 @@ function UserProfileBad({ userId }: { userId: string }) {
 // Do: cancel stale requests and ignore abort errors.
 function UserProfileGood({ userId }: { userId: string }) {
   const [user, setUser] = useState<User | null>(null);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -183,11 +190,14 @@ function UserProfileGood({ userId }: { userId: string }) {
         if (!response.ok) return;
         const data = (await response.json()) as User;
         setUser(data);
+        setError(null);
       } catch (error) {
         if (error instanceof Error && error.name === "AbortError") {
           return;
         }
-        throw error;
+        setError(
+          error instanceof Error ? error : new Error("Unknown user fetch error")
+        );
       }
     }
 
@@ -195,6 +205,7 @@ function UserProfileGood({ userId }: { userId: string }) {
     return () => controller.abort();
   }, [userId]);
 
+  if (error) return <span>Failed to load user.</span>;
   return user ? <ProfileCard user={user} /> : <Spinner />;
 }
 ```
@@ -218,7 +229,9 @@ function WindowWidthBad() {
 
 // Do: always pair subscription setup with cleanup.
 function WindowWidthGood() {
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(() =>
+    typeof window === "undefined" ? 0 : window.innerWidth
+  );
 
   useEffect(() => {
     if (typeof window === "undefined") return;

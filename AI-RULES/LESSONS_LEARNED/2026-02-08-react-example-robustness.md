@@ -17,3 +17,6 @@ render in "good" examples).
   `error instanceof Error && error.name === "AbortError"`).
 - If SSR/hydration may exist, avoid browser-global reads during render in "good"
   examples; initialize safely and read browser globals in effects.
+- In fire-and-forget async effect tasks, avoid rethrowing inside `catch`; handle
+  non-abort errors explicitly with state/reporting so examples do not model
+  unhandled promise rejections.
