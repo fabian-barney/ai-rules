@@ -34,7 +34,10 @@ Guidance for Angular projects.
 - Use `$index` tracking only for truly static collections that never reorder or
   change length.
 - Avoid identity tracking (`track item`) except as a last resort.
-- Prefer native `[class]` / `[style]` bindings over `ngClass` / `ngStyle`.
+- Prefer native granular bindings (`[class.foo]`, `[style.width.px]`) over
+  `ngClass` / `ngStyle`.
+- Use `[class]` / `[style]` only when intentionally setting the full
+  attribute.
 
 ## State, Signals, and RxJS
 - Keep one clear source of truth; derive secondary state via `computed`.
@@ -42,8 +45,10 @@ Guidance for Angular projects.
   actions instead.
 - Use RxJS composition operators (`switchMap`, `combineLatest`, `map`, etc.)
   instead of nested subscriptions.
-- Prefer exposing `Observable`/signal view models to templates and binding with
+- Prefer exposing `Observable`-based view models to templates and binding with
   `async` pipe.
+- Prefer exposing signal-based view models to templates and reading signals
+  directly (for example `user()` in templates).
 - Prefer explicit interop boundaries:
   use `toSignal()` for Observable -> signal and `toObservable()` for signal ->
   Observable.
@@ -146,27 +151,29 @@ Effects synchronize Angular state with non-reactive or imperative systems.
   non-standard update paths.
 
 ## Zoneless Notes
-- Angular v21+ defaults to zoneless change detection.
-- Verify `provideZoneChangeDetection` is not present unless intentionally
-  opting into Zone.js semantics.
-- If a v21+ application intentionally depends on Zone.js semantics, opt in
-  explicitly with `provideZoneChangeDetection()` and keep Zone.js runtime/test
-  polyfills configured.
-- Angular v20 projects should enable zoneless via
-  `provideZonelessChangeDetection()` at bootstrap.
+- Base zoneless setup on the official Angular guidance for your exact major
+  version: `https://angular.dev/guide/zoneless`.
+- In projects configured for zoneless change detection, use the
+  version-recommended setup (for example helper providers like
+  `provideZonelessChangeDetection()` where applicable).
+- Use `provideZoneChangeDetection()` only when intentionally opting into
+  Zone.js semantics, and keep Zone.js runtime/test polyfills configured.
 - In zoneless apps, prefer clear Angular change notifications:
   signals read by templates, template/host listeners, `async` pipe, and
   `markForCheck()` at integration boundaries.
-- Remove `zone.js` and `zone.js/testing` from build/test polyfills when
-  committing to zoneless mode.
+- When committing to zoneless mode and no longer relying on Zone.js semantics,
+  remove `zone.js` and `zone.js/testing` from build/test polyfills.
 
 ## SSR and Hydration Notes
 - Keep render paths SSR-safe: no unguarded `window` / `document` reads during
   render.
 - Keep initial server and client markup consistent to avoid hydration mismatch
   and layout shift.
-- Run browser-only integrations after render/hydration in appropriate lifecycle
-  hooks/effects.
+- Run browser-only integrations after render/hydration in lifecycle
+  hooks/effects, but remember these can still execute during SSR.
+- Guard browser-only APIs with platform checks (for example
+  `isPlatformBrowser` / `PLATFORM_ID`) and/or defer DOM work with SSR-safe
+  primitives (for example `afterNextRender`).
 - Evaluate third-party DOM-manipulating libraries for hydration compatibility.
 
 ## Security
@@ -242,7 +249,7 @@ export class UserPageGood {
 
   readonly user$ = this.route.paramMap.pipe(
     map((params) => params.get("id")),
-    filter((id): id is string => id !== null),
+    filter((id): id is string => id !== null && id.trim().length > 0),
     distinctUntilChanged(),
     switchMap((id) => this.http.get<User>(`/api/users/${id}`)),
   );
@@ -278,12 +285,12 @@ export class NotificationsGood {
 ```html
 <!-- Don't: omit track key; Angular cannot map rows efficiently. -->
 @for (item of items()) {
-  <app-user-row [user]="item" />
+  <app-user-row [user]="item"></app-user-row>
 }
 
 <!-- Do: use stable identity. -->
 @for (item of items(); track item.id) {
-  <app-user-row [user]="item" />
+  <app-user-row [user]="item"></app-user-row>
 }
 ```
 
