@@ -10,8 +10,9 @@ Guidance for AI agents performing code and rules-document reviews.
 - Inherit review-layer boundary from `REVIEW/REVIEW.md`.
 - Inherit all applicable technical constraints from relevant language/framework/
   library/build/infra docs.
-- Inherit security/testing/compliance severity from
+- Inherit security/testing/compliance constraints and priority direction from
   `SECURITY/SECURITY.md`, `TEST/TEST.md`, `COMPLIANCE/COMPLIANCE.md`.
+- Severity levels are defined by this document's local severity model.
 
 ## Review Priority Order
 1. Correctness and regression risk.

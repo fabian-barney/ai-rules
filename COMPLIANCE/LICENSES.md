@@ -13,8 +13,8 @@ Consult legal counsel for final legal decisions.
 
 ## Semantic Dependencies
 - Inherit compliance baseline from `COMPLIANCE/COMPLIANCE.md`.
-- Inherit dependency-selection constraints from `FRAMEWORK/**`, `LIBRARY/**`,
-  and `BUILD_TOOLS/**`.
+- This file is part of the cross-cutting baseline; downstream framework/library/
+  build-tool docs must comply with this policy.
 
 ## Decision Framework
 For each dependency (direct and significant transitive):
@@ -38,20 +38,23 @@ Typically acceptable for commercial closed-source use:
 ## Conditional Licenses (Review Required)
 Potentially acceptable with constraints and legal review:
 - MPL-2.0
-- LGPL-2.1 / LGPL-3.0
+- LGPL-2.1-only / LGPL-2.1-or-later
+- LGPL-3.0-only / LGPL-3.0-or-later
 - EPL-2.0
 - CDDL-1.0
 
 ## Generally Not Compatible for Closed-Source Distribution
 Avoid unless legal explicitly approves alternative model:
-- GPL-2.0 / GPL-3.0
-- AGPL-3.0
+- GPL-2.0-only / GPL-2.0-or-later
+- GPL-3.0-only / GPL-3.0-or-later
+- AGPL-3.0-only / AGPL-3.0-or-later
 - SSPL-1.0
 - Commons Clause / non-commercial-restricted licenses
 
 ## Attribution and Notice Workflow
 - Preserve required copyright/license notices.
-- Maintain `THIRD_PARTY_NOTICES.md` (or equivalent) for distributed artifacts.
+- For distributed artifacts, maintain `THIRD_PARTY_NOTICES.md` in the project
+  root (or an explicitly documented equivalent path).
 - Include NOTICE file obligations (for example Apache-2.0) in release outputs.
 - Keep attribution metadata updated on dependency upgrades/removals.
 

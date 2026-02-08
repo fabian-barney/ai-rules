@@ -10,8 +10,9 @@ Guidance for AI agents implementing and reviewing JPA-based persistence.
 - Inherit Java baseline from `LANGUAGE/JAVA/JAVA.md`.
 - Inherit SQL and N+1 constraints from
   `LANGUAGE/SQL/SQL.md` and `ARCHITECTURE/N_PLUS_1.md`.
-- Inherit Spring/repository boundary constraints from framework docs where
-  relevant.
+- Inherit framework boundary constraints from `FRAMEWORK/SPRING_BOOT.md`.
+- Cross-cutting baselines are inherited transitively via the language/framework
+  parents above.
 
 ## Defaults
 - Keep entities persistence-focused; keep business workflows in services.

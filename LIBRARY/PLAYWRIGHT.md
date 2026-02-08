@@ -15,7 +15,8 @@ Guidance for AI agents implementing and reviewing Playwright tests.
 ## Defaults
 - Focus E2E tests on critical user journeys.
 - Keep tests deterministic with isolated test data/state.
-- Use robust locators (`getByRole`, test IDs) over brittle CSS/xpath chains.
+- Use robust locators (`getByRole`, test IDs via `data-testid` +
+  `getByTestId`) over brittle CSS/XPath chains.
 - Use Playwright auto-waiting and explicit assertions.
 - Keep setup/teardown reusable through fixtures.
 

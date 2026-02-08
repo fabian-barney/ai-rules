@@ -21,7 +21,7 @@ Guidance for AI agents implementing and reviewing Lombok usage.
 
 ## Annotation Selection Policy
 - `@Getter`/`@Setter`: use selectively based on encapsulation intent.
-- `@Value`: prefer for immutable DTO/value objects.
+- `@Value` (`lombok.Value`): prefer for immutable DTO/value objects.
 - `@Data`: avoid by default on domain entities and types with nuanced identity.
 - `@EqualsAndHashCode`: configure intentionally for inheritance/identity.
 - `@ToString`: avoid exposing large graphs or sensitive fields.

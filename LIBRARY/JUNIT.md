@@ -8,8 +8,11 @@ Guidance for AI agents implementing and reviewing JUnit tests.
 
 ## Semantic Dependencies
 - Inherit global testing baseline from `TEST/TEST.md`.
-- Inherit language readability/conventions from `LANGUAGE/**` docs.
-- Mockito/other test-library docs may specialize mocking/integration behavior.
+- Inherit language/readability baselines from
+  `LANGUAGE/JAVA/JAVA.md`, `LANGUAGE/CONVENTIONS.md`, and
+  `LANGUAGE/READABILITY.md`.
+- `LIBRARY/MOCKITO.md` and other test-library docs may specialize
+  mocking/integration behavior.
 
 ## Defaults
 - Use JUnit 5.
