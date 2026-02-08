@@ -4,18 +4,291 @@ Guidance for Angular projects.
 
 ## Defaults
 - Follow Angular style guide conventions.
-- Prefer standalone APIs where appropriate.
+- Prefer standalone APIs (`bootstrapApplication`, standalone components,
+  function providers) for new code.
+- Prefer `inject()` over constructor parameter injection in new code.
+- Keep components and directives focused on presentation concerns.
+- Prefer signal-based local state and `computed` derivations.
+- Treat signal `effect()` as a controlled escape hatch, not a default tool.
+- Prefer explicit boundaries: component UI logic in components, shared logic in
+  services/utilities.
 
 ## Structure
-- Keep components small and focused.
-- Use feature modules or folder-based boundaries for clarity.
-- Avoid logic in templates; move to component or service.
+- Organize by feature area, not by technical type folders.
+- Keep components small and focused; prefer one main concept per file.
+- Keep related files together (`.ts`, template, styles, and `.spec.ts`).
+- Match file names to the primary identifier and use hyphenated file names.
 
-## State and Data
-- Keep services pure and testable.
-- Prefer RxJS composition over nested subscriptions.
-- Unsubscribe when needed; use `async` pipe where possible.
+## Components and Templates
+- Prefer `input()`, `output()`, and `model()` APIs for new components.
+- Mark members initialized by Angular (`input`, `output`, queries) as
+  `readonly` where applicable.
+- Use `protected` for class members that are only read from the template.
+- Name event handlers for the action performed (for example `saveUser()`),
+  not by DOM event name (for example `handleClick()`).
+- Keep templates declarative; move complex logic into TypeScript (often
+  `computed`).
+- Prefer `@if`, `@for`, and `@switch` blocks in modern Angular code.
+- In every `@for`, use a stable `track` expression (`id`/`uuid`), not
+  incidental identity.
+- Prefer native `[class]` / `[style]` bindings over `ngClass` / `ngStyle`.
 
-## Testing
-- Keep unit tests fast; isolate components.
-- Use e2e tests for critical user journeys.
+## State, Signals, and RxJS
+- Keep one clear source of truth; derive secondary state via `computed`.
+- Avoid propagating state changes via `effect()`; use `computed` or explicit
+  actions instead.
+- Use RxJS composition operators (`switchMap`, `combineLatest`, `map`, etc.)
+  instead of nested subscriptions.
+- Prefer exposing `Observable`/signal view models to templates and binding with
+  `async` pipe.
+- Avoid manual subscriptions in components unless an imperative side effect is
+  required.
+- For imperative subscriptions, use `takeUntilDestroyed()` (or equivalent
+  `DestroyRef` cleanup) to prevent leaks.
+
+## `effect()` Policy
+Effects synchronize Angular state with non-reactive or imperative systems.
+
+### Allowed Uses
+- Logging/analytics tied to signal changes.
+- Synchronizing state to browser storage.
+- Integrating with imperative APIs (canvas, charts, third-party widgets).
+- Registering imperative behavior not expressible in template syntax.
+
+### Discouraged Uses
+- Deriving state from other state (use `computed`).
+- Propagating state from one signal/store into another as workflow glue.
+- Modeling user intent flow by "watching" state instead of handling the event.
+- Coordinating request flows that are better expressed with RxJS pipelines.
+
+## Dependency Injection and Services
+- Keep services focused and composable; avoid "god services".
+- Keep pure transformation logic framework-agnostic where possible.
+- Scope providers intentionally (component/route/root) based on lifetime.
+- Keep cross-cutting HTTP concerns in interceptors, not duplicated in
+  components.
+- Prefer functional interceptors for predictable behavior in complex setups.
+
+## Routing and Data Loading
+- Define route trees per feature and lazy-load feature boundaries with
+  `loadComponent` / `loadChildren`.
+- Use route guards/resolvers where navigation-level guarantees are required.
+- Keep route-level dependencies near routes, using route provider scopes when
+  helpful.
+- Avoid unnecessary deep lazy-loading chains that create navigation waterfalls.
+
+## HTTP and Error Handling
+- Keep HTTP access in data services, not scattered across templates/components.
+- Model loading, success, and error states explicitly in UI-facing view models.
+- Handle errors at the boundary where context exists (service/component), and
+  map to actionable user-facing state.
+- Do not swallow errors silently; either recover with an explicit fallback or
+  report/log through the chosen observability path.
+- Keep cross-cutting concerns (auth headers, retries, correlation IDs,
+  standardized error mapping) in interceptors.
+
+## Forms
+- Prefer typed reactive forms for medium/large business forms.
+- Prefer `NonNullableFormBuilder` or `{ nonNullable: true }` where null is not
+  a valid domain state.
+- Keep validators pure and reusable; place cross-field rules at group level.
+- Avoid server-bound async validation on every keystroke:
+  use `updateOn: 'blur'` / `updateOn: 'submit'` where appropriate.
+- Remember `form.value` excludes disabled controls; use `getRawValue()` only
+  when intentionally including disabled fields.
+
+## Change Detection and Performance
+- Prefer `ChangeDetectionStrategy.OnPush` for reusable or heavy component
+  subtrees.
+- Treat `OnPush` inputs as immutable boundaries; replace object references
+  rather than mutating in place.
+- Avoid expensive template calls and repeated allocations during change
+  detection.
+- Use stable track keys in list rendering to minimize DOM churn.
+- Use `ChangeDetectorRef.markForCheck()` only when integrating with
+  non-standard update paths.
+
+## SSR and Hydration Notes
+- Keep render paths SSR-safe: no unguarded `window` / `document` reads during
+  render.
+- Keep initial server and client markup consistent to avoid hydration mismatch
+  and layout shift.
+- Run browser-only integrations after render/hydration in appropriate lifecycle
+  hooks/effects.
+- Evaluate third-party DOM-manipulating libraries for hydration compatibility.
+
+## Security
+- Never build Angular templates from user-controlled strings.
+- Prefer template binding over direct DOM APIs.
+- If direct DOM interaction is unavoidable, sanitize untrusted values with
+  `DomSanitizer.sanitize` and the correct `SecurityContext`.
+- Treat `bypassSecurityTrust*` as exceptional and document trust boundaries.
+- Keep Angular updated and use production AOT builds.
+
+## High-Risk Pitfalls
+1. State propagation loops using `effect()` or late lifecycle hooks.
+2. Nested subscriptions that leak and cause callback pyramids.
+3. Missing teardown for subscriptions, timers, or observers.
+4. `@for` without stable `track`, causing unnecessary DOM recreation.
+5. In-place mutation of `OnPush` inputs, leading to stale UI.
+6. Heavy template logic or methods that recompute on every check.
+7. Writing to parent state during change detection (`NG0100` class errors).
+8. Raw DOM writes (`innerHTML`, `ElementRef`) bypassing sanitization.
+9. Component-level duplicated HTTP concerns instead of interceptor/service
+   boundaries.
+10. Assuming `HttpClient<T>` generics validate runtime payload shape.
+11. Async error paths missing UI state updates, creating stuck spinners.
+
+## Do / Don't Examples
+
+### 1. Derived State with Signals
+```ts
+// Don't: propagate derived state via effect.
+export class InvoiceBad {
+  readonly subtotal = signal(100);
+  readonly taxRate = signal(0.19);
+  readonly total = signal(0);
+
+  constructor() {
+    effect(() => {
+      this.total.set(this.subtotal() * (1 + this.taxRate()));
+    });
+  }
+}
+
+// Do: derive state with computed.
+export class InvoiceGood {
+  readonly subtotal = signal(100);
+  readonly taxRate = signal(0.19);
+  readonly total = computed(() => this.subtotal() * (1 + this.taxRate()));
+}
+```
+
+### 2. Nested Subscriptions vs Composed Stream
+```ts
+// Don't: nest subscriptions in components.
+export class UserPageBad {
+  private readonly route = inject(ActivatedRoute);
+  private readonly http = inject(HttpClient);
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get("id");
+      if (!id) return;
+      this.http.get<User>(`/api/users/${id}`).subscribe((user) => {
+        // assign user state
+      });
+    });
+  }
+}
+
+// Do: compose with RxJS operators and expose a view-model stream.
+export class UserPageGood {
+  private readonly route = inject(ActivatedRoute);
+  private readonly http = inject(HttpClient);
+
+  readonly user$ = this.route.paramMap.pipe(
+    map((params) => params.get("id")),
+    filter((id): id is string => id !== null),
+    distinctUntilChanged(),
+    switchMap((id) => this.http.get<User>(`/api/users/${id}`)),
+  );
+}
+```
+
+### 3. Manual Subscription Cleanup
+```ts
+// Don't: subscribe imperatively without teardown.
+export class NotificationsBad {
+  private readonly bus = inject(NotificationBus);
+
+  constructor() {
+    this.bus.stream$.subscribe((message) => {
+      console.log(message);
+    });
+  }
+}
+
+// Do: use takeUntilDestroyed for imperative subscriptions.
+export class NotificationsGood {
+  private readonly bus = inject(NotificationBus);
+
+  constructor() {
+    this.bus.stream$
+      .pipe(takeUntilDestroyed())
+      .subscribe((message) => console.log(message));
+  }
+}
+```
+
+### 4. Stable Tracking in `@for`
+```html
+<!-- Don't: omit track key; Angular cannot map rows efficiently. -->
+@for (item of items()) {
+  <app-user-row [user]="item" />
+}
+
+<!-- Do: use stable identity. -->
+@for (item of items(); track item.id) {
+  <app-user-row [user]="item" />
+}
+```
+
+### 5. OnPush and Immutable Inputs
+```ts
+// Don't: mutate input object in place.
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class ProfileCardBad {
+  readonly user = input.required<User>();
+
+  uppercaseName(): void {
+    this.user().name = this.user().name.toUpperCase();
+  }
+}
+
+// Do: replace object references across OnPush boundaries.
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class ProfileCardGood {
+  readonly user = input.required<User>();
+  readonly userChange = output<User>();
+
+  uppercaseName(): void {
+    const current = this.user();
+    this.userChange.emit({ ...current, name: current.name.toUpperCase() });
+  }
+}
+```
+
+## Code Review Checklist for Angular
+- Is each component focused on presentation, with business logic extracted where
+  sensible?
+- Could this state derivation be `computed` instead of `effect()`?
+- Are manual subscriptions avoided or cleaned with `takeUntilDestroyed`?
+- Are RxJS flows composed (no nested subscriptions)?
+- Do all `@for` loops use stable `track` keys?
+- Are `OnPush` boundaries respected with immutable updates?
+- Are templates free of heavy logic and unnecessary method calls?
+- Are cross-cutting HTTP concerns implemented via interceptors/services?
+- Are loading/error states explicit, and are async failures surfaced safely?
+- Is direct DOM access avoided or explicitly sanitized?
+- Is code safe for SSR/hydration (no unguarded browser globals in render)?
+- Are forms typed, and are async validators performance-aware?
+- Are route boundaries lazy-loaded where they improve startup without causing
+  deep waterfalls?
+
+## Testing Guidance for Angular-Specific Risks
+- Follow general testing expectations in `TEST/TEST.md`.
+- Add focused tests for `effect()` / signal interactions when side effects are
+  intentional.
+- Test list rendering updates for stable identity behavior in `@for` blocks.
+- Test request cancellation/race behavior for route-driven data loading.
+- Test manual subscription teardown on component destroy.
+- Test `OnPush` components with immutable input updates.
+- Test typed form validators (sync and async), including invalid and edge-case
+  states.
+- If SSR/hydration is relevant, test browser-global guards and hydration-safe
+  render paths.
