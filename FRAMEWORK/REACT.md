@@ -199,12 +199,12 @@ function UserProfileGood({ userId }: { userId: string }) {
         const data = (await response.json()) as User;
         setUser(data);
         setError(null);
-      } catch (error) {
-        if (error instanceof Error && error.name === "AbortError") {
+      } catch (err) {
+        if (err instanceof Error && err.name === "AbortError") {
           return;
         }
         setError(
-          error instanceof Error ? error : new Error("Unknown user fetch error")
+          err instanceof Error ? err : new Error("Unknown user fetch error")
         );
       }
     }
