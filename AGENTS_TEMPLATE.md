@@ -29,7 +29,7 @@ Before any `git subtree add`/`git subtree pull` command:
 
 ### Resolve REF (deterministic)
 Use this before any `git subtree add/pull` command:
-- If the user specifies a tag (for example `v4.1.0`), validate it:
+- If the user specifies a tag (for example `v4.2.0`), validate it:
   `git ls-remote --exit-code --refs --tags https://github.com/fabian-barney/ai-rules.git "refs/tags/<TAG>"`
   - If valid, set `REF=<TAG>`.
   - If invalid, stop and ask for a valid tag.
