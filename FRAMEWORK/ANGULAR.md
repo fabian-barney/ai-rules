@@ -52,8 +52,12 @@ Guidance for Angular projects.
   unless there is a strong reason.
 - When using `toSignal()` / `toObservable()` outside an injection context
   (for example plain utility modules, static functions, or code created outside
-  component/service construction), pass an explicit `Injector` (or use manual
-  cleanup) so interop resources are torn down correctly.
+  component/service construction), pass an explicit `Injector` option (for
+  example `toSignal(source$, { injector })` or
+  `toObservable(signalValue, { injector })`) so interop resources are torn down
+  correctly.
+- For `toSignal()`, `manualCleanup: true` is available for sources that
+  complete naturally and intentionally outlive destroy-driven cleanup.
 - `toSignal()` surfaces Observable errors through signal reads:
   handle errors in the stream (for example with `catchError`) when you need a
   rendered error state instead of thrown reads.
@@ -100,8 +104,9 @@ Effects synchronize Angular state with non-reactive or imperative systems.
   outside constructors/field initializers, pass an explicit `Injector`.
 - Prefer `afterRenderEffect`/`afterNextRender` for DOM read/write that must
   happen after render.
-- `afterRenderEffect` and `afterNextRender` run only on the client and may run
-  before hydration is complete; keep DOM access hydration-safe.
+- `afterRenderEffect` and `afterNextRender` callbacks run only on browser
+  platforms, and components are not guaranteed to be hydrated before callbacks
+  run; keep DOM access hydration-safe.
 - Do not mutate SSR-produced DOM structure in post-render hooks unless
   hydration behavior is intentionally controlled.
 
@@ -124,8 +129,8 @@ Effects synchronize Angular state with non-reactive or imperative systems.
 ## HTTP and Error Handling
 - Keep HTTP access in data services, not scattered across templates/components.
 - For signal-first data loading, consider `httpResource` (experimental /
-  version-dependent) to model loading/error/value state explicitly without
-  ad-hoc subscriptions/interop.
+  version-dependent) when you explicitly want a resource-style
+  loading/error/value state model without ad-hoc subscriptions/interop.
 - Model loading, success, and error states explicitly in UI-facing view models.
 - Handle errors at the boundary where context exists (service/component), and
   map to actionable user-facing state.
@@ -161,8 +166,17 @@ Effects synchronize Angular state with non-reactive or imperative systems.
 - In projects configured for zoneless change detection, use the
   version-recommended setup (for example helper providers like
   `provideZonelessChangeDetection()` where applicable).
+- In Angular versions where zoneless is the default (for example v21+), verify
+  `provideZoneChangeDetection()` is not unintentionally re-enabling Zone.js
+  semantics.
 - Use `provideZoneChangeDetection()` only when intentionally opting into
   Zone.js semantics, and keep Zone.js runtime/test polyfills configured.
+- For SSR with zoneless change detection, use `PendingTasks` /
+  `pendingUntilEvent` to ensure required async render work finishes before
+  serialization.
+- Remove `NgZone.onStable` / `onMicrotaskEmpty` style "wait for stability"
+  patterns; prefer `afterNextRender` / `afterEveryRender` or explicit DOM
+  observers where appropriate.
 - In zoneless apps, prefer clear Angular change notifications:
   signals read by templates, template/host listeners, `async` pipe, and
   `markForCheck()` at integration boundaries.
