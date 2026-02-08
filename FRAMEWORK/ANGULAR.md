@@ -50,9 +50,10 @@ Guidance for Angular projects.
   directly, and convert at boundaries with `toSignal()` / `toObservable()`.
 - Avoid mixing `Observable` and signal binding styles in the same template
   unless there is a strong reason.
-- When using `toSignal()` / `toObservable()` outside an injection context, pass
-  an explicit `Injector` (or use manual cleanup) so interop resources are torn
-  down correctly.
+- When using `toSignal()` / `toObservable()` outside an injection context
+  (for example plain utility modules, static functions, or code created outside
+  component/service construction), pass an explicit `Injector` (or use manual
+  cleanup) so interop resources are torn down correctly.
 - `toSignal()` surfaces Observable errors through signal reads:
   handle errors in the stream (for example with `catchError`) when you need a
   rendered error state instead of thrown reads.
@@ -335,8 +336,9 @@ export class ProfileCardGood {
   crossing reactive models?
 - Is one reactive model used per template, with a clear reason documented when
   mixing `Observable` and signal styles?
-- If `toSignal()` / `toObservable()` are created outside an injection context,
-  is an explicit `Injector` (or equivalent cleanup strategy) provided?
+- If `toSignal()` / `toObservable()` are created outside an injection context
+  (for example utility modules/static functions), is an explicit `Injector`
+  (or equivalent cleanup strategy) provided?
 - Are manual subscriptions avoided or cleaned with `takeUntilDestroyed`?
 - If `takeUntilDestroyed()` is parameterless, is the usage site in an injection
   context?
