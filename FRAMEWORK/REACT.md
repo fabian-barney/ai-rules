@@ -20,6 +20,7 @@ Guidance for React projects.
 - Use this file's effect-specific checklist and tests for `useEffect` behavior.
 
 ## `useEffect` Policy
+Effects keep non-React systems in sync; keep React-only derivations in render.
 `useEffect` exists to synchronize React with systems outside React.
 
 Use `useEffect` when your component must connect, subscribe, schedule, observe,
@@ -30,7 +31,6 @@ or cancel external work.
 - Timers and observers.
 - Network requests that truly belong on the client.
 - Imperative APIs or third-party widgets.
-- Effects keep non-React systems in sync; keep React-only derivations in render.
 
 ### Discouraged Uses
 - Deriving render data from props/state.
@@ -86,6 +86,8 @@ or cancel external work.
   use one cohesive effect, or model flow with explicit actions/reducer/state machine.
 - Handle non-abort async errors explicitly (state/reporting); do not `throw`
   from fire-and-forget async effect tasks.
+  Throwing inside async effect tasks often becomes an unhandled rejection outside
+  React error boundaries.
 - If your React version supports `useEffectEvent`, use it for non-reactive
   callback reads instead of stale closure workarounds.
 - Use `useLayoutEffect` only for DOM read/write that must run before paint.
@@ -113,6 +115,7 @@ function PriceGood({ amount, taxRate }: { amount: number; taxRate: number }) {
 ### 2. User Intent
 ```tsx
 // Don't: watch state to trigger an action.
+// Bad because user intent is now indirect state coupling and easy to mis-handle.
 function SaveButtonBad({ onSave }: { onSave: () => Promise<void> }) {
   const [shouldSave, setShouldSave] = useState(false);
   useEffect(() => {
@@ -181,13 +184,18 @@ function UserProfileGood({ userId }: { userId: string }) {
 
   useEffect(() => {
     const controller = new AbortController();
+    setError(null);
+    setUser(null);
 
     async function load() {
       try {
         const response = await fetch(`/api/users/${userId}`, {
           signal: controller.signal,
         });
-        if (!response.ok) return;
+        if (!response.ok) {
+          setError(new Error(`User fetch failed: ${response.status}`));
+          return;
+        }
         const data = (await response.json()) as User;
         setUser(data);
         setError(null);
@@ -213,6 +221,7 @@ function UserProfileGood({ userId }: { userId: string }) {
 ### 5. Subscription Cleanup
 ```tsx
 // Don't: subscribe without cleanup.
+// Bad because it reads `window` during render and leaks event listeners.
 function WindowWidthBad() {
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -248,6 +257,9 @@ function WindowWidthGood() {
   return <span>{width}</span>;
 }
 ```
+
+- For window size and similar subscriptions, prefer a focused custom hook based
+  on `useSyncExternalStore`.
 
 ## Dependency Rules
 - Never mark an effect callback `async`; create an inner async function.

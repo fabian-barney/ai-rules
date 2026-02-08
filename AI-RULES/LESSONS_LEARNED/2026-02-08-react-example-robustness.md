@@ -20,3 +20,8 @@ render in "good" examples).
 - In fire-and-forget async effect tasks, avoid rethrowing inside `catch`; handle
   non-abort errors explicitly with state/reporting so examples do not model
   unhandled promise rejections.
+- In async fetch examples, handle non-OK responses explicitly and clear stale
+  render state when request context changes, so failed loads do not leave stale
+  data visible.
+- In "Don't" examples, add one short reason comment so non-experts understand
+  the specific failure mode, not only the pattern label.
