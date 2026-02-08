@@ -57,9 +57,9 @@ Guidance for Angular projects.
 - `toSignal()` surfaces Observable errors through signal reads:
   handle errors in the stream (for example with `catchError`) when you need a
   rendered error state instead of thrown reads.
-- Signals created by `toSignal()` do not expose completion state:
-  after the Observable completes, the signal keeps returning the last value.
-  If completion matters, model it explicitly in state.
+- Signals created by `toSignal()` do not expose completion state.
+  If completion matters (for example to render "done"), model it explicitly in
+  stream/state (for example `{ status, value, error }`).
 - Avoid manual subscriptions in components unless an imperative side effect is
   required.
 - For imperative subscriptions, use `takeUntilDestroyed()` (or equivalent
@@ -123,6 +123,8 @@ Effects synchronize Angular state with non-reactive or imperative systems.
 
 ## HTTP and Error Handling
 - Keep HTTP access in data services, not scattered across templates/components.
+- For signal-first data loading, consider `httpResource` to model loading/error
+  /value state explicitly without ad-hoc subscriptions/interop.
 - Model loading, success, and error states explicitly in UI-facing view models.
 - Handle errors at the boundary where context exists (service/component), and
   map to actionable user-facing state.
