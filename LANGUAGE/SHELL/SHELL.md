@@ -90,7 +90,7 @@ tar -czf backup.tar.gz -- "$INPUT_PATH"
 ```
 
 ## Code Review Checklist for Shell
-- Is interpreter and strict mode configured correctly?
+- Are the interpreter and strict mode configured correctly?
 - Are all variable expansions safely quoted?
 - Is untrusted input kept away from command construction/eval?
 - Are errors surfaced with meaningful exit behavior?

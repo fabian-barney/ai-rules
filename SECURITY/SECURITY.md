@@ -39,7 +39,9 @@ Security is a non-negotiable baseline across all stacks and domains.
 - Validate all external input at boundaries (API, file, queue, UI).
 - Normalize and canonicalize inputs before policy checks when relevant.
 - Use parameterized queries and safe encoders to prevent injection classes.
-- Encode/escape output according to sink context (HTML, SQL, shell, URL, etc.).
+- Encode/escape output according to sink context (HTML, shell, URL, etc.).
+- For SQL sinks, use parameterized queries/bind variables as the primary
+  defense rather than string escaping.
 - Classify sensitive data and apply minimization, masking, and retention limits.
 
 ## Dependency and Supply-Chain Hygiene
@@ -59,7 +61,8 @@ Security is a non-negotiable baseline across all stacks and domains.
 
 ## High-Risk Pitfalls
 1. Accepting user input without strict validation or context-aware encoding.
-2. Hardcoding credentials in code, configs, scripts, or CI variables.
+2. Storing credentials in code/config/scripts, plaintext CI config, or
+   unencrypted/non-secret CI variables instead of the platform secret store.
 3. Treating client-side checks as sufficient authorization.
 4. Overly broad IAM/role permissions in runtime or CI.
 5. Ignoring dependency vulnerabilities due to transitive complexity.

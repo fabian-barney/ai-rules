@@ -39,7 +39,8 @@ codebases.
 
 ## Optional and Nullability
 - Return `Optional<T>` when absence is part of API semantics.
-- Avoid `Optional` in fields/parameters unless there is a specific reason.
+- Avoid `Optional` in fields/parameters unless there is a strong documented
+  reason.
 - Do not use `Optional.get()` without presence checks.
 
 ## Exceptions and Resource Management
@@ -51,7 +52,8 @@ codebases.
 ## Concurrency Guidance
 - Prefer immutable/shared-nothing designs over synchronization.
 - Use high-level concurrency abstractions (`ExecutorService`,
-  `CompletableFuture`, structured APIs) over ad-hoc thread creation.
+  `CompletableFuture`, Structured Concurrency/virtual-thread APIs where
+  available) over ad-hoc thread creation.
 - Document thread-safety guarantees for shared components.
 - Avoid exposing mutable static state.
 
@@ -125,6 +127,6 @@ public Date createdAt() {
 - Test serialization/deserialization compatibility where relevant.
 
 ## Override Notes
-- This file narrows `JAVA.md` with preference heuristics.
+- This file narrows `LANGUAGE/JAVA/JAVA.md` with preference heuristics.
 - When heuristics conflict with explicit project constraints (performance,
   interoperability), document the tradeoff and preserve baseline safety rules.

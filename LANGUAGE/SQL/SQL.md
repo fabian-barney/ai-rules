@@ -10,6 +10,8 @@ Guidance for AI agents implementing and reviewing SQL.
 ## Semantic Dependencies
 - Inherit security constraints from `SECURITY/SECURITY.md`.
 - Inherit testing expectations from `TEST/TEST.md`.
+- Inherit naming/readability constraints from
+  `LANGUAGE/CONVENTIONS.md` and `LANGUAGE/READABILITY.md`.
 - Inherit architecture guidance from `ARCHITECTURE/N_PLUS_1.md` where relevant.
 - Library docs (JPA/jOOQ) may specialize query construction but must preserve
   this baseline.
@@ -58,11 +60,13 @@ Guidance for AI agents implementing and reviewing SQL.
 
 ## Do / Don't Examples
 ### 1. Parameterization
-```sql
--- Don't: string interpolation
-SELECT * FROM users WHERE email = '" + input + "';
+```text
+Don't: build SQL in application code using string interpolation/concatenation.
+Example: `"... WHERE email = '" + input + "'"`.
+```
 
--- Do: parameterized query
+```sql
+-- Do: parameterized query with explicit column list
 SELECT id, email FROM users WHERE email = :email;
 ```
 
@@ -82,9 +86,14 @@ LIMIT :limit OFFSET :offset;
 ```sql
 -- Don't: one query per parent row in application loop
 
--- Do: batch children by parent ids
-SELECT * FROM order_items WHERE order_id IN (:orderIds);
+-- Do: batch children by parent ids with driver-safe list binding
+SELECT order_id, sku, quantity
+FROM order_items
+WHERE order_id IN (:orderId1, :orderId2, :orderId3);
 ```
+
+Note: generate placeholder lists through the DB driver/query builder; never
+string-interpolate `IN (...)` values.
 
 ## Code Review Checklist for SQL
 - Are all dynamic values parameterized?

@@ -5,15 +5,18 @@ Framework-layer contract for runtime and UI/application framework behavior.
 ## Role in the Ruleset
 - FRAMEWORK docs specialize language and architecture rules for concrete
   framework ecosystems.
-- Framework docs inherit cross-cutting and language baselines before adding
-  framework-specific patterns.
+- Framework docs inherit cross-cutting and language baselines, and apply
+  architecture constraints where relevant.
+- Architecture and framework guidance are peers in the same semantic layer;
+  conflicts require explicit specialization/override rationale.
 - Global precedence and override behavior are defined in
   `CORE/RULE_DEPENDENCY_TREE.md`.
 
 ## Scope Boundary
 FRAMEWORK includes:
 - Framework lifecycle and state-management guidance.
-- Framework-specific performance, testing, and SSR/hydration patterns.
+- Framework-specific performance/testing patterns and runtime behavior
+  (including rendering/SSR/hydration where applicable).
 - Framework-specific pitfalls and code review checklists.
 
 FRAMEWORK does not include:
@@ -29,8 +32,8 @@ Those belong in `LANGUAGE/**`, `LIBRARY/**`, `BUILD_TOOLS/**`,
   require it.
 - Any framework-level override must be explicit and justified in the framework
   document.
-- Framework docs must not silently weaken cross-cutting security/compliance/test
-  constraints.
+- Framework docs must not silently weaken cross-cutting security/compliance/
+  testing constraints.
 
 ## Selection Guidance
 - Prefer mature, enterprise-ready frameworks with a proven track record.

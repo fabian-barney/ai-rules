@@ -21,7 +21,7 @@ REVIEW does not include:
 - Build/deployment runtime procedures.
 
 Those belong in `PROGRAMMING/**`, `FRAMEWORK/**`, `LIBRARY/**`,
-`BUILD_TOOLS/**`, and `INFRASTRUCTURE/**`.
+`BUILD_TOOLS/**`, `INFRASTRUCTURE/**`, and `CI-CD/**`.
 
 ## Specialization Contract
 - `CODE_REVIEW.md` specializes this index-level review contract with deep review

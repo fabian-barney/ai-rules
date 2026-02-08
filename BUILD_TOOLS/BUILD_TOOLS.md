@@ -6,8 +6,9 @@ artifact-generation workflow.
 ## Role in the Ruleset
 - BUILD_TOOLS docs specialize how projects resolve dependencies, build
   artifacts, and enforce reproducible tooling behavior.
-- Build-tool guidance inherits cross-cutting and language constraints first, and
-  then adds tool-specific workflow rules.
+- Build-tool guidance inherits cross-cutting/language constraints and applies
+  architecture/framework constraints where relevant before adding tool-specific
+  workflow rules.
 - Global precedence and override behavior are defined in
   `CORE/RULE_DEPENDENCY_TREE.md`.
 
@@ -29,8 +30,10 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `INFRASTRUCTURE/**`, and
 - Prefer the standard build tool for the language/ecosystem unless a strong,
   explicit reason exists to deviate.
 - Tool-specific docs may narrow parent guidance when tool semantics require it.
+- Any narrowing/override of inherited guidance must be explicit and justified in
+  the specialized tool doc.
 - Tool docs must not weaken inherited security/compliance/reproducibility
-  constraints without explicit rationale.
+  constraints unless an upstream rule explicitly allows that weakening.
 
 ## Files
 - [BUN.md](BUN.md) - Bun package manager guidance.

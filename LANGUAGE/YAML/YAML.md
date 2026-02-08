@@ -71,18 +71,39 @@ releaseVersion: "01.02"
 # Don't: commit plaintext secrets
 database:
   password: super-secret
+```
 
-# Do: reference external secret source
+```yaml
+# Do: reference an external secret source (Kubernetes example)
 database:
   passwordFrom:
-    secretRef: db-password
+    valueFrom:
+      secretKeyRef:
+        name: app-secrets
+        key: database-password
 ```
 
 ### 3. Anchor Overuse
 ```yaml
-# Don't: deep alias indirection with unclear final output
+# Don't: nested merges make effective config hard to reason about
+appDefaults: &appDefaults
+  image: app:1.2.3
+  resources:
+    requests: { cpu: "100m", memory: "128Mi" }
+    limits: { cpu: "500m", memory: "512Mi" }
+prod:
+  <<: *appDefaults
+  resources:
+    <<: { requests: { cpu: "200m", memory: "256Mi" } }
+```
 
-# Do: keep shared fragments small and obvious, or repeat explicitly
+```yaml
+# Do: keep overrides explicit and shallow
+prod:
+  image: app:1.2.3
+  resources:
+    requests: { cpu: "200m", memory: "256Mi" }
+    limits: { cpu: "500m", memory: "512Mi" }
 ```
 
 ## Code Review Checklist for YAML

@@ -39,11 +39,11 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `BUILD_TOOLS/**`,
 ## Languages
 - [JAVASCRIPT/JAVASCRIPT.md](JAVASCRIPT/JAVASCRIPT.md) - JavaScript runtime
   baseline (parent for TypeScript and JS frameworks).
-- [JAVA/JAVA.md](JAVA/JAVA.md) - Java language baseline and entry point.
 - [TYPESCRIPT/TYPESCRIPT.md](TYPESCRIPT/TYPESCRIPT.md) - TypeScript
   specialization over JavaScript baseline.
+- [JAVA/JAVA.md](JAVA/JAVA.md) - Java language baseline and entry point.
 
-## Data/Markup Languages
+## Languages and Formats
 - [HTML/HTML.md](HTML/HTML.md) - Semantic and accessible HTML baseline.
 - [CSS/CSS.md](CSS/CSS.md) - Maintainable and accessible CSS baseline.
 - [SQL/SQL.md](SQL/SQL.md) - SQL correctness/performance baseline.

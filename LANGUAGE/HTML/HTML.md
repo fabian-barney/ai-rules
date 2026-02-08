@@ -11,6 +11,7 @@ Guidance for AI agents implementing and reviewing HTML markup.
 - Inherit naming/readability constraints from
   `LANGUAGE/CONVENTIONS.md` and `LANGUAGE/READABILITY.md`.
 - Inherit security constraints from `SECURITY/SECURITY.md`.
+- Inherit testing expectations from `TEST/TEST.md`.
 - CSS/framework docs may specialize styling patterns, but should not weaken
   semantic and accessibility requirements.
 
@@ -22,6 +23,8 @@ Guidance for AI agents implementing and reviewing HTML markup.
 - Keep markup declarative and free of presentation-only hacks.
 
 ## Accessibility Baseline
+- Set the root document language (`<html lang="...">`) and set `dir` where
+  bidirectional text requirements apply.
 - Ensure interactive elements are keyboard reachable and operable.
 - Every form control needs an accessible name (`label`, `aria-label`, etc.).
 - Provide `alt` text for informative images; use empty alt for decorative
@@ -42,6 +45,8 @@ Guidance for AI agents implementing and reviewing HTML markup.
 - Prefer escaping by default for dynamic text content.
 - Treat URL-bearing attributes (`href`, `src`) as untrusted inputs and validate
   schemes.
+- For links opened via `target="_blank"`, include `rel="noopener"`
+  (typically `noopener noreferrer`) to prevent reverse-tabnabbing.
 
 ## Performance and Maintainability
 - Avoid deeply nested DOM structures without semantic justification.

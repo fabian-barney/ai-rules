@@ -86,13 +86,15 @@ Guidance for AI agents implementing and reviewing Java code.
 ## Do / Don't Examples
 ### 1. Defensive Copying
 ```java
-// Don't: expose mutable internal list.
-public List<Item> getItems() {
+// Don't
+public List<Item> getItemsUnsafe() {
   return items;
 }
+```
 
-// Do: return immutable snapshot/view.
-public List<Item> getItems() {
+```java
+// Do
+public List<Item> getItemsSafe() {
   return List.copyOf(items);
 }
 ```
@@ -115,11 +117,14 @@ try {
 
 ### 3. Optional Usage
 ```java
-// Don't: Optional as field.
-private Optional<String> middleName;
+// Don't
+private Optional<String> optionalMiddleName;
+```
 
-// Do: plain nullable field internally, Optional in API if needed.
+```java
+// Do
 private String middleName;
+
 public Optional<String> middleName() {
   return Optional.ofNullable(middleName);
 }
@@ -147,14 +152,16 @@ public Optional<String> middleName() {
 Add these when using Java build tools (if not already covered by baseline
 ignore rules):
 - `target/`, `build/`
-- `*.class`, `*.jar`, `*.war`, `*.ear`
+- `*.class`, `*.war`, `*.ear`
 - `pom.xml.tag`, `pom.xml.releaseBackup`, `pom.xml.versionsBackup`,
   `pom.xml.next`
 - `release.properties`, `dependency-reduced-pom.xml`,
   `buildNumber.properties`
 - `.gradle/`
 
-Do not ignore wrapper scripts or wrapper binaries required to build projects.
+Do not ignore wrapper scripts or wrapper JARs required to build projects
+(for example `gradle/wrapper/gradle-wrapper.jar`,
+`.mvn/wrapper/maven-wrapper.jar`).
 
 ## Companion Specialization
 - [EFFECTIVE_JAVA.md](EFFECTIVE_JAVA.md) - deeper effective Java idioms and

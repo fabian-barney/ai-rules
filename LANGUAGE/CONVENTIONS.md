@@ -46,7 +46,8 @@ Rules:
 ## Casing Rules (General)
 Apply language-standard casing as default:
 - Types/class-like constructs: `PascalCase`.
-- Variables/functions/methods: `camelCase`.
+- Variables/functions/methods: follow language/ecosystem standard
+  (`camelCase` in Java/JS/TS, `snake_case` in Python/Ruby, etc.).
 - True constants: language-standard constant style
   (commonly `UPPER_SNAKE_CASE`, but follow language conventions).
 - File/directory casing should follow ecosystem conventions and existing module
@@ -54,9 +55,10 @@ Apply language-standard casing as default:
 
 ## Abbreviation Policy
 - Avoid abbreviations unless broadly recognized.
-- If abbreviation is used, treat it as one word for casing (`userId`,
-  `httpClient`, `xmlParser`).
-- Do not mix styles (`getURL` and `getUrl`) in the same codebase.
+- Initialism casing must follow the target language/ecosystem style guide.
+- When the language style does not mandate all-caps initialisms, treat
+  abbreviations as one word for casing (`userId`, `httpClient`, `xmlParser`).
+- Do not mix styles for the same identifier family in one codebase.
 - Prefer expanding obscure domain shorthand in public APIs.
 
 ## Identifier Quality Rules
@@ -82,8 +84,12 @@ Apply language-standard casing as default:
 ## Do / Don't Examples
 ### 1. Abbreviation Casing
 ```text
+JS/TS/Java example:
 Don't: getURL(), parseXML(), userID
 Do:    getUrl(), parseXml(), userId
+
+Language-style exception:
+If a language/style guide mandates all-caps initialisms, follow that standard.
 ```
 
 ### 2. Unit Clarity

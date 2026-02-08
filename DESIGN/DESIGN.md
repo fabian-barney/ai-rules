@@ -6,8 +6,8 @@ long-term code quality.
 ## Role in the Ruleset
 - DESIGN docs define principle-level constraints that shape implementation
   choices across languages, frameworks, and libraries.
-- Design guidance inherits cross-cutting and language baselines and adds
-  structure-oriented quality rules.
+- Design guidance is part of the cross-cutting baseline and applies alongside
+  the other cross-cutting constraints before downstream specialization.
 - Global precedence and override behavior are defined in
   `CORE/RULE_DEPENDENCY_TREE.md`.
 

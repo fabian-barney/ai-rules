@@ -165,7 +165,8 @@ enum RetryPolicy {
   gate.
 
 ## VCS Ignore Additions
-Add these when using TypeScript (if not already covered by baseline ignores):
+Add these when using TypeScript (if not already covered by baseline ignore
+list):
 - `*.tsbuildinfo`
 - `dist/`, `out/` when build outputs are generated locally
 

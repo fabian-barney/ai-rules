@@ -6,8 +6,9 @@ must be preserved across all technology choices.
 ## Role in the Ruleset
 - COMPLIANCE defines non-negotiable legal/governance constraints for dependency
   selection and delivery artifacts.
-- Compliance guidance is inherited by all language, framework, library, build,
-  infrastructure, and CI/CD docs.
+- Compliance constraints are part of the cross-cutting baseline
+  (currently anchored by `COMPLIANCE/LICENSES.md`) and inherited by all
+  downstream language/framework/library/build/infrastructure/CI docs.
 - Global precedence and override behavior are defined in
   `CORE/RULE_DEPENDENCY_TREE.md`.
 
@@ -28,7 +29,7 @@ Those belong in `LANGUAGE/**`, `FRAMEWORK/**`, `LIBRARY/**`,
 
 ## Specialization Contract
 - Child compliance docs may narrow compliance constraints for specific legal
-  domains (for example license policy).
+  domains (for example, license policy).
 - Downstream docs must not weaken compliance constraints without explicit,
   reviewed governance approval.
 - If a technical recommendation conflicts with compliance rules, compliance is
