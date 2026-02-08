@@ -1,12 +1,16 @@
 # ANGULAR
 
-Guidance for Angular projects.
+Guidance for AI agents implementing and reviewing Angular projects.
 
 ## Defaults
 - Follow Angular style guide conventions.
 - Prefer standalone APIs (`bootstrapApplication`, standalone components,
   function providers) for new code.
 - Prefer `inject()` over constructor parameter injection in new code.
+- Apply these rules by default in generated code and code reviews; deviate only
+  with explicit, project-specific rationale.
+- Before using version-sensitive or experimental APIs, verify the project's
+  Angular major version and choose a supported fallback when needed.
 - Keep components and directives focused on presentation concerns.
 - Prefer signal-based local state and `computed` derivations.
 - Treat signal `effect()` as a controlled escape hatch, not a default tool.
@@ -57,10 +61,15 @@ Guidance for Angular projects.
   `toObservable(signalValue, { injector })`) so interop resources are torn down
   correctly.
 - For `toSignal()`, `manualCleanup: true` is available for sources that
-  complete naturally and intentionally outlive destroy-driven cleanup.
+  complete naturally.
+  `manualCleanup: true` disables destroy-driven teardown; use it only when the
+  source should complete on its own or intentionally outlive the creating
+  context.
 - `toSignal()` surfaces Observable errors through signal reads:
   handle errors in the stream (for example with `catchError`) when you need a
   rendered error state instead of thrown reads.
+  Prefer explicit renderable state (`{ status, value, error }`) or a sentinel
+  fallback value for template paths.
 - Signals created by `toSignal()` do not expose completion state.
   If completion matters (for example to render "done"), model it explicitly in
   stream/state (for example `{ status, value, error }`).
@@ -129,7 +138,8 @@ Effects synchronize Angular state with non-reactive or imperative systems.
 ## HTTP and Error Handling
 - Keep HTTP access in data services, not scattered across templates/components.
 - For signal-first data loading, consider `httpResource` (experimental /
-  version-dependent) when you explicitly want a resource-style
+  version-dependent) only after verifying support in the current Angular major,
+  and when you explicitly want a resource-style
   loading/error/value state model without ad-hoc subscriptions/interop.
 - Model loading, success, and error states explicitly in UI-facing view models.
 - Handle errors at the boundary where context exists (service/component), and
