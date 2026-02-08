@@ -61,8 +61,8 @@ Security is a non-negotiable baseline across all stacks and domains.
 
 ## High-Risk Pitfalls
 1. Accepting user input without strict validation or context-aware encoding.
-2. Hardcoding credentials in code/config/scripts or plaintext CI config/non-
-   secret variables instead of platform secret stores.
+2. Storing credentials in code/config/scripts, plaintext CI config, or
+   unencrypted/non-secret CI variables instead of the platform secret store.
 3. Treating client-side checks as sufficient authorization.
 4. Overly broad IAM/role permissions in runtime or CI.
 5. Ignoring dependency vulnerabilities due to transitive complexity.
