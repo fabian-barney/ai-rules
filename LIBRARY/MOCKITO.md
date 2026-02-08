@@ -26,7 +26,9 @@ Guidance for AI agents implementing and reviewing Mockito-based tests.
 
 ## Verification Rules
 - Verify meaningful interactions, not every call by default.
-- Use strict verification for critical side effects.
+- Use explicit/precise verification for critical side effects
+  (for example once/never checks and argument constraints).
+- Prefer strict stubbing to catch unused or mismatched stubs.
 - Avoid over-verifying call counts in non-critical paths.
 - Prefer `verifyNoMoreInteractions` sparingly and intentionally.
 

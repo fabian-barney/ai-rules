@@ -5,12 +5,13 @@ review.
 
 ## Scope
 - Define practical code-quality rules for maintainability and clarity.
-- Apply this file across languages/frameworks unless specialized docs narrow a
-  rule explicitly.
+- Apply this file across languages/frameworks as a minimum baseline.
+- Specialized docs may add stricter/idiomatic constraints; explicit overrides
+  must be documented and justified.
 
 ## Semantic Dependencies
-- Inherit readability/naming baselines from `LANGUAGE/CONVENTIONS.md` and
-  `LANGUAGE/READABILITY.md`.
+- Inherit naming baseline from `LANGUAGE/CONVENTIONS.md`.
+- `LANGUAGE/READABILITY.md` is a companion guideline, not a semantic parent.
 - Inherit design constraints from `DESIGN/SOLID.md`.
 
 ## Core Principles
@@ -66,7 +67,7 @@ Do:    separate orchestration from focused operations.
 
 ### 2. Error Context
 ```text
-Don't: throw generic RuntimeException("failed").
+Don't: throw a generic error with no context ("failed").
 Do:    throw domain-specific error with contextual identifiers.
 ```
 

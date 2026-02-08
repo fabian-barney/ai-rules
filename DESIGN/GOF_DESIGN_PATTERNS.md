@@ -1,4 +1,4 @@
-# GOF_DESIGN_PATTERNS
+﻿# GOF_DESIGN_PATTERNS
 
 Guidance for AI agents applying GoF patterns pragmatically.
 
@@ -29,7 +29,7 @@ Guidance for AI agents applying GoF patterns pragmatically.
 - Adapter:
   isolate incompatible interfaces.
 - Facade:
-  simplify interaction with complex subsystem.
+  simplify interaction with a complex subsystem.
 - Decorator:
   extend behavior without subclass explosion.
 - Proxy:
@@ -48,7 +48,7 @@ Guidance for AI agents applying GoF patterns pragmatically.
 ## Anti-Pattern Guardrails
 - Avoid speculative pattern layering without real variability pressure.
 - Avoid pattern names as substitutes for clear domain names.
-- Avoid hidden complexity behind façade/proxy without observability.
+- Avoid hidden complexity behind facade/proxy without observability.
 - Avoid singleton-as-global-variable design.
 
 ## High-Risk Pitfalls

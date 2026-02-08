@@ -15,7 +15,8 @@ Guidance for AI agents creating implementation plans.
 ## When Planning Is Required
 - Multi-document or multi-repo changes.
 - High-risk refactors and behavior changes.
-- Work spanning multiple semantic layers (language/framework/library/infra).
+- Work spanning multiple semantic layers
+  (language/framework/library/infrastructure/CI-CD).
 - Any change with unclear requirements or significant rollback risk.
 
 ## Decision-Complete Plan Requirements

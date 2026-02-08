@@ -7,8 +7,10 @@ Guidance for AI agents applying SOLID principles pragmatically.
 - Apply this file during design and review, not as rigid dogma.
 
 ## Semantic Dependencies
-- Inherit clean-code baseline from `DESIGN/CLEAN_CODE.md`.
-- Inherit architecture boundary rules from `ARCHITECTURE/CLEAN_ARCHITECTURE.md`.
+- Inherit cross-cutting precedence/override model from
+  `CORE/RULE_DEPENDENCY_TREE.md`.
+- `DESIGN/CLEAN_CODE.md` and `ARCHITECTURE/CLEAN_ARCHITECTURE.md` are related
+  companion docs that apply alongside this file.
 
 ## SRP: Single Responsibility Principle
 - Keep modules with one primary reason to change.

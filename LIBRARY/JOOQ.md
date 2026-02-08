@@ -9,7 +9,10 @@ Guidance for AI agents implementing and reviewing jOOQ-based data access.
 ## Semantic Dependencies
 - Inherit SQL baseline from `LANGUAGE/SQL/SQL.md`.
 - Inherit Java baseline from `LANGUAGE/JAVA/JAVA.md`.
-- Inherit N+1 and transaction safety constraints from architecture docs.
+- Inherit N+1 constraints from `ARCHITECTURE/N_PLUS_1.md`.
+- Inherit transaction/boundary constraints from
+  `ARCHITECTURE/ARCHITECTURE.md` and `FRAMEWORK/SPRING_BOOT.md` where
+  applicable.
 
 ## Defaults
 - Prefer generated jOOQ types for compile-time safety.

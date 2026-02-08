@@ -27,7 +27,10 @@ Guidance for AI agents implementing and reviewing Apache Kafka usage.
 
 ## Producer Rules
 - Keep key strategy intentional for partition affinity/order semantics.
-- Enable idempotent producer where duplicate prevention matters.
+- Enable idempotent producer settings (`enable.idempotence` with compatible
+  `acks`/retry configuration) where retry-duplicate suppression is required.
+- Treat producer idempotence as a producer-session guarantee only; handle
+  end-to-end deduplication/idempotency at consumer/workflow boundaries.
 - Handle send failures with clear retry/error policy.
 - Avoid fire-and-forget publishing without observability.
 
