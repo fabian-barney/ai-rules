@@ -47,6 +47,9 @@ Guidance for Angular projects.
 - Prefer explicit interop boundaries:
   use `toSignal()` for Observable -> signal and `toObservable()` for signal ->
   Observable.
+- `toSignal()` surfaces Observable errors through signal reads:
+  handle errors in the stream (for example with `catchError`) when you need a
+  rendered error state instead of thrown reads.
 - Avoid manual subscriptions in components unless an imperative side effect is
   required.
 - For imperative subscriptions, use `takeUntilDestroyed()` (or equivalent
@@ -87,6 +90,8 @@ Effects synchronize Angular state with non-reactive or imperative systems.
   happen after render.
 - `afterRenderEffect` runs only on the client and may run before hydration is
   complete; keep DOM access hydration-safe.
+- Do not mutate SSR-produced DOM structure in post-render hooks unless
+  hydration behavior is intentionally controlled.
 
 ## Dependency Injection and Services
 - Keep services focused and composable; avoid "god services".
@@ -137,8 +142,8 @@ Effects synchronize Angular state with non-reactive or imperative systems.
 
 ## Zoneless Notes
 - Angular v21+ defaults to zoneless change detection.
-- Verify `provideZoneChangeDetection` is not used unintentionally to override
-  the zoneless default.
+- Verify `provideZoneChangeDetection` is not present unless intentionally
+  opting into Zone.js semantics.
 - If a v21+ application intentionally depends on Zone.js semantics, opt in
   explicitly with `provideZoneChangeDetection()` and keep Zone.js runtime/test
   polyfills configured.
