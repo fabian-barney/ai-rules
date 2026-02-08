@@ -9,12 +9,10 @@ Guidance for React projects.
 - Treat `useEffect` as a controlled escape hatch, not a default tool.
 
 ## Naming Conventions
+- This section only defines React-specific naming rules.
 - React components: `PascalCase` (for example `UserProfileCard`).
 - Custom hooks: `camelCase` with `use` prefix (for example `useUserProfile`).
-- Regular helpers/functions: `camelCase` (for example `formatCurrency`).
-- Types, interfaces, and enums: `PascalCase`.
-- Constants: follow project-level conventions documented in
-  `LANGUAGE/CONVENTIONS.md`.
+- Non-React symbol naming follows general TypeScript conventions.
 
 ## State and Data
 - Keep state minimal and local where possible.
@@ -296,7 +294,6 @@ function WindowWidthGood() {
 - Is there effect chaining that should be replaced by explicit actions?
 - Are inline dependencies causing unnecessary effect churn?
 - Would extracting a custom hook reduce duplicated side-effect logic?
-- Do component, hook, helper, and type names follow React naming conventions?
 - Are lint suppressions for hooks justified and minimal?
 
 ## Testing Guidance for Effect-Heavy Code
