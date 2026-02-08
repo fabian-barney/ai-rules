@@ -7,6 +7,14 @@ Guidance for TypeScript projects.
 - Avoid `any`; use `unknown` or proper types instead.
 - Prefer explicit types at module boundaries and public APIs.
 
+## Naming Conventions
+- Variables, parameters, and regular functions: `camelCase`.
+- Types, interfaces, classes, enums, and namespaces: `PascalCase`.
+- Enum members: `PascalCase`.
+- Constants:
+  use `UPPER_SNAKE_CASE` for true shared constants;
+  keep regular `const` values in `camelCase`.
+
 ## VCS Ignore Additions
 Add these when using TypeScript (if not already covered by the baseline ignore list):
 - `*.tsbuildinfo`
