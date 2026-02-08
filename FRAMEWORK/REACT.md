@@ -21,7 +21,6 @@ Guidance for React projects.
 
 ## `useEffect` Policy
 Effects keep non-React systems in sync; keep React-only derivations in render.
-`useEffect` exists to synchronize React with systems outside React.
 
 Use `useEffect` when your component must connect, subscribe, schedule, observe,
 or cancel external work.
@@ -82,6 +81,8 @@ or cancel external work.
 - Use functional state updates to avoid stale closure bugs in intervals/callbacks.
 - Use refs for mutable, non-render state that should not retrigger rendering.
 - Extract repeated side-effect behavior into focused custom hooks.
+- For subscription-style state (for example window size), prefer custom hooks
+  based on `useSyncExternalStore`.
 - Avoid effect chains:
   use one cohesive effect, or model flow with explicit actions/reducer/state machine.
 - Handle non-abort async errors explicitly (state/reporting); do not `throw`
@@ -116,6 +117,7 @@ function PriceGood({ amount, taxRate }: { amount: number; taxRate: number }) {
 ```tsx
 // Don't: watch state to trigger an action.
 // Bad because user intent is now indirect state coupling and easy to mis-handle.
+// Also breaks repeated clicks unless state is reset.
 function SaveButtonBad({ onSave }: { onSave: () => Promise<void> }) {
   const [shouldSave, setShouldSave] = useState(false);
   useEffect(() => {
@@ -184,6 +186,7 @@ function UserProfileGood({ userId }: { userId: string }) {
 
   useEffect(() => {
     const controller = new AbortController();
+    // Prevent stale data from the previous request context.
     setError(null);
     setUser(null);
 
@@ -249,6 +252,7 @@ function WindowWidthGood() {
       setWidth(window.innerWidth);
     }
 
+    // Initialize width immediately after mount.
     onResize();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
@@ -257,9 +261,6 @@ function WindowWidthGood() {
   return <span>{width}</span>;
 }
 ```
-
-- For window size and similar subscriptions, prefer a focused custom hook based
-  on `useSyncExternalStore`.
 
 ## Dependency Rules
 - Never mark an effect callback `async`; create an inner async function.
