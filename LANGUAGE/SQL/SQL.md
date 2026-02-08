@@ -86,14 +86,18 @@ LIMIT :limit OFFSET :offset;
 ```sql
 -- Don't: one query per parent row in application loop
 
--- Do: batch children by parent ids with driver-safe list binding
+-- Do: batch children by parent ids with query-builder-expanded placeholders
 SELECT order_id, sku, quantity
 FROM order_items
-WHERE order_id IN (:orderIds);
+WHERE order_id IN (
+  -- expanded by query builder from a collection bind like :orderIds
+  :orderId1, :orderId2, :orderId3
+);
 ```
 
-Note: bind collections through the DB driver/query builder (for example array
-binding or generated placeholders); never string-interpolate `IN (...)` values.
+Note: the expanded placeholders above are illustrative.
+Generate collection bindings/placeholders through the DB driver/query builder;
+never string-interpolate `IN (...)` values.
 
 ## Code Review Checklist for SQL
 - Are all dynamic values parameterized?
