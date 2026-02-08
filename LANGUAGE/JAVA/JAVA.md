@@ -1,7 +1,7 @@
 # JAVA
 
 ## Entry Point
-- `EFFECTIVE_JAVA.md` - distilled ruleset for Java code quality.
+- [EFFECTIVE_JAVA.md](EFFECTIVE_JAVA.md) - distilled ruleset for Java code quality.
 
 ## General Java Rules (summary)
 - Prefer immutability where practical.
