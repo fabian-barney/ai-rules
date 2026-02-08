@@ -31,6 +31,9 @@ Guidance for Angular projects.
 - Prefer `@if`, `@for`, and `@switch` blocks in modern Angular code.
 - In every `@for`, use a stable `track` expression (`id`/`uuid`), not
   incidental identity.
+- Use `$index` tracking only for truly static collections that never reorder or
+  change length.
+- Avoid identity tracking (`track item`) except as a last resort.
 - Prefer native `[class]` / `[style]` bindings over `ngClass` / `ngStyle`.
 
 ## State, Signals, and RxJS
@@ -45,6 +48,9 @@ Guidance for Angular projects.
   required.
 - For imperative subscriptions, use `takeUntilDestroyed()` (or equivalent
   `DestroyRef` cleanup) to prevent leaks.
+- Be explicit about lifetime in services:
+  root-provided services can keep subscriptions/effects alive until app
+  teardown.
 
 ## `effect()` Policy
 Effects synchronize Angular state with non-reactive or imperative systems.
@@ -60,6 +66,19 @@ Effects synchronize Angular state with non-reactive or imperative systems.
 - Propagating state from one signal/store into another as workflow glue.
 - Modeling user intent flow by "watching" state instead of handling the event.
 - Coordinating request flows that are better expressed with RxJS pipelines.
+
+### Guardrails
+- Treat `effect()` as the last API choice:
+  prefer `computed()` for derived values and `linkedSignal()` for
+  derived-but-overridable values.
+- Register cleanup for long-running work (timers, listeners, subscriptions)
+  using `onCleanup` inside the effect callback.
+- `effect()` creation requires an injection context:
+  outside constructors/field initializers, pass an explicit `Injector`.
+- Prefer `afterRenderEffect`/`afterNextRender` for DOM read/write that must
+  happen after render.
+- `afterRenderEffect` runs only on the client and may run before hydration is
+  complete; keep DOM access hydration-safe.
 
 ## Dependency Injection and Services
 - Keep services focused and composable; avoid "god services".
@@ -108,6 +127,18 @@ Effects synchronize Angular state with non-reactive or imperative systems.
 - Use `ChangeDetectorRef.markForCheck()` only when integrating with
   non-standard update paths.
 
+## Zoneless Notes
+- Angular v21+ defaults to zoneless change detection.
+- Verify `provideZoneChangeDetection` is not used unintentionally to override
+  the zoneless default.
+- Angular v20 projects should enable zoneless via
+  `provideZonelessChangeDetection()` at bootstrap.
+- In zoneless apps, prefer clear Angular change notifications:
+  signals read by templates, template/host listeners, `async` pipe, and
+  `markForCheck()` at integration boundaries.
+- Remove `zone.js` and `zone.js/testing` from build/test polyfills when
+  committing to zoneless mode.
+
 ## SSR and Hydration Notes
 - Keep render paths SSR-safe: no unguarded `window` / `document` reads during
   render.
@@ -138,6 +169,7 @@ Effects synchronize Angular state with non-reactive or imperative systems.
    boundaries.
 10. Assuming `HttpClient<T>` generics validate runtime payload shape.
 11. Async error paths missing UI state updates, creating stuck spinners.
+12. Root-scoped effects/subscriptions with no explicit lifetime strategy.
 
 ## Do / Don't Examples
 
@@ -267,14 +299,21 @@ export class ProfileCardGood {
 - Is each component focused on presentation, with business logic extracted where
   sensible?
 - Could this state derivation be `computed` instead of `effect()`?
+- If `effect()` is used, is there a clear reason it cannot be
+  `computed`/`linkedSignal`?
 - Are manual subscriptions avoided or cleaned with `takeUntilDestroyed`?
 - Are RxJS flows composed (no nested subscriptions)?
 - Do all `@for` loops use stable `track` keys?
+- Is `$index` used only for static lists and identity tracking avoided?
 - Are `OnPush` boundaries respected with immutable updates?
 - Are templates free of heavy logic and unnecessary method calls?
 - Are cross-cutting HTTP concerns implemented via interceptors/services?
 - Are loading/error states explicit, and are async failures surfaced safely?
 - Is direct DOM access avoided or explicitly sanitized?
+- For DOM post-render integrations, is `afterRenderEffect` used with hydration
+  caveats considered?
+- Are effects/subscriptions in root-provided services intentionally long-lived?
+- Is zoneless configuration intentional for the Angular version in use?
 - Is code safe for SSR/hydration (no unguarded browser globals in render)?
 - Are forms typed, and are async validators performance-aware?
 - Are route boundaries lazy-loaded where they improve startup without causing
@@ -287,8 +326,12 @@ export class ProfileCardGood {
 - Test list rendering updates for stable identity behavior in `@for` blocks.
 - Test request cancellation/race behavior for route-driven data loading.
 - Test manual subscription teardown on component destroy.
+- For root-provided services, test or document lifetime expectations for
+  long-lived subscriptions/effects.
 - Test `OnPush` components with immutable input updates.
 - Test typed form validators (sync and async), including invalid and edge-case
   states.
+- If using zoneless change detection, ensure tests rely on Angular's scheduling
+  signals instead of manual `detectChanges()` defaults.
 - If SSR/hydration is relevant, test browser-global guards and hydration-safe
   render paths.
