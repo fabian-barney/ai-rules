@@ -60,11 +60,10 @@ Guidance for AI agents implementing and reviewing Angular projects.
   example `toSignal(source$, { injector })` or
   `toObservable(signalValue, { injector })`) so interop resources are torn down
   correctly.
-- For `toSignal()`, `manualCleanup: true` is available for sources that
-  complete naturally.
-  `manualCleanup: true` disables destroy-driven teardown; use it only when the
-  source should complete on its own or intentionally outlive the creating
-  context.
+- For `toSignal()`, `manualCleanup: true` keeps the subscription until the
+  source completes and disables destroy-driven teardown.
+  Use it only when the source is guaranteed to complete or when you explicitly
+  manage lifecycle; otherwise it can leak.
 - `toSignal()` surfaces Observable errors through signal reads:
   handle errors in the stream (for example with `catchError`) when you need a
   rendered error state instead of thrown reads.
