@@ -8,8 +8,9 @@ Guidance for AI agents on writing code with low cognitive load.
   complexity.
 
 ## Semantic Dependencies
-- Inherit naming/formatting baseline from `LANGUAGE/CONVENTIONS.md`.
 - Inherit design constraints from `DESIGN/CLEAN_CODE.md` and `DESIGN/SOLID.md`.
+- `LANGUAGE/CONVENTIONS.md` is a companion baseline that applies alongside this
+  file.
 - Language/framework docs may specialize patterns but must preserve readability
   and explainability constraints.
 
@@ -50,7 +51,7 @@ Guidance for AI agents on writing code with low cognitive load.
 ## Error Path Readability
 - Keep happy path and failure path clearly separated.
 - Use explicit error types/messages that communicate cause and recovery context.
-- Avoid broad catch blocks that hide control flow outcomes.
+- Avoid broad error-handling blocks that hide control flow outcomes.
 
 ## High-Risk Pitfalls
 1. Deeply nested conditionals obscuring business intent.

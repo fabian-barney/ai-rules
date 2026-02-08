@@ -4,8 +4,9 @@ Core, non-negotiable baseline rules for all technology stacks in this
 repository.
 
 ## Role in the Ruleset
-- CORE defines cross-cutting constraints that always apply first.
-- CORE rules are inherited by all language/framework/library/tool docs.
+- CORE is part of the first-applied cross-cutting baseline layer.
+- CORE rules are inherited by all downstream docs, including language,
+  framework, library, build-tool, infrastructure, CI/CD, and task-overlay docs.
 - Precedence and override behavior are defined in
   [RULE_DEPENDENCY_TREE.md](RULE_DEPENDENCY_TREE.md).
 

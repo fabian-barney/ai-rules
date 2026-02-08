@@ -114,7 +114,7 @@ repository: ERROR "save failed" ex=...
 controller: ERROR "invoice save failed" invoiceId=... traceId=... ex=...
 ```
 
-```json
+```jsonc
 // Don't: free-form string with sensitive payload.
 {"level":"ERROR","message":"login failed for user=alice password=secret"}
 

@@ -68,7 +68,9 @@ Guidance for AI agents implementing and reviewing JavaScript code.
 - Never build code paths that evaluate untrusted strings (`eval`, dynamic
   function constructors) unless there is no alternative and controls are strict.
 - Avoid unsafe shell command construction from untrusted input.
-- Sanitize/encode output for the target context (HTML, URL, SQL, shell).
+- Sanitize/encode output for the target context (HTML, URL, shell).
+- For SQL, use parameterized queries/prepared statements rather than string
+  escaping.
 
 ## High-Risk Pitfalls
 1. Unhandled promise rejections causing hidden failures.
@@ -93,7 +95,7 @@ async function saveUser(user) {
     await db.write(user);
   } catch (error) {
     logger.error("user.save.failed", { userId: user.id, error });
-    throw error;
+    throw new Error(`Failed to save user ${user.id}`, { cause: error });
   }
 }
 ```
@@ -140,7 +142,7 @@ const runtimeSettings = { ...settings, timeoutMs: 5000 };
 - Add regression tests for previously observed runtime edge cases.
 
 ## Override Notes
-- `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md` narrows typing and API-boundary rules for
-  TypeScript codebases.
+- `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md` narrows typing discipline and compile-time
+  safety rules for TypeScript codebases.
 - Framework docs may further specialize state/lifecycle/rendering behavior but
   must keep this file's runtime safety baseline.

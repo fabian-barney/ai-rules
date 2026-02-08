@@ -28,8 +28,9 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `BUILD_TOOLS/**`,
 ## Specialization Contract
 - Pattern documents may specialize architecture constraints for specific styles
   (for example event-driven, REST, GraphQL).
-- Architecture docs must not weaken inherited security/compliance/test
-  constraints without explicit rationale.
+- Architecture docs may narrow/extend parent guidance, but must not weaken
+  inherited mandatory security/compliance/testing constraints unless an upstream
+  parent rule explicitly marks that behavior optional.
 - Framework/library docs may specialize architecture guidance only with explicit
   justification in those specialized docs.
 
