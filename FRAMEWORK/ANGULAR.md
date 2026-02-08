@@ -50,12 +50,17 @@ Guidance for Angular projects.
 - `toSignal()` surfaces Observable errors through signal reads:
   handle errors in the stream (for example with `catchError`) when you need a
   rendered error state instead of thrown reads.
+- Signals created by `toSignal()` do not expose completion state:
+  after the Observable completes, the signal keeps returning the last value.
+  If completion matters, model it explicitly in state.
 - Avoid manual subscriptions in components unless an imperative side effect is
   required.
 - For imperative subscriptions, use `takeUntilDestroyed()` (or equivalent
   `DestroyRef` cleanup) to prevent leaks.
 - Parameterless `takeUntilDestroyed()` works only in an injection context;
   otherwise pass `DestroyRef` explicitly.
+  Example: `stream$.pipe(takeUntilDestroyed(this.destroyRef))` with
+  `private readonly destroyRef = inject(DestroyRef)`.
 - Be explicit about lifetime in services:
   root-provided services can keep subscriptions/effects alive until app
   teardown.
