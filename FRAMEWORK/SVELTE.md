@@ -32,7 +32,8 @@ Guidance for AI agents implementing and reviewing Svelte projects.
 ## Side Effects and Lifecycle
 - Keep setup/teardown side effects explicit in lifecycle hooks.
 - For dependency-driven side effects, use controlled reactive blocks
-  (`$:` / `$effect`) and avoid uncontrolled reactive side-effect chains.
+  (`$:` in Svelte 3/4, or `$effect` when using Svelte 5+ runes) and avoid
+  uncontrolled reactive side-effect chains.
 - Clean up subscriptions/listeners/timers in teardown paths.
 - Avoid running heavy side effects during rendering paths.
 - Guard browser-only APIs when SSR/hydration is relevant.

@@ -63,7 +63,8 @@ Add these when using Bun (if not already covered by baseline ignore rules):
 ### 1. Lockfile Discipline
 ```text
 Don't: keep Bun and npm lockfiles together in one repository.
-Do:    keep only the Bun lockfile selected by project Bun version.
+Do:    keep only the Bun lockfile appropriate for the project's pinned Bun
+       version.
 ```
 
 ### 2. Script Trust

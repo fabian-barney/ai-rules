@@ -1,4 +1,4 @@
-﻿# GOF_DESIGN_PATTERNS
+# GOF_DESIGN_PATTERNS
 
 Guidance for AI agents applying GoF patterns pragmatically.
 
