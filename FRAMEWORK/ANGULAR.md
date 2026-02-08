@@ -45,13 +45,14 @@ Guidance for Angular projects.
   actions instead.
 - Use RxJS composition operators (`switchMap`, `combineLatest`, `map`, etc.)
   instead of nested subscriptions.
-- Prefer exposing `Observable`-based view models to templates and binding with
-  `async` pipe.
-- Prefer exposing signal-based view models to templates and reading signals
-  directly (for example `user()` in templates).
-- Prefer explicit interop boundaries:
-  use `toSignal()` for Observable -> signal and `toObservable()` for signal ->
-  Observable.
+- Prefer one reactive model per component/template:
+  use `async` pipe for `Observable` view models, read signal view models
+  directly, and convert at boundaries with `toSignal()` / `toObservable()`.
+- Avoid mixing `Observable` and signal binding styles in the same template
+  unless there is a strong reason.
+- When using `toSignal()` / `toObservable()` outside an injection context, pass
+  an explicit `Injector` (or use manual cleanup) so interop resources are torn
+  down correctly.
 - `toSignal()` surfaces Observable errors through signal reads:
   handle errors in the stream (for example with `catchError`) when you need a
   rendered error state instead of thrown reads.
@@ -169,8 +170,9 @@ Effects synchronize Angular state with non-reactive or imperative systems.
   render.
 - Keep initial server and client markup consistent to avoid hydration mismatch
   and layout shift.
-- Run browser-only integrations after render/hydration in lifecycle
-  hooks/effects, but remember these can still execute during SSR.
+- Run browser-only integrations after render/hydration where possible.
+- Some lifecycle hooks (for example initialization) run during SSR; do not
+  assume "after render" implies "browser".
 - Guard browser-only APIs with platform checks (for example
   `isPlatformBrowser` / `PLATFORM_ID`) and/or defer DOM work with SSR-safe
   primitives (for example `afterNextRender`).
@@ -331,6 +333,10 @@ export class ProfileCardGood {
   `computed`/`linkedSignal`?
 - Are RxJS/signal boundaries explicit (`toSignal()` / `toObservable()`) where
   crossing reactive models?
+- Is one reactive model used per template, with a clear reason documented when
+  mixing `Observable` and signal styles?
+- If `toSignal()` / `toObservable()` are created outside an injection context,
+  is an explicit `Injector` (or equivalent cleanup strategy) provided?
 - Are manual subscriptions avoided or cleaned with `takeUntilDestroyed`?
 - If `takeUntilDestroyed()` is parameterless, is the usage site in an injection
   context?
