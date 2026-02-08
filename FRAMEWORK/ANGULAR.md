@@ -78,8 +78,9 @@ Effects synchronize Angular state with non-reactive or imperative systems.
 - Treat `effect()` as the last API choice:
   prefer `computed()` for derived values and `linkedSignal()` for
   derived-but-overridable values.
-- Register cleanup for long-running work (timers, listeners, subscriptions)
-  using `onCleanup` inside the effect callback.
+- Assume effects can re-run:
+  always use `onCleanup` for effect-created resources (timers, listeners,
+  subscriptions, observers, and similar handles).
 - `effect()` creation requires an injection context:
   outside constructors/field initializers, pass an explicit `Injector`.
 - Prefer `afterRenderEffect`/`afterNextRender` for DOM read/write that must
@@ -138,6 +139,9 @@ Effects synchronize Angular state with non-reactive or imperative systems.
 - Angular v21+ defaults to zoneless change detection.
 - Verify `provideZoneChangeDetection` is not used unintentionally to override
   the zoneless default.
+- If a v21+ application intentionally depends on Zone.js semantics, opt in
+  explicitly with `provideZoneChangeDetection()` and keep Zone.js runtime/test
+  polyfills configured.
 - Angular v20 projects should enable zoneless via
   `provideZonelessChangeDetection()` at bootstrap.
 - In zoneless apps, prefer clear Angular change notifications:
