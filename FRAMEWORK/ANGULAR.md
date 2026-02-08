@@ -44,13 +44,20 @@ Guidance for Angular projects.
   instead of nested subscriptions.
 - Prefer exposing `Observable`/signal view models to templates and binding with
   `async` pipe.
+- Prefer explicit interop boundaries:
+  use `toSignal()` for Observable -> signal and `toObservable()` for signal ->
+  Observable.
 - Avoid manual subscriptions in components unless an imperative side effect is
   required.
 - For imperative subscriptions, use `takeUntilDestroyed()` (or equivalent
   `DestroyRef` cleanup) to prevent leaks.
+- Parameterless `takeUntilDestroyed()` works only in an injection context;
+  otherwise pass `DestroyRef` explicitly.
 - Be explicit about lifetime in services:
   root-provided services can keep subscriptions/effects alive until app
   teardown.
+  These are effectively root effects, while effects tied to component injectors
+  are view-scoped.
 
 ## `effect()` Policy
 Effects synchronize Angular state with non-reactive or imperative systems.
@@ -301,7 +308,11 @@ export class ProfileCardGood {
 - Could this state derivation be `computed` instead of `effect()`?
 - If `effect()` is used, is there a clear reason it cannot be
   `computed`/`linkedSignal`?
+- Are RxJS/signal boundaries explicit (`toSignal()` / `toObservable()`) where
+  crossing reactive models?
 - Are manual subscriptions avoided or cleaned with `takeUntilDestroyed`?
+- If `takeUntilDestroyed()` is parameterless, is the usage site in an injection
+  context?
 - Are RxJS flows composed (no nested subscriptions)?
 - Do all `@for` loops use stable `track` keys?
 - Is `$index` used only for static lists and identity tracking avoided?
