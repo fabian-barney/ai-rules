@@ -8,8 +8,9 @@ Guidance for AI agents implementing and reviewing REST-style APIs.
 - Apply this file to service interface design and API review.
 
 ## Semantic Dependencies
-- Inherit cross-cutting constraints from:
-  `SECURITY/SECURITY.md`, `TEST/TEST.md`, `CORE/LOGGING.md`.
+- Inherit the full cross-cutting baseline as defined in
+  `CORE/RULE_DEPENDENCY_TREE.md` (including security/testing/logging and other
+  mandatory cross-cutting constraints).
 - Inherit architecture boundaries from `ARCHITECTURE/ARCHITECTURE.md` and
   `ARCHITECTURE/CLEAN_ARCHITECTURE.md`.
 - Specialized framework docs may refine implementation details but should keep

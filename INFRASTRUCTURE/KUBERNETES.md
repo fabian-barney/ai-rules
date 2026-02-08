@@ -27,8 +27,9 @@ Guidance for AI agents implementing and reviewing Kubernetes manifests.
 
 ## Security Baseline
 - Run containers as non-root where possible.
-- Use security context (`runAsNonRoot`, read-only fs where applicable,
-  dropped capabilities).
+- Use explicit `securityContext` fields (`runAsNonRoot`,
+  `readOnlyRootFilesystem`, `allowPrivilegeEscalation: false`,
+  `capabilities.drop`, `seccompProfile`) as applicable.
 - Apply least privilege RBAC for service accounts.
 - Keep secrets in dedicated secret resources, not plain config maps.
 - Restrict network reachability with network policies where applicable.
@@ -39,7 +40,7 @@ Guidance for AI agents implementing and reviewing Kubernetes manifests.
 - Avoid coupling runtime behavior to undocumented env vars.
 
 ## Observability and Operations
-- Expose metrics/logging in platform-compatible way.
+- Expose metrics/logging in a platform-compatible way.
 - Track pod restarts, crash loops, and probe failures.
 - Monitor resource saturation and eviction risk.
 - Keep alerting tied to service SLO indicators.
@@ -81,7 +82,8 @@ Do:    tune startup/readiness/liveness thresholds to app behavior.
 
 ## Testing Guidance
 - Validate manifests with schema/policy checks in CI.
-- Run dry-run/apply-preview checks before deployment.
+- Run server-side dry-run and diff checks before deployment
+  (for example `kubectl apply --dry-run=server`, `kubectl diff`).
 - Test rollout and rollback behavior in staging.
 - Test probe behavior under startup/slow dependency conditions.
 - Test autoscaling/resource behavior under representative load.

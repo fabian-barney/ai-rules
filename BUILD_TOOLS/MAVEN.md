@@ -17,7 +17,7 @@ Guidance for AI agents implementing and reviewing Maven builds.
   builds.
 - Keep plugin and dependency versions explicitly pinned.
 - Keep build lifecycle predictable and avoid hidden side effects in profiles.
-- Keep parent/bom usage intentional and documented.
+- Keep parent/BOM usage intentional and documented.
 
 ## Dependency and Plugin Management
 - Centralize versions with `dependencyManagement`/BOM where appropriate.
@@ -48,14 +48,15 @@ Guidance for AI agents implementing and reviewing Maven builds.
 ## VCS Ignore Additions
 Add these when using Maven (if not already covered by baseline ignores):
 - `target/`
-- `*.class`, `*.jar`, `*.war`, `*.ear`
+- `*.class`, `*.war`, `*.ear`
 - `pom.xml.tag`, `pom.xml.releaseBackup`, `pom.xml.versionsBackup`,
   `pom.xml.next`
 - `release.properties`, `dependency-reduced-pom.xml`,
   `buildNumber.properties`
 - `.mvn/timing.properties`
 
-Do not ignore wrapper scripts or wrapper binaries required for build.
+Do not ignore wrapper scripts or wrapper JARs required for build
+(for example `.mvn/wrapper/maven-wrapper.jar`).
 
 ## High-Risk Pitfalls
 1. Unpinned plugin versions causing non-deterministic builds.

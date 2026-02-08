@@ -7,10 +7,12 @@ Guidance for AI agents implementing and reviewing circuit breaker patterns.
 - Apply this file to service-to-service calls and external IO boundaries.
 
 ## Semantic Dependencies
-- Inherit resilience context from `ARCHITECTURE/MICROSERVICE.md` and
-  `ARCHITECTURE/EVENT_DRIVEN_ARCHITECTURE.md` where relevant.
-- Inherit cross-cutting constraints from
+- Inherit architecture baseline from `ARCHITECTURE/ARCHITECTURE.md`.
+- Inherit cross-cutting defaults from
   `SECURITY/SECURITY.md`, `TEST/TEST.md`, `CORE/LOGGING.md`.
+- `ARCHITECTURE/MICROSERVICE.md` and
+  `ARCHITECTURE/EVENT_DRIVEN_ARCHITECTURE.md` may specialize breaker usage for
+  their communication patterns.
 
 ## Placement Rules
 - Place circuit breakers at remote dependency boundaries (HTTP, gRPC, DB,

@@ -9,21 +9,22 @@ Guidance for AI agents implementing and reviewing event-driven systems.
 
 ## Semantic Dependencies
 - Inherit architecture baseline from `ARCHITECTURE/ARCHITECTURE.md` and
-  `ARCHITECTURE/MICROSERVICE.md`.
+  `ARCHITECTURE/CLEAN_ARCHITECTURE.md`.
 - Inherit resilience constraints from `ARCHITECTURE/CIRCUIT_BREAKER.md`.
 - Inherit cross-cutting constraints from
   `SECURITY/SECURITY.md`, `TEST/TEST.md`, `CORE/LOGGING.md`.
 
 ## Event Contract Design
-- Model events as facts of past domain actions.
+- Model events as facts about completed domain actions.
 - Use stable, domain-driven event names.
 - Keep payloads explicit and minimal; avoid leaking internal persistence shape.
 - Include metadata for tracing and diagnostics
-  (`eventId`, `occurredAt`, `producer`, `traceId`).
+  (`eventId`, `occurredAt`, `producer`, `correlationId`, `traceId`).
 - Keep contracts versioned and backward-compatible by default.
 
 ## Delivery and Processing Semantics
-- Assume at-least-once delivery unless infrastructure guarantees stronger model.
+- Assume at-least-once delivery unless infrastructure guarantees a stronger
+  delivery model.
 - Make handlers idempotent.
 - Define deduplication strategy for repeated deliveries.
 - Treat ordering guarantees as explicit contracts, not assumptions.

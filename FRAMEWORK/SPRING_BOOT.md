@@ -18,8 +18,8 @@ Guidance for AI agents implementing and reviewing Spring Boot applications.
 ## Defaults
 - Prefer constructor injection (for example with Lombok
   `@RequiredArgsConstructor`), avoid field injection.
-- Keep controllers thin; move orchestration/business rules into services/use
-  cases.
+- Keep controllers thin; move orchestration/business rules into services or
+  use-case classes.
 - Keep persistence logic in repositories/adapters, not controllers.
 - Prefer explicit DTOs for API boundaries.
 - Use `@ConfigurationProperties` for structured config over scattered
@@ -79,7 +79,7 @@ Do:    constructor injection with final dependencies.
 ### 2. Layering
 ```text
 Don't: controller directly manipulates EntityManager.
-Do:    controller -> service/use case -> repository adapter.
+Do:    controller -> service/use-case -> repository adapter.
 ```
 
 ### 3. Config Management

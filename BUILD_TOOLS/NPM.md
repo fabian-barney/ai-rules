@@ -47,7 +47,7 @@ Guidance for AI agents managing Node.js dependencies (npm, Yarn, pnpm).
 - Keep install/build logs actionable and fail fast on dependency errors.
 
 ## VCS Ignore Additions
-Add these when using Node tooling (if not already in baseline ignore rules):
+Add these when using Node tooling (if not already in baseline ignore list):
 - `node_modules/`
 - `npm-debug.log*`, `yarn-debug.log*`, `yarn-error.log*`, `pnpm-debug.log*`
 - `.npm/`, `.yarn/`, `.pnpm-store/`

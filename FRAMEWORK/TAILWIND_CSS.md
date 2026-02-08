@@ -9,8 +9,8 @@ Guidance for AI agents implementing and reviewing Tailwind CSS code.
 ## Semantic Dependencies
 - Inherit CSS baseline from `LANGUAGE/CSS/CSS.md`.
 - Inherit HTML accessibility baseline from `LANGUAGE/HTML/HTML.md`.
-- Framework docs may add component conventions but should preserve this file's
-  maintainability constraints.
+- Project/framework-specific docs may add component conventions, but should
+  preserve this file's maintainability constraints.
 
 ## Defaults
 - Prefer utility-first styling with clear class grouping by concern
@@ -41,7 +41,8 @@ Guidance for AI agents implementing and reviewing Tailwind CSS code.
 ## Performance Baseline
 - Ensure content paths are configured so unused classes are purged.
 - Avoid dynamically constructed class names that evade static extraction.
-- Keep generated CSS size monitored in CI/release checks.
+- Keep generated CSS size bounded and monitored through the project's build/
+  delivery standards.
 - Prefer stable class composition over runtime string-generation complexity.
 
 ## High-Risk Pitfalls

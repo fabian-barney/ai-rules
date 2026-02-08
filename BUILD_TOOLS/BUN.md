@@ -14,7 +14,8 @@ Guidance for AI agents using Bun as package manager/runtime tooling.
 
 ## Defaults
 - Use one package manager per repository; do not mix lockfiles.
-- Commit Bun lockfile for reproducible installs.
+- Commit the Bun lockfile for reproducible installs (format/name depends on Bun
+  version, for example `bun.lock` or `bun.lockb`).
 - Keep Bun version pinned in project/tooling config.
 - Validate Bun compatibility with required ecosystem tooling before adoption.
 
@@ -28,7 +29,8 @@ Guidance for AI agents using Bun as package manager/runtime tooling.
 
 ## Lifecycle Script and Trust Model
 - Bun dependency lifecycle script behavior differs from npm ecosystem defaults.
-- Explicitly configure trusted dependencies when lifecycle scripts are required.
+- Configure trusted dependencies explicitly in `bunfig.toml` via
+  `trustedDependencies` when lifecycle scripts are required.
 - Do not blanket-trust all dependency scripts.
 - Validate build/install outcome for packages requiring postinstall steps.
 
@@ -60,8 +62,8 @@ Add these when using Bun (if not already covered by baseline ignore rules):
 ## Do / Don't Examples
 ### 1. Lockfile Discipline
 ```text
-Don't: keep both bun.lock and package-lock.json.
-Do:    keep Bun lockfile only when Bun is selected.
+Don't: keep Bun and npm lockfiles together in one repository.
+Do:    keep only the Bun lockfile selected by project Bun version.
 ```
 
 ### 2. Script Trust

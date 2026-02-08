@@ -7,9 +7,12 @@ Guidance for AI agents preventing and detecting N+1 query patterns.
 - Apply this file to data access implementation and review.
 
 ## Semantic Dependencies
+- Inherit cross-cutting constraints from
+  `SECURITY/SECURITY.md`, `TEST/TEST.md`, `CORE/LOGGING.md`.
 - Inherit SQL/query baseline from `LANGUAGE/SQL/SQL.md`.
 - Inherit architecture constraints from `ARCHITECTURE/ARCHITECTURE.md`.
-- Inherit framework/library specifics from JPA/jOOQ/GraphQL docs where
+- Inherit framework/library specifics from:
+  `LIBRARY/JPA.md`, `LIBRARY/JOOQ.md`, and `ARCHITECTURE/GRAPHQL.md` where
   applicable.
 
 ## Core Rule
