@@ -8,7 +8,7 @@ must be preserved across all technology choices.
   selection and delivery artifacts.
 - Compliance constraints are part of the cross-cutting baseline
   (currently anchored by `COMPLIANCE/LICENSES.md`) and inherited by all
-  downstream language/framework/library/build/infrastructure/CI docs.
+  downstream language/framework/library/build/infrastructure/CI/CD docs.
 - Global precedence and override behavior are defined in
   `CORE/RULE_DEPENDENCY_TREE.md`.
 

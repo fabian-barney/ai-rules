@@ -89,11 +89,11 @@ LIMIT :limit OFFSET :offset;
 -- Do: batch children by parent ids with driver-safe list binding
 SELECT order_id, sku, quantity
 FROM order_items
-WHERE order_id IN (:orderId1, :orderId2, :orderId3);
+WHERE order_id IN (:orderIds);
 ```
 
-Note: generate placeholder lists through the DB driver/query builder; never
-string-interpolate `IN (...)` values.
+Note: bind collections through the DB driver/query builder (for example array
+binding or generated placeholders); never string-interpolate `IN (...)` values.
 
 ## Code Review Checklist for SQL
 - Are all dynamic values parameterized?

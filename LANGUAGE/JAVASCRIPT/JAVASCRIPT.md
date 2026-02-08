@@ -95,7 +95,13 @@ async function saveUser(user) {
     await db.write(user);
   } catch (error) {
     logger.error("user.save.failed", { userId: user.id, error });
-    throw new Error(`Failed to save user ${user.id}`, { cause: error });
+    const wrappedError = new Error(`Failed to save user ${user.id}`, {
+      cause: error,
+    });
+    if (wrappedError.cause === undefined) {
+      wrappedError.cause = error;
+    }
+    throw wrappedError;
   }
 }
 ```

@@ -74,13 +74,21 @@ database:
 ```
 
 ```yaml
-# Do: reference an external secret source (Kubernetes example)
-database:
-  passwordFrom:
-    valueFrom:
-      secretKeyRef:
-        name: app-secrets
-        key: database-password
+# Do: reference an external secret source (valid Kubernetes example)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app
+spec:
+  containers:
+    - name: app
+      image: example/app:1.0.0
+      env:
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: database-password
 ```
 
 ### 3. Anchor Overuse
