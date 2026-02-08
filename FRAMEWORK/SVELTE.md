@@ -8,6 +8,8 @@ Guidance for AI agents implementing and reviewing Svelte projects.
 
 ## Semantic Dependencies
 - Inherit JavaScript baseline from `LANGUAGE/JAVASCRIPT/JAVASCRIPT.md`.
+- Apply `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md` as an additional parent when the
+  Svelte codebase uses TypeScript.
 - Inherit HTML/CSS accessibility and semantics from
   `LANGUAGE/HTML/HTML.md` and `LANGUAGE/CSS/CSS.md`.
 - Inherit cross-cutting constraints from
@@ -28,7 +30,9 @@ Guidance for AI agents implementing and reviewing Svelte projects.
 - Avoid mutating shared objects in-place without explicit intent.
 
 ## Side Effects and Lifecycle
-- Keep side effects explicit in lifecycle hooks.
+- Keep setup/teardown side effects explicit in lifecycle hooks.
+- For dependency-driven side effects, use controlled reactive blocks
+  (`$:` / `$effect`) and avoid uncontrolled reactive side-effect chains.
 - Clean up subscriptions/listeners/timers in teardown paths.
 - Avoid running heavy side effects during rendering paths.
 - Guard browser-only APIs when SSR/hydration is relevant.

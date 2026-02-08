@@ -29,8 +29,8 @@ Guidance for AI agents implementing and reviewing GraphQL APIs.
 
 ## Resolver Architecture
 - Keep resolvers thin orchestration layers.
-- Move business logic to services/use-cases, not resolver glue code.
-- Keep per-field resolvers side-effect free for query operations.
+- Move business logic to services/use cases, not resolver glue code.
+- Keep per-field resolvers side-effect-free for query operations.
 - Validate and authorize at resolver boundaries consistently.
 
 ## Query Safety and Performance
@@ -42,7 +42,7 @@ Guidance for AI agents implementing and reviewing GraphQL APIs.
 
 ## Caching and Consistency
 - Define cacheability and invalidation strategy per field/resource class.
-- Avoid stale-sensitive data caching without clear TTL/invalidation rules.
+- Avoid caching staleness-sensitive data without clear TTL/invalidation rules.
 - Keep mutation side effects explicit for downstream cache invalidation.
 
 ## Error Handling

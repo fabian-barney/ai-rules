@@ -48,12 +48,6 @@ Guidance for AI agents implementing and reviewing Clean Architecture patterns.
 - Keep transaction scope aligned with use-case boundary.
 - Avoid domain-layer calls directly to infrastructure.
 
-## Testing Strategy
-- Prefer fast unit tests for domain and use-case layers.
-- Use integration tests for adapters/gateways and wiring.
-- Use end-to-end tests sparingly for critical workflows.
-- Keep architecture tests/rules to detect forbidden dependencies.
-
 ## High-Risk Pitfalls
 1. Framework annotations leaking into domain models.
 2. Use-case logic tightly coupled to ORM/HTTP types.
