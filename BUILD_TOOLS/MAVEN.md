@@ -57,6 +57,8 @@ Add these when using Maven (if not already covered by baseline ignores):
 
 Do not ignore wrapper scripts or wrapper JARs required for build
 (for example `.mvn/wrapper/maven-wrapper.jar`).
+If a broader ignore pattern includes `*.jar`, add an explicit negation rule
+for the wrapper JAR.
 
 ## High-Risk Pitfalls
 1. Unpinned plugin versions causing non-deterministic builds.

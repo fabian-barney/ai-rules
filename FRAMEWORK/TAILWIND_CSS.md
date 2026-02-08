@@ -41,7 +41,7 @@ Guidance for AI agents implementing and reviewing Tailwind CSS code.
 ## Performance Baseline
 - Ensure content paths are configured so unused classes are purged.
 - Avoid dynamically constructed class names that evade static extraction.
-- Keep generated CSS size bounded and monitored through the project's build/
+- Keep generated CSS size bounded and monitored through the project's build and
   delivery standards.
 - Prefer stable class composition over runtime string-generation complexity.
 
