@@ -5,6 +5,8 @@ shared AI guidance, so changes should be deliberate and well-reviewed.
 
 ## Workflow
 - Make focused changes per PR.
+- Use one concern per branch and PR.
+- For each new concern, create a new branch from `main` and open a new PR.
 - Update the relevant directory entry file (e.g., `DESIGN/DESIGN.md`).
 - Keep `AI.md` as the single top-level entry point.
 - Avoid quoting copyrighted sources; summarize in your own words.
