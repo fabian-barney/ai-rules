@@ -146,7 +146,8 @@ Local-only update note:
    extensions.
 4. Create a project lessons learned area (recommended):
    `<AI_ROOT_PATH>/LESSONS_LEARNED/LESSONS_LEARNED.md`
-   See `AI-RULES/DOWNSTREAM-PROJECT.md` for guidance.
+   See `AI-RULES/DOWNSTREAM-PROJECT.md` and
+   `AI-RULES/DOWNSTREAM-OVERRIDES.md` for guidance.
 5. Create a project ADR area (recommended):
    `<AI_ROOT_PATH>/DECISIONS/DECISIONS.md`
    `<AI_ROOT_PATH>/DECISIONS/ADR-0001-TITLE.md`
