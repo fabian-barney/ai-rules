@@ -35,8 +35,13 @@ Repository-standard PR review loop for ai-rules maintenance.
    - Classify each Copilot finding as valid or invalid.
    - Reply to each thread with the classification and concise rationale.
    - Fix valid findings, then resolve handled threads.
-   - If any changes were pushed, re-trigger GitHub Copilot Code Review and move
-     on to the next item.
+   - If any changes were pushed, re-trigger GitHub Copilot Code Review:
+     - Get PR node ID:
+       `gh pr view <PR_NUMBER> --json id`
+     - Request review from Copilot bot:
+       `gh api graphql -f query="<requestReviewsByLogin mutation>" -f pr="<PR_ID>" -f bots='copilot-pull-request-reviewer'`
+     - Verify a new review request/review appears before judging latest state.
+   - Move on to the next item after re-trigger.
 3. Repeat until every active item has no new valid findings and no open review
    threads.
 
