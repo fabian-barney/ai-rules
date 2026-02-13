@@ -7,8 +7,6 @@ Legacy wording "consuming project" means the same thing.
 ## Goals
 - Keep the ai-rules subtree replaceable by updates.
 - Store project-specific guidance and lessons learned outside the vendor path.
-- Do not inherit repository-maintainer workflows that are explicitly scoped to
-  ai-rules itself (for example `AI-RULES/PR-REVIEW-LOOP.md`).
 
 ## Execution Guidance
 - For planning, see [PLAN/PLAN.md](../PLAN/PLAN.md).

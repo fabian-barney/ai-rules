@@ -16,22 +16,34 @@ Repository-standard PR review loop for ai-rules maintenance.
   multiple issues or PRs.
 - After this one-time decision, run unattended through the loop unless blocked.
 
-## Standard Loop
-1. Create a focused branch and PR.
-2. Push changes.
-3. Wait at least 5 minutes after push before collecting Copilot review results.
-4. Collect all Copilot review comments and review threads.
-5. Classify each Copilot finding as valid or invalid.
-6. Reply to each thread with the classification and concise rationale.
-7. Fix valid findings in code/docs and push updates.
-8. Resolve all handled review threads.
-9. If any changes were pushed, re-trigger GitHub Copilot Code Review.
-10. Repeat steps 4-9 until no new valid findings remain.
+## Work Item Model
+- Treat each issue/PR pair as one independent work item.
+- Track per item:
+  - `last_push_at`
+  - `review_eligible_at = last_push_at + 5 minutes`
+  - `has_open_review_threads`
+  - `has_new_valid_findings`
+
+## Loop (Round-Robin, Multi-Issue)
+1. Build a queue of active work items.
+2. For each item in round-robin order:
+   - If code/docs updates are pending, push them.
+   - After each push, set `review_eligible_at`.
+   - If current time is before `review_eligible_at`, skip this item for now and
+     continue with the next item (no idle waiting).
+   - When eligible, collect Copilot review comments and review threads.
+   - Classify each Copilot finding as valid or invalid.
+   - Reply to each thread with the classification and concise rationale.
+   - Fix valid findings, then resolve handled threads.
+   - If any changes were pushed, re-trigger GitHub Copilot Code Review and move
+     on to the next item.
+3. Repeat until every active item has no new valid findings and no open review
+   threads.
 
 ## Completion
-- If `MERGE_AFTER_CLEAN_LOOP=true`, merge the PR after the loop is clean.
-- If `MERGE_AFTER_CLEAN_LOOP=false`, stop after clean loop and report that the
-  PR is ready for user merge.
+- If `MERGE_AFTER_CLEAN_LOOP=true`, merge each PR when its loop is clean.
+- If `MERGE_AFTER_CLEAN_LOOP=false`, stop at clean loop and report each PR as
+  ready for user merge.
 
 ## Guardrails
 - Keep PRs focused; do not bundle unrelated repository changes.
