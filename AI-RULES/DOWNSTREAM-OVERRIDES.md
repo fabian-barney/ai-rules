@@ -46,16 +46,29 @@ be authored by AI agents.
   - Keep links updated whenever files move or new files are added.
 
 ## Reachability Verification (Docs-Only, Deterministic)
-Use this procedure whenever downstream extension files are added or moved:
+Use this procedure whenever downstream extension files are added or moved,
+operating on the downstream-project's vendored copy of `AI-RULES` and its
+resolved `<AI_PROJECT_PATH>`:
 1. Build `IN_SCOPE`:
    - Include all `*.md` files under `<AI_PROJECT_PATH>`.
    - Normalize each path to a repo-relative path and sort alphabetically.
 2. Build `REACHABLE`:
    - Start with `<AI_PROJECT_PATH>/AI.md`.
-   - Traverse markdown links recursively from each newly discovered file.
-   - Include only link targets that resolve to markdown files under
+   - Traverse markdown links recursively from each newly discovered file:
+     - Treat links as non-image inline markdown links in the form
+       `[text](target)`.
+     - Ignore image links in the form `![alt](target)`.
+     - Ignore external URL targets (for example `http:`, `https:`,
+       `mailto:`, or targets starting with `//`).
+     - Ignore empty targets and pure fragment targets (for example
+       `""` or `#section`).
+     - For `path#fragment`, strip `#fragment` and resolve only `path`.
+     - Resolve paths relative to the link source file directory and normalize
+       `.` and `..` segments.
+   - Include only resolved targets that are markdown files under
      `<AI_PROJECT_PATH>`.
-   - Normalize and de-duplicate paths while traversing.
+   - Normalize each included path to repo-relative form with `/` separators and
+     de-duplicate paths while traversing.
 3. Compare sets:
    - Pass: `IN_SCOPE - REACHABLE` is empty.
    - Fail: `IN_SCOPE - REACHABLE` contains at least one file.

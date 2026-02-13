@@ -49,4 +49,4 @@ Default placeholder mapping for downstream guidance:
   `<AI_PROJECT_PATH>/AI.md` or other local guidance.
 - Verify transitive reachability for all markdown files under
   `<AI_PROJECT_PATH>` using the deterministic docs-only method in
-  `DOWNSTREAM-OVERRIDES.md`.
+  [`AI-RULES/DOWNSTREAM-OVERRIDES.md`](DOWNSTREAM-OVERRIDES.md).
