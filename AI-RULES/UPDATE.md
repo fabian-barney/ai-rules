@@ -153,7 +153,7 @@ Steps:
      control for this repo. This requires a commit.
    - Remove tracked ai-rules paths but keep files:
       ```
-      git rm -r --cached --ignore-unmatch -- "<AI_RULES_PATH>" "<AI_PROJECT_PATH>" `
+      git rm -r --cached --ignore-unmatch -- "<AI_RULES_PATH>" "<AI_PROJECT_PATH>" \
         "AGENTS.md" "CLAUDE.md" ".github/copilot-instructions.md"
       ```
       This must succeed even when optional entry-point files are absent.
