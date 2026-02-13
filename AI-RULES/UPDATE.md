@@ -77,9 +77,9 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
    - Validate `REF` with the matching rule (tag or branch).
 7. Run a compatibility preflight before any subtree command:
    - Load and review target-version docs at `REF` (the same ref used for subtree commands):
-     - `CHANGELOG.md`
-     - `AI-RULES/UPDATE.md`
-     - `AGENTS_TEMPLATE.md`
+     - [CHANGELOG.md](../CHANGELOG.md)
+     - [AI-RULES/UPDATE.md](UPDATE.md)
+     - [AGENTS_TEMPLATE.md](../AGENTS_TEMPLATE.md)
    - Use any reliable method to inspect these files at `REF` (for example the
      repository web view, `git show`, or a temporary local checkout).
    - Review changelog entries:
@@ -134,7 +134,7 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
     (e.g., `<AI_PROJECT_PATH>/AI.md`) when used.
     - Verify transitive reachability for markdown files under
       `<AI_PROJECT_PATH>` using the deterministic docs-only method in
-      `AI-RULES/DOWNSTREAM-OVERRIDES.md`.
+      [AI-RULES/DOWNSTREAM-OVERRIDES.md](DOWNSTREAM-OVERRIDES.md).
 11. Run cleanup for stale legacy references:
     - Remove or update references that still point to `AI_PROJECT.md`.
     - Ensure generated/final references point to `<AI_PROJECT_PATH>/AI.md`.
