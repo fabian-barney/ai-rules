@@ -5,7 +5,8 @@ shared AI guidance, so changes should be deliberate and well-reviewed.
 
 ## Workflow
 - Start from an issue. If none exists, create one before implementation.
-- Use a dedicated branch per issue.
+- Use one concern per issue branch and PR.
+- For each new concern/issue, create a new branch from `main`.
 - Make focused changes per PR.
 - Open a dedicated PR per issue branch and link it with a closing keyword
   (for example `Closes #123`) so merge auto-closes the issue.
