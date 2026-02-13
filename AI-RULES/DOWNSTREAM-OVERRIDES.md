@@ -22,8 +22,8 @@ be authored by AI agents.
 - Baseline rules under `<AI_RULES_PATH>` remain authoritative defaults.
 - Downstream files under `<AI_PROJECT_PATH>` extend baseline rules.
 - Default conflict behavior: downstream extension takes precedence.
-- Exception: if a baseline rule explicitly forbids extension/override for that
-  rule, baseline wins.
+- Exception: baseline wins only when a baseline rule explicitly marks itself as
+  non-extensible (non-overridable).
 - Missing downstream extension content always falls back to baseline behavior.
 
 ## File Placement Rules
@@ -44,6 +44,24 @@ be authored by AI agents.
 - Maintain index hygiene consistently:
   - Keep clear index files for directories with multiple children.
   - Keep links updated whenever files move or new files are added.
+
+## Reachability Verification (Docs-Only, Deterministic)
+Use this procedure whenever downstream extension files are added or moved:
+1. Build `IN_SCOPE`:
+   - Include all `*.md` files under `<AI_PROJECT_PATH>`.
+   - Normalize each path to a repo-relative path and sort alphabetically.
+2. Build `REACHABLE`:
+   - Start with `<AI_PROJECT_PATH>/AI.md`.
+   - Traverse markdown links recursively from each newly discovered file.
+   - Include only link targets that resolve to markdown files under
+     `<AI_PROJECT_PATH>`.
+   - Normalize and de-duplicate paths while traversing.
+3. Compare sets:
+   - Pass: `IN_SCOPE - REACHABLE` is empty.
+   - Fail: `IN_SCOPE - REACHABLE` contains at least one file.
+4. On failure:
+   - Add or fix index/parent links for each missing file.
+   - Re-run the same procedure until `IN_SCOPE - REACHABLE` is empty.
 
 ## Authoring Workflow for AI Agents
 1. Resolve placeholders from the target downstream-project configuration.

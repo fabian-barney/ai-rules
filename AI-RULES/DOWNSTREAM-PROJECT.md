@@ -43,7 +43,10 @@ Default placeholder mapping for downstream guidance:
   `<AI_ROOT_PATH>/DECISIONS/ADR-0002-TITLE.md`, and so on.
 
 ## Entry Points
-- `AGENTS.md` should reference the baseline entry point and any local overlay
-  such as `<AI_PROJECT_PATH>/AI.md`.
+- `AGENTS.md` should reference the baseline entry point and downstream extension
+  entry point such as `<AI_PROJECT_PATH>/AI.md`.
 - If you use `<AI_ROOT_PATH>/LESSONS_LEARNED/`, reference it from
   `<AI_PROJECT_PATH>/AI.md` or other local guidance.
+- Verify transitive reachability for all markdown files under
+  `<AI_PROJECT_PATH>` using the deterministic docs-only method in
+  `DOWNSTREAM-OVERRIDES.md`.

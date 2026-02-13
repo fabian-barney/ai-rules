@@ -132,6 +132,9 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
 9. Verify the baseline entry point still resolves (e.g., `<AI_RULES_PATH>/AI.md`).
 10. Verify the downstream extension entry point still resolves
     (e.g., `<AI_PROJECT_PATH>/AI.md`) when used.
+    - Verify transitive reachability for markdown files under
+      `<AI_PROJECT_PATH>` using the deterministic docs-only method in
+      `AI-RULES/DOWNSTREAM-OVERRIDES.md`.
 11. Run cleanup for stale legacy references:
     - Remove or update references that still point to `AI_PROJECT.md`.
     - Ensure generated/final references point to `<AI_PROJECT_PATH>/AI.md`.
