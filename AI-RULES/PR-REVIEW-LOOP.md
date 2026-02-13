@@ -40,7 +40,7 @@ Repository-standard PR review loop for ai-rules maintenance.
        `gh pr view <PR_NUMBER> --json id --jq .id`
      - Request review from Copilot bot:
        `gh api graphql -f query="<MUTATION_QUERY>" -f pr="<PR_ID>" -f bots='copilot-pull-request-reviewer'`
-      - Where `<MUTATION_QUERY>` is the complete
+     - Where `<MUTATION_QUERY>` is the complete
         `requestReviewsByLogin` GraphQL mutation and `<PR_ID>` is the value
         returned by the previous command.
      - Verify a new review request/review appears before judging latest state.
