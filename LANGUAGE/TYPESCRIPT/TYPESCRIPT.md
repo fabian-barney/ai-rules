@@ -77,6 +77,13 @@ Guidance for AI agents implementing and reviewing TypeScript code.
 - Preserve error cause chains when wrapping.
 - For async paths, ensure rejected promises are observed and handled.
 
+## Decorators and JSDoc Order
+- For decorated classes, place JSDoc immediately above the top-most decorator.
+- Keep decorators contiguous and directly above the class declaration.
+- Do not place JSDoc between a decorator and the class declaration.
+- Use one ordering style consistently across the codebase to avoid formatter and
+  tooling ambiguity.
+
 ## Performance and Build Hygiene
 - Avoid unnecessary type-level complexity that harms compile performance.
 - Keep deeply recursive conditional types bounded and documented.
@@ -146,6 +153,19 @@ enum RetryPolicy {
 }
 ```
 
+### 4. JSDoc and Decorator Order
+```ts
+// Don't: mixed ordering around decorated class declarations.
+@Injectable()
+/** Handles invoice orchestration. */
+export class InvoiceService {}
+
+// Do: put JSDoc above the top-most decorator.
+/** Handles invoice orchestration. */
+@Injectable()
+export class InvoiceService {}
+```
+
 ## Code Review Checklist for TypeScript
 - Is strict typing preserved without `any` leakage?
 - Are untrusted inputs validated at runtime boundaries?
@@ -153,6 +173,7 @@ enum RetryPolicy {
 - Are null/undefined paths explicit and safe?
 - Are casts/assertions minimal and justified?
 - Are naming conventions consistent with TypeScript standards?
+- Is JSDoc/decorator ordering for decorated classes consistent with this file?
 - Are public types cohesive, stable, and domain-focused?
 - Are async error paths typed and handled intentionally?
 
