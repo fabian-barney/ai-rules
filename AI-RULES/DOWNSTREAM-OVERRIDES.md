@@ -32,7 +32,7 @@ be authored by AI agents.
 - Materialize only files and directories that are actually extended or added.
 - Avoid copying untouched baseline files into `<AI_PROJECT_PATH>`.
 - Downstream-projects may add additional directories/files not present in
-  baseline when they extend project-specific guidance.
+  baseline for project-specific guidance not covered by baseline.
 
 ## Link and Index Rules
 - Downstream extension entry point is `<AI_PROJECT_PATH>/AI.md`.
@@ -49,7 +49,7 @@ be authored by AI agents.
 1. Resolve placeholders from the target downstream-project configuration.
 2. Decide whether the new rule is:
    - an extension of an existing baseline topic, or
-   - a downstream-specific extension.
+   - a new downstream-specific topic or rule not present in baseline.
 3. Create/update files under `<AI_PROJECT_PATH>` using placement rules above.
 4. Update index and parent-link chains so every touched file is reachable from
    `<AI_PROJECT_PATH>/AI.md`.
