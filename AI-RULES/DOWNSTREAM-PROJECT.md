@@ -12,11 +12,14 @@ Legacy wording "consuming project" means the same thing.
 - For planning, see [PLAN/PLAN.md](../PLAN/PLAN.md).
 - For implementation, see [PROGRAMMING/PROGRAMMING.md](../PROGRAMMING/PROGRAMMING.md).
 - For review, see [REVIEW/REVIEW.md](../REVIEW/REVIEW.md).
+- For downstream override authoring workflow, see
+  [DOWNSTREAM-OVERRIDES.md](DOWNSTREAM-OVERRIDES.md).
 
 ## Recommended Layout
 - Vendor ai-rules under `docs/ai/AI-RULES/`.
 - Baseline entry point: `docs/ai/AI-RULES/AI.md`.
-- Keep project-specific AI files outside `docs/ai/AI-RULES/` (for example `AI_PROJECT.md`).
+- Keep project-specific AI overrides outside `docs/ai/AI-RULES/`
+  (preferred: `docs/ai/PROJECT/AI.md`, legacy: `AI_PROJECT.md`).
 - Store project lessons learned under `docs/ai/LESSONS_LEARNED/` so updates do not overwrite them.
 - Store project ADRs under `docs/ai/DECISIONS/` so architecture decisions stay
   with project-owned AI docs, not the vendored subtree.
@@ -34,6 +37,6 @@ Legacy wording "consuming project" means the same thing.
 
 ## Entry Points
 - `AGENTS.md` should reference the baseline entry point and any local overlay
-  such as `AI_PROJECT.md`.
-- If you use `docs/ai/LESSONS_LEARNED/`, reference it from `AI_PROJECT.md` or other
-  local guidance.
+  such as `docs/ai/PROJECT/AI.md` (or legacy `AI_PROJECT.md`).
+- If you use `docs/ai/LESSONS_LEARNED/`, reference it from
+  `docs/ai/PROJECT/AI.md` (or legacy `AI_PROJECT.md`) or other local guidance.
