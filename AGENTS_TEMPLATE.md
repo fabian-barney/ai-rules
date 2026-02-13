@@ -98,7 +98,7 @@ version and adapt behavior as needed:
    `<AI_PROJECT_PATH>/AI.md`
    In local mode, keep `<AI_PROJECT_PATH>/` local-only (excluded from VCS).
    Verify transitive reachability for markdown files under `<AI_PROJECT_PATH>`
-   using `AI-RULES/DOWNSTREAM-OVERRIDES.md`.
+   using [AI-RULES/DOWNSTREAM-OVERRIDES.md](AI-RULES/DOWNSTREAM-OVERRIDES.md).
 6. Create a project lessons learned area (recommended):
    `<AI_ROOT_PATH>/LESSONS_LEARNED/LESSONS_LEARNED.md`
    See [AI-RULES/DOWNSTREAM-PROJECT.md](AI-RULES/DOWNSTREAM-PROJECT.md) and
@@ -149,7 +149,7 @@ Local-only update note:
    In git mode, keep `<AI_PROJECT_PATH>/` tracked so the team shares the
    extensions.
    Verify transitive reachability for markdown files under `<AI_PROJECT_PATH>`
-   using `AI-RULES/DOWNSTREAM-OVERRIDES.md`.
+   using [AI-RULES/DOWNSTREAM-OVERRIDES.md](AI-RULES/DOWNSTREAM-OVERRIDES.md).
 4. Create a project lessons learned area (recommended):
    `<AI_ROOT_PATH>/LESSONS_LEARNED/LESSONS_LEARNED.md`
    See [AI-RULES/DOWNSTREAM-PROJECT.md](AI-RULES/DOWNSTREAM-PROJECT.md) and
