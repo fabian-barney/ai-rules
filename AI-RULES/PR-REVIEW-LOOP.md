@@ -39,7 +39,9 @@ Repository-standard PR review loop for ai-rules maintenance.
      - Get PR node ID:
        `gh pr view <PR_NUMBER> --json id`
      - Request review from Copilot bot:
-       `gh api graphql -f query="<requestReviewsByLogin mutation>" -f pr="<PR_ID>" -f bots='copilot-pull-request-reviewer'`
+       `gh api graphql -f query="<MUTATION_QUERY>" -f pr="<PR_ID>" -f bots='copilot-pull-request-reviewer'`
+      - Where `<MUTATION_QUERY>` is the complete
+        `requestReviewsByLogin` GraphQL mutation.
      - Verify a new review request/review appears before judging latest state.
    - Move on to the next item after re-trigger.
 3. Repeat until every active item has no new valid findings and no open review
