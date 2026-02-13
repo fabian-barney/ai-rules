@@ -49,3 +49,4 @@ Repository-standard PR review loop for ai-rules maintenance.
 - Keep PRs focused; do not bundle unrelated repository changes.
 - Never delete review comments to make threads disappear.
 - For invalid findings, leave a clear rationale before resolving.
+- Never mention `@copilot` in PR comments.
