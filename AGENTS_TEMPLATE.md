@@ -53,9 +53,9 @@ Before running any setup/update subtree command, inspect the target ai-rules
 version and adapt behavior as needed:
 - Use the same `REF` that will be passed to `git subtree add`/`git subtree pull`.
 - Read target-version docs:
-  - `CHANGELOG.md`
-  - `AI-RULES/UPDATE.md`
-  - `AGENTS_TEMPLATE.md`
+  - [CHANGELOG.md](CHANGELOG.md)
+  - [AI-RULES/UPDATE.md](AI-RULES/UPDATE.md)
+  - [AGENTS_TEMPLATE.md](AGENTS_TEMPLATE.md)
 - Inspect these files at `REF` using any reliable method (for example repository
   web view, `git show`, or a temporary local checkout).
 - If the target version includes breaking or behavior-changing setup/update
@@ -101,12 +101,14 @@ version and adapt behavior as needed:
    using `AI-RULES/DOWNSTREAM-OVERRIDES.md`.
 6. Create a project lessons learned area (recommended):
    `<AI_ROOT_PATH>/LESSONS_LEARNED/LESSONS_LEARNED.md`
-   See `AI-RULES/DOWNSTREAM-PROJECT.md` and
-   `AI-RULES/DOWNSTREAM-OVERRIDES.md` for guidance.
+   See [AI-RULES/DOWNSTREAM-PROJECT.md](AI-RULES/DOWNSTREAM-PROJECT.md) and
+   [AI-RULES/DOWNSTREAM-OVERRIDES.md](AI-RULES/DOWNSTREAM-OVERRIDES.md) for
+   guidance.
 7. Create a project ADR area (recommended):
    `<AI_ROOT_PATH>/DECISIONS/DECISIONS.md`
    `<AI_ROOT_PATH>/DECISIONS/ADR-0001-TITLE.md`
-   See `AI-RULES/DOWNSTREAM-PROJECT.md` for guidance.
+   See [AI-RULES/DOWNSTREAM-PROJECT.md](AI-RULES/DOWNSTREAM-PROJECT.md) for
+   guidance.
 8. Create entry points for other AI tools:
    - `CLAUDE.md` (Claude Code)
    - `.github/copilot-instructions.md` (GitHub Copilot)
@@ -115,7 +117,7 @@ version and adapt behavior as needed:
    - Downstream extension: `<AI_PROJECT_PATH>/AI.md`
 
 Local-only update note:
-- Follow the local-mode update steps in `AI-RULES/UPDATE.md`.
+- Follow the local-mode update steps in [AI-RULES/UPDATE.md](AI-RULES/UPDATE.md).
   Do not run `git subtree add` on top of an existing `<AI_RULES_PATH>` directory.
   If `<AI_RULES_PATH>` already exists locally, remove it only after confirming
   there is no real work in that directory.
@@ -150,12 +152,14 @@ Local-only update note:
    using `AI-RULES/DOWNSTREAM-OVERRIDES.md`.
 4. Create a project lessons learned area (recommended):
    `<AI_ROOT_PATH>/LESSONS_LEARNED/LESSONS_LEARNED.md`
-   See `AI-RULES/DOWNSTREAM-PROJECT.md` and
-   `AI-RULES/DOWNSTREAM-OVERRIDES.md` for guidance.
+   See [AI-RULES/DOWNSTREAM-PROJECT.md](AI-RULES/DOWNSTREAM-PROJECT.md) and
+   [AI-RULES/DOWNSTREAM-OVERRIDES.md](AI-RULES/DOWNSTREAM-OVERRIDES.md) for
+   guidance.
 5. Create a project ADR area (recommended):
    `<AI_ROOT_PATH>/DECISIONS/DECISIONS.md`
    `<AI_ROOT_PATH>/DECISIONS/ADR-0001-TITLE.md`
-   See `AI-RULES/DOWNSTREAM-PROJECT.md` for guidance.
+   See [AI-RULES/DOWNSTREAM-PROJECT.md](AI-RULES/DOWNSTREAM-PROJECT.md) for
+   guidance.
 6. Create entry points for other AI tools:
    - `CLAUDE.md` (Claude Code)
    - `.github/copilot-instructions.md` (GitHub Copilot)
