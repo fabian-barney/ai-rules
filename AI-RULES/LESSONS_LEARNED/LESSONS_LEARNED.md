@@ -26,6 +26,8 @@ Concrete steps or checks that would have avoided the issue.
 ```
 
 ## Files
+- [2026-02-13-no-copilot-mentions-in-pr-comments.md](2026-02-13-no-copilot-mentions-in-pr-comments.md)
+  - Never mention `@copilot` in PR comments.
 - [2026-02-13-github-issue-newline-escaping.md](2026-02-13-github-issue-newline-escaping.md)
   - Prevent scrambled issue bodies by using `--body-file` for create/edit.
 - [2026-02-08-react-example-robustness.md](2026-02-08-react-example-robustness.md)
