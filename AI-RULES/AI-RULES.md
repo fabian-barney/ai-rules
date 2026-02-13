@@ -14,6 +14,8 @@ Guidance for maintaining this ai-rules repository.
 - [RELEASE.md](RELEASE.md) - Release checklist for this repository.
 - [PR-REVIEW-LOOP.md](PR-REVIEW-LOOP.md) - Standard Copilot review loop for
   repository PRs.
+- [DOWNSTREAM-OVERRIDES.md](DOWNSTREAM-OVERRIDES.md) - Authoring model for
+  downstream-project extension rules and conflict precedence.
 - [UPDATE.md](UPDATE.md) - Update workflow and prompt examples for downstream-projects.
 - [DOWNSTREAM-PROJECT.md](DOWNSTREAM-PROJECT.md) - downstream-project layout and lessons learned guidance.
 - [LESSONS_LEARNED/LESSONS_LEARNED.md](LESSONS_LEARNED/LESSONS_LEARNED.md) - Index of lessons
