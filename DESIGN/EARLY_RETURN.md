@@ -16,7 +16,8 @@ Guidance for AI agents to use early return and guard clauses effectively.
 
 ## Defaults and Guardrails
 - Prefer early return/guard clauses to keep the happy path linear.
-- Validate invalid/precondition/error states early and exit immediately.
+- Validate inputs and preconditions early; on invalid or error states, return
+  (or exit) immediately.
 - Reduce nested branching depth before extracting deeper abstractions.
 - Keep guard clauses small and intent-revealing.
 - Keep return points semantically obvious; do not scatter unrelated exits.
@@ -32,7 +33,7 @@ GC-managed memory, and scoped APIs) reduce these risks in many cases. Treat
 early return as the default, and treat caveats as exceptions to check.
 
 ## High-Risk Pitfalls
-1. Deep nested condition trees when guard clauses would make intent obvious.
+1. Deeply nested condition trees when guard clauses would make intent obvious.
 2. Early exits with vague predicates that hide why execution stops.
 3. Multiple exits that duplicate side effects in inconsistent ways.
 4. Adding guard clauses without tests for changed control-flow paths.
@@ -42,18 +43,20 @@ early return as the default, and treat caveats as exceptions to check.
 ### 1. Guard Clauses over Nested Blocks
 ```text
 Don't:
+// Happy path is buried inside multiple nested checks.
 if (isValid(request)) {
-  if (isAuthorized(user)) {
-    if (!isExpired(token)) {
+  if (hasActiveSession(user)) {
+    if (!isTokenExpired(token)) {
       process(request);
     }
   }
 }
 
 Do:
+// Fail fast on invalid or unauthorized states; keep happy path linear.
 if (!isValid(request)) return;
-if (!isAuthorized(user)) return;
-if (isExpired(token)) return;
+if (!hasActiveSession(user)) return;
+if (isTokenExpired(token)) return;
 process(request);
 ```
 
