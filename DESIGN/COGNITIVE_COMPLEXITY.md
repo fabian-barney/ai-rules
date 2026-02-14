@@ -38,12 +38,13 @@ thresholds conservatively.
 
 ## Complexity Reduction Heuristics
 - Extract nested decision logic into named methods with single responsibility.
-- Replace condition pyramids with guard clauses where readability improves.
+- Prefer early return/guard clauses to flatten nested condition pyramids.
 - Separate orchestration from domain decision logic.
 - Replace branch-heavy variant handling with Strategy/Polymorphism where
   variation is stable.
 - Keep cross-cutting concerns out of core methods (use focused wrappers/aspects
   only when appropriate per `DESIGN/AOP.md`).
+- Use `DESIGN/EARLY_RETURN.md` for guard-clause defaults and exception handling.
 
 ## High-Risk Pitfalls
 1. Treating metric thresholds as optional suggestions for new code.
@@ -76,6 +77,7 @@ Do:    attach Sonar/plugin metric or a documented estimate rationale.
 - For altered existing methods, was complexity reduced or kept within target?
 - If any altered method remains above 20, is there a linked follow-up issue?
 - Is complexity evidence included (Sonar/plugin/estimate)?
+- Were nested branches flattened with early returns where it improves clarity?
 - Did refactoring improve readability/cohesion instead of only moving branches?
 
 ## Testing Guidance
