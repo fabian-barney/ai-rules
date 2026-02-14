@@ -33,7 +33,8 @@ Guidance for AI agents implementing and reviewing Java code.
 - If smallest-unit integers are not suitable, prefer dedicated libraries (for
   example Joda-Money or JavaMoney/Moneta) over ad-hoc `BigDecimal` handling.
 - Avoid `new BigDecimal(double)`; if `BigDecimal` is unavoidable, construct
-  from string/valueOf and centralize scale + rounding rules.
+  from `String` for exact decimal values, or use `BigDecimal.valueOf(long)` for
+  whole-number smallest-unit amounts, and centralize scale + rounding rules.
 - Keep unit/currency attached to the amount type to prevent accidental mixing.
 
 ## Nullability and Optional
