@@ -100,12 +100,12 @@ version and adapt behavior as needed:
    Verify transitive reachability for markdown files under `<AI_PROJECT_PATH>`
    using `AI-RULES/DOWNSTREAM-OVERRIDES.md`.
 6. Create a project lessons learned area (recommended):
-   `<AI_ROOT_PATH>/LESSONS_LEARNED/LESSONS_LEARNED.md`
+   `<AI_PROJECT_PATH>/LESSONS_LEARNED/LESSONS_LEARNED.md`
    See `AI-RULES/DOWNSTREAM-PROJECT.md` and
    `AI-RULES/DOWNSTREAM-OVERRIDES.md` for guidance.
 7. Create a project ADR area (recommended):
-   `<AI_ROOT_PATH>/DECISIONS/DECISIONS.md`
-   `<AI_ROOT_PATH>/DECISIONS/ADR-0001-TITLE.md`
+   `<AI_PROJECT_PATH>/DECISIONS/DECISIONS.md`
+   `<AI_PROJECT_PATH>/DECISIONS/ADR-0001-TITLE.md`
    See `AI-RULES/DOWNSTREAM-PROJECT.md` for guidance.
 8. Create entry points for other AI tools:
    - `CLAUDE.md` (Claude Code)
@@ -149,12 +149,12 @@ Local-only update note:
    Verify transitive reachability for markdown files under `<AI_PROJECT_PATH>`
    using `AI-RULES/DOWNSTREAM-OVERRIDES.md`.
 4. Create a project lessons learned area (recommended):
-   `<AI_ROOT_PATH>/LESSONS_LEARNED/LESSONS_LEARNED.md`
+   `<AI_PROJECT_PATH>/LESSONS_LEARNED/LESSONS_LEARNED.md`
    See `AI-RULES/DOWNSTREAM-PROJECT.md` and
    `AI-RULES/DOWNSTREAM-OVERRIDES.md` for guidance.
 5. Create a project ADR area (recommended):
-   `<AI_ROOT_PATH>/DECISIONS/DECISIONS.md`
-   `<AI_ROOT_PATH>/DECISIONS/ADR-0001-TITLE.md`
+   `<AI_PROJECT_PATH>/DECISIONS/DECISIONS.md`
+   `<AI_PROJECT_PATH>/DECISIONS/ADR-0001-TITLE.md`
    See `AI-RULES/DOWNSTREAM-PROJECT.md` for guidance.
 6. Create entry points for other AI tools:
    - `CLAUDE.md` (Claude Code)

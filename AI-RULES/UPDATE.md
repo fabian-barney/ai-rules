@@ -139,7 +139,8 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
     - Remove or update references that still point to `AI_PROJECT.md`.
     - Ensure generated/final references point to `<AI_PROJECT_PATH>/AI.md`.
 12. Preserve local extensions and any project-specific rules outside the vendor
-    path, including `<AI_ROOT_PATH>/LESSONS_LEARNED/` if used.
+    path, including `<AI_PROJECT_PATH>/LESSONS_LEARNED/` and
+    `<AI_PROJECT_PATH>/DECISIONS/` if used.
 13. Record the updated version in the destination repository if it tracks versions.
 14. Summarize changes.
 
