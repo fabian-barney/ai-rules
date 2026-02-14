@@ -105,7 +105,7 @@ Operational rules:
 ## Completion
 - If `MERGE_AFTER_CLEAN_LOOP=true`, merge each PR only when:
   - `merge_gate_passed = true` from the hard merge gate above
-- If `MERGE_AFTER_CLEAN_LOOP=false`, stop at clean loop and report each PR as
+- If `MERGE_AFTER_CLEAN_LOOP=false`, stop at clean loop and report each PR's
   gate-evaluated status to the user, including `merge_gate_passed` and any
   failing hard-gate conditions. Do not label a PR as merge-ready unless the
   hard merge gate passes.
