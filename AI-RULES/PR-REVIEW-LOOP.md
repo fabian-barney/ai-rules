@@ -22,7 +22,6 @@ Repository-standard PR review loop for ai-rules maintenance.
   - `last_push_at`
   - `last_review_submitted_at`
   - `has_review_in_progress_after_last_push`
-  - `has_review_submission_after_last_push`
   - `has_open_review_threads`
   - `has_new_valid_findings`
   - `has_required_checks_green`
@@ -35,23 +34,24 @@ Repository-standard PR review loop for ai-rules maintenance.
    - After each push, set `last_push_at` and reset post-push review state:
      `last_review_submitted_at = null`,
      `has_review_in_progress_after_last_push = false`,
-     `has_review_submission_after_last_push = false`,
      `has_open_review_threads = false`,
-     `has_new_valid_findings = false`.
+     `has_new_valid_findings = false`,
+     `has_required_checks_green = false`,
+     `merge_gate_passed = false`.
    - Collect PR timeline events, Copilot review status, and review threads.
      - Set `has_review_in_progress_after_last_push` from timeline/status for
        the latest push.
-     - Set `has_review_submission_after_last_push` by checking whether a
-       Copilot review `submitted_at` exists after `last_push_at`.
-     - If `has_review_submission_after_last_push=true`, set
-       `last_review_submitted_at` to the latest matching `submitted_at`.
+     - Set `last_review_submitted_at` to the latest Copilot review
+       `submitted_at` that is after `last_push_at`; otherwise keep it `null`.
      - Set `has_open_review_threads` from unresolved review threads.
      - Set `has_required_checks_green` from required status checks for the
        current PR head commit.
+     - Set `merge_gate_passed=true` only when all hard merge gate conditions
+       are true; otherwise set `merge_gate_passed=false`.
    - If timeline events show a review currently running for the latest push,
      skip this item for now and continue with the next item (no idle waiting).
-   - If no Copilot review submission exists after `last_push_at` (based on
-     review `submitted_at`), trigger GitHub Copilot Code Review via API and
+   - If `last_review_submitted_at = null` (no Copilot review submission after
+     `last_push_at`), trigger GitHub Copilot Code Review via API and
      continue with the next item:
      - Get raw PR node ID:
        `gh pr view <PR_NUMBER> --json id --jq .id`
@@ -73,7 +73,8 @@ Repository-standard PR review loop for ai-rules maintenance.
      invalid or already handled), do not push or re-trigger review; move on to
      the next item.
 3. Repeat until every active item satisfies all conditions:
-   - at least one Copilot review submission happened after `last_push_at`
+   - `last_review_submitted_at != null` (a Copilot review was submitted after
+     `last_push_at`)
    - no review is currently running for the latest push
    - no new valid findings remain
    - no open review threads remain
@@ -81,11 +82,15 @@ Repository-standard PR review loop for ai-rules maintenance.
 ## Hard Merge Gate (No Exceptions)
 Before merging any PR in this loop, evaluate this gate explicitly. If any item
 is false or unknown, do not merge.
-- `has_review_submission_after_last_push = true`
 - `last_review_submitted_at > last_push_at`
 - `has_review_in_progress_after_last_push = false`
 - `has_open_review_threads = false`
+- `has_new_valid_findings = false`
 - `has_required_checks_green = true`
+
+Definition:
+- `merge_gate_passed = true` only when all hard-merge-gate checklist items
+  above are true in the same evaluation round.
 
 Operational rules:
 - Treat missing/ambiguous timestamps or review state as gate failure.
@@ -98,10 +103,6 @@ Operational rules:
 ## Completion
 - If `MERGE_AFTER_CLEAN_LOOP=true`, merge each PR only when:
   - `merge_gate_passed = true` from the hard merge gate above
-  - `has_required_checks_green = true`
-  - `last_review_submitted_at > last_push_at`
-  - no review is currently running for the latest push
-  - no open review threads remain
 - If `MERGE_AFTER_CLEAN_LOOP=false`, stop at clean loop and report each PR as
   ready for user merge.
 
