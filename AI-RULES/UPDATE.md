@@ -4,11 +4,11 @@ Instructions for AI agents to update ai-rules in a downstream-project.
 
 ## Prompt Examples
 - "update ai-rules"
-- "update ai-rules v4.3.0"
+- "update ai-rules v4.4.0"
 
 ## REF Determination Rules
 Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
-- If the user specifies a tag (for example `v4.3.0`), validate it first:
+- If the user specifies a tag (for example `v4.4.0`), validate it first:
   `git ls-remote --exit-code --refs --tags https://github.com/fabian-barney/ai-rules.git "refs/tags/<TAG>"`
   - If the command fails, stop and ask for a valid tag.
   - If it succeeds, set `REF=<TAG>`.

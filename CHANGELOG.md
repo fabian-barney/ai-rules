@@ -6,6 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
 
+## [v4.4.0] - 2026-02-14
+- Added repository-level security disclosure guidance in `SECURITY.md` for
+  supported versions and coordinated vulnerability reporting.
+- Added design guidance for cognitive complexity and early returns in
+  `DESIGN/COGNITIVE_COMPLEXITY.md` and `DESIGN/EARLY_RETURN.md`, and linked both
+  in design/dependency docs.
+- Hardened `AI-RULES/PR-REVIEW-LOOP.md` merge gates and replaced placeholder
+  review-trigger guidance with an executable `requestReviewsByLogin` GraphQL
+  mutation flow.
+- Updated downstream-project path guidance to keep project lessons learned and
+  ADRs under `<AI_PROJECT_PATH>/...` across setup/update/template docs.
+- Expanded language/design quality guidance, including semantic type preference
+  in `LANGUAGE/CONVENTIONS.md` and exact numeric handling in
+  `LANGUAGE/JAVA/JAVA.md`.
+- Added explicit deep-doc contract sections in `FRAMEWORK/ANGULAR.md` and
+  `FRAMEWORK/REACT.md`.
+- Added `Do / Don't Examples` sections to `SECURITY/SECURITY.md` and
+  `TEST/TEST.md` to align with deep technical doc requirements.
+
 ## [v4.3.0] - 2026-02-13
 - Added architecture guidance for CQRS in `ARCHITECTURE/CQRS.md` and linked it
   from the architecture index.
