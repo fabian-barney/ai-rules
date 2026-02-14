@@ -44,7 +44,8 @@ thresholds conservatively.
   variation is stable.
 - Keep cross-cutting concerns out of core methods (use focused wrappers/aspects
   only when appropriate per `DESIGN/AOP.md`).
-- Use `DESIGN/EARLY_RETURN.md` for guard-clause defaults and exception handling.
+- Use `DESIGN/EARLY_RETURN.md` for guard-clause defaults, guardrails, and
+  caveats.
 
 ## High-Risk Pitfalls
 1. Treating metric thresholds as optional suggestions for new code.
