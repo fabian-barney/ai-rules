@@ -10,15 +10,16 @@ This file defines the repository security disclosure process for GitHub.
 
 ## Supported Versions
 
-| Version | Supported |
+| Version | Support level |
 | --- | --- |
 | `main` branch | Yes |
 | Latest tagged release | Yes |
 | Older tags/releases | Best effort |
 
 ## Reporting a Vulnerability
-1. Use GitHub private vulnerability reporting for this repository:
-   `https://github.com/fabian-barney/ai-rules/security/advisories/new`
+1. Use GitHub private vulnerability reporting for this repository via
+   [GitHub private security advisories](https://github.com/fabian-barney/ai-rules/security/advisories/new).
+   If this policy is reused in another repository, update the owner/repo link accordingly.
 2. Do not open a public GitHub issue for vulnerability details.
 3. Include:
    - affected file/rule and version/ref,
