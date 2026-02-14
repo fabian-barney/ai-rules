@@ -25,6 +25,8 @@ Repository-standard PR review loop for ai-rules maintenance.
   - `has_review_submission_after_last_push`
   - `has_open_review_threads`
   - `has_new_valid_findings`
+  - `has_required_checks_green`
+  - `merge_gate_passed`
 
 ## Loop (Round-Robin, Multi-Issue)
 1. Build a queue of active work items.
@@ -44,6 +46,8 @@ Repository-standard PR review loop for ai-rules maintenance.
      - If `has_review_submission_after_last_push=true`, set
        `last_review_submitted_at` to the latest matching `submitted_at`.
      - Set `has_open_review_threads` from unresolved review threads.
+     - Set `has_required_checks_green` from required status checks for the
+       current PR head commit.
    - If timeline events show a review currently running for the latest push,
      skip this item for now and continue with the next item (no idle waiting).
    - If no Copilot review submission exists after `last_push_at` (based on
@@ -74,8 +78,27 @@ Repository-standard PR review loop for ai-rules maintenance.
    - no new valid findings remain
    - no open review threads remain
 
+## Hard Merge Gate (No Exceptions)
+Before merging any PR in this loop, evaluate this gate explicitly. If any item
+is false or unknown, do not merge.
+- `has_review_submission_after_last_push = true`
+- `last_review_submitted_at > last_push_at`
+- `has_review_in_progress_after_last_push = false`
+- `has_open_review_threads = false`
+- `has_required_checks_green = true`
+
+Operational rules:
+- Treat missing/ambiguous timestamps or review state as gate failure.
+- Treat missing/ambiguous required-check state as gate failure.
+- Passing CI alone is never sufficient for merge.
+- A prior Copilot review that predates the latest push never satisfies the gate.
+- Never merge in a state where Copilot review is still pending/running for the
+  latest push.
+
 ## Completion
 - If `MERGE_AFTER_CLEAN_LOOP=true`, merge each PR only when:
+  - `merge_gate_passed = true` from the hard merge gate above
+  - `has_required_checks_green = true`
   - `last_review_submitted_at > last_push_at`
   - no review is currently running for the latest push
   - no open review threads remain
