@@ -30,7 +30,10 @@ Repository-standard PR review loop for ai-rules maintenance.
 1. Build a queue of active work items.
 2. For each item in round-robin order:
    - If code/docs updates are pending, push them.
-   - After each push, set `last_push_at` and reset post-push review state.
+   - After each push, set `last_push_at` and reset post-push review state:
+     `last_review_submitted_at = null`,
+     `has_review_in_progress_after_last_push = false`,
+     `has_review_submission_after_last_push = false`.
    - Collect PR timeline events, Copilot review status, and review threads.
    - If timeline events show a review currently running for the latest push,
      skip this item for now and continue with the next item (no idle waiting).
@@ -40,8 +43,9 @@ Repository-standard PR review loop for ai-rules maintenance.
    - Classify each Copilot finding as valid or invalid.
    - Reply to each thread with the classification and concise rationale.
    - Fix valid findings, then resolve handled threads.
-   - If any changes were pushed, re-trigger GitHub Copilot Code Review and move
-     on to the next item.
+   - If any changes were pushed, set `last_push_at`, reset post-push review
+     state, re-trigger GitHub Copilot Code Review, and move on to the next
+     item.
 3. Repeat until every active item satisfies all conditions:
    - at least one Copilot review submission happened after `last_push_at`
    - no review is currently running for the latest push
@@ -52,7 +56,7 @@ Repository-standard PR review loop for ai-rules maintenance.
 - If `MERGE_AFTER_CLEAN_LOOP=true`, merge each PR only when:
   - `last_review_submitted_at > last_push_at`
   - no review is in progress
-  - no open valid review comments remain
+  - no open review threads remain
 - If `MERGE_AFTER_CLEAN_LOOP=false`, stop at clean loop and report each PR as
   ready for user merge.
 
