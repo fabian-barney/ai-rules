@@ -50,6 +50,8 @@ Repository-standard PR review loop for ai-rules maintenance.
        are true; otherwise set `merge_gate_passed=false`.
    - If timeline events show a review currently running for the latest push,
      skip this item for now and continue with the next item (no idle waiting).
+   - If `has_required_checks_green = false`, keep the item active, skip it for
+     now, and continue with the next item (no idle waiting).
    - If `last_review_submitted_at = null` (no Copilot review submission after
      `last_push_at`), trigger GitHub Copilot Code Review via API and
      continue with the next item:
@@ -104,7 +106,9 @@ Operational rules:
 - If `MERGE_AFTER_CLEAN_LOOP=true`, merge each PR only when:
   - `merge_gate_passed = true` from the hard merge gate above
 - If `MERGE_AFTER_CLEAN_LOOP=false`, stop at clean loop and report each PR as
-  ready for user merge.
+  gate-evaluated status to the user, including `merge_gate_passed` and any
+  failing hard-gate conditions. Do not label a PR as merge-ready unless the
+  hard merge gate passes.
 
 ## Guardrails
 - Keep PRs focused; do not bundle unrelated repository changes.
