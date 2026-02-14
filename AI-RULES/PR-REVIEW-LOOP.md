@@ -57,11 +57,20 @@ Repository-standard PR review loop for ai-rules maintenance.
      continue with the next item:
      - Get raw PR node ID:
        `gh pr view <PR_NUMBER> --json id --jq .id`
+     - Define the GraphQL mutation:
+       ```text
+       mutation RequestCopilotReview($pr: ID!, $bots: String!) {
+         requestReviewsByLogin(
+           input: { pullRequestId: $pr, botLogins: [$bots], union: true }
+         ) {
+           clientMutationId
+         }
+       }
+       ```
+     - Set `MUTATION_QUERY` to the exact mutation text above.
      - Request review from Copilot bot:
-       `gh api graphql -f query="<MUTATION_QUERY>" -f pr="<PR_ID>" -f bots='copilot-pull-request-reviewer'`
-     - Where `<MUTATION_QUERY>` is the complete
-       `requestReviewsByLogin` GraphQL mutation and `<PR_ID>` is the value
-       returned by the previous command.
+       `gh api graphql -f query="$MUTATION_QUERY" -f pr="<PR_ID>" -f bots='copilot-pull-request-reviewer'`
+     - `<PR_ID>` is the value returned by the previous command.
      - Verify a new review request/review appears before judging latest state.
    - Classify each Copilot finding as valid or invalid.
    - Set `has_new_valid_findings` from the current round's classification
