@@ -64,5 +64,7 @@ Repository-standard PR review loop for ai-rules maintenance.
 - Keep PRs focused; do not bundle unrelated repository changes.
 - Never delete review comments to make threads disappear.
 - For invalid findings, leave a clear rationale before resolving.
+- Never trigger Copilot review via PR comments (for example `@copilot review`
+  or `/copilot review`).
 - Do not use fixed wait timers (for example, "wait 5 minutes after push") as a
   merge/review gate; use PR timeline and review state instead.
