@@ -136,8 +136,12 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
       `<AI_PROJECT_PATH>` using the deterministic docs-only method in
       [AI-RULES/DOWNSTREAM-OVERRIDES.md](DOWNSTREAM-OVERRIDES.md).
 11. Run cleanup for stale legacy references:
-    - Remove or update references that still point to `AI_PROJECT.md`.
-    - Ensure generated/final references point to `<AI_PROJECT_PATH>/AI.md`.
+    - Identify outdated files, directories, and references left from earlier
+      setup/update states.
+    - Remove or update stale items based on current downstream-project
+      structure and preflight findings.
+    - Ensure generated/final references point to the currently resolved
+      baseline and downstream extension entry points.
 12. Preserve local extensions and any project-specific rules outside the vendor
     path, including `<AI_ROOT_PATH>/LESSONS_LEARNED/` if used.
 13. Record the updated version in the destination repository if it tracks versions.
