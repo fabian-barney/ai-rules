@@ -37,6 +37,13 @@ Repository-standard PR review loop for ai-rules maintenance.
      `has_open_review_threads = false`,
      `has_new_valid_findings = false`.
    - Collect PR timeline events, Copilot review status, and review threads.
+     - Set `has_review_in_progress_after_last_push` from timeline/status for
+       the latest push.
+     - Set `has_review_submission_after_last_push` by checking whether a
+       Copilot review `submitted_at` exists after `last_push_at`.
+     - If `has_review_submission_after_last_push=true`, set
+       `last_review_submitted_at` to the latest matching `submitted_at`.
+     - Set `has_open_review_threads` from unresolved review threads.
    - If timeline events show a review currently running for the latest push,
      skip this item for now and continue with the next item (no idle waiting).
    - If no Copilot review submission exists after `last_push_at` (based on
@@ -51,11 +58,16 @@ Repository-standard PR review loop for ai-rules maintenance.
        returned by the previous command.
      - Verify a new review request/review appears before judging latest state.
    - Classify each Copilot finding as valid or invalid.
+   - Set `has_new_valid_findings` from the current round's classification
+     result.
    - Reply to each thread with the classification and concise rationale.
    - Fix valid findings, then resolve handled threads.
    - If any changes were pushed, set `last_push_at`, reset the same post-push
      fields listed above, re-trigger GitHub Copilot Code Review via API (same
      steps above), and move on to the next item.
+   - If no changes were required or pushed (for example, all findings were
+     invalid or already handled), do not push or re-trigger review; move on to
+     the next item.
 3. Repeat until every active item satisfies all conditions:
    - at least one Copilot review submission happened after `last_push_at`
    - no review is currently running for the latest push
@@ -65,7 +77,7 @@ Repository-standard PR review loop for ai-rules maintenance.
 ## Completion
 - If `MERGE_AFTER_CLEAN_LOOP=true`, merge each PR only when:
   - `last_review_submitted_at > last_push_at`
-  - no review is in progress
+  - no review is currently running for the latest push
   - no open review threads remain
 - If `MERGE_AFTER_CLEAN_LOOP=false`, stop at clean loop and report each PR as
   ready for user merge.
