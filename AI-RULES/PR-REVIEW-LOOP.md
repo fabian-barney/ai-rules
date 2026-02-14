@@ -80,6 +80,7 @@ Repository-standard PR review loop for ai-rules maintenance.
    - no review is currently running for the latest push
    - no new valid findings remain
    - no open review threads remain
+   - `has_required_checks_green = true`
 
 ## Hard Merge Gate (No Exceptions)
 Before merging any PR in this loop, evaluate this gate explicitly. If any item
