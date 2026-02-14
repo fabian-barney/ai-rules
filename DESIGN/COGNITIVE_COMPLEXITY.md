@@ -16,11 +16,15 @@ Guidance for AI agents to control method-level cognitive complexity.
 - Enforced limit for new methods: cognitive complexity `<= 15`.
 - Encouraged limit for altered existing methods: cognitive complexity `<= 15`.
 - Temporary tolerance for altered legacy methods: up to `20` is acceptable only
-  when behavior risk is high and further simplification is documented as follow-up.
-- If an altered method stays above `20`, create or link a follow-up issue with
-  explicit reduction plan.
+  when behavior risk is high and the PR includes a documented reduction plan.
+- If an altered legacy method stays above `20`, create or link a follow-up
+  issue with an explicit reduction plan.
 
-These thresholds align with typical static-analysis defaults (for example Sonar)
+Definition used in this document:
+- Legacy method: a method that already existed before the current change and had
+  cognitive complexity above the encouraged target (`> 15`) at change start.
+
+These thresholds align with typical static-analysis defaults (for example SonarQube/SonarCloud)
 and common IDE plugin conventions.
 
 ## Metric Determination and Evidence
