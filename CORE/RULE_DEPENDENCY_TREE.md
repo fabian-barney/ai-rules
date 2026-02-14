@@ -144,6 +144,7 @@ Required sections for deep technical docs:
 ### Query/Data Access Chain
 - `LANGUAGE/SQL/SQL.md`
 - `ARCHITECTURE/N_PLUS_1.md`
+- `ARCHITECTURE/CQRS.md`
 - `LIBRARY/JPA.md`, `LIBRARY/JOOQ.md`
 
 ### Delivery/Runtime Chain

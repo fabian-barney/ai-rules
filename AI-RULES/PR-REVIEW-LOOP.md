@@ -40,14 +40,22 @@ Repository-standard PR review loop for ai-rules maintenance.
    - If timeline events show a review currently running for the latest push,
      skip this item for now and continue with the next item (no idle waiting).
    - If no Copilot review submission exists after `last_push_at` (based on
-     review `submitted_at`), trigger GitHub Copilot Code Review and continue
-     with the next item.
+     review `submitted_at`), trigger GitHub Copilot Code Review via API and
+     continue with the next item:
+     - Get raw PR node ID:
+       `gh pr view <PR_NUMBER> --json id --jq .id`
+     - Request review from Copilot bot:
+       `gh api graphql -f query="<MUTATION_QUERY>" -f pr="<PR_ID>" -f bots='copilot-pull-request-reviewer'`
+     - Where `<MUTATION_QUERY>` is the complete
+       `requestReviewsByLogin` GraphQL mutation and `<PR_ID>` is the value
+       returned by the previous command.
+     - Verify a new review request/review appears before judging latest state.
    - Classify each Copilot finding as valid or invalid.
    - Reply to each thread with the classification and concise rationale.
    - Fix valid findings, then resolve handled threads.
    - If any changes were pushed, set `last_push_at`, reset the same post-push
-     fields listed above, re-trigger GitHub Copilot Code Review, and move on to
-     the next item.
+     fields listed above, re-trigger GitHub Copilot Code Review via API (same
+     steps above), and move on to the next item.
 3. Repeat until every active item satisfies all conditions:
    - at least one Copilot review submission happened after `last_push_at`
    - no review is currently running for the latest push
@@ -68,5 +76,6 @@ Repository-standard PR review loop for ai-rules maintenance.
 - For invalid findings, leave a clear rationale before resolving.
 - Never trigger Copilot review via PR comments (for example `@copilot review`
   or `/copilot review`).
+- Never mention `@copilot` in PR comments.
 - Do not use fixed wait timers (for example, "wait 5 minutes after push") as a
   merge/review gate; use PR timeline and review state instead.

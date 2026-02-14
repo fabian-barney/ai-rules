@@ -12,9 +12,11 @@ with real newline characters.
 
 ## Prevention
 - Prefer `gh issue create --body-file <path>` with a raw UTF-8 Markdown file.
+- For updates, use `gh issue edit <id> --body-file <path>` instead of passing
+  escaped inline strings.
 - If content comes from JSON, decode once before posting (for example, with
   `jq -r`).
 - Add a preflight check that blocks publish when the body contains literal
   `\n` markers.
-- After creating an issue, verify rendered formatting in GitHub for headings
-  and bullet lists.
+- After creating or editing an issue, verify rendered formatting in GitHub for
+  headings and bullet lists.
