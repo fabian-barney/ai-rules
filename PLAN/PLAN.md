@@ -3,8 +3,9 @@
 Guidance for AI agents creating implementation plans.
 
 ## Scope
-- Define planning standards for multi-step or high-risk tasks.
-- Apply this file when producing execution plans before implementation.
+- Define planning standards for implementation tasks.
+- Apply this file before implementation for every implementation concern.
+- Use deeper, decision-complete planning for multi-step or high-risk work.
 
 ## Semantic Dependencies
 - Inherit dependency order from `CORE/RULE_DEPENDENCY_TREE.md`.
