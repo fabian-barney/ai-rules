@@ -18,8 +18,7 @@ Sub-heading template:
 - Standardized release-note sub-heading formatting guidance in
   `AI-RULES/RELEASE.md` to enforce a single canonical heading template.
 - Fixed duplicated/triplicated release-note top headings by deduplicating
-  existing GitHub release-note sub-headings and documenting heading-stripping
-  behavior in `AI-RULES/RELEASE.md`.
+  existing GitHub release-note sub-headings.
 
 ## [v4.5.0] - 2026-02-15
 - Added session entry preferences and execution controls in
