@@ -31,6 +31,9 @@ Version selection:
 6. Create an annotated tag (for example `v4.5.0`).
 7. Push `main` and the tag to GitHub.
 8. Create a GitHub Release using the changelog notes.
+   - Release notes must start with this exact sub-heading template:
+     `## [vX.Y.Z] - YYYY-MM-DD`
+   - Keep bullet content unchanged when normalizing only sub-heading format.
 9. Verify the release page and tag exist.
 
 ## Notes
