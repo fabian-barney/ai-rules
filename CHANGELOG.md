@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
 
+## [v4.5.0] - 2026-02-15
+- Added session entry preferences and execution controls in
+  `AI-RULES/PR-REVIEW-LOOP.md` for review-loop execution, plan-to-implementation
+  autonomy, and optional merge-after-clean-loop behavior.
+- Expanded `PLAN/PLAN.md` with stronger planning dependencies, architecture-first
+  focus, and explicit research requirements to reduce shallow planning.
+- Clarified inherited constraint resolution in `PROGRAMMING/PROGRAMMING.md` and
+  `REVIEW/CODE_REVIEW.md` by explicitly requiring index-doc and leaf-doc
+  traversal across language, design, architecture, framework, library, build,
+  infrastructure, and CI/CD guidance.
+- Updated repository security policy in `SECURITY.md` to support only the latest
+  tagged release and to use best-effort triage timing (no fixed SLA).
+- Removed outdated private-repository access guidance from
+  `AGENTS_TEMPLATE.md`.
+
 ## [v4.4.0] - 2026-02-14
 - Added repository-level security disclosure guidance in `SECURITY.md` for
   supported versions and coordinated vulnerability reporting.
