@@ -25,8 +25,8 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
 
 ## Update Steps (run when requested)
 1. Locate the vendored ai-rules path and entry point from `AGENTS.md` or README.
-   - Set `<AI_ROOT_PATH>` to the repo-relative ai docs root (for example
-     `docs/ai`).
+   - Set `<AI_ROOT_PATH>` to the repo-relative ai root path (for example
+     `ai`).
    - Set `<AI_RULES_PATH>` to the baseline path (for example
      `<AI_ROOT_PATH>/AI-RULES`).
    - Set `<AI_PROJECT_PATH>` to the downstream extension path (for example
@@ -35,9 +35,9 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
    - Every time this guide shows `<AI_PROJECT_PATH>`, replace it with that real
      path.
    - For `.git/info/exclude`, the matching directory entry is `/<AI_RULES_PATH>/`
-     (for example `/docs/ai/AI-RULES/`).
+     (for example `/ai/AI-RULES/`).
    - For downstream extensions in local mode, the matching directory entry is
-     `/<AI_PROJECT_PATH>/` (for example `/docs/ai/PROJECT/`).
+     `/<AI_PROJECT_PATH>/` (for example `/ai/PROJECT/`).
 2. Enforce a clean-working-tree precondition before subtree operations:
    - Run `git status --porcelain`.
    - If output is empty, continue.
@@ -52,7 +52,7 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
      - `TRACKED_SUBTREE=true` if `git ls-files -- "<AI_RULES_PATH>/AI.md"` returns a tracked file.
      - `LOCAL_HINT=true` if `.git/info/exclude` contains the subtree directory
        entry `/<AI_RULES_PATH>/` (replace with the real path; example:
-       `/docs/ai/AI-RULES/`).
+       `/ai/AI-RULES/`).
        Companion excludes (for example `/AGENTS.md`, `/<AI_PROJECT_PATH>/`,
        `/CLAUDE.md`, `/.github/copilot-instructions.md`) are optional and do not
        affect `LOCAL_HINT`.
@@ -168,7 +168,7 @@ Steps:
       Note: `<AI_PROJECT_PATH>/` is shared/tracked in git mode. Switching to
       local intentionally converts it to local-only (untracked).
    - Add the local excludes to `.git/info/exclude` (keep the file intact):
-     (Replace `/<AI_RULES_PATH>/` with the real path; example: `/docs/ai/AI-RULES/`.)
+     (Replace `/<AI_RULES_PATH>/` with the real path; example: `/ai/AI-RULES/`.)
      /<AI_RULES_PATH>/
      /<AI_PROJECT_PATH>/
      /AGENTS.md
@@ -182,7 +182,7 @@ Steps:
 3. If switching to git:
    - If already git, stop.
    - Remove the ai-rules entries from `.git/info/exclude` (keep the file intact):
-     (Replace `/<AI_RULES_PATH>/` with the real path; example: `/docs/ai/AI-RULES/`.)
+     (Replace `/<AI_RULES_PATH>/` with the real path; example: `/ai/AI-RULES/`.)
      /<AI_RULES_PATH>/
      /<AI_PROJECT_PATH>/
      /AGENTS.md

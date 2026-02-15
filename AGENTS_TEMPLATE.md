@@ -17,7 +17,7 @@ To switch modes later, use "mode ai-rules local" or "mode ai-rules git".
 
 ### Paths
 Use these placeholders consistently:
-- `<AI_ROOT_PATH>` = `docs/ai`
+- `<AI_ROOT_PATH>` = `ai`
 - `<AI_RULES_PATH>` = `<AI_ROOT_PATH>/AI-RULES`
 - `<AI_PROJECT_PATH>` = `<AI_ROOT_PATH>/PROJECT`
 
@@ -170,9 +170,9 @@ Git update note:
 
 ## Entry Point Templates
 Note: Replace placeholders with actual paths:
-- `<AI_ROOT_PATH>` => `docs/ai`
-- `<AI_RULES_PATH>` => `docs/ai/AI-RULES`
-- `<AI_PROJECT_PATH>` => `docs/ai/PROJECT`
+- `<AI_ROOT_PATH>` => `ai`
+- `<AI_RULES_PATH>` => `ai/AI-RULES`
+- `<AI_PROJECT_PATH>` => `ai/PROJECT`
 
 ### CLAUDE.md
 ```
