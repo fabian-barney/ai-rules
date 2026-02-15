@@ -9,6 +9,12 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+- Strengthened `AI-RULES/UPDATE.md` with explicit structure-adaptation guidance
+  for baseline and downstream override directory/file changes, requiring ad-hoc
+  migration planning from preflight findings instead of a fixed checklist.
+- Added required update completion gates for structure alignment, git-subtree
+  location validation (git mode), and stale-reference cleanup in entry/ignore
+  files.
 
 ## [v4.6.0] - 2026-02-15
 - Changed the default downstream base directory placeholder from `docs/ai` to
