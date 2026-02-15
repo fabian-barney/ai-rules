@@ -15,6 +15,8 @@ Sub-heading template:
   issue branch + PR/MR flow, and explicit completion status reporting fields.
 - Added repository PR-loop preconditions to consume shared plan/VCS rules
   without redefining downstream-project guidance scope.
+- Standardized release-note sub-heading formatting guidance in
+  `AI-RULES/RELEASE.md` to enforce a single canonical heading template.
 
 ## [v4.5.0] - 2026-02-15
 - Added session entry preferences and execution controls in
