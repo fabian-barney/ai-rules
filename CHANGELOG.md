@@ -9,6 +9,8 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+
+## [v4.6.0] - 2026-02-15
 - Changed the default downstream base directory placeholder from `docs/ai` to
   `ai` across setup/template/update guidance.
 - Hardened shared workflow policy to require plan-first execution, dedicated
