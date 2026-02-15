@@ -10,7 +10,7 @@ Legacy wording "consuming project" means the same thing.
 
 ## Path Placeholders
 Default placeholder mapping for downstream guidance:
-- `<AI_ROOT_PATH>` = `docs/ai`
+- `<AI_ROOT_PATH>` = `ai`
 - `<AI_RULES_PATH>` = `<AI_ROOT_PATH>/AI-RULES`
 - `<AI_PROJECT_PATH>` = `<AI_ROOT_PATH>/PROJECT`
 

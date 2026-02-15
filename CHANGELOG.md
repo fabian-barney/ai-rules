@@ -5,6 +5,8 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
+- Changed the default downstream base directory placeholder from `docs/ai` to
+  `ai` across setup/template/update guidance.
 
 ## [v4.5.0] - 2026-02-15
 - Added session entry preferences and execution controls in
@@ -105,14 +107,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Clarified update/setup path placeholder handling, including copy-paste-safe
   `.git/info/exclude` examples.
 - Added readability guidance forbidding nested/chained ternary expressions.
-- Added downstream-project ADR guidance under `docs/ai/DECISIONS/` and
+- Added downstream-project ADR guidance under `<AI_PROJECT_PATH>/DECISIONS/` and
   clarified downstream-project terminology.
 - Clarified scope boundaries between repository governance files and
   downstream-project operational guidance.
 
 ## [v3.0.0] - 2026-02-05
 - Breaking: flattened repo layout with `AI.md` at the repo root and subtree prefix
-  guidance updated to `docs/ai/AI-RULES`.
+  guidance updated to `<AI_RULES_PATH>`.
 - Added PROGRAMMING, PLAN, and CODE_REVIEW guidance with stricter review expectations.
 - Added downstream-project guidance for lessons learned placement and maintenance rules.
 - Added test fixture separation guidance and markdownlint hygiene updates.
