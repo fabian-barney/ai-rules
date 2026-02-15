@@ -25,11 +25,12 @@ Guidance for AI agents creating implementation plans.
 ## Planning Requirement (Mandatory)
 - Create a plan before starting implementation for every implementation task.
 - The plan may be lightweight for low-risk, trivial changes, but it must still
-  state goal, scope, and verification approach.
+  be decision-complete for its scope and risk while stating required elements
+  tersely.
 - Do not start implementation when no plan exists.
 
 ## Decision-Complete Plan Requirements
-A plan must specify:
+A plan must specify (at depth appropriate to scope/risk):
 - Goal and success criteria.
 - In-scope and out-of-scope items.
 - Semantic dependency order and target files.

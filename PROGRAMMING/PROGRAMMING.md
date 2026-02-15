@@ -27,8 +27,10 @@ Guidance for AI agents executing implementation tasks.
    - A plan exists (see `PLAN/PLAN.md`).
    - The work is mapped to an issue/ticket.
    - Work is on a dedicated non-default branch for that issue/ticket.
-   - If any precondition is missing, stop implementation and establish the
-     missing precondition first.
+   - If any precondition is missing, stop implementation and either establish
+     the missing precondition first or, if impossible due to
+     permissions/tooling/VCS policy, stop and report `BLOCKED` as defined in
+     `CORE/VERSION_CONTROL_SYSTEM.md`.
 2. Confirm behavior goals, acceptance criteria, and scope boundaries.
 3. Locate semantic parent docs using `CORE/RULE_DEPENDENCY_TREE.md` and the
    relevant index docs (`LANGUAGE/LANGUAGE.md`, `DESIGN/DESIGN.md`,

@@ -10,8 +10,12 @@ Repository-standard PR review loop for ai-rules maintenance.
 - This loop assumes shared workflow prerequisites are already satisfied for each
   work item:
   - A plan exists.
-  - Work is on a dedicated issue branch (not a default branch).
-  - A PR exists for that branch.
+  - Work is on a dedicated issue branch (not a default branch) for non-blocked
+    items.
+  - An open PR/MR exists for that branch for all non-blocked items.
+- If a work item is explicitly marked `BLOCKED: <reason>` because a branch or
+  PR/MR cannot be created, do not run this loop for that item until it is
+  unblocked.
 - Source of truth for those shared prerequisites:
   - `PLAN/PLAN.md`
   - `CORE/VERSION_CONTROL_SYSTEM.md`
