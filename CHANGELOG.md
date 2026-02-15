@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## Unreleased
 - Changed the default downstream base directory placeholder from `docs/ai` to
   `ai` across setup/template/update guidance.
+- Hardened shared workflow policy to require plan-first execution, dedicated
+  issue branch + PR/MR flow, and explicit completion status reporting fields.
+- Added repository PR-loop preconditions to consume shared plan/VCS rules
+  without redefining downstream-project guidance scope.
 
 ## [v4.5.0] - 2026-02-15
 - Added session entry preferences and execution controls in

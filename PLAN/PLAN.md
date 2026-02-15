@@ -21,12 +21,11 @@ Guidance for AI agents creating implementation plans.
   `TEST/TEST.md`, `SECURITY/SECURITY.md`, and `COMPLIANCE/COMPLIANCE.md`.
 - Inherit workflow constraints from `CORE/VERSION_CONTROL_SYSTEM.md`.
 
-## When Planning Is Required
-- Multi-document or multi-repo changes.
-- High-risk refactors and behavior changes.
-- Work spanning multiple semantic layers
-  (language/framework/library/infrastructure/CI-CD).
-- Any change with unclear requirements or significant rollback risk.
+## Planning Requirement (Mandatory)
+- Create a plan before starting implementation for every implementation task.
+- The plan may be lightweight for low-risk, trivial changes, but it must still
+  state goal, scope, and verification approach.
+- Do not start implementation when no plan exists.
 
 ## Decision-Complete Plan Requirements
 A plan must specify:
@@ -107,5 +106,6 @@ Do:    update parent baselines first, then child specializations.
 - Are assumptions and follow-ups explicit?
 
 ## Override Notes
-- Task-specific user constraints may change execution order, but plans must stay
-  decision-complete and dependency-aware.
+- Task-specific user constraints may change plan format or depth, but they do
+  not remove the mandatory plan-before-implementation requirement.
+- Plans must stay decision-complete and dependency-aware.

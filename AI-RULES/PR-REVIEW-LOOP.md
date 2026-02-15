@@ -6,6 +6,16 @@ Repository-standard PR review loop for ai-rules maintenance.
 - Applies only to this repository.
 - Do not copy these rules into downstream-projects.
 
+## Preconditions
+- This loop assumes shared workflow prerequisites are already satisfied for each
+  work item:
+  - A plan exists.
+  - Work is on a dedicated issue branch (not a default branch).
+  - A PR exists for that branch.
+- Source of truth for those shared prerequisites:
+  - `PLAN/PLAN.md`
+  - `CORE/VERSION_CONTROL_SYSTEM.md`
+
 ## Session Entry Preferences (Ask Once, Only If Unclear)
 - Ask these questions at the very beginning of the workflow (before planning,
   implementation, or review-loop execution) when the user prompt did not
@@ -36,6 +46,8 @@ Repository-standard PR review loop for ai-rules maintenance.
     implementation/review-loop execution without additional user prompts.
   - If `IMPLEMENT_AFTER_PLAN=false`, stop after planning and wait for explicit
     user instruction before implementation and review-loop execution.
+- Session preferences in this file control execution behavior only; they do not
+  override shared mandatory planning/VCS requirements.
 
 ## Work Item Model
 - Treat each issue/PR pair as one independent work item.

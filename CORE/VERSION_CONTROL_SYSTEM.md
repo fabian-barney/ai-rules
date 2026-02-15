@@ -10,16 +10,23 @@ Guidance for version control system usage (Git and others).
 - Mark breaking changes explicitly.
 
 ## Branch and PR/MR Workflow
+- Mandatory execution order for implementation concerns:
+  `plan -> dedicated branch -> implement -> PR/MR -> review -> merge`.
+- Link each implementation concern to one issue/ticket and keep branch/PR/MR
+  scope aligned to that single concern.
 - Create a dedicated branch for each new concern being implemented (usually one
   issue/ticket).
 - Keep each branch scoped to that single concern.
 - Push successful intermediate states to VCS so progress stays recoverable.
 - Do not push knowingly non-working code unless this is explicitly requested.
-- Suggest opening a PR/MR when all acceptance criteria are fulfilled and you
+- Create a PR/MR for implementation work before reporting completion when you
   have access to GitHub, GitLab, or a similar review system.
 - When opening a PR/MR, auto-detect the target branch from downstream-project
   rules when available; otherwise ask which target branch to use and suggest
   the most likely one.
+- If you cannot create the branch or PR/MR due permission/tooling constraints,
+  stop and report `BLOCKED` with the concrete reason instead of bypassing the
+  workflow.
 
 ## PR/MR and Issue Tracker Summaries
 - When creating a PR/MR, include an implementation summary aimed at code
@@ -30,6 +37,15 @@ Guidance for version control system usage (Git and others).
   Product Owners, Code Reviewers, and Testers/QA.
 - If you have access to the issue tracker, add that summary directly to the
   linked issue/ticket.
+
+## Completion Status Contract
+- Final delivery for implementation work must include:
+  - `Plan:`
+  - `Issue/Ticket:`
+  - `Branch:`
+  - `PR/MR:` (or `BLOCKED: <reason>`)
+  - `Validation:`
+- Use platform-neutral `PR/MR` wording in shared guidance.
 
 ## PR/MR Review Comment Handling
 - Evaluate every review comment and explicitly judge whether it is valid or not
