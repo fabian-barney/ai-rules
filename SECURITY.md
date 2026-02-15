@@ -14,7 +14,7 @@ This file defines the repository security disclosure process for GitHub.
 | --- | --- |
 | `main` branch | Yes |
 | Latest tagged release | Yes |
-| Older tags/releases | Best effort |
+| Older tags/releases | No |
 
 ## Reporting a Vulnerability
 1. Use GitHub private vulnerability reporting for this repository via
