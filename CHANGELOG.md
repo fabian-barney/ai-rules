@@ -4,6 +4,10 @@ All notable changes to this project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+Sub-heading template:
+- Unreleased section: `## Unreleased`
+- Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
+
 ## Unreleased
 - Changed the default downstream base directory placeholder from `docs/ai` to
   `ai` across setup/template/update guidance.
