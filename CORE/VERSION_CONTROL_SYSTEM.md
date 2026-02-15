@@ -24,7 +24,7 @@ Guidance for version control system usage (Git and others).
 - When opening a PR/MR, auto-detect the target branch from downstream-project
   rules when available; otherwise ask which target branch to use and suggest
   the most likely one.
-- If you cannot create the branch or PR/MR due permission/tooling constraints,
+- If you cannot create the branch or PR/MR due to permission/tooling constraints,
   stop and report `BLOCKED` with the concrete reason instead of bypassing the
   workflow.
 
