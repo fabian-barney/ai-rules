@@ -6,15 +6,25 @@ Repository-standard PR review loop for ai-rules maintenance.
 - Applies only to this repository.
 - Do not copy these rules into downstream-projects.
 
-## Session Merge Preference (Ask Once)
-- At the beginning of a session that uses this loop, ask exactly once:
-  "After the loop reaches zero valid Copilot findings, should I also merge the
-  PR?"
-- Store the user's answer as session preference:
-  `MERGE_AFTER_CLEAN_LOOP=true|false`.
-- Do not ask this merge question again in the same session, even when handling
+## Session Entry Preferences (Ask Once, Only If Unclear)
+- Ask these questions at the very beginning of the workflow (before planning,
+  implementation, or review-loop execution) when the user prompt did not
+  already answer them.
+- Ask each question at most once per session, then store the answer as session
+  preference:
+  - Code review loop preference:
+    "Do you want me to run the code review loop for the relevant PRs?"
+    Store as `RUN_REVIEW_LOOP=true|false`.
+  - Plan-to-implementation autonomy preference:
+    "After planning is complete, should I start implementation immediately?"
+    Store as `IMPLEMENT_AFTER_PLAN=true|false`.
+  - Merge-after-clean-loop preference:
+    "After the loop reaches zero valid Copilot findings, should I also merge
+    the PR?"
+    Store as `MERGE_AFTER_CLEAN_LOOP=true|false`.
+- Do not ask these questions again in the same session, even when handling
   multiple issues or PRs.
-- After this one-time decision, run unattended through the loop unless blocked.
+- After these one-time decisions are captured, run unattended unless blocked.
 
 ## Work Item Model
 - Treat each issue/PR pair as one independent work item.
@@ -48,6 +58,8 @@ Repository-standard PR review loop for ai-rules maintenance.
        current PR head commit.
      - Set `merge_gate_passed=true` only when all hard merge gate conditions
        are true; otherwise set `merge_gate_passed=false`.
+     - Copilot review generation can take several minutes (often around
+       5 minutes). Treat this as operational latency, not as a fixed gate.
    - If timeline events show a review currently running for the latest push,
      skip this item for now and continue with the next item (no idle waiting).
    - If `has_required_checks_green = false`, keep the item active, skip it for
