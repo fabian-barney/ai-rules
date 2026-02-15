@@ -195,6 +195,3 @@ Use the shared AI rules located at:
 > Note: The Copilot PR Review bot draws context from repository instructions.
 > Keeping `.github/copilot-instructions.md` present and pointed at the baseline
 > increases the chance it uses the same rules.
-
-## Access
-This repository is private; ensure your GitHub account has access.
