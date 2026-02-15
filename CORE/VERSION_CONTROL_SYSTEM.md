@@ -11,7 +11,8 @@ Guidance for version control system usage (Git and others).
 
 ## Branch and PR/MR Workflow
 - Mandatory execution order for implementation concerns:
-  `plan -> dedicated branch -> implement -> PR/MR -> review -> merge`.
+  `plan -> dedicated branch -> implement -> PR/MR -> review -> merge (if
+  permitted, typically by maintainers)`.
 - Link each implementation concern to one issue/ticket and keep branch/PR/MR
   scope aligned to that single concern.
 - Create a dedicated branch for each new concern being implemented (usually one
@@ -27,6 +28,8 @@ Guidance for version control system usage (Git and others).
 - If you cannot create the branch or PR/MR due to permission/tooling constraints,
   stop and report `BLOCKED` with the concrete reason instead of bypassing the
   workflow.
+- When merge permission is not available, the hand-off point is a review-ready
+  PR/MR and completion should be reported via the completion status contract.
 
 ## PR/MR and Issue Tracker Summaries
 - When creating a PR/MR, include an implementation summary aimed at code
@@ -42,8 +45,10 @@ Guidance for version control system usage (Git and others).
 - Final delivery for implementation work must include:
   - `Plan:`
   - `Issue/Ticket:`
-  - `Branch:`
-  - `PR/MR:` (or `BLOCKED: <reason>`)
+  - `Branch:` (or `Branch: BLOCKED` / `Branch: N/A` when branch creation is not
+    possible; explain the reason under `BLOCKED: <reason>`)
+  - `PR/MR:` (or `BLOCKED: <reason>` when the PR/MR and/or branch cannot be
+    created)
   - `Validation:`
 - Use platform-neutral `PR/MR` wording in shared guidance.
 
