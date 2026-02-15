@@ -26,6 +26,17 @@ Repository-standard PR review loop for ai-rules maintenance.
   multiple issues or PRs.
 - After these one-time decisions are captured, run unattended unless blocked.
 
+## Session Preference Application
+- Apply `RUN_REVIEW_LOOP` before starting this loop:
+  - If `RUN_REVIEW_LOOP=true`, execute this document's loop.
+  - If `RUN_REVIEW_LOOP=false`, do not execute the loop; report that review
+    loop execution is intentionally skipped for this session.
+- Apply `IMPLEMENT_AFTER_PLAN` in workflows that include a planning phase:
+  - If `IMPLEMENT_AFTER_PLAN=true`, continue from planning into
+    implementation/review-loop execution without additional user prompts.
+  - If `IMPLEMENT_AFTER_PLAN=false`, stop after planning and wait for explicit
+    user instruction before implementation and review-loop execution.
+
 ## Work Item Model
 - Treat each issue/PR pair as one independent work item.
 - Track per item:
