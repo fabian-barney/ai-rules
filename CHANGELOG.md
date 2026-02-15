@@ -9,6 +9,8 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+
+## [v4.7.0] - 2026-02-15
 - Strengthened `AI-RULES/UPDATE.md` with explicit structure-adaptation guidance
   for baseline and downstream override directory/file changes, requiring ad-hoc
   migration planning from preflight findings instead of a fixed checklist.
