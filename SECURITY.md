@@ -12,9 +12,9 @@ This file defines the repository security disclosure process for GitHub.
 
 | Version | Support level |
 | --- | --- |
-| `main` branch | Yes |
+| `main` branch | No |
 | Latest tagged release | Yes |
-| Older tags/releases | Best effort |
+| Older tags/releases | No |
 
 ## Reporting a Vulnerability
 1. Use GitHub private vulnerability reporting for this repository via
@@ -28,6 +28,6 @@ This file defines the repository security disclosure process for GitHub.
    - suggested remediation if available.
 
 ## Response Expectations
-- Initial triage response target: within 5 business days.
+- Initial triage response timing is best effort (no fixed SLA target).
 - Valid reports will be tracked privately until a fix is ready.
 - Disclosure timing should follow coordinated disclosure practices.
