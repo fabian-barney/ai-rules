@@ -8,6 +8,15 @@ Guidance for AI agents creating implementation plans.
 
 ## Semantic Dependencies
 - Inherit dependency order from `CORE/RULE_DEPENDENCY_TREE.md`.
+- Resolve planning constraints through relevant index docs:
+  `LANGUAGE/LANGUAGE.md`, `DESIGN/DESIGN.md`,
+  `ARCHITECTURE/ARCHITECTURE.md`, `FRAMEWORK/FRAMEWORK.md`,
+  `LIBRARY/LIBRARY.md`, `BUILD_TOOLS/BUILD_TOOLS.md`,
+  `INFRASTRUCTURE/INFRASTRUCTURE.md`, and `CI-CD/CI-CD.md`.
+- Apply corresponding specialized leaf rules under `LANGUAGE/**`,
+  `DESIGN/**`, `ARCHITECTURE/**`, `FRAMEWORK/**`, `LIBRARY/**`,
+  `BUILD_TOOLS/**`, `INFRASTRUCTURE/**`, and `CI-CD/**` when they affect
+  planning decisions and risk.
 - Inherit testing/security/compliance constraints from
   `TEST/TEST.md`, `SECURITY/SECURITY.md`, and `COMPLIANCE/COMPLIANCE.md`.
 - Inherit workflow constraints from `CORE/VERSION_CONTROL_SYSTEM.md`.
@@ -35,6 +44,9 @@ A plan must specify:
 - Keep assumptions explicit; avoid hidden decisions.
 - Mark where follow-up issues are needed.
 - Keep plan aligned with one-issue/one-branch/one-PR workflow when required.
+- Prioritize system-level architecture and design decisions in planning.
+- Do not over-index on fine-grained implementation details that are better
+  handled during execution unless they materially change risk/scope.
 
 ## Risk and Dependency Handling
 - Identify external dependencies and blockers early.
@@ -42,6 +54,15 @@ A plan must specify:
 - Prefer dependency-first ordering (parent constraints before child
   specialization).
 - Include rollback options for high-impact changes.
+
+## Research Requirements
+- Perform intensive research before finalizing a plan.
+- Research must cover:
+  - semantic parent and sibling docs that influence scope and decisions,
+  - architecture and design constraints,
+  - relevant codebase context and issue/PR history,
+  - external authoritative sources when domain or risk requires it.
+- Record the key options considered and why the chosen plan is preferred.
 
 ## Testing and Validation Planning
 - Define required tests before implementation starts.
@@ -56,6 +77,7 @@ A plan must specify:
 4. Oversized steps with hidden complexity.
 5. No rollback strategy for risky changes.
 6. Untracked assumptions that later break execution.
+7. Shallow research that misses better options or known constraints.
 
 ## Do / Don't Examples
 ### 1. Step Quality
