@@ -90,6 +90,12 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
        including `TARGET_VERSION`.
    - Identify breaking or behavior-changing entries (for example path renames,
      entry-point changes, setup/update workflow changes, mode semantics changes).
+   - Compare target-version directory/file structure expectations for both:
+     - baseline vendor content under `<AI_RULES_PATH>/`
+     - downstream overrides under `<AI_PROJECT_PATH>/`
+   - Derive required structure-migration actions ad-hoc from those detected
+     differences and the current downstream-project state. Do not rely on a
+     fixed migration checklist for structure changes in this ruleset.
    - Adapt the setup/update commands and file operations before execution.
    - Summarize the detected changes and adapted execution plan before proceeding.
    - If the target-version docs cannot be inspected, stop and ask the user how
@@ -140,6 +146,9 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
       setup/update states.
     - Remove or update stale items based on current downstream-project
       structure and preflight findings.
+    - Validate that entry and ignore files no longer contain stale path
+      references (for example `AGENTS.md`, `CLAUDE.md`,
+      `.github/copilot-instructions.md`, and `.git/info/exclude`).
     - Ensure generated/final references point to the currently resolved
       baseline and downstream extension entry points.
 12. Preserve local extensions and any project-specific rules outside the vendor
@@ -147,6 +156,22 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
     `<AI_PROJECT_PATH>/DECISIONS/` if used.
 13. Record the updated version in the destination repository if it tracks versions.
 14. Summarize changes.
+
+## Completion Gates (required before closing an update)
+- Structure alignment gate:
+  - The downstream-project directory/file layout matches target-version
+    expectations from preflight for both `<AI_RULES_PATH>/` and
+    `<AI_PROJECT_PATH>/`.
+- Git-subtree location gate (git mode only):
+  - `<AI_RULES_PATH>/AI.md` is tracked.
+  - No stale tracked ai-rules vendor path from an old structure remains.
+- Stale-reference gate:
+  - No stale path reference remains in baseline/downstream entry files or ignore
+    files (at minimum `AGENTS.md`, `CLAUDE.md`,
+    `.github/copilot-instructions.md`, `.git/info/exclude`).
+- Final consistency gate:
+  - Baseline and downstream entry points resolve to the currently installed
+    structure and all preflight-detected migration items are complete.
 
 ## Mode Switch (when requested)
 Prompt Examples:
