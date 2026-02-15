@@ -33,9 +33,6 @@ Version selection:
 8. Create a GitHub Release using the changelog notes.
    - Release notes must start with this exact sub-heading template:
      `## [vX.Y.Z] - YYYY-MM-DD`
-   - If normalizing an existing release, remove any pre-existing top markdown
-     heading lines before adding the canonical sub-heading.
-   - Keep bullet content unchanged when normalizing only sub-heading format.
 9. Verify the release page and tag exist.
 
 ## Notes
