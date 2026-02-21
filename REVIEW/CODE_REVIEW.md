@@ -22,6 +22,17 @@ Guidance for AI agents performing code and rules-document reviews.
   `SECURITY/SECURITY.md`, `TEST/TEST.md`, `COMPLIANCE/COMPLIANCE.md`.
 - Severity levels are defined by this document's local severity model.
 
+## Ruleset Read Gate (Mandatory)
+- Start every review task by reading the complete ai-rules ruleset.
+- "Complete ai-rules ruleset" means every Markdown file transitively reachable
+  from the baseline entry point `AI.md`.
+- In downstream-projects, also read every Markdown file transitively reachable
+  from the downstream extension entry point described in
+  `AI-RULES/DOWNSTREAM-PROJECT.md`.
+- Do not skip reachable Markdown files and do not pick files ad-hoc.
+- After the full read is complete, irrelevant rules may be removed from active
+  context.
+
 ## Review Priority Order
 1. Correctness and regression risk.
 2. Security, privacy, and compliance.
