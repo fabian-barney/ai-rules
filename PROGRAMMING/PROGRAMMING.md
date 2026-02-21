@@ -22,8 +22,20 @@ Guidance for AI agents executing implementation tasks.
   `DESIGN/**`, `ARCHITECTURE/**`, `FRAMEWORK/**`, `LIBRARY/**`,
   `BUILD_TOOLS/**`, `INFRASTRUCTURE/**`, and `CI-CD/**`.
 
+## Ruleset Read Gate (Mandatory)
+- Start every programming task by reading the complete ai-rules ruleset.
+- "Complete ai-rules ruleset" means every Markdown file transitively reachable
+  from the baseline entry point `AI.md`.
+- In downstream-projects, also read every Markdown file transitively reachable
+  from the downstream extension entry point described in
+  `AI-RULES/DOWNSTREAM-PROJECT.md`.
+- Do not skip reachable Markdown files and do not pick files ad-hoc.
+- After the full read is complete, irrelevant rules may be removed from active
+  context.
+
 ## Default Execution Workflow
 1. Verify hard preconditions before implementation:
+   - The ruleset read gate in this file has been completed.
    - A plan exists (see `PLAN/PLAN.md`).
    - The work is mapped to an issue/ticket.
    - Work is on a dedicated non-default branch for that issue/ticket.

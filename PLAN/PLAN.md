@@ -22,12 +22,34 @@ Guidance for AI agents creating implementation plans.
   `TEST/TEST.md`, `SECURITY/SECURITY.md`, and `COMPLIANCE/COMPLIANCE.md`.
 - Inherit workflow constraints from `CORE/VERSION_CONTROL_SYSTEM.md`.
 
+## Ruleset Read Gate (Mandatory)
+- Start every planning task by reading the complete ai-rules ruleset.
+- "Complete ai-rules ruleset" means every Markdown file transitively reachable
+  from the baseline entry point `AI.md`.
+- In downstream-projects, also read every Markdown file transitively reachable
+  from the downstream extension entry point described in
+  `AI-RULES/DOWNSTREAM-PROJECT.md`.
+- Do not skip reachable Markdown files and do not pick files ad-hoc.
+- After the full read is complete, irrelevant rules may be removed from active
+  context.
+
 ## Planning Requirement (Mandatory)
 - Create a plan before starting implementation for every implementation task.
 - The plan may be lightweight for low-risk, trivial changes, but it must still
   be decision-complete for its scope and risk while stating required elements
   tersely.
 - Do not start implementation when no plan exists.
+
+## Plan Step Ordering Gates (Mandatory)
+- Every plan must include a ruleset-read step as the very first task.
+- The first task must require reading the complete ai-rules ruleset as defined
+  in `Ruleset Read Gate (Mandatory)`.
+- No other planning or implementation task may appear before that first step.
+- Every plan must include a final task that re-reads the complete ai-rules
+  ruleset and verifies the current planned/implemented changes still conform.
+- If non-conformance is found during that final task, corrective updates are
+  mandatory before the plan can be marked complete.
+- This end-of-plan conformance check is a hard quality gate.
 
 ## Decision-Complete Plan Requirements
 A plan must specify (at depth appropriate to scope/risk):
@@ -101,6 +123,8 @@ Do:    update parent baselines first, then child specializations.
 
 ## Plan Review Checklist
 - Is the plan decision-complete and implementation-ready?
+- Does the plan start with the mandatory complete-ruleset-read task?
+- Does the plan end with the mandatory complete-ruleset-read conformance gate?
 - Are scope and success criteria explicit?
 - Are semantic dependencies and ordering correct?
 - Are risks, mitigations, and rollback steps captured?
