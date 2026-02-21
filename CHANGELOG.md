@@ -9,6 +9,10 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+- Added `FRAMEWORK/IONIC.md` with Ionic-specific guidance for navigation,
+  native plugin boundaries, permission discipline, and mobile fallback safety.
+- Updated `FRAMEWORK/FRAMEWORK.md` and `CORE/RULE_DEPENDENCY_TREE.md` to index
+  and reference the new Ionic framework document.
 
 ## [v4.7.0] - 2026-02-15
 - Strengthened `AI-RULES/UPDATE.md` with explicit structure-adaptation guidance

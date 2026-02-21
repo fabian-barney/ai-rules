@@ -49,6 +49,7 @@ Those belong in `LANGUAGE/**`, `LIBRARY/**`, `BUILD_TOOLS/**`,
 
 ## Files
 - [ANGULAR.md](ANGULAR.md) - Angular framework guidance.
+- [IONIC.md](IONIC.md) - Ionic framework guidance.
 - [PRIMEFACES.md](PRIMEFACES.md) - PrimeFaces UI framework guidance.
 - [REACT.md](REACT.md) - React framework guidance.
 - [SPRING_BOOT.md](SPRING_BOOT.md) - Spring Boot guidance.

@@ -127,6 +127,7 @@ Required sections for deep technical docs:
 - Frameworks:
   - `FRAMEWORK/REACT.md`
   - `FRAMEWORK/ANGULAR.md`
+  - `FRAMEWORK/IONIC.md`
   - `FRAMEWORK/SVELTE.md`
 - Styling/UI layers:
   - `LANGUAGE/HTML/HTML.md`
