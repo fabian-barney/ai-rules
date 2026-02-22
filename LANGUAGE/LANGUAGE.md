@@ -46,6 +46,7 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `BUILD_TOOLS/**`,
   specialization and design heuristics.
 - [PYTHON/PYTHON.md](PYTHON/PYTHON.md) - Python language baseline.
 - [GO/GO.md](GO/GO.md) - Go language baseline.
+- [C_SHARP/C_SHARP.md](C_SHARP/C_SHARP.md) - C#/.NET language baseline.
 
 ## Languages and Formats
 - [HTML/HTML.md](HTML/HTML.md) - Semantic and accessible HTML baseline.

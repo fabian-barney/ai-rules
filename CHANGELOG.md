@@ -103,6 +103,11 @@ Sub-heading template:
   safety.
 - Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
   Go in language indexing and semantic dependency chains.
+- Added `LANGUAGE/C_SHARP/C_SHARP.md` with C#/.NET baseline guidance for
+  nullable contract integrity, async/cancellation discipline, explicit
+  exception handling, and boundary cohesion.
+- Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
+  C#/.NET in language indexing and semantic dependency chains.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
