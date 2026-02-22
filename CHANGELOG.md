@@ -29,6 +29,12 @@ Sub-heading template:
 - Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
   `CORE/RULE_DEPENDENCY_TREE.md` to index Terraform in infrastructure and
   delivery/runtime guidance.
+- Added `INFRASTRUCTURE/PULUMI.md` with Pulumi-specific guidance for
+  stack isolation, preview/update discipline, plugin/version pinning, and
+  secret-safe configuration.
+- Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
+  `CORE/RULE_DEPENDENCY_TREE.md` to index Pulumi in infrastructure and
+  delivery/runtime guidance.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
