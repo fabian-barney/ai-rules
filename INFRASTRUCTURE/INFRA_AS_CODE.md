@@ -7,7 +7,7 @@ changes.
 - Define tool-neutral IaC guardrails for provisioning and evolving
   infrastructure safely.
 - Apply this file when infrastructure definitions are changed through code
-  (for example Terraform, Pulumi, CloudFormation, or Ansible-managed resources).
+  (for example, Terraform, Pulumi, CloudFormation, or Ansible-managed resources).
 
 ## Semantic Dependencies
 - Inherit infrastructure baseline from `INFRASTRUCTURE/INFRASTRUCTURE.md`.

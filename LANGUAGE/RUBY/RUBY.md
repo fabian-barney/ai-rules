@@ -37,7 +37,7 @@ Guidance for AI agents implementing and reviewing Ruby code.
 ## State and Side-Effect Control
 - Avoid hidden global state and implicit mutable singletons.
 - Keep transactional boundaries explicit for stateful operations.
-- Keep IO operations at service/adaptor boundaries for testability.
+- Keep IO operations at service/adapter boundaries for testability.
 - Keep logging redacted and purpose-minimal for sensitive fields.
 
 ## High-Risk Pitfalls
@@ -65,7 +65,7 @@ Do:    prefer explicit methods when behavior clarity matters.
 ### 3. Side Effects
 ```text
 Don't: scatter external IO side effects through domain objects.
-Do:    isolate IO at clear service/adaptor boundaries.
+Do:    isolate IO at clear service/adapter boundaries.
 ```
 
 ## Code Review Checklist for Ruby

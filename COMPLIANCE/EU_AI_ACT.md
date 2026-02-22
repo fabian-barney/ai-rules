@@ -15,6 +15,7 @@ Consult qualified legal counsel for final legal decisions.
 ## Semantic Dependencies
 - Inherit compliance baseline from `COMPLIANCE/COMPLIANCE.md`.
 - Inherit security controls from `SECURITY/SECURITY.md`.
+- Inherit logging and traceability constraints from `CORE/LOGGING.md`.
 - Inherit privacy controls from `COMPLIANCE/GDPR_BDSG.md` where personal data
   processing is involved.
 - Inherit testing and review constraints from `TEST/TEST.md` and
@@ -72,7 +73,7 @@ Consult qualified legal counsel for final legal decisions.
 ## Do / Don't Examples
 ### 1. Risk Classification
 ```text
-Don't: ship new AI use-case with \"we'll classify later\" mindset.
+Don't: ship new AI use-case with "we'll classify later" mindset.
 Do:    classify risk category before rollout and gate release on completion.
 ```
 

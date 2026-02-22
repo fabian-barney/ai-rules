@@ -28,6 +28,14 @@ Guidance for AI agents implementing and reviewing Pulumi infrastructure changes.
 - Block updates when preview includes unexpected replacements/deletions.
 - Keep non-interactive execution for automated environments.
 
+## Policy as Code and Organizational Guardrails
+- Enforce Pulumi policy checks (for example, Policy Packs/CrossGuard) in shared
+  environments.
+- Run required policy checks as part of preview/update gates in CI.
+- Block updates when required policies fail unless an explicit, approved,
+  time-bounded exception exists.
+- Keep policy versions and exception approvals auditable.
+
 ## Stack and State Governance
 - Use secure backend/state storage and controlled access.
 - Keep stack isolation strict across dev/test/stage/prod.

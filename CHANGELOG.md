@@ -9,6 +9,10 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+- Addressed missed review feedback from merged PRs by aligning GitHub
+  conversation-owner wording, fixing minor ordering/grammar consistency, adding
+  Pulumi policy-check guidance, and applying terminology/example consistency
+  fixes across compliance/language docs.
 - Added `CORE/GITHUB.md` with GitHub-specific protected-branch, PR merge
   authority, unresolved review-conversation, and review workflow rules.
 - Added `CI-CD/GITHUB_ACTIONS.md` with GitHub Actions workflow guidance,

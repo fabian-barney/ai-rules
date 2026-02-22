@@ -72,7 +72,7 @@ Consult qualified legal counsel for final legal decisions.
 ## Do / Don't Examples
 ### 1. Data Minimization
 ```text
-Don't: add broad personal profile fields \"just in case\" for future analytics.
+Don't: add broad personal profile fields "just in case" for future analytics.
 Do:    collect only fields required for documented current purpose.
 ```
 

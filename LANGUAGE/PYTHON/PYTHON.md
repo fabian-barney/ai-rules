@@ -57,21 +57,41 @@ Guidance for AI agents implementing and reviewing Python code.
 
 ## Do / Don't Examples
 ### 1. Exception Handling
-```text
-Don't: catch Exception and continue silently.
-Do:    catch specific exception types and preserve context.
+```python
+# Don't: swallow broad exceptions.
+try:
+    persist_order(order)
+except Exception:
+    pass
+
+# Do: catch specific exceptions and preserve context.
+try:
+    persist_order(order)
+except DatabaseError as exc:
+    raise OrderPersistenceError(order.id) from exc
 ```
 
 ### 2. Typing
-```text
-Don't: expose untyped public service interfaces.
-Do:    type inputs/outputs for stable contracts and review clarity.
+```python
+# Don't: untyped public API contract.
+def fetch_user(user_id):
+    ...
+
+# Do: typed API contract.
+def fetch_user(user_id: str) -> User:
+    ...
 ```
 
 ### 3. Async Safety
-```text
-Don't: call blocking network/file APIs inside async request handlers.
-Do:    use async-compatible clients or isolate blocking work explicitly.
+```python
+# Don't: run blocking work directly in async path.
+async def load_payload(path: str) -> bytes:
+    with open(path, "rb") as file_handle:
+        return file_handle.read()
+
+# Do: isolate blocking work off the event loop.
+async def load_payload(path: str) -> bytes:
+    return await asyncio.to_thread(Path(path).read_bytes)
 ```
 
 ## Code Review Checklist for Python
