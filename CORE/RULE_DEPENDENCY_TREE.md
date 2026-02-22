@@ -42,6 +42,7 @@ Apply rules from top to bottom. Lower layers specialize higher layers.
 Always inherited first:
 - `CORE/LOGGING.md`
 - `CORE/VERSION_CONTROL_SYSTEM.md`
+- `CORE/GITHUB.md`
 - `CORE/GITLAB.md`
 - `CORE/CONFLUENCE.md`
 - `CORE/JIRA.md`
@@ -112,12 +113,12 @@ intermediate parents, must be deep and operational.
 Examples (non-exhaustive):
 - Language parents: `LANGUAGE/JAVASCRIPT/JAVASCRIPT.md`,
   `LANGUAGE/JAVA/JAVA.md`, `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md`
-- Core specializations: `CORE/GITLAB.md`, `CORE/CONFLUENCE.md`,
-  `CORE/JIRA.md`
+- Core specializations: `CORE/GITHUB.md`, `CORE/GITLAB.md`,
+  `CORE/CONFLUENCE.md`, `CORE/JIRA.md`
 - Framework docs: `FRAMEWORK/ANGULAR.md`, `FRAMEWORK/REACT.md`, etc.
 - Architecture docs: `ARCHITECTURE/REST.md`, `ARCHITECTURE/GRAPHQL.md`, etc.
 - Libraries and tools: `LIBRARY/*`, `BUILD_TOOLS/*`, `INFRASTRUCTURE/*`,
-  `CI-CD/GITLAB.md`
+  `CI-CD/GITLAB.md`, `CI-CD/GITHUB_ACTIONS.md`
 
 Required sections for deep technical docs:
 - Scope and applicability
@@ -166,7 +167,7 @@ Required sections for deep technical docs:
 - `INFRASTRUCTURE/DOCKER.md`
 - `INFRASTRUCTURE/KUBERNETES.md`
 - `INFRASTRUCTURE/HELM.md`, `INFRASTRUCTURE/ISTIO.md`
-- `CI-CD/GITLAB.md`
+- `CI-CD/GITLAB.md`, `CI-CD/GITHUB_ACTIONS.md`
 
 ## Conflict Resolution Rules
 When two rules seem to conflict, resolve in this order:

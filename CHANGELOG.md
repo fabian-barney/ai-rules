@@ -9,6 +9,14 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+- Added `CORE/GITHUB.md` with GitHub-specific protected-branch, PR merge
+  authority, unresolved review-conversation, and review workflow rules.
+- Added `CI-CD/GITHUB_ACTIONS.md` with GitHub Actions workflow guidance,
+  including action pinning, least-privilege permissions, and release-gate
+  expectations.
+- Updated `CORE/CORE.md`, `CI-CD/CI-CD.md`, and
+  `CORE/RULE_DEPENDENCY_TREE.md` to index and inherit the new GitHub-specific
+  specializations.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child

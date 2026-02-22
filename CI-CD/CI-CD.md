@@ -34,6 +34,7 @@ Those belong in `LANGUAGE/**`, `FRAMEWORK/**`, `LIBRARY/**`,
   CI/CD docs should orchestrate them rather than redefine them.
 
 ## Files
+- [GITHUB_ACTIONS.md](GITHUB_ACTIONS.md) - GitHub Actions pipeline guidance.
 - [GITLAB.md](GITLAB.md) - GitLab CI/CD pipeline guidance.
 
 ## Authoring Notes
