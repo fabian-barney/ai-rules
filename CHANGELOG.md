@@ -118,6 +118,11 @@ Sub-heading template:
   handling, and boundary cohesion.
 - Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
   Kotlin in language indexing and semantic dependency chains.
+- Added `LANGUAGE/PHP/PHP.md` with PHP baseline guidance for strict typing,
+  explicit API contracts, boundary validation, exception mapping, and
+  side-effect control.
+- Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
+  PHP in language indexing and semantic dependency chains.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child

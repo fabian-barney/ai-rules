@@ -49,6 +49,7 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `BUILD_TOOLS/**`,
 - [C_SHARP/C_SHARP.md](C_SHARP/C_SHARP.md) - C#/.NET language baseline.
 - [RUST/RUST.md](RUST/RUST.md) - Rust language baseline.
 - [KOTLIN/KOTLIN.md](KOTLIN/KOTLIN.md) - Kotlin language baseline.
+- [PHP/PHP.md](PHP/PHP.md) - PHP language baseline.
 
 ## Languages and Formats
 - [HTML/HTML.md](HTML/HTML.md) - Semantic and accessible HTML baseline.
