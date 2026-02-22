@@ -35,6 +35,12 @@ Sub-heading template:
 - Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
   `CORE/RULE_DEPENDENCY_TREE.md` to index Pulumi in infrastructure and
   delivery/runtime guidance.
+- Added `INFRASTRUCTURE/CLOUDFORMATION.md` with CloudFormation-specific
+  guidance for change-set review discipline, stack protection, drift handling,
+  and migration safety.
+- Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
+  `CORE/RULE_DEPENDENCY_TREE.md` to index CloudFormation in infrastructure and
+  delivery/runtime guidance.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
