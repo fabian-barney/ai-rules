@@ -9,6 +9,14 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+- Consolidated cross-doc workflow guidance by removing specialization
+  references from `CORE/VERSION_CONTROL_SYSTEM.md` and keeping it
+  platform-neutral.
+- Generalized the shared PR/MR summary template in
+  `CORE/VERSION_CONTROL_SYSTEM.md` by adding `Review Focus` fields for
+  generated/copied files and non-obvious rationale.
+- Removed redundant GitLab-specific summary template duplication from
+  `CORE/GITLAB.md` and reused the general PR/MR summary template.
 - Added `CORE/CONFLUENCE.md` with Confluence wiki read-only defaults,
   explicit revertible-change-only write constraints, preserved history
   requirements, and a non-overridable no-delete policy.

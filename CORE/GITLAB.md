@@ -60,23 +60,8 @@ review lifecycle rules.
   standard imports.
 - Highlight non-obvious logic and explain why it is implemented that way.
 - Keep scope, validation, and residual risk explicit.
-
-### GitLab MR Summary Template
-```md
-## Implementation Summary
-- Scope:
-- Key changes:
-- Non-goals:
-
-## Review Focus
-- Generated/copied files that can be skimmed:
-- Non-obvious code paths and rationale:
-
-## Validation
-- Tests executed:
-- Manual checks:
-- Residual risks:
-```
+- Reuse the general PR/MR summary template from
+  `CORE/VERSION_CONTROL_SYSTEM.md`.
 
 ## Code Review Workflow for GitLab MRs
 - Apply `REVIEW/CODE_REVIEW.md` severity-first process for every MR review.
