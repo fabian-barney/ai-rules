@@ -37,6 +37,7 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `LANGUAGE/**`,
   must keep this layer authoritative for runtime platform behavior.
 
 ## Files
+- [INFRA_AS_CODE.md](INFRA_AS_CODE.md) - Infrastructure as Code baseline guidance.
 - [DOCKER.md](DOCKER.md) - Containerization guidance.
 - [KUBERNETES.md](KUBERNETES.md) - Kubernetes deployment guidance.
 - [HELM.md](HELM.md) - Helm chart practices.
