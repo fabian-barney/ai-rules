@@ -26,3 +26,10 @@ Rules for organizing the ai-rules repository itself (not downstream-projects).
 - Put detailed downstream-project operational guidance in
   `AI-RULES/DOWNSTREAM-PROJECT.md`, `AI-RULES/UPDATE.md`, and
   `AGENTS_TEMPLATE.md`.
+
+## Dependency Inversion Principle (DIP)
+- Apply the Dependency Inversion Principle (DIP) to ruleset structure.
+- More general rule docs must not reference child/specialization docs in
+  normative rule content.
+- Child/specialization docs may reference parent/general docs.
+- Exception: pure index docs may link to child docs for navigation.

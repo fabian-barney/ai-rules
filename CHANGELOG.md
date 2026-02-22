@@ -9,6 +9,14 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+- Added explicit Dependency Inversion Principle (DIP) rules for parent/child
+  rule-doc dependencies in `AI-RULES/STRUCTURE.md` and
+  `CORE/RULE_DEPENDENCY_TREE.md`, including the pure-index-linking exception.
+- Fixed existing parent-to-child reference violations by removing child-doc
+  references from parent docs in `LANGUAGE/JAVASCRIPT/JAVASCRIPT.md`,
+  `LANGUAGE/JAVA/JAVA.md`, `BUILD_TOOLS/NPM.md`, `LIBRARY/JUNIT.md`, and
+  `ARCHITECTURE/CIRCUIT_BREAKER.md`; added child discoverability via
+  `LANGUAGE/LANGUAGE.md`.
 - Consolidated cross-doc workflow guidance by removing specialization
   references from `CORE/VERSION_CONTROL_SYSTEM.md` and keeping it
   platform-neutral.

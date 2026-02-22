@@ -10,9 +10,8 @@ Guidance for AI agents implementing and reviewing circuit breaker patterns.
 - Inherit architecture baseline from `ARCHITECTURE/ARCHITECTURE.md`.
 - Inherit cross-cutting defaults from
   `SECURITY/SECURITY.md`, `TEST/TEST.md`, `CORE/LOGGING.md`.
-- `ARCHITECTURE/MICROSERVICE.md` and
-  `ARCHITECTURE/EVENT_DRIVEN_ARCHITECTURE.md` may specialize breaker usage for
-  their communication patterns.
+- Service communication architecture docs may specialize breaker usage for their
+  communication patterns.
 
 ## Placement Rules
 - Place circuit breakers at remote dependency boundaries (HTTP, gRPC, DB,

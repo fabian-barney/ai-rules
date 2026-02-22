@@ -11,8 +11,7 @@ Guidance for AI agents implementing and reviewing JUnit tests.
 - Inherit language/readability baselines from
   `LANGUAGE/JAVA/JAVA.md`, `LANGUAGE/CONVENTIONS.md`, and
   `LANGUAGE/READABILITY.md`.
-- `LIBRARY/MOCKITO.md` and other test-library docs may specialize
-  mocking/integration behavior.
+- Companion test-library docs may specialize mocking/integration behavior.
 
 ## Defaults
 - Use JUnit 5.
@@ -86,6 +85,6 @@ Do:    include invalid input and boundary cases.
 - Keep CI reports readable with failing-test diagnostics.
 
 ## Override Notes
-- Library/framework test docs (Mockito, Spring test slices, etc.) may add
-  specialization, but JUnit determinism and clarity constraints remain
+- Library/framework test docs (for example Mockito and Spring test slices) may
+  add specialization, but JUnit determinism and clarity constraints remain
   mandatory.

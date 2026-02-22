@@ -6,15 +6,15 @@ Guidance for AI agents implementing and reviewing Java code.
 - Define the baseline Java ruleset for correctness, maintainability, and
   interoperability.
 - Apply this file for all Java code generation and code review tasks.
-- Use `EFFECTIVE_JAVA.md` as an additional specialization layer, not a
-  substitute for this baseline.
+- Use Java specialization layers as additions, not substitutes for this
+  baseline.
 
 ## Semantic Dependencies
 - Inherit cross-cutting constraints from:
   `SECURITY/SECURITY.md`, `TEST/TEST.md`, `CORE/LOGGING.md`.
 - Inherit shared language constraints from:
   `LANGUAGE/CONVENTIONS.md`, `LANGUAGE/READABILITY.md`.
-- `LANGUAGE/JAVA/EFFECTIVE_JAVA.md` narrows and enriches this baseline.
+- Java specialization docs may narrow and enrich this baseline.
 - Framework/library docs (for example Spring, JPA) may specialize API usage
   but must not weaken Java safety constraints.
 
@@ -190,11 +190,7 @@ Do not ignore wrapper scripts or wrapper JARs required to build projects
 (for example `gradle/wrapper/gradle-wrapper.jar`,
 `.mvn/wrapper/maven-wrapper.jar`).
 
-## Companion Specialization
-- [EFFECTIVE_JAVA.md](EFFECTIVE_JAVA.md) - deeper effective Java idioms and
-  review heuristics.
-
 ## Override Notes
 - This file is the Java baseline.
-- `EFFECTIVE_JAVA.md` and Java framework/library docs may narrow patterns for
-  specific contexts, but must keep this file's safety and clarity defaults.
+- Java specialization docs and Java framework/library docs may narrow patterns
+  for specific contexts, but must keep this file's safety and clarity defaults.
