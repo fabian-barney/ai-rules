@@ -108,6 +108,11 @@ Sub-heading template:
   exception handling, and boundary cohesion.
 - Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
   C#/.NET in language indexing and semantic dependency chains.
+- Added `LANGUAGE/RUST/RUST.md` with Rust baseline guidance for ownership and
+  error contracts, bounded unsafe usage, async runtime safety, and concurrency
+  discipline.
+- Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
+  Rust in language indexing and semantic dependency chains.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
