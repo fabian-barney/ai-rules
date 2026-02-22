@@ -223,8 +223,9 @@ Steps:
      `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
    - Create any missing entry points (for example `AGENTS.md` final references,
      `<AI_PROJECT_PATH>/AI.md`, `CLAUDE.md`, and
-     `.github/copilot-instructions.md`), ensure they are tracked, then commit
-     and push.
+     `.github/copilot-instructions.md`), ensure they are tracked, then commit.
+   - Ask the user whether to push this commit, and only push if they explicitly
+     confirm.
 
 ## Expectations
 - Prefer tagged releases unless explicitly asked for a branch.
