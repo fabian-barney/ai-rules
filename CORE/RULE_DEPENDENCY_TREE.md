@@ -70,6 +70,7 @@ Defines syntax- and platform-level behavior:
 - `LANGUAGE/GO/GO.md`
 - `LANGUAGE/C_SHARP/C_SHARP.md`
 - `LANGUAGE/RUST/RUST.md`
+- `LANGUAGE/KOTLIN/KOTLIN.md`
 - `LANGUAGE/HTML/HTML.md`, `LANGUAGE/CSS/CSS.md`
 - `LANGUAGE/SQL/SQL.md`
 - `LANGUAGE/YAML/YAML.md`
@@ -123,7 +124,8 @@ Examples (non-exhaustive):
 - Language parents: `LANGUAGE/JAVASCRIPT/JAVASCRIPT.md`,
   `LANGUAGE/JAVA/JAVA.md`, `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md`,
   `LANGUAGE/PYTHON/PYTHON.md`, `LANGUAGE/GO/GO.md`,
-  `LANGUAGE/C_SHARP/C_SHARP.md`, `LANGUAGE/RUST/RUST.md`
+  `LANGUAGE/C_SHARP/C_SHARP.md`, `LANGUAGE/RUST/RUST.md`,
+  `LANGUAGE/KOTLIN/KOTLIN.md`
 - Core specializations: `CORE/GITHUB.md`, `CORE/GITLAB.md`,
   `CORE/CONFLUENCE.md`, `CORE/JIRA.md`
 - Framework docs: `FRAMEWORK/ANGULAR.md`, `FRAMEWORK/REACT.md`, etc.
@@ -176,6 +178,9 @@ Required sections for deep technical docs:
 
 ### Rust Service Chain
 - `LANGUAGE/RUST/RUST.md`
+
+### Kotlin Service Chain
+- `LANGUAGE/KOTLIN/KOTLIN.md`
 
 ### Query/Data Access Chain
 - `LANGUAGE/SQL/SQL.md`

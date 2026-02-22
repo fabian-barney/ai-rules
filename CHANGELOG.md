@@ -113,6 +113,11 @@ Sub-heading template:
   discipline.
 - Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
   Rust in language indexing and semantic dependency chains.
+- Added `LANGUAGE/KOTLIN/KOTLIN.md` with Kotlin baseline guidance for
+  null-safety integrity, structured coroutine usage, explicit exception
+  handling, and boundary cohesion.
+- Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
+  Kotlin in language indexing and semantic dependency chains.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
