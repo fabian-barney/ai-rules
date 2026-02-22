@@ -38,6 +38,7 @@ Apply rules from top to bottom. Lower layers specialize higher layers.
 Always inherited first:
 - `CORE/LOGGING.md`
 - `CORE/VERSION_CONTROL_SYSTEM.md`
+- `CORE/JIRA.md`
 - `SECURITY/SECURITY.md`
 - `TEST/TEST.md`
 - `LANGUAGE/CONVENTIONS.md`

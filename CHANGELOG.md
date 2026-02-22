@@ -13,6 +13,11 @@ Sub-heading template:
   native plugin boundaries, permission discipline, and mobile fallback safety.
 - Updated `FRAMEWORK/FRAMEWORK.md` and `CORE/RULE_DEPENDENCY_TREE.md` to index
   and reference the new Ionic framework document.
+- Added `CORE/JIRA.md` with Jira-specific ticket-authoring guidance, explicit
+  restrictions for editing existing descriptions, and reusable templates for
+  ticket descriptions and delivery summaries.
+- Updated `CORE/CORE.md`, `CORE/VERSION_CONTROL_SYSTEM.md`, and
+  `CORE/RULE_DEPENDENCY_TREE.md` to reference Jira-specific workflow guidance.
 
 ## [v4.7.0] - 2026-02-15
 - Strengthened `AI-RULES/UPDATE.md` with explicit structure-adaptation guidance
