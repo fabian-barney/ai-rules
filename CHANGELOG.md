@@ -9,6 +9,11 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+- Added `CORE/GITLAB.md` with GitLab-specific protected-branch, MR merge
+  authority, unresolved-comment, and conversation-resolution workflow rules.
+- Updated `CORE/CORE.md`, `CORE/VERSION_CONTROL_SYSTEM.md`, and
+  `CORE/RULE_DEPENDENCY_TREE.md` to index and inherit the new GitLab
+  specialization.
 
 ## [v4.8.0] - 2026-02-22
 - Added `FRAMEWORK/IONIC.md` with Ionic-specific guidance for navigation,
