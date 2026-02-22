@@ -40,6 +40,8 @@ Guidance for version control system usage (Git and others).
   Product Owners, Code Reviewers, and Testers/QA.
 - If you have access to the issue tracker, add that summary directly to the
   linked issue/ticket.
+- When the issue tracker is Jira, apply `CORE/JIRA.md` for Jira-specific
+  description-edit restrictions and summary templates.
 
 ## Completion Status Contract
 - Final delivery for implementation work must include:

@@ -33,6 +33,7 @@ Those belong in their respective domains (`LANGUAGE/**`, `FRAMEWORK/**`,
 
 ## Files
 - [VERSION_CONTROL_SYSTEM.md](VERSION_CONTROL_SYSTEM.md) - Commit/branch/PR workflow, issue linkage, and VCS hygiene.
+- [JIRA.md](JIRA.md) - Jira ticket authoring, edit policy, and summary templates.
 - [LOGGING.md](LOGGING.md) - Logging purpose, safety, and reliability guardrails.
 - [RULE_DEPENDENCY_TREE.md](RULE_DEPENDENCY_TREE.md) - Semantic inheritance, precedence, and override contract.
 
