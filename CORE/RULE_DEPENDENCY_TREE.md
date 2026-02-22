@@ -66,6 +66,7 @@ Defines syntax- and platform-level behavior:
 - `LANGUAGE/JAVASCRIPT/JAVASCRIPT.md` (parent for TypeScript and JS frameworks)
 - `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md` (specializes JavaScript)
 - `LANGUAGE/JAVA/JAVA.md` and `LANGUAGE/JAVA/EFFECTIVE_JAVA.md`
+- `LANGUAGE/PYTHON/PYTHON.md`
 - `LANGUAGE/HTML/HTML.md`, `LANGUAGE/CSS/CSS.md`
 - `LANGUAGE/SQL/SQL.md`
 - `LANGUAGE/YAML/YAML.md`
@@ -117,7 +118,8 @@ intermediate parents, must be deep and operational.
 
 Examples (non-exhaustive):
 - Language parents: `LANGUAGE/JAVASCRIPT/JAVASCRIPT.md`,
-  `LANGUAGE/JAVA/JAVA.md`, `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md`
+  `LANGUAGE/JAVA/JAVA.md`, `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md`,
+  `LANGUAGE/PYTHON/PYTHON.md`
 - Core specializations: `CORE/GITHUB.md`, `CORE/GITLAB.md`,
   `CORE/CONFLUENCE.md`, `CORE/JIRA.md`
 - Framework docs: `FRAMEWORK/ANGULAR.md`, `FRAMEWORK/REACT.md`, etc.
@@ -158,6 +160,9 @@ Required sections for deep technical docs:
     `LIBRARY/MOCKITO.md`, `LIBRARY/LOMBOK.md`, `LIBRARY/MAPSTRUCT.md`,
     `LIBRARY/JAXB.md`, `LIBRARY/GUAVA.md`, `LIBRARY/KAFKA.md`,
     `LIBRARY/RESILIENCE4J.md`
+
+### Python Service Chain
+- `LANGUAGE/PYTHON/PYTHON.md`
 
 ### Query/Data Access Chain
 - `LANGUAGE/SQL/SQL.md`

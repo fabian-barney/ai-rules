@@ -93,6 +93,11 @@ Sub-heading template:
 - Updated `COMPLIANCE/COMPLIANCE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to
   include ePrivacy/TTDSG guidance in compliance indexing and cross-cutting
   baseline guidance.
+- Added `LANGUAGE/PYTHON/PYTHON.md` with Python baseline guidance for explicit
+  typing, boundary validation, safe exception handling, concurrency/async
+  discipline, and dependency reproducibility.
+- Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
+  Python in language indexing and semantic dependency chains.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
