@@ -76,6 +76,11 @@ Sub-heading template:
 - Updated `COMPLIANCE/COMPLIANCE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to
   include NIS2/KRITIS in compliance indexing and cross-cutting baseline
   guidance.
+- Added `COMPLIANCE/DORA.md` with DORA-oriented engineering compliance guidance
+  for ICT risk ownership, incident evidence readiness, third-party dependency
+  controls, and resilience testing.
+- Updated `COMPLIANCE/COMPLIANCE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to
+  include DORA in compliance indexing and cross-cutting baseline guidance.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
