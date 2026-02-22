@@ -186,9 +186,10 @@ Steps:
      control for this repo. This requires a commit.
    - Remove tracked ai-rules paths but keep files:
       ```
-      git rm -r --cached --ignore-unmatch -- "<AI_RULES_PATH>" "<AI_PROJECT_PATH>" \
-        "AGENTS.md" "CLAUDE.md" ".github/copilot-instructions.md"
+      git rm -r --cached --ignore-unmatch -- "<AI_RULES_PATH>" "<AI_PROJECT_PATH>" "AGENTS.md" "CLAUDE.md" ".github/copilot-instructions.md"
       ```
+      Use the single-line form above for shell portability (including
+      PowerShell).
       This must succeed even when optional entry-point files are absent.
       Note: `<AI_PROJECT_PATH>/` is shared/tracked in git mode. Switching to
       local intentionally converts it to local-only (untracked).
