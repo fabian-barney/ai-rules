@@ -13,7 +13,8 @@ Sub-heading template:
   rule-doc dependencies in `AI-RULES/STRUCTURE.md` and
   `CORE/RULE_DEPENDENCY_TREE.md`, including the pure-index-linking exception.
 - Fixed existing parent-to-child reference violations by removing child-doc
-  references from parent docs in `LANGUAGE/JAVASCRIPT/JAVASCRIPT.md`,
+  references from parent docs in `CORE/GITLAB.md`,
+  `LANGUAGE/JAVASCRIPT/JAVASCRIPT.md`,
   `LANGUAGE/JAVA/JAVA.md`, `BUILD_TOOLS/NPM.md`, `LIBRARY/JUNIT.md`, and
   `ARCHITECTURE/CIRCUIT_BREAKER.md`; added child discoverability via
   `LANGUAGE/LANGUAGE.md`.
