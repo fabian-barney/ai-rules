@@ -10,7 +10,7 @@ Sub-heading template:
 
 ## Unreleased
 - Added `CORE/CONFLUENCE.md` with Confluence wiki read-only defaults,
-  explicit revertable-change-only write constraints, preserved history
+  explicit revertible-change-only write constraints, preserved history
   requirements, and a non-overridable no-delete policy.
 - Updated `CORE/CORE.md`, `CORE/VERSION_CONTROL_SYSTEM.md`, and
   `CORE/RULE_DEPENDENCY_TREE.md` to index and inherit Confluence-specific
