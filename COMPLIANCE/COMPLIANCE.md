@@ -41,6 +41,7 @@ Those belong in `LANGUAGE/**`, `FRAMEWORK/**`, `LIBRARY/**`,
 - [NIS2_KRITIS.md](NIS2_KRITIS.md) - NIS2/KRITIS engineering compliance guidance.
 - [DORA.md](DORA.md) - DORA engineering compliance guidance.
 - [EU_AI_ACT.md](EU_AI_ACT.md) - EU AI Act engineering compliance guidance.
+- [EPRIVACY_TTDSG.md](EPRIVACY_TTDSG.md) - ePrivacy/TTDSG engineering compliance guidance.
 
 ## Authoring Notes
 - Keep this file index-level and boundary-focused.

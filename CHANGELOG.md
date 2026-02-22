@@ -87,6 +87,12 @@ Sub-heading template:
 - Updated `COMPLIANCE/COMPLIANCE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to
   include EU AI Act guidance in compliance indexing and cross-cutting baseline
   guidance.
+- Added `COMPLIANCE/EPRIVACY_TTDSG.md` with ePrivacy/TTDSG engineering
+  compliance guidance for consent gating, client-side identifier minimization,
+  telemetry boundaries, and revocation handling.
+- Updated `COMPLIANCE/COMPLIANCE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to
+  include ePrivacy/TTDSG guidance in compliance indexing and cross-cutting
+  baseline guidance.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
