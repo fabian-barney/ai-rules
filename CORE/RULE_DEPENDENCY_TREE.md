@@ -57,6 +57,7 @@ Always inherited first:
 - `COMPLIANCE/LICENSES.md`
 - `COMPLIANCE/GDPR_BDSG.md`
 - `COMPLIANCE/NIS2_KRITIS.md`
+- `COMPLIANCE/DORA.md`
 
 #### 2) Language and format baseline
 Defines syntax- and platform-level behavior:
