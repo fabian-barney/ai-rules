@@ -55,6 +55,7 @@ Always inherited first:
 - `DESIGN/EARLY_RETURN.md`
 - `DESIGN/SOLID.md`
 - `COMPLIANCE/LICENSES.md`
+- `COMPLIANCE/GDPR_BDSG.md`
 
 #### 2) Language and format baseline
 Defines syntax- and platform-level behavior:

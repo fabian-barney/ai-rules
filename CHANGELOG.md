@@ -65,6 +65,11 @@ Sub-heading template:
 - Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
   `CORE/RULE_DEPENDENCY_TREE.md` to index GCP in infrastructure and
   delivery/runtime guidance.
+- Added `COMPLIANCE/GDPR_BDSG.md` with GDPR/BDSG engineering compliance
+  guidance for data minimization, lawful-basis mapping, retention/deletion,
+  DSAR workflows, and high-risk privacy escalation.
+- Updated `COMPLIANCE/COMPLIANCE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to
+  include GDPR/BDSG in compliance indexing and cross-cutting baseline guidance.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
