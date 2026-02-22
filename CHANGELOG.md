@@ -9,6 +9,8 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+
+## [v4.10.0] - 2026-02-22
 - Addressed missed review feedback from merged PRs by aligning GitHub
   conversation-owner wording, fixing minor ordering/grammar consistency, adding
   Pulumi policy-check guidance, and applying terminology/example consistency
