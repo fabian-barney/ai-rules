@@ -96,7 +96,8 @@ Do:    wait for explicit merge instruction and enforce all merge gates.
 ### 3. Conversation Ownership
 ```text
 Don't: resolve a reviewer conversation with no policy/approval basis.
-Do:    reply with the fix and let an authorized owner resolve the thread.
+Do:    reply with the fix and let the review-comment author resolve the thread
+       when possible.
 ```
 
 ## Code Review Checklist for GitHub Workflow
@@ -104,7 +105,8 @@ Do:    reply with the fix and let an authorized owner resolve the thread.
 - Were protected-branch and merge-gate rules enforced without bypass?
 - Is merge authority valid for the acting user and instruction context?
 - Are unresolved review conversations/threads blocking merge?
-- Are conversation resolutions handled by an authorized owner?
+- Are conversation resolutions handled by the review-comment author when
+  possible?
 - Does the PR description include summary, skip candidates, and non-obvious
   rationale?
 

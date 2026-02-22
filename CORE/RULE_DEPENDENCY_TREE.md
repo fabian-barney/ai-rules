@@ -135,7 +135,7 @@ Examples (non-exhaustive):
 - Framework docs: `FRAMEWORK/ANGULAR.md`, `FRAMEWORK/REACT.md`, etc.
 - Architecture docs: `ARCHITECTURE/REST.md`, `ARCHITECTURE/GRAPHQL.md`, etc.
 - Libraries and tools: `LIBRARY/*`, `BUILD_TOOLS/*`, `INFRASTRUCTURE/*`,
-  `CI-CD/GITLAB.md`, `CI-CD/GITHUB_ACTIONS.md`
+  `CI-CD/GITHUB_ACTIONS.md`, `CI-CD/GITLAB.md`
 
 Required sections for deep technical docs:
 - Scope and applicability
@@ -216,7 +216,7 @@ Required sections for deep technical docs:
 - `INFRASTRUCTURE/DOCKER.md`
 - `INFRASTRUCTURE/KUBERNETES.md`
 - `INFRASTRUCTURE/HELM.md`, `INFRASTRUCTURE/ISTIO.md`
-- `CI-CD/GITLAB.md`, `CI-CD/GITHUB_ACTIONS.md`
+- `CI-CD/GITHUB_ACTIONS.md`, `CI-CD/GITLAB.md`
 
 ## Conflict Resolution Rules
 When two rules seem to conflict, resolve in this order:
