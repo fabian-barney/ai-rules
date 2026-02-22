@@ -22,6 +22,10 @@ AI-agent rule documents.
   the broader scope itself marks them as optional.
 - Intermediate technical docs (for example language base docs) must be complete
   rule sets for their own scope, not thin index stubs.
+- Apply the Dependency Inversion Principle (DIP): more general rule docs must
+  not reference child/specialization docs in normative rule content.
+- Child/specialization docs may reference parent/general docs.
+- Exception: pure index docs may link to child docs for navigation.
 
 ## Precedence Model
 Apply rules from top to bottom. Lower layers specialize higher layers.
@@ -200,6 +204,8 @@ When overriding, add a short "override rationale" sentence with:
 
 ## Code Review Checklist (Dependency Integrity)
 - Does the PR preserve precedence order and semantic inheritance?
+- Does the change preserve DIP direction (no parent-to-child references outside
+  pure index linking)?
 - Are new rules placed at the correct abstraction layer?
 - Do specialized docs avoid weakening cross-cutting baseline constraints?
 - Are required companion index updates included when adding new docs?

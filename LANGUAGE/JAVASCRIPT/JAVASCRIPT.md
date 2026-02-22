@@ -12,7 +12,7 @@ Guidance for AI agents implementing and reviewing JavaScript code.
   `SECURITY/SECURITY.md`, `TEST/TEST.md`, `CORE/LOGGING.md`.
 - Inherit shared language constraints from:
   `LANGUAGE/CONVENTIONS.md`, `LANGUAGE/READABILITY.md`.
-- Specialized docs (`LANGUAGE/TYPESCRIPT/TYPESCRIPT.md`, framework docs) may
+- Specialized docs (for example TypeScript and framework-specific docs) may
   narrow this guidance but must not silently weaken it.
 
 ## Defaults
@@ -148,7 +148,8 @@ const runtimeSettings = { ...settings, timeoutMs: 5000 };
 - Add regression tests for previously observed runtime edge cases.
 
 ## Override Notes
-- `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md` narrows typing discipline and compile-time
-  safety rules for TypeScript codebases.
+- Type-specialized JavaScript docs may narrow typing discipline and
+  compile-time safety rules for TypeScript codebases and other typed JavaScript
+  projects.
 - Framework docs may further specialize state/lifecycle/rendering behavior but
   must keep this file's runtime safety baseline.

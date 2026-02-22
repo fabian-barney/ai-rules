@@ -95,5 +95,6 @@ Do:    inject registry auth at CI runtime only.
 - Test workspace script execution for changed packages.
 
 ## Override Notes
-- `BUILD_TOOLS/BUN.md` may specialize Bun behavior, but lockfile discipline,
-  deterministic installs, and secret/supply-chain safety here remain mandatory.
+- Specialized package-manager docs may narrow manager-specific behavior, but
+  lockfile discipline, deterministic installs, and secret/supply-chain safety
+  here remain mandatory.
