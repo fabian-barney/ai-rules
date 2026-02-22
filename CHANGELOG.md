@@ -17,6 +17,12 @@ Sub-heading template:
 - Updated `CORE/CORE.md`, `CI-CD/CI-CD.md`, and
   `CORE/RULE_DEPENDENCY_TREE.md` to index and inherit the new GitHub-specific
   specializations.
+- Added `INFRASTRUCTURE/INFRA_AS_CODE.md` with tool-neutral Infrastructure as
+  Code guardrails for plan/apply gates, state safety, drift governance, and
+  least-privilege identity.
+- Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
+  `CORE/RULE_DEPENDENCY_TREE.md` to include the IaC baseline in infrastructure
+  indexing and dependency chains.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
