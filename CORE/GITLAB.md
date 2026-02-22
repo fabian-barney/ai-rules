@@ -91,7 +91,7 @@ review lifecycle rules.
 1. Direct pushes to protected branches.
 2. Self-merging MRs without the explicit owner-authorized exception.
 3. Resolving another reviewer's conversation.
-4. Merging with unresolved review comments.
+4. Merging while review discussions/threads (conversations) are unresolved.
 5. Bypassing required MR gates or force-merging.
 6. MR descriptions that hide generated files or non-obvious logic.
 
@@ -118,7 +118,7 @@ Do:    reply with the fix, then let the comment author resolve it.
 - Is work done on a dedicated feature branch with MR into protected target?
 - Were protected-branch and merge-gate rules enforced without bypass?
 - Is merge authority valid for the acting user and instruction context?
-- Are unresolved review comments blocking merge?
+- Are unresolved review discussions/threads (conversations) blocking merge?
 - Are conversation resolutions owned by comment authors?
 - Does the MR description include summary, skip candidates, and non-obvious
   rationale?
@@ -131,5 +131,5 @@ Do:    reply with the fix, then let the comment author resolve it.
 
 ## Override Notes
 - Project-specific GitLab governance may be stricter, but protected-branch
-  discipline, unresolved-comment merge blocking, and merge-by-explicit-request
-  behavior remain mandatory.
+  discipline, unresolved review discussions/threads (conversations) blocking
+  merge, and merge-by-explicit-request behavior remain mandatory.
