@@ -98,6 +98,11 @@ Sub-heading template:
   discipline, and dependency reproducibility.
 - Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
   Python in language indexing and semantic dependency chains.
+- Added `LANGUAGE/GO/GO.md` with Go baseline guidance for explicit error
+  handling, context/cancellation discipline, package cohesion, and concurrency
+  safety.
+- Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
+  Go in language indexing and semantic dependency chains.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
