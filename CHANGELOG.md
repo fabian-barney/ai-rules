@@ -9,6 +9,8 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+
+## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
   rule-doc dependencies in `AI-RULES/STRUCTURE.md` and
   `CORE/RULE_DEPENDENCY_TREE.md`, including the pure-index-linking exception.
