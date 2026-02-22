@@ -26,6 +26,8 @@ Concrete steps or checks that would have avoided the issue.
 ```
 
 ## Files
+- [2026-02-22-no-general-semantics-change-for-scope-limited-rules.md](2026-02-22-no-general-semantics-change-for-scope-limited-rules.md)
+  - Keep scope-limited rule additions from changing baseline semantics.
 - [2026-02-13-retrigger-copilot-review-after-fix-pushes.md](2026-02-13-retrigger-copilot-review-after-fix-pushes.md)
   - Re-trigger Copilot review after every fix push before merge.
 - [2026-02-13-no-copilot-mentions-in-pr-comments.md](2026-02-13-no-copilot-mentions-in-pr-comments.md)

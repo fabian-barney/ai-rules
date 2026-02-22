@@ -38,6 +38,7 @@ Apply rules from top to bottom. Lower layers specialize higher layers.
 Always inherited first:
 - `CORE/LOGGING.md`
 - `CORE/VERSION_CONTROL_SYSTEM.md`
+- `CORE/GITLAB.md`
 - `CORE/JIRA.md`
 - `SECURITY/SECURITY.md`
 - `TEST/TEST.md`
@@ -106,6 +107,7 @@ intermediate parents, must be deep and operational.
 Examples (non-exhaustive):
 - Language parents: `LANGUAGE/JAVASCRIPT/JAVASCRIPT.md`,
   `LANGUAGE/JAVA/JAVA.md`, `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md`
+- Core specializations: `CORE/GITLAB.md`, `CORE/JIRA.md`
 - Framework docs: `FRAMEWORK/ANGULAR.md`, `FRAMEWORK/REACT.md`, etc.
 - Architecture docs: `ARCHITECTURE/REST.md`, `ARCHITECTURE/GRAPHQL.md`, etc.
 - Libraries and tools: `LIBRARY/*`, `BUILD_TOOLS/*`, `INFRASTRUCTURE/*`,

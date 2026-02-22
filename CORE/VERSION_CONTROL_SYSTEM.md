@@ -22,6 +22,9 @@ Guidance for version control system usage (Git and others).
 - Do not push knowingly non-working code unless this is explicitly requested.
 - Create a PR/MR for implementation work before reporting completion when you
   have access to GitHub, GitLab, or a similar review system.
+- When the delivery platform is GitLab, apply `CORE/GITLAB.md` for
+  protected-branch behavior, merge authority, and unresolved-discussion
+  merge-blocking behavior.
 - When opening a PR/MR, auto-detect the target branch from downstream-project
   rules when available; otherwise ask which target branch to use and suggest
   the most likely one.
@@ -42,6 +45,9 @@ Guidance for version control system usage (Git and others).
   linked issue/ticket.
 - When the issue tracker is Jira, apply `CORE/JIRA.md` for Jira-specific
   description-edit restrictions and summary templates.
+- When the review platform is GitLab, apply `CORE/GITLAB.md` MR-summary
+  requirements, including generated/copied-file review hints and non-obvious
+  logic explanations.
 
 ## Completion Status Contract
 - Final delivery for implementation work must include:
@@ -68,6 +74,8 @@ Guidance for version control system usage (Git and others).
 - When appropriate, mark the relevant review thread or conversation as resolved,
   but first check downstream project rules for ownership (for example whether
   the author or reviewer is expected to mark threads resolved).
+- When using GitLab, enforce `CORE/GITLAB.md` conversation-resolution ownership
+  and unresolved discussions/threads (conversations) merge-blocking behavior.
 - Do not mark a review thread or conversation resolved by deleting discussion;
   keep decisions auditable in the comment thread.
 
