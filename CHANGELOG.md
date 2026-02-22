@@ -23,6 +23,12 @@ Sub-heading template:
 - Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
   `CORE/RULE_DEPENDENCY_TREE.md` to include the IaC baseline in infrastructure
   indexing and dependency chains.
+- Added `INFRASTRUCTURE/TERRAFORM.md` with Terraform-specific guidance for
+  version pinning, module boundaries, remote state/locking, plan/apply
+  discipline, and migration safety.
+- Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
+  `CORE/RULE_DEPENDENCY_TREE.md` to index Terraform in infrastructure and
+  delivery/runtime guidance.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
