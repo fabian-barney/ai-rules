@@ -41,6 +41,12 @@ Sub-heading template:
 - Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
   `CORE/RULE_DEPENDENCY_TREE.md` to index CloudFormation in infrastructure and
   delivery/runtime guidance.
+- Added `INFRASTRUCTURE/ANSIBLE.md` with Ansible-specific guidance for
+  idempotent automation, inventory/variable governance, secret handling, and
+  execution safety.
+- Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
+  `CORE/RULE_DEPENDENCY_TREE.md` to index Ansible in infrastructure and
+  delivery/runtime guidance.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child

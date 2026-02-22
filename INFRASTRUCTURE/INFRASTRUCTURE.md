@@ -41,6 +41,7 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `LANGUAGE/**`,
 - [TERRAFORM.md](TERRAFORM.md) - Terraform infrastructure guidance.
 - [PULUMI.md](PULUMI.md) - Pulumi infrastructure guidance.
 - [CLOUDFORMATION.md](CLOUDFORMATION.md) - CloudFormation infrastructure guidance.
+- [ANSIBLE.md](ANSIBLE.md) - Ansible infrastructure automation guidance.
 - [DOCKER.md](DOCKER.md) - Containerization guidance.
 - [KUBERNETES.md](KUBERNETES.md) - Kubernetes deployment guidance.
 - [HELM.md](HELM.md) - Helm chart practices.
