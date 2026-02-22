@@ -59,6 +59,12 @@ Sub-heading template:
 - Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
   `CORE/RULE_DEPENDENCY_TREE.md` to index Azure in infrastructure and
   delivery/runtime guidance.
+- Added `INFRASTRUCTURE/GCP.md` with GCP platform guardrails for
+  org/project isolation, IAM least privilege, network/data protection,
+  auditability, and resilience operations.
+- Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
+  `CORE/RULE_DEPENDENCY_TREE.md` to index GCP in infrastructure and
+  delivery/runtime guidance.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
