@@ -23,8 +23,8 @@ Guidance for version control system usage (Git and others).
 - Create a PR/MR for implementation work before reporting completion when you
   have access to GitHub, GitLab, or a similar review system.
 - When the delivery platform is GitLab, apply `CORE/GITLAB.md` for
-  protected-branch behavior, merge authority, and unresolved-comment merge
-  constraints.
+  protected-branch behavior, merge authority, and unresolved-discussion
+  merge-blocking behavior.
 - When opening a PR/MR, auto-detect the target branch from downstream-project
   rules when available; otherwise ask which target branch to use and suggest
   the most likely one.

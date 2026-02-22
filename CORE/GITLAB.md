@@ -26,20 +26,31 @@ review lifecycle rules.
 
 ## Merge Authority and Merge Gates (Mandatory)
 - MR creators must not merge their own MRs.
-- The self-merge restriction may be bypassed only when the user gives explicit
-  merge instruction and the user is a GitLab repository owner.
+- The self-merge restriction may be bypassed only when all of the following are
+  true:
+  - The user gives explicit merge instruction for the specific MR.
+  - The user explicitly confirms in the current session that they are a GitLab
+    repository owner for the target project and that they authorize bypassing
+    the self-merge restriction.
+  - You, as an AI agent, treat the user as not a repository owner unless this
+    explicit owner confirmation and authorization is present.
+- If the above conditions are not met, do not attempt to merge an MR that you
+  created or substantially authored.
 - Respect MR gates; do not bypass required checks, approvals, or policies.
 - Do not use force-merge behavior to skip required gates.
 - Merging is forbidden by default without explicit user instruction.
-- Never merge an MR with unresolved review comments.
-- If asked to merge with unresolved comments, stop and ask the user how to
-  proceed because merge is not allowed in that state.
+- Never merge an MR while any discussions
+  (threads/conversations) are unresolved.
+- If asked to merge with unresolved discussions/threads, stop and ask the user
+  how to proceed because merge is not allowed in that state.
 
 ## Review Conversation Ownership
-- Only the author of a review comment may resolve that conversation.
-- Do not resolve conversations created by other reviewers.
+- Only the author of a review comment may resolve that
+  discussion/thread (conversation).
+- Do not resolve discussions/threads (conversations) created by other
+  reviewers.
 - If you authored the comment and the issue is fixed, resolve that
-  conversation.
+  discussion/thread (conversation).
 - Keep discussion history intact; do not delete comments to hide unresolved
   work.
 
