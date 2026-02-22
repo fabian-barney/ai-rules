@@ -35,6 +35,43 @@ Guidance for AI agents implementing and reviewing TypeScript code.
 - Model state variants with discriminated unions instead of boolean flags.
 - Use `readonly` for immutable APIs and value objects.
 
+## Domain Types vs Ad-Hoc Objects
+- Use this default split:
+  domain type for semantic data with meaning and invariants;
+  ad-hoc object for local, short-lived, mechanical data.
+- Treat ad-hoc objects as local implementation details.
+  Promote them to named types once they start shaping domain contracts.
+
+### Require Named Domain Types When
+- Data crosses a boundary:
+  exported function signatures, cross-module contracts, package boundaries,
+  persistence models, network DTOs, or event payloads.
+- The shape is reused or shared:
+  used in multiple call sites, stored and passed around, or repeated in tests.
+- The data has invariants or behavior:
+  needs validation, normalization, derived fields, or domain operations.
+- Complexity is no longer trivial:
+  nested structures, multiple lifecycle states, or domain unions/workflows.
+
+### Allow Ad-Hoc Objects When Local
+- Options/config bags for infrastructure helpers
+  (for example retry/cache/http/logging helpers).
+- Query/filter/URL parameter objects that remain local to one call flow.
+- `Record`/dictionary lookup maps for simple key-to-value translations.
+- UI-local view models or style/config objects kept inside one component/module.
+- Test fixtures/mocks that stay local to one test;
+  promote to builders/factories when shared.
+
+### Promotion Guardrails
+- If an ad-hoc object gets reused, exported, or shared across module boundaries,
+  replace it with a named type.
+- If fields encode domain semantics, promote immediately
+  (for example pricing, tax, policy, risk, authorization).
+- Do not accept `object`, `Record<string, unknown>`, or `any` for
+  domain-shaped data contracts.
+- In public APIs, prefer named parameter/return types;
+  callers may still pass inline literals when structural typing permits.
+
 ## Runtime Boundary Rules
 - TypeScript types do not validate runtime data.
 - Validate untrusted external data at boundaries (HTTP, queue, env, file).
@@ -98,6 +135,7 @@ Guidance for AI agents implementing and reviewing TypeScript code.
 5. Enum/string mismatch at API boundaries.
 6. Type-safe signatures with unsafe internal casts.
 7. Leaking framework/transport DTOs into domain core.
+8. Letting ad-hoc objects become shared domain contracts without promotion.
 
 ## Do / Don't Examples
 ### 1. `any` vs `unknown` Narrowing
@@ -172,6 +210,8 @@ export class InvoiceService {}
 - Are union types handled exhaustively?
 - Are null/undefined paths explicit and safe?
 - Are casts/assertions minimal and justified?
+- Are ad-hoc objects kept local and promoted to named types when they become
+  shared or domain-relevant?
 - Are naming conventions consistent with TypeScript standards?
 - Is JSDoc/decorator ordering for decorated classes consistent with this file?
 - Are public types cohesive, stable, and domain-focused?
