@@ -53,6 +53,12 @@ Sub-heading template:
 - Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
   `CORE/RULE_DEPENDENCY_TREE.md` to index AWS in infrastructure and
   delivery/runtime guidance.
+- Added `INFRASTRUCTURE/AZURE.md` with Azure platform guardrails for
+  subscription isolation, RBAC least privilege, network/data protection,
+  auditability, and resilience operations.
+- Updated `INFRASTRUCTURE/INFRASTRUCTURE.md` and
+  `CORE/RULE_DEPENDENCY_TREE.md` to index Azure in infrastructure and
+  delivery/runtime guidance.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child

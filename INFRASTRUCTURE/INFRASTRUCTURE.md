@@ -43,6 +43,7 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `LANGUAGE/**`,
 - [CLOUDFORMATION.md](CLOUDFORMATION.md) - CloudFormation infrastructure guidance.
 - [ANSIBLE.md](ANSIBLE.md) - Ansible infrastructure automation guidance.
 - [AWS.md](AWS.md) - AWS platform guidance.
+- [AZURE.md](AZURE.md) - Azure platform guidance.
 - [DOCKER.md](DOCKER.md) - Containerization guidance.
 - [KUBERNETES.md](KUBERNETES.md) - Kubernetes deployment guidance.
 - [HELM.md](HELM.md) - Helm chart practices.
