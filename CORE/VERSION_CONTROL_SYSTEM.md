@@ -77,7 +77,7 @@ Guidance for version control system usage (Git and others).
 - Non-goals:
 
 ## Review Focus
-- Generated/copied files that can be skimmed:
+- Generated/copied files and standard imports that can be skimmed:
 - Non-obvious code paths and rationale:
 
 ## Validation
