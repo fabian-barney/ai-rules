@@ -9,6 +9,12 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+- Added `CORE/CONFLUENCE.md` with Confluence wiki read-only defaults,
+  explicit revertible-change-only write constraints, preserved history
+  requirements, and a non-overridable no-delete policy.
+- Updated `CORE/CORE.md`, `CORE/VERSION_CONTROL_SYSTEM.md`, and
+  `CORE/RULE_DEPENDENCY_TREE.md` to index and inherit Confluence-specific
+  workflow constraints.
 - Added `CORE/GITLAB.md` with GitLab-specific protected-branch, MR merge
   authority, unresolved review discussions/threads (conversations), and
   conversation-resolution workflow rules.

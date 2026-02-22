@@ -45,6 +45,8 @@ Guidance for version control system usage (Git and others).
   linked issue/ticket.
 - When the issue tracker is Jira, apply `CORE/JIRA.md` for Jira-specific
   description-edit restrictions and summary templates.
+- When a project wiki is Confluence, apply `CORE/CONFLUENCE.md` for read-only
+  default behavior and non-overridable no-delete constraints.
 - When the review platform is GitLab, apply `CORE/GITLAB.md` MR-summary
   requirements, including generated/copied-file review hints and non-obvious
   logic explanations.

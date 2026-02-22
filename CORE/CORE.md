@@ -33,6 +33,7 @@ Those belong in their respective domains (`LANGUAGE/**`, `FRAMEWORK/**`,
 
 ## Files
 - [VERSION_CONTROL_SYSTEM.md](VERSION_CONTROL_SYSTEM.md) - Commit/branch/PR workflow, issue linkage, and VCS hygiene.
+- [CONFLUENCE.md](CONFLUENCE.md) - Confluence wiki read-only and non-overridable no-delete safety rules.
 - [GITLAB.md](GITLAB.md) - GitLab protected-branch, MR, and review-conversation workflow rules.
 - [JIRA.md](JIRA.md) - Jira ticket authoring, edit policy, and summary templates.
 - [LOGGING.md](LOGGING.md) - Logging purpose, safety, and reliability guardrails.
