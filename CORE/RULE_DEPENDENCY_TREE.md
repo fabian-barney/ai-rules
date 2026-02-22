@@ -59,6 +59,7 @@ Always inherited first:
 - `COMPLIANCE/NIS2_KRITIS.md`
 - `COMPLIANCE/DORA.md`
 - `COMPLIANCE/EU_AI_ACT.md`
+- `COMPLIANCE/EPRIVACY_TTDSG.md`
 
 #### 2) Language and format baseline
 Defines syntax- and platform-level behavior:
