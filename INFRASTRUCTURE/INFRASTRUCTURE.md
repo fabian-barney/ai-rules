@@ -40,6 +40,7 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `LANGUAGE/**`,
 - [INFRA_AS_CODE.md](INFRA_AS_CODE.md) - Infrastructure as Code baseline guidance.
 - [TERRAFORM.md](TERRAFORM.md) - Terraform infrastructure guidance.
 - [PULUMI.md](PULUMI.md) - Pulumi infrastructure guidance.
+- [CLOUDFORMATION.md](CLOUDFORMATION.md) - CloudFormation infrastructure guidance.
 - [DOCKER.md](DOCKER.md) - Containerization guidance.
 - [KUBERNETES.md](KUBERNETES.md) - Kubernetes deployment guidance.
 - [HELM.md](HELM.md) - Helm chart practices.
