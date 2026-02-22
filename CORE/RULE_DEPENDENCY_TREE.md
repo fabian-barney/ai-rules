@@ -67,6 +67,7 @@ Defines syntax- and platform-level behavior:
 - `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md` (specializes JavaScript)
 - `LANGUAGE/JAVA/JAVA.md` and `LANGUAGE/JAVA/EFFECTIVE_JAVA.md`
 - `LANGUAGE/PYTHON/PYTHON.md`
+- `LANGUAGE/GO/GO.md`
 - `LANGUAGE/HTML/HTML.md`, `LANGUAGE/CSS/CSS.md`
 - `LANGUAGE/SQL/SQL.md`
 - `LANGUAGE/YAML/YAML.md`
@@ -119,7 +120,7 @@ intermediate parents, must be deep and operational.
 Examples (non-exhaustive):
 - Language parents: `LANGUAGE/JAVASCRIPT/JAVASCRIPT.md`,
   `LANGUAGE/JAVA/JAVA.md`, `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md`,
-  `LANGUAGE/PYTHON/PYTHON.md`
+  `LANGUAGE/PYTHON/PYTHON.md`, `LANGUAGE/GO/GO.md`
 - Core specializations: `CORE/GITHUB.md`, `CORE/GITLAB.md`,
   `CORE/CONFLUENCE.md`, `CORE/JIRA.md`
 - Framework docs: `FRAMEWORK/ANGULAR.md`, `FRAMEWORK/REACT.md`, etc.
@@ -163,6 +164,9 @@ Required sections for deep technical docs:
 
 ### Python Service Chain
 - `LANGUAGE/PYTHON/PYTHON.md`
+
+### Go Service Chain
+- `LANGUAGE/GO/GO.md`
 
 ### Query/Data Access Chain
 - `LANGUAGE/SQL/SQL.md`

@@ -45,6 +45,7 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `BUILD_TOOLS/**`,
 - [JAVA/EFFECTIVE_JAVA.md](JAVA/EFFECTIVE_JAVA.md) - Effective Java
   specialization and design heuristics.
 - [PYTHON/PYTHON.md](PYTHON/PYTHON.md) - Python language baseline.
+- [GO/GO.md](GO/GO.md) - Go language baseline.
 
 ## Languages and Formats
 - [HTML/HTML.md](HTML/HTML.md) - Semantic and accessible HTML baseline.
