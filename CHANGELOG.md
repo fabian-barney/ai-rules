@@ -9,6 +9,8 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+
+## [v4.8.0] - 2026-02-22
 - Added `FRAMEWORK/IONIC.md` with Ionic-specific guidance for navigation,
   native plugin boundaries, permission discipline, and mobile fallback safety.
 - Updated `FRAMEWORK/FRAMEWORK.md` and `CORE/RULE_DEPENDENCY_TREE.md` to index
@@ -18,6 +20,16 @@ Sub-heading template:
   ticket descriptions and delivery summaries.
 - Updated `CORE/CORE.md`, `CORE/VERSION_CONTROL_SYSTEM.md`, and
   `CORE/RULE_DEPENDENCY_TREE.md` to reference Jira-specific workflow guidance.
+- Added mandatory complete-ruleset-read gate ordering to `PLAN/PLAN.md`,
+  `PROGRAMMING/PROGRAMMING.md`, and `REVIEW/CODE_REVIEW.md`.
+- Updated `AI-RULES/UPDATE.md` mode-switch guidance to require explicit push
+  confirmation when switching to local mode.
+- Fixed PowerShell portability in `AI-RULES/UPDATE.md` by standardizing the
+  mode-switch `git rm` command to a single shell-safe line.
+- Hardened `.github/workflows/docs-check.yml` by pinning action SHAs and using
+  least-privilege workflow permissions.
+- Expanded `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md` with detailed guidance for
+  restricting ad-hoc objects and promoting shared domain data to named types.
 
 ## [v4.7.0] - 2026-02-15
 - Strengthened `AI-RULES/UPDATE.md` with explicit structure-adaptation guidance
