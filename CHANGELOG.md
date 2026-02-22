@@ -123,6 +123,11 @@ Sub-heading template:
   side-effect control.
 - Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
   PHP in language indexing and semantic dependency chains.
+- Added `LANGUAGE/RUBY/RUBY.md` with Ruby baseline guidance for explicit object
+  contracts, bounded exception handling, side-effect isolation, and boundary
+  validation.
+- Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
+  Ruby in language indexing and semantic dependency chains.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child

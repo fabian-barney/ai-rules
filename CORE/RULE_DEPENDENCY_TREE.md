@@ -72,6 +72,7 @@ Defines syntax- and platform-level behavior:
 - `LANGUAGE/RUST/RUST.md`
 - `LANGUAGE/KOTLIN/KOTLIN.md`
 - `LANGUAGE/PHP/PHP.md`
+- `LANGUAGE/RUBY/RUBY.md`
 - `LANGUAGE/HTML/HTML.md`, `LANGUAGE/CSS/CSS.md`
 - `LANGUAGE/SQL/SQL.md`
 - `LANGUAGE/YAML/YAML.md`
@@ -126,7 +127,8 @@ Examples (non-exhaustive):
   `LANGUAGE/JAVA/JAVA.md`, `LANGUAGE/TYPESCRIPT/TYPESCRIPT.md`,
   `LANGUAGE/PYTHON/PYTHON.md`, `LANGUAGE/GO/GO.md`,
   `LANGUAGE/C_SHARP/C_SHARP.md`, `LANGUAGE/RUST/RUST.md`,
-  `LANGUAGE/KOTLIN/KOTLIN.md`, `LANGUAGE/PHP/PHP.md`
+  `LANGUAGE/KOTLIN/KOTLIN.md`, `LANGUAGE/PHP/PHP.md`,
+  `LANGUAGE/RUBY/RUBY.md`
 - Core specializations: `CORE/GITHUB.md`, `CORE/GITLAB.md`,
   `CORE/CONFLUENCE.md`, `CORE/JIRA.md`
 - Framework docs: `FRAMEWORK/ANGULAR.md`, `FRAMEWORK/REACT.md`, etc.
@@ -185,6 +187,9 @@ Required sections for deep technical docs:
 
 ### PHP Service Chain
 - `LANGUAGE/PHP/PHP.md`
+
+### Ruby Service Chain
+- `LANGUAGE/RUBY/RUBY.md`
 
 ### Query/Data Access Chain
 - `LANGUAGE/SQL/SQL.md`
