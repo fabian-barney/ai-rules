@@ -35,7 +35,7 @@ Apply rules from top to bottom. Lower layers specialize higher layers.
 
 ### Layer Details
 #### 1) Cross-cutting baseline
-Inherited first across tasks; conditional entries are explicitly marked inline:
+Always inherited first:
 - `CORE/LOGGING.md`
 - `CORE/VERSION_CONTROL_SYSTEM.md`
 - `CORE/GITLAB.md` (when delivery platform is GitLab)
