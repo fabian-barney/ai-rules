@@ -75,7 +75,7 @@ Guidance for version control system usage (Git and others).
   but first check downstream project rules for ownership (for example whether
   the author or reviewer is expected to mark threads resolved).
 - When using GitLab, enforce `CORE/GITLAB.md` conversation-resolution ownership
-  and unresolved-conversation merge blocking requirements.
+  and unresolved discussions/threads (conversations) merge-blocking behavior.
 - Do not mark a review thread or conversation resolved by deleting discussion;
   keep decisions auditable in the comment thread.
 
