@@ -51,6 +51,7 @@ Those belong in `FRAMEWORK/**`, `LIBRARY/**`, `BUILD_TOOLS/**`,
 - [KOTLIN/KOTLIN.md](KOTLIN/KOTLIN.md) - Kotlin language baseline.
 - [PHP/PHP.md](PHP/PHP.md) - PHP language baseline.
 - [RUBY/RUBY.md](RUBY/RUBY.md) - Ruby language baseline.
+- [SWIFT/SWIFT.md](SWIFT/SWIFT.md) - Swift language baseline.
 
 ## Languages and Formats
 - [HTML/HTML.md](HTML/HTML.md) - Semantic and accessible HTML baseline.

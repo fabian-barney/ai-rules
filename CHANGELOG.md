@@ -128,6 +128,11 @@ Sub-heading template:
   validation.
 - Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
   Ruby in language indexing and semantic dependency chains.
+- Added `LANGUAGE/SWIFT/SWIFT.md` with Swift baseline guidance for optional
+  safety, structured concurrency/isolation, explicit error handling, and
+  boundary separation.
+- Updated `LANGUAGE/LANGUAGE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to include
+  Swift in language indexing and semantic dependency chains.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
