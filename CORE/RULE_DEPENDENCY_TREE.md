@@ -38,7 +38,7 @@ Apply rules from top to bottom. Lower layers specialize higher layers.
 Always inherited first:
 - `CORE/LOGGING.md`
 - `CORE/VERSION_CONTROL_SYSTEM.md`
-- `CORE/GITLAB.md` (when delivery platform is GitLab)
+- `CORE/GITLAB.md`
 - `CORE/JIRA.md`
 - `SECURITY/SECURITY.md`
 - `TEST/TEST.md`

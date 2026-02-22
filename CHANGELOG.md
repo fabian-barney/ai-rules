@@ -10,7 +10,7 @@ Sub-heading template:
 
 ## Unreleased
 - Added `CORE/GITLAB.md` with GitLab-specific protected-branch, MR merge
-  authority, unresolved review comments/discussions, and
+  authority, unresolved review discussions/threads (conversations), and
   conversation-resolution workflow rules.
 - Updated `CORE/CORE.md`, `CORE/VERSION_CONTROL_SYSTEM.md`, and
   `CORE/RULE_DEPENDENCY_TREE.md` to index and inherit the new GitLab
