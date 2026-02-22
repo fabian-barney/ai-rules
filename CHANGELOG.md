@@ -70,6 +70,12 @@ Sub-heading template:
   DSAR workflows, and high-risk privacy escalation.
 - Updated `COMPLIANCE/COMPLIANCE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to
   include GDPR/BDSG in compliance indexing and cross-cutting baseline guidance.
+- Added `COMPLIANCE/NIS2_KRITIS.md` with NIS2/KRITIS-oriented engineering
+  compliance guidance for incident readiness/reporting hooks, supply-chain
+  controls, risk governance, and continuity validation.
+- Updated `COMPLIANCE/COMPLIANCE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to
+  include NIS2/KRITIS in compliance indexing and cross-cutting baseline
+  guidance.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
