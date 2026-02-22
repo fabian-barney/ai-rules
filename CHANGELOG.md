@@ -81,6 +81,12 @@ Sub-heading template:
   controls, and resilience testing.
 - Updated `COMPLIANCE/COMPLIANCE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to
   include DORA in compliance indexing and cross-cutting baseline guidance.
+- Added `COMPLIANCE/EU_AI_ACT.md` with EU AI Act-oriented engineering
+  compliance guidance for risk classification, transparency, human oversight,
+  model lineage, and AI behavior monitoring.
+- Updated `COMPLIANCE/COMPLIANCE.md` and `CORE/RULE_DEPENDENCY_TREE.md` to
+  include EU AI Act guidance in compliance indexing and cross-cutting baseline
+  guidance.
 
 ## [v4.9.0] - 2026-02-22
 - Added explicit Dependency Inversion Principle (DIP) rules for parent/child
