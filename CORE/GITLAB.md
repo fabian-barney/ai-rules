@@ -6,7 +6,8 @@ review lifecycle rules.
 ## Scope
 - Define GitLab-specific delivery and review workflow constraints.
 - Apply this file when the code hosting and review platform is GitLab.
-- This file does not define GitLab CI pipeline authoring rules.
+- This file does not define GitLab CI pipeline authoring rules; see
+  `CI-CD/CI-CD.md` for CI/CD pipeline and job authoring guidance.
 
 ## Semantic Dependencies
 - Inherit baseline branch/PR/MR workflow rules from
