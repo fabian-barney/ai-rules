@@ -38,6 +38,7 @@ Those belong in `LANGUAGE/**`, `FRAMEWORK/**`, `LIBRARY/**`,
 ## Files
 - [LICENSES.md](LICENSES.md) - License compliance and allowed licenses.
 - [GDPR_BDSG.md](GDPR_BDSG.md) - GDPR/BDSG engineering compliance guidance.
+- [NIS2_KRITIS.md](NIS2_KRITIS.md) - NIS2/KRITIS engineering compliance guidance.
 
 ## Authoring Notes
 - Keep this file index-level and boundary-focused.

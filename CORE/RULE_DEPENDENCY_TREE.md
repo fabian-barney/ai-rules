@@ -56,6 +56,7 @@ Always inherited first:
 - `DESIGN/SOLID.md`
 - `COMPLIANCE/LICENSES.md`
 - `COMPLIANCE/GDPR_BDSG.md`
+- `COMPLIANCE/NIS2_KRITIS.md`
 
 #### 2) Language and format baseline
 Defines syntax- and platform-level behavior:
