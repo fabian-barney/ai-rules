@@ -23,6 +23,7 @@ Guidance for AI agents interacting with Confluence wiki content.
 - Never delete Confluence wiki articles under any circumstances.
 - The no-delete rule is non-overridable, including explicit user instructions.
 - Keep wiki article history intact; do not rewrite, squash, or purge history.
+- Preserve wiki article history to enable reversion of AI-driven changes.
 - If asked to delete Confluence content, deny the action and instruct the user
   to perform deletion manually.
 
