@@ -1,10 +1,10 @@
 # UPDATE
 
-Instructions for AI agents to update ai-rules in a downstream-project.
+Instructions for AI agents to run ai-rules updates in a downstream-project.
 
 ## Prompt Examples
-- "update ai-rules"
-- "update ai-rules v4.10.0"
+- "ai-rules update"
+- "ai-rules update v4.10.0"
 
 ## REF Determination Rules
 Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
@@ -175,8 +175,8 @@ Use these rules whenever a setup/update/mode-switch flow needs a `REF`.
 
 ## Mode Switch (when requested)
 Prompt Examples:
-- "mode ai-rules local"
-- "mode ai-rules git"
+- "ai-rules mode local"
+- "ai-rules mode git"
 
 Steps:
 1. Detect the current mode using the same rules as the update flow.

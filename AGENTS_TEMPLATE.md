@@ -10,10 +10,10 @@ still available if the setup is interrupted.
 
 ### Choose a setup mode
 Follow the mode requested by the user:
-- "setup ai-rules" or "setup ai-rules local" => Local-only (no commits, no push)
-- "setup ai-rules git" => Git subtree (tracked in repo)
+- "ai-rules setup" or "ai-rules setup local" => Local-only (no commits, no push)
+- "ai-rules setup git" => Git subtree (tracked in repo)
 If the user did not specify a mode, default to local (do not ask).
-To switch modes later, use "mode ai-rules local" or "mode ai-rules git".
+To switch modes later, use "ai-rules mode local" or "ai-rules mode git".
 
 ### Paths
 Use these placeholders consistently:
