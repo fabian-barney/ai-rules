@@ -79,6 +79,12 @@ Guidance for AI agents implementing and reviewing Java code.
 - Keep stream pipelines understandable; extract named methods when complex.
 - Prefer loops when they are clearer than chained stream operations.
 
+## String Construction and Formatting
+- Prefer `String.format(...)` over `+` concatenation when constructing a
+  string from a literal template and variables.
+- Use clear, stable format templates for user-facing or logged text.
+- In tight loops or append-heavy code paths, prefer `StringBuilder`.
+
 ## Persistence/Serialization Boundaries
 - Keep domain models independent from persistence/transport annotations when
   practical.
@@ -94,6 +100,7 @@ Guidance for AI agents implementing and reviewing Java code.
 6. Overly clever stream chains harming readability.
 7. Implicit null contracts with no annotations/documentation.
 8. Using floating-point types for exact monetary or quantity values.
+9. Building literal-template strings with `+` instead of `String.format(...)`.
 
 ## Do / Don't Examples
 ### 1. Defensive Copying
@@ -153,6 +160,21 @@ long cents = 1010L;
 BigDecimal safe = new BigDecimal("10.10");
 ```
 
+### 5. String Construction
+```java
+// Don't: concatenate literal template and variables.
+String message = "User " + username + " has " + count + " pending tasks.";
+```
+
+```java
+// Do: use a format template.
+String message = String.format(
+    "User %s has %d pending tasks.",
+    username,
+    count
+);
+```
+
 ## Code Review Checklist for Java
 - Are mutability boundaries explicit and safe?
 - Are nullability contracts explicit and consistent?
@@ -161,6 +183,8 @@ BigDecimal safe = new BigDecimal("10.10");
 - Are public APIs stable and domain-oriented?
 - Are concurrency assumptions documented and safe?
 - Are stream usages readable and side-effect free?
+- Are literal-template strings with variables using `String.format(...)`
+  instead of `+` concatenation?
 - Are persistence/transport concerns separated from domain where appropriate?
 - Are exact-value domains modeled with exact types (scaled integer or dedicated
   money type) instead of `float`/`double`?
