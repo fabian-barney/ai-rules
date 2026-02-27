@@ -15,6 +15,8 @@ Guidance for AI agents implementing and reviewing Lombok usage.
 - Use Lombok to remove low-value boilerplate while preserving clarity.
 - If Lombok is available, implement simple constructors with Lombok annotations
   (`@NoArgsConstructor`, `@AllArgsConstructor`, `@RequiredArgsConstructor`).
+- For dependency injection, prefer `@RequiredArgsConstructor` as the default
+  constructor strategy.
 - If Lombok is available, implement ordinary getters/setters with
   `@Getter`/`@Setter`.
 - If Lombok is available, provide logger instances through the appropriate
@@ -31,6 +33,9 @@ Guidance for AI agents implementing and reviewing Lombok usage.
   methods only when logic/validation is needed.
 - Constructor annotations: use Lombok constructor annotations for simple
   constructor shapes instead of handwritten constructor boilerplate.
+- For dependency injection use cases, prefer `@RequiredArgsConstructor`; use
+  `@NoArgsConstructor`/`@AllArgsConstructor` only when framework or boundary
+  requirements demand those shapes.
 - Logging annotations (`@Slf4j`, `@Log4j2`, etc.): required for logger fields
   instead of manual logger instance declarations.
 - `@Value` (`lombok.Value`): prefer for immutable DTO/value objects.
@@ -108,6 +113,7 @@ Do:    annotate with @lombok.NonNull or @jakarta.annotation.Nullable when
 - Is Lombok reducing boilerplate without hiding critical behavior?
 - Are simple constructors (`@NoArgsConstructor`, `@AllArgsConstructor`,
   `@RequiredArgsConstructor`) Lombok-generated when Lombok is available?
+- For DI classes, is `@RequiredArgsConstructor` used by default?
 - Are ordinary getters/setters Lombok-generated when Lombok is available?
 - Are logger instances provided via Lombok log annotations (for example
   `@Slf4j`)?
