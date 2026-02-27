@@ -45,6 +45,7 @@ Those belong in `LANGUAGE/**`, `FRAMEWORK/**`, `BUILD_TOOLS/**`,
 ## Files
 - [GUAVA.md](GUAVA.md) - Google Guava library guidance.
 - [JAXB.md](JAXB.md) - JAXB XML binding guidance.
+- [JAVA_MONEY.md](JAVA_MONEY.md) - JavaMoney monetary domain guidance.
 - [JEST.md](JEST.md) - Jest testing guidance.
 - [JOOQ.md](JOOQ.md) - jOOQ SQL DSL guidance.
 - [JPA.md](JPA.md) - Java Persistence API guidance.
