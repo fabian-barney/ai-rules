@@ -168,6 +168,7 @@ Required sections for deep technical docs:
 - Java libraries:
   - `LIBRARY/JPA.md`, `LIBRARY/JOOQ.md`, `LIBRARY/JUNIT.md`,
     `LIBRARY/MOCKITO.md`, `LIBRARY/LOMBOK.md`, `LIBRARY/MAPSTRUCT.md`,
+    `LIBRARY/JAVA_MONEY.md`,
     `LIBRARY/JAXB.md`, `LIBRARY/GUAVA.md`, `LIBRARY/KAFKA.md`,
     `LIBRARY/RESILIENCE4J.md`
 
