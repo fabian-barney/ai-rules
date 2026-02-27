@@ -24,9 +24,6 @@ Guidance for AI agents implementing and reviewing Lombok usage.
 - Prefer `@Builder` for complex immutable object construction.
 - Prefer explicit annotations over broad convenience annotations when behavior
   matters.
-- If Lombok is available but JSpecify is not, annotate all fields, parameters,
-  and return types with either `@lombok.NonNull` or `@jakarta.annotation.Nullable`
-  to keep null contracts explicit.
 
 ## Annotation Selection Policy
 - `@Getter`/`@Setter`: required for ordinary accessor boilerplate; write manual
@@ -42,9 +39,15 @@ Guidance for AI agents implementing and reviewing Lombok usage.
 - `@Data`: avoid by default on domain entities and types with nuanced identity.
 - `@EqualsAndHashCode`: configure intentionally for inheritance/identity.
 - `@ToString`: avoid exposing large graphs or sensitive fields.
-- Nullness annotations: if JSpecify is unavailable, require
-  `@lombok.NonNull`/`@jakarta.annotation.Nullable` coverage on fields,
-  parameters, and return types.
+
+## Null Handling
+- JSpecify nullness annotations take precedence whenever JSpecify is available.
+- Lombok/Jakarta nullness annotations are fallback only:
+  use `@lombok.NonNull` and `@jakarta.annotation.Nullable` only when JSpecify
+  is not available.
+- Keep null contracts explicit on fields, parameters, and return types under
+  the active nullness annotation strategy.
+- Do not choose Lombok nullness annotations when JSpecify is present.
 
 ## Risky Annotations and Guardrails
 - `@SneakyThrows`: use only with explicit rationale and bounded scope.
@@ -69,7 +72,8 @@ Guidance for AI agents implementing and reviewing Lombok usage.
    availability.
 7. Handwritten ordinary getters/setters despite Lombok availability.
 8. Manual logger field declarations instead of Lombok logging annotations.
-9. Implicit nullability contracts when Lombok is available but JSpecify is not.
+9. Implicit nullability contracts or use of Lombok/Jakarta nullness annotations
+   when JSpecify is available.
 
 ## Do / Don't Examples
 ### 1. Entity Identity
@@ -102,11 +106,11 @@ Don't: declare manual static logger fields in Lombok-enabled classes.
 Do:    use appropriate Lombok log annotation (for example @Slf4j).
 ```
 
-### 6. Nullness Without JSpecify
+### 6. Nullness Strategy Precedence
 ```text
-Don't: leave field/parameter/return null contracts implicit.
-Do:    annotate with @lombok.NonNull or @jakarta.annotation.Nullable when
-       Lombok is available and JSpecify is not.
+Don't: use Lombok/Jakarta nullness annotations when JSpecify is available.
+Do:    use JSpecify when available; otherwise use @lombok.NonNull and
+       @jakarta.annotation.Nullable as fallback.
 ```
 
 ## Code Review Checklist for Lombok
@@ -117,8 +121,10 @@ Do:    annotate with @lombok.NonNull or @jakarta.annotation.Nullable when
 - Are ordinary getters/setters Lombok-generated when Lombok is available?
 - Are logger instances provided via Lombok log annotations (for example
   `@Slf4j`)?
-- If JSpecify is unavailable, are fields/parameters/return types explicitly
-  annotated with `@lombok.NonNull` or `@jakarta.annotation.Nullable`?
+- Is nullness annotation precedence correct (JSpecify first; Lombok/Jakarta
+  fallback only when JSpecify is unavailable)?
+- Under the chosen strategy, are fields/parameters/return types explicitly
+  annotated for null contracts?
 - Are risky annotations (`@Data`, `@SneakyThrows`) justified?
 - Are equality/toString semantics safe and intentional?
 - Is sensitive data excluded from generated toString output?
@@ -129,13 +135,14 @@ Do:    annotate with @lombok.NonNull or @jakarta.annotation.Nullable when
 - Test equality/hashCode behavior for classes using generated methods.
 - Test serialization/mapping behavior for Lombok-built DTOs.
 - Validate build + IDE annotation processing consistency in CI.
-- Add null-contract tests where `@NonNull`/`@Nullable` annotations define API
-  behavior.
+- Add null-contract tests matching the active strategy (JSpecify if available;
+  otherwise Lombok/Jakarta fallback annotations).
 - Add regression tests when Lombok annotation strategy changes.
 
 ## Override Notes
 - If project policy prefers explicit boilerplate in critical modules, follow
   stricter module policy. Baseline rule: favor clarity over annotation density.
 - Explicit specialization in this doc: when Lombok is available, constructor,
-  ordinary accessor, and logger boilerplate should be Lombok-generated, and
-  nullability contracts must be explicitly annotated when JSpecify is absent.
+  ordinary accessor, and logger boilerplate should be Lombok-generated.
+- Nullness specialization: JSpecify always takes precedence; Lombok/Jakarta
+  nullness annotations are fallback only when JSpecify is unavailable.
