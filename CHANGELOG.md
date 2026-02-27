@@ -9,6 +9,10 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+- Reordered downstream-project command examples to namespace-first wording:
+  `ai-rules setup`, `ai-rules update`, and `ai-rules mode`.
+- Kept release command wording unchanged as `release ai-rules`.
+- No behavior changed; this is a documentation-only command phrasing update.
 
 ## [v4.10.0] - 2026-02-22
 - Addressed missed review feedback from merged PRs by aligning GitHub
