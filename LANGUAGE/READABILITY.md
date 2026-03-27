@@ -30,6 +30,10 @@ Guidance for AI agents on writing code with low cognitive load.
 
 ## Expression and Statement Clarity
 - Avoid cascading ternary expressions.
+- For simple two-branch guard mappings, prefer a single ternary return or
+  assignment over verbose `if` blocks.
+- In ternary guard mappings, keep exceptional case first:
+  `condition ? exceptional : happy`.
 - Avoid deeply nested function calls in a single line when intent is unclear.
 - Introduce intermediate variables for non-trivial expressions.
 - Name intermediate values semantically, not mechanically.
@@ -62,6 +66,8 @@ Guidance for AI agents on writing code with low cognitive load.
 5. Comments that drift from behavior and become misleading.
 6. Boolean flags controlling unrelated behavior branches.
 7. Refactors that shrink lines but increase cognitive load.
+8. Ternary guard expressions that place happy-path first and hide exceptional
+   behavior.
 
 ## Do / Don't Examples
 ### 1. Guard Clauses over Nested Blocks
@@ -96,10 +102,26 @@ Don't: status = a ? "A" : b ? "B" : c ? "C" : "D";
 Do:    use explicit if/switch with named intent.
 ```
 
+### 4. Guard Mapping with Ternary
+```text
+Don't:
+if (value == null) return null;
+return map(value);
+
+Don't:
+result = value != null ? map(value) : null;
+
+Do:
+return value == null ? null : map(value);
+result = value == null ? null : map(value);
+```
+
 ## Code Review Checklist for Readability
 - Is the main execution flow understandable in one pass?
 - Are functions single-purpose and appropriately sized?
 - Are nested branches and boolean expressions easy to follow?
+- For simple guard mappings, does ternary keep exceptional case first
+  (`condition ? exceptional : happy`)?
 - Are names meaningful and domain-specific?
 - Are comments useful, current, and non-redundant?
 - Are error paths explicit and readable?
