@@ -22,9 +22,9 @@ Might work well in most cases, but expect it to be sloppy sometimes.
    ai-rules setup
    ai-rules setup local
    ai-rules setup git
-   ai-rules setup v4.10.0
-   ai-rules setup local v4.10.0
-   ai-rules setup git v4.10.0
+   ai-rules setup v4.11.0
+   ai-rules setup local v4.11.0
+   ai-rules setup git v4.11.0
    ```
    If you omit the version, the latest tagged release will be used.
    If you omit the mode, `local` is used by default.
@@ -36,7 +36,7 @@ Ask your AI agent to run `ai-rules update` when you want a newer version.
 Example prompts:
 ```
 ai-rules update
-ai-rules update v4.10.0
+ai-rules update v4.11.0
 ```
 If you omit the version, the latest tagged release will be used.
 The update auto-detects the current mode (local or git) and preserves it.

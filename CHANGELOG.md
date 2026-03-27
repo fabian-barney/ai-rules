@@ -9,10 +9,23 @@ Sub-heading template:
 - Released versions: `## [vX.Y.Z] - YYYY-MM-DD`
 
 ## Unreleased
+
+## [v4.11.0] - 2026-03-27
 - Reordered downstream-project command examples to namespace-first wording:
-  `ai-rules setup`, `ai-rules update`, and `ai-rules mode`.
-- Kept release command wording unchanged as `release ai-rules`.
-- No behavior changed; this is a documentation-only command phrasing update.
+  `ai-rules setup`, `ai-rules update`, and `ai-rules mode`, while keeping
+  `release ai-rules` unchanged.
+- Expanded Java baseline guidance to prefer `String.format(...)` for
+  literal-template string construction and to model monetary values with
+  JavaMoney by default.
+- Added `LIBRARY/JAVA_MONEY.md` with JavaMoney/Moneta rules and linked it from
+  library and dependency index docs.
+- Expanded `LIBRARY/GUAVA.md` to prefer Guava `Cache`/`LoadingCache` over
+  `ConcurrentMap` and Guava immutable collections for public API returns.
+- Expanded `LIBRARY/LOMBOK.md` to require Lombok constructor/accessor/logger
+  annotations and explicit nullness contracts when Lombok is available.
+- Added readability guidance in `DESIGN/EARLY_RETURN.md` and
+  `LANGUAGE/READABILITY.md` to prefer exceptional-first ternary expressions for
+  simple two-branch guard mappings.
 
 ## [v4.10.0] - 2026-02-22
 - Addressed missed review feedback from merged PRs by aligning GitHub
