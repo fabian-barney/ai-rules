@@ -30,8 +30,10 @@ Guidance for AI agents implementing and reviewing Java code.
 - Do not use `float`/`double` when values must stay exact (for example money).
 - Prefer smallest-unit integers (for example cents in `long`) when unit and
   range are stable for the domain.
-- If smallest-unit integers are not suitable, prefer dedicated libraries (for
-  example Joda-Money or JavaMoney/Moneta) over ad-hoc `BigDecimal` handling.
+- Always prefer JavaMoney (JSR 354, typically Moneta) for monetary values in
+  Java.
+- Restrict raw `BigDecimal` money handling to boundary conversions where
+  JavaMoney types cannot be used directly.
 - Avoid `new BigDecimal(double)`; if `BigDecimal` is unavoidable, construct
   from `String` for exact decimal values, or use `BigDecimal.valueOf(long)` for
   whole-number smallest-unit amounts, and centralize scale + rounding rules.
@@ -151,13 +153,12 @@ public Optional<String> middleName() {
 
 ### 4. Exact Monetary Values
 ```java
-// Don't: binary floating point for exact money.
+// Don't: binary floating point or bare BigDecimal model for money.
 double amount = 10.10;
 BigDecimal unsafe = new BigDecimal(amount);
 
-// Do: exact domain type / exact constructor path.
-long cents = 1010L;
-BigDecimal safe = new BigDecimal("10.10");
+// Do: JavaMoney amount with explicit currency.
+MonetaryAmount safe = Money.of(new BigDecimal("10.10"), "USD");
 ```
 
 ### 5. String Construction
@@ -186,8 +187,8 @@ String message = String.format(
 - Are literal-template strings with variables using `String.format(...)`
   instead of `+` concatenation?
 - Are persistence/transport concerns separated from domain where appropriate?
-- Are exact-value domains modeled with exact types (scaled integer or dedicated
-  money type) instead of `float`/`double`?
+- Are monetary values modeled with JavaMoney and explicit currency instead of
+  `float`/`double` or bare `BigDecimal`?
 
 ## Testing Guidance for Java
 - Test null/absence behavior for public APIs.
