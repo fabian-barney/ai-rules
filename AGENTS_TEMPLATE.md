@@ -66,7 +66,7 @@ version and adapt behavior as needed:
 
 ### Mode: local (no commits, no push)
 1. Add the ai-rules subtree (creates a local commit):
-   `git subtree add --prefix <AI_RULES_PATH> https://github.com/fabian-barney/ai-rules.git <REF> --squash`
+   `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
    - Resolve `REF` using the deterministic rules above.
    - If Git requires an author identity, set it locally:
      git config --local user.name "Your Name"
@@ -122,7 +122,7 @@ Local-only update note:
 
 ### Mode: git (tracked in repo)
 1. Add the ai-rules subtree:
-   `git subtree add --prefix <AI_RULES_PATH> https://github.com/fabian-barney/ai-rules.git <REF> --squash`
+   `git subtree add --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
    - Resolve `REF` using the deterministic rules above.
    - If Git requires an author identity, set it locally:
      git config --local user.name "Your Name"
@@ -165,7 +165,7 @@ Local-only update note:
 8. Commit and push the changes.
 
 Git update note:
-- Use `git subtree pull --prefix <AI_RULES_PATH> https://github.com/fabian-barney/ai-rules.git <REF> --squash`
+- Use `git subtree pull --prefix "<AI_RULES_PATH>" https://github.com/fabian-barney/ai-rules.git <REF> --squash`
   and commit the update.
 
 ## Entry Point Templates
