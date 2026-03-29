@@ -15,8 +15,8 @@ to update versioned examples, but the step was skipped.
 
 ## Prevention
 Before creating the release commit:
-1. Search for the last released version tag string (for example grep `v2.1.0`
-   when releasing `v2.1.1`) across all files.
+1. Search for the last released version tag string (for example, run
+   `git grep "v2.1.0"` when releasing `v2.1.1`) across all files.
 2. Update every versioned reference found (README example prompts and any other
    documentation) to the new version.
 3. Verify the changes are staged before committing.
